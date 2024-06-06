@@ -2,7 +2,7 @@
 #define USUARIO
 #include <set>
 #include <string>
-#include "DTs/DTFecha.h"
+#include "DTFecha.h"
 #include "Comentario.h"
 
 using namespace std;

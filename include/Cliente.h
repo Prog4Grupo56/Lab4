@@ -1,8 +1,8 @@
 #ifndef CLIENTE
 #define CLIENTE
 
-#include "DTs/DTDireccion.h"
-#include "DTs/DataVendedor.h"
+#include "DTDireccion.h"
+#include "DataVendedor.h"
 #include "Vendedor.h"
 
 class Vendedor;
@@ -23,15 +23,16 @@ class Cliente : public Usuario{
         DTDireccion* getDireccion();
         string getCiudad();
         //set<DataNotificacion*> getNotificaciones();
-        set<DataVendedor*> obtenerSuscripciones();
+        //set<DataVendedor*> obtenerSuscripciones();
 
         void setDireccion(DTDireccion* _direccion);
         void setCiudad(string _ciudad);
-        //void agregarSuscripcion(Vendedor* vendedor);
+        void agregarSuscripcion(Vendedor* vendedor);
 
         //void notificar(cosasssssssssssssss);
 
-        //void eliminarSuscripciones(set<DataVendedor*>);
+        void eliminarSuscripciones(set<DataVendedor*>);
+        void eliminarSuscripcion(Vendedor* v);
 };
 
 #endif
