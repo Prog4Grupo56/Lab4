@@ -11,12 +11,12 @@ class DataPromocion{
 
     private:
         string nombre, descripcion;
-        DTFecha* fechaVenc;
+        DTFecha fechaVenc;
         float descuento;
 
     public:
         //Constructor
-        DataPromocion(string _nombre, string _descripcion, DTFecha* _fechaVenc, float _descuento);
+        DataPromocion(string _nombre, string _descripcion, DTFecha _fechaVenc, float _descuento);
 
         //Destructor
         ~DataPromocion();
@@ -24,14 +24,9 @@ class DataPromocion{
         //Getters
         string getNombre();
         string getDescripcion();
-        DTFecha* getFechaVenc();
+        DTFecha getFechaVenc();
         float getDescuento();
 
-        //Setters
-        void setNombre(string _nombre);
-        void setDescripcion(string _descripcion);
-        void setFechaVenc(DTFecha* _fechaVenc);
-        void setDescuento(float _descuento);
 };
 
 #endif

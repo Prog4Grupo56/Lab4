@@ -13,7 +13,7 @@ class DataProducto{
         string codigo, nombre, descripcion;
         int stock;
         float precio;
-        //Categoria* categoria;
+        //Categoria categoria;
 
     public:
         //Constructor
@@ -28,15 +28,8 @@ class DataProducto{
         float getPrecio();
         string getNombre();
         string getDescripcion();
-        //Categoria* getCategoria();
-
-        //Setters
-        void setCodigo(string _codigo);
-        void setStock(int _stock);
-        void setPrecio(float _precio);
-        void setNombre(string _nombre);
-        void setDescripcion(string _descripcion);
-        /*void setCategoria(Categoria* _categoria);*/
+        //Categoria getCategoria();
+        
 };
 
 #endif
