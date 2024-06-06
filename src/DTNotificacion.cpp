@@ -15,7 +15,6 @@ string DTNotificacion::getNombreVendedor(){
 string DTNotificacion::getNombrePromocion(){
     return nombrePromocion;
 }
-//No me convence un sorete, revisar despues
 set<DataProducto> DTNotificacion::getProductos(){
     return productos;
 }
