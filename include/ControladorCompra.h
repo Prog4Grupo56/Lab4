@@ -41,17 +41,17 @@ class ParCompraProductos;
 class ControladorCompra
 {
     private:
-        ControladorCompra * instancia;
-        DataInfoCompra * dataInfoC;
+       static  ControladorCompra * instancia;
+        //DataInfoCompra  dataInfoC;
         set<Compra> compras;
         set<Producto> productos;
         set<Promocion> promociones;
-    public:
-        ControladorCompra(); //Constructor
-        ~ControladorCompra(); //Destructor
 
+        ControladorCompra(); //Constructor
+        ~ControladorCompra(); //Destructor. Privado??
+    public:
         /*======= Operaciones ========*/
-        ControladorCompra getInstancia(); //Obtener instancia (singleton)
+        ControladorCompra* getInstancia(); //Obtener instancia (singleton)
         void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP);
         set<DataProducto> obtenerListaProductos();
         void agregarProducto(ParCodigoCantidad* parCodCant);
