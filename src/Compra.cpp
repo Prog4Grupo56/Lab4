@@ -2,7 +2,7 @@
 
 Compra::Compra()
 {
-
+    
 };
 Compra::~Compra()
 {

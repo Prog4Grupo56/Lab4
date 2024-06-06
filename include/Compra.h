@@ -15,6 +15,7 @@ using namespace std;
 //Forward
 class controladorCompra;
 class CompraProducto;
+class Cliente;
 
 class Compra
 {
@@ -23,8 +24,9 @@ class Compra
         ControladorCompra* contCompra;
         set<CompraProducto*> paresCompraProducto;
         DTFecha fecha;
+        Cliente * cliente;
     public:
-        Compra(); //Aca adentro habria que calcular monto final?
+        Compra(Cliente * _cliente); //Aca adentro habria que calcular monto final?
         ~Compra(); //Destructor
 
         /*======= GETTERS ========*/

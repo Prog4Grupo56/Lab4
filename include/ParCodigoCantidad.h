@@ -21,8 +21,8 @@ class ParCodigoCantidad
         string getCodigo();
         int getCantidadMinima();
         //Setters
-        void setCodigo(string s);
-        void setCantidadMinima(int c);
+        void setCodigo(string _codigo);
+        void setCantidadMinima(int _cantMinima);
 };
 
 #endif
