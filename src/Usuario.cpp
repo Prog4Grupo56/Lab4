@@ -9,8 +9,9 @@ Usuario::Usuario(string _nickname, string _contrasenia, DTFecha* _fecha){
 Usuario::~Usuario(){
     /*deslinkearme de ControladorUsuario*/
 
+    //delete fecha;
     //eliminar mis comentarios
-    
+
 };
 
 /*======= GETTERS ========*/

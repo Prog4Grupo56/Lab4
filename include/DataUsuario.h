@@ -12,7 +12,8 @@ class DataUsuario{
         DTFecha* fecha;
     public:
         DataUsuario(string _nickname, DTFecha* _fecha);
-        ~DataUsuario();
+
+        virtual ~DataUsuario();
 
         string getNickname();
         DTFecha* getFecha();
