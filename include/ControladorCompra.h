@@ -43,9 +43,9 @@ class ControladorCompra
     private:
         static  ControladorCompra * instancia;
         //DataInfoCompra  dataInfoC;
-        set<Compra> compras;
-        set<Producto> productos;
-        set<Promocion> promociones;
+        set<Compra*> compras;
+        set<Producto*> productos;
+        set<Promocion*> promociones;
 
         ControladorCompra(); //Constructor
         ~ControladorCompra(); //Destructor. Privado??

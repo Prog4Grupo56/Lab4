@@ -23,19 +23,35 @@ void ControladorCompra::crearPromocion(Vendedor* v, DataCrearPromocion* dataCrea
 };
 set<DataProducto> ControladorCompra::obtenerListaProductos()
 {
+    /*
+    set<Producto*>::iterator it;
+    set<DataProducto> dps;
+    for(it = productos.begin();it != productos.end(); it++)
+    {
+        Producto * prod = *it;
+        int s = prod -> getStock();
+        DataProducto dp = new DataProducto(...);
+        dps.insert(dp);
+    };
+    return dps;
+    */
 };
 void ControladorCompra::agregarProducto(ParCodigoCantidad* parCodCant)
 {
+    
 };
 ParCompraProductos ControladorCompra::obtenerInfoCompra()
 {
 };
 set<string> ControladorCompra::obtenerListaNicknamesClientes()
 {
+    //Preciso controlador usuario
 };
 void ControladorCompra::seleccionarCliente(string nickname)
 {
+    //Preciso data info compra
 };
 void ControladorCompra::confirmarCompra()
 {
+
 };
