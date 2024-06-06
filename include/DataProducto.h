@@ -10,11 +10,9 @@ using namespace std;
 class DataProducto{
 
     private:
-        string codigo;
+        string codigo, nombre, descripcion;
         int stock;
         float precio;
-        string nombre;
-        string descripcion;
         //Categoria* categoria;
 
     public:
@@ -38,7 +36,7 @@ class DataProducto{
         void setPrecio(float _precio);
         void setNombre(string _nombre);
         void setDescripcion(string _descripcion);
-        //void setCategoria(Categoria* _categoria);
+        /*void setCategoria(Categoria* _categoria);*/
 };
 
 #endif

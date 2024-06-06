@@ -9,7 +9,7 @@ DataPromocion::DataPromocion(string _nombre, string _descripcion, DTFecha* _fech
 
 DataPromocion::~DataPromocion(){};
 
-//Getters
+/*======= GETTERS ========*/
 string DataPromocion::getNombre(){
     return nombre;
 }
@@ -26,7 +26,7 @@ float DataPromocion::getDescuento(){
     return descuento;
 }
 
-//Setters
+/*======= SETTERS ========*/
 void DataPromocion::setNombre(string _nombre){
     nombre = _nombre;
 }

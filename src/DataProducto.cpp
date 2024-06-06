@@ -11,7 +11,7 @@ DataProducto::DataProducto(string _codigo, int _stock, float _precio, string _no
 
 DataProducto::~DataProducto(){};
 
-//Getters
+/*======= GETTERS ========*/
 string DataProducto::getCodigo(){
     return codigo;
 }
@@ -31,7 +31,7 @@ string DataProducto::getDescripcion(){
     return categoria;
 }*/
 
-//Setters
+/*======= SETTERS ========*/
 void DataProducto::setCodigo(string _codigo){
     codigo = _codigo;
 }

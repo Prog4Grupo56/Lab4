@@ -10,8 +10,7 @@ using namespace std;
 class DataPromocion{
 
     private:
-        string nombre;
-        string descripcion;
+        string nombre, descripcion;
         DTFecha* fechaVenc;
         float descuento;
 
