@@ -1,4 +1,4 @@
-#include "../include/DTs/DataUsuario.h"
+#include "../include/DataUsuario.h"
 
 DataUsuario::DataUsuario(string _nickname, DTFecha* _fecha){
     nickname = _nickname;
