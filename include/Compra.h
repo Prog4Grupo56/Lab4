@@ -30,7 +30,7 @@ class Compra
         /*======= GETTERS ========*/
         float getMontoFinal();
         DTFecha getFecha();
-        set<CompraProducto> getParesCompraProducto(); //Este va?
+        set<CompraProducto*> getParesCompraProducto(); //Este va?
         /*======= SETTERS ========*/
         void setFecha(DTFecha f);
 };
