@@ -1,8 +1,8 @@
 #ifndef CLIENTE
 #define CLIENTE
 
-#include "DTs/DTDireccion.h"
-#include "DTs/DataVendedor.h"
+#include "DTDireccion.h"
+#include "DataVendedor.h"
 #include "Vendedor.h"
 
 class Vendedor;

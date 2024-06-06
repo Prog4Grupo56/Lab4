@@ -6,7 +6,7 @@
 #include "CompraProducto.h"
 #include "Cliente.h"
 
-#include "DTs/DTFecha.h"
+#include "DTFecha.h"
 
 
 

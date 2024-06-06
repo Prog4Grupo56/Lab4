@@ -11,12 +11,12 @@
 #include "Promocion.h"
 #include "CantMin.h"
 
-#include "DTs/DataInfoCompra.h"
-#include "DTs/DTFecha.h"
-#include "DTs/DataCrearPromocion.h"
-#include "DTs/DataProducto.h"
-#include "DTs/ParCodigoCantidad.h"
-#include "DTs/ParCompraProductos.h"
+#include "DataInfoCompra.h"
+#include "DTFecha.h"
+#include "DataCrearPromocion.h"
+#include "DataProducto.h"
+#include "ParCodigoCantidad.h"
+#include "ParCompraProductos.h"
 
 
 
@@ -24,6 +24,7 @@ using namespace std;
 
 /*======= Forward ========*/
 //Clases
+class Compra;
 class Cliente;
 class Vendedor;
 class Vendedor;

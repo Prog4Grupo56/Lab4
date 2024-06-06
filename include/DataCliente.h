@@ -2,7 +2,9 @@
 #define DATACLIENTE
 
 #include "DataUsuario.h"
-#include "DTs/DTDireccion.h"
+#include "DTDireccion.h"
+
+class DTDireccion;
 
 class DataCliente : public DataUsuario{
 
@@ -14,10 +16,10 @@ class DataCliente : public DataUsuario{
         DataCliente(string _nickname, DTFecha* _fecha, DTDireccion* _direccion, string _ciudad);
 
         ~DataCliente();
-       
+
         DTDireccion* getDireccion();
         string getCiudad();
-  
+
         void setDireccion(DTDireccion* _direccion);
         void setCiudad(string _ciudad);
 };

@@ -1,8 +1,8 @@
 #ifndef COMENTARIO
 #define COMENTARIO
 
-#include "DTs/DTFecha.h"
-#include "DTs/DataComentario.h"
+#include "DTFecha.h"
+#include "DataComentario.h"
 #include <set>
 #include "Usuario.h"
 
