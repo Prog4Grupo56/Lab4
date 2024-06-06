@@ -20,7 +20,7 @@ class CompraProducto
         int cantidad;
         bool enviado;
     public:
-        CompraProducto(Producto* _p,Compra* _c, int _cantidadMinima); //Constructor
+        CompraProducto(Producto* _p,Compra* _c); //Constructor
         ~CompraProducto(); //Destructor
 
         //Getters
