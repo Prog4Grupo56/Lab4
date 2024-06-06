@@ -14,8 +14,8 @@ class Compra;
 class CompraProducto
 {
     private:
-        Producto p;
-        Compra c;
+        Producto* p;
+        Compra* c;
         int cantidadMinima;
         int cantidad;
         bool enviado;
@@ -30,11 +30,11 @@ class CompraProducto
         int getCantidad();
         bool getEstado();
         //Setters
-        void setProducto();
-        void setCompra();
-        void sentCantMin();
-        void setCantidad();
-        void setEstado();
+        void setProducto(Producto* _p);
+        void setCompra(Compra* _c);
+        void sentCantMin(int cant);
+        void setCantidad(int cant);
+        void setEstado(bool e);
 };
 
 #endif
