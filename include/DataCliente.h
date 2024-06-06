@@ -2,7 +2,7 @@
 #define DATACLIENTE
 
 #include "DataUsuario.h"
-#include "DTs/DTDireccion.h"
+#include "DTDireccion.h"
 
 class DataCliente : public DataUsuario{
 
