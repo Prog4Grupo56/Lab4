@@ -41,7 +41,7 @@ class ParCompraProductos;
 class ControladorCompra
 {
     private:
-       static  ControladorCompra * instancia;
+        static  ControladorCompra * instancia;
         //DataInfoCompra  dataInfoC;
         set<Compra> compras;
         set<Producto> productos;
