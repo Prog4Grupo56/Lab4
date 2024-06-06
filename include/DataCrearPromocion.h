@@ -17,7 +17,7 @@ class DataCrearPromocion {
         //Destructor
         ~DataCrearPromocion();
 
-        //Getters
+        //Getters   
         string getVendedor();
         DataPromocion getInfoP();
         //set<ParCodigoCantidad> getProdCant();
