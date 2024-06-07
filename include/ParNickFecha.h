@@ -10,6 +10,7 @@ class ParNickFecha{
         string nickname;
         DTFecha fecha;
     public:
+        ParNickFecha();
         ParNickFecha(string _nickname, DTFecha _fecha);
         ~ParNickFecha();
 
