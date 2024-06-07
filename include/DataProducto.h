@@ -3,7 +3,6 @@
 #define DATAPRODUCTO
 using namespace std;
 
-#include <string>
 //#include "Categoria.h"
 
 
