@@ -1,8 +1,8 @@
 #include "../include/DataCrearPromocion.h"
 
-DataCrearPromocion::DataCrearPromocion(string _vendedor, DataPromocion _infoP/*, set<ParCodigoCompra> _prodCant*/): infoP(_infoP){
+DataCrearPromocion::DataCrearPromocion(string _vendedor, DataPromocion _infoP, set<ParCodigoCantidad> _prodCant): infoP(_infoP){
     vendedor = _vendedor;
-    //prodCant = _prodCant;
+    prodCant = _prodCant;
 };
 
 DataCrearPromocion::~DataCrearPromocion(){};
@@ -16,9 +16,9 @@ DataPromocion DataCrearPromocion::getInfoP(){
     return infoP;
 }
 
-/*set<ParCodigoCompra> DataCrearPromocion::getProdCant(){
+set<ParCodigoCantidad> DataCrearPromocion::getProdCant(){
     return prodCant;
-}*/
+}
 
 /*======= SETTERS ========*/
 
@@ -30,6 +30,6 @@ void DataCrearPromocion::setInfoP(DataPromocion _infoP){
     infoP = _infoP;
 }
 
-/*void DataCrearPromocion::setProdCant(set<ParCodigoCantidad> _prodCant){
+void DataCrearPromocion::setProdCant(set<ParCodigoCantidad> _prodCant){
     prodCant = _prodCant;
-}*/
+}

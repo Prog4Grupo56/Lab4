@@ -4,29 +4,29 @@
 #include <set>
 
 using namespace std;
-//#include "ParCodigoCantidad.h"
+#include "ParCodigoCantidad.h"
 
 
 class DataInfoCompra {
     private:
         string cliente;
         float montoF;
-        //set<ParCodigoCantida> prodCant;
+        set<ParCodigoCantidad> prodCant;
     public:
         //Constructor
-        DataInfoCompra(string _cliente, float _montoF/*, set<parCodigoCantidad> _prodCant*/);
+        DataInfoCompra(string _cliente, float _montoF, set<ParCodigoCantidad> _prodCant);
         //Destructor
         ~DataInfoCompra();
 
         //Getters   
         string getCliente();
         float getMontoF();
-        //set<parCodigoCantidad> _prodCant();
+        set<ParCodigoCantidad> getProdCant();
 
         //Setters
         void setCliente(string _cliente);
         void setMontoF(float _montoF);
-        //void setProdCant(set<ParCodigoCantidad> _prodCant);
+        void setProdCant(set<ParCodigoCantidad> _prodCant);
 
 };
 

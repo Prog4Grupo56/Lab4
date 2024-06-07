@@ -1,6 +1,6 @@
 #include "../include/DataInfoCompra.h"
 
-DataInfoCompra::DataInfoCompra(string _cliente, float _montoF/*, set<ParCodigoCantidad> prodCant*/)/*: prodCant(_prodCant)*/{
+DataInfoCompra::DataInfoCompra(string _cliente, float _montoF, set<ParCodigoCantidad> _prodCant): prodCant(_prodCant){
     cliente = _cliente;
     montoF = _montoF;
 };
@@ -16,9 +16,9 @@ float DataInfoCompra::getMontoF(){
     return montoF;
 }
 
-/*set<ParCodigoCantidad> DataInfoCompra::getProdCant(){
-    return _prodCant;
-}*/
+set<ParCodigoCantidad> DataInfoCompra::getProdCant(){
+    return prodCant;
+}
 
 /*======= SETTERS ========*/
 
@@ -30,6 +30,6 @@ void DataInfoCompra::setMontoF(float _montoF){
     montoF = _montoF;
 }
 
-/*void DataInfoCompra::setProdCant(set<ParCodigoCantidad> _prodCant){
+void DataInfoCompra::setProdCant(set<ParCodigoCantidad> _prodCant){
     prodCant = _prodCant;
-}*/
+}
