@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "set": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "dataeliminarsuscripcion": "c",
+        "*.tcc": "cpp",
+        "random": "cpp"
     }
 }

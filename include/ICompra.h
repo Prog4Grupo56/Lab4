@@ -4,16 +4,16 @@
 #include <string>
 #include <set>
 #include "ParCodigoCantidad.h"
-#include "DataCrearPromocion.h" // está el .h pero no esta implementado
-#include "DataProducto.h"       // está el .h pero no esta implementado
+#include "DataCrearPromocion.h"
+#include "DataProducto.h"
 #include "DataVendedor.h"
 #include "ParCompraProductos.h"
 
 class ICompra {
 public:
 
-    //virtual void crearPromocion(Vendedor v, DataCrearPromocion dataCrearP) = 0;   // está el .h pero no esta implementado
-    //virtual set<DataProducto> obtenerListaProductos() = 0;                        // está el .h pero no esta implementado
+    virtual void crearPromocion(Vendedor v, DataCrearPromocion dataCrearP) = 0;
+    virtual set<DataProducto> obtenerListaProductos() = 0;
     virtual void agregarProducto(ParCodigoCantidad parCodCant) = 0;
     virtual ParCompraProductos obtenerInfoCompra() = 0;
     virtual set<string> obtenerListaNicknamesClientes() = 0;

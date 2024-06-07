@@ -8,9 +8,9 @@
 #include "DataComentario.h"
 #include "Cliente.h"
 #include "ParCodigoCantidad.h"
-//#include "DataPromocion.h"
+#include "DataPromocion.h"
 //#include "ParCodigoNombre.h"
-//#include "DTNotificacion.h"
+#include "DTNotificacion.h"
 
 class IUsuario {
 public:
@@ -22,7 +22,7 @@ public:
     virtual set<DataComentario> obtenerComentariosUsuario() = 0;
     virtual void seleccionarComentario(DataComentario comentario) = 0;
     virtual void eliminarComentario() = 0;
-    // virtual vector<string> ingresarDatosPromocion(DataPromocion data) = 0;
+    virtual void ingresarDatosPromocion(DataPromocion data) = 0;
     virtual set<string> obtenerListaNicknameVendedores() = 0;
     virtual void seleccionarVendedor(string nickname) = 0;
     // virtual set<ParCodigoNombre> obtenerListaProductosVendedor(string nickname) = 0;
@@ -35,7 +35,7 @@ public:
     virtual void eliminarSuscripciones() = 0;
     virtual set<DataVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente) = 0;
     virtual void vendedoresASuscribirse(set<DataVendedor> vendedores) = 0;
-    //virtual set<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente) = 0;
+    virtual set<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente) = 0;
     
 };
 
