@@ -23,7 +23,10 @@ class DataInfoCompra {
         float getMontoF();
         //set<parCodigoCantidad> _prodCant();
 
-        //CAPAZ TIENE SETTERS
+        //Setters
+        void setCliente(string _cliente);
+        void setMontoF(float _montoF);
+        //void setProdCant(set<ParCodigoCantidad> _prodCant);
 
 };
 

@@ -19,3 +19,17 @@ DataPromocion DataCrearPromocion::getInfoP(){
 /*set<ParCodigoCompra> DataCrearPromocion::getProdCant(){
     return prodCant;
 }*/
+
+/*======= SETTERS ========*/
+
+void DataCrearPromocion::setVendedor(string _vendedor){
+    vendedor = _vendedor;
+}
+
+void DataCrearPromocion::setInfoP(DataPromocion _infoP){
+    infoP = _infoP;
+}
+
+/*void DataCrearPromocion::setProdCant(set<ParCodigoCantidad> _prodCant){
+    prodCant = _prodCant;
+}*/

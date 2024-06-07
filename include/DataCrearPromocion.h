@@ -21,7 +21,12 @@ class DataCrearPromocion {
         string getVendedor();
         DataPromocion getInfoP();
         //set<ParCodigoCantidad> getProdCant();
-        
+
+        //Setters
+        void setVendedor(string _vendedor);
+        void setInfoP(DataPromocion _infoP);
+        //void setProdCant(set<ParCodigoCantidad> _prodCant);
+
 };
 
 #endif

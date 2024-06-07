@@ -20,4 +20,16 @@ float DataInfoCompra::getMontoF(){
     return _prodCant;
 }*/
 
-//CAPAZ TIENE SETTERS
+/*======= SETTERS ========*/
+
+void DataInfoCompra::setCliente(string _cliente){
+    cliente = _cliente;
+}
+
+void DataInfoCompra::setMontoF(float _montoF){
+    montoF = _montoF;
+}
+
+/*void DataInfoCompra::setProdCant(set<ParCodigoCantidad> _prodCant){
+    prodCant = _prodCant;
+}*/
