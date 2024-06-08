@@ -1,5 +1,9 @@
 #include "../../include/Clases/DataInfoCompra.h"
 
+DataInfoCompra::DataInfoCompra(string _cliente){
+    cliente = _cliente;
+}
+
 DataInfoCompra::DataInfoCompra(string _cliente, float _montoF, set<ParCodigoCantidad> _prodCant): prodCant(_prodCant){
     cliente = _cliente;
     montoF = _montoF;

@@ -12,49 +12,31 @@
 #include "CantMin.h"
 #include "DataCrearPromocion.h"
 #include "DataInfoCompra.h"
+#include "ICompra.h"
+#include "Fabrica.h"
 
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/ParCompraProductos.h"
 
-
-
 using namespace std;
 
-/*======= Forward ========*/
-//Clases
-class Compra;
-class Cliente;
-class Vendedor;
-class Vendedor;
-class Producto;
-class CompraProducto;
-class Promocion;
-//Datatypes
-class DataInfoCompra;
-class DataCrearPromocion;
-class DataProducto;
-class ParCodigoCantidad;
-class ParCompraProductos;
-
-class ControladorCompra
+class ControladorCompra : public ICompra
 {
     private:
-        ControladorCompra * instancia;
+        static ControladorCompra * instancia;
         DataInfoCompra * dataInfoC;
-        set<Compra> compras;
-        set<Producto> productos;
-        set<Promocion> promociones;
+        set<Compra*> compras;
+        set<Producto*> productos;
+        set<Promocion*> promociones;
+        ControladorCompra();
     public:
-        ControladorCompra(); //Constructor
-        ~ControladorCompra(); //Destructor
-
-        /*======= Operaciones ========*/
-        ControladorCompra getInstancia(); //Obtener instancia (singleton)
+        ~ControladorCompra();
+        static ControladorCompra* getInstancia();
         void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP);
         set<DataProducto> obtenerListaProductos();
-        void agregarProducto(ParCodigoCantidad* parCodCant);
+        void agregarProducto(ParCodigoCantidad parCodCant);
         ParCompraProductos obtenerInfoCompra();
         set<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);

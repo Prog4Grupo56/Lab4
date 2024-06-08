@@ -14,6 +14,7 @@ class DataInfoCompra {
         set<ParCodigoCantidad> prodCant;
     public:
         //Constructor
+        DataInfoCompra(string _cliente);
         DataInfoCompra(string _cliente, float _montoF, set<ParCodigoCantidad> _prodCant);
         //Destructor
         ~DataInfoCompra();
