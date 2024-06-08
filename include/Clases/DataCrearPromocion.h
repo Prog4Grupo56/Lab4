@@ -2,14 +2,9 @@
 #ifndef DATACREARPROMOCION
 #define DATACREARPROMOCION
 
-<<<<<<< HEAD:include/Clases/DataCrearPromocion.h
-#include "../Datatypes/DataPromocion.h"
-//#include "../Datatypes/ParCodigoCantidad.h"
-=======
 #include <set>
-#include "DataPromocion.h"
-#include "ParCodigoCantidad.h"
->>>>>>> c6fad72dd8fb7f6e0a0c0a82d5156d2f452c8bd0:include/DataCrearPromocion.h
+#include "../Datatypes/DataPromocion.h"
+#include "../Datatypes/ParCodigoCantidad.h"
 
 
 class DataCrearPromocion {

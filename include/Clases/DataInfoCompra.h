@@ -4,11 +4,7 @@
 #include <set>
 
 using namespace std;
-<<<<<<< HEAD:include/Clases/DataInfoCompra.h
-//#include "../Datatypes/ParCodigoCantidad.h"
-=======
-#include "ParCodigoCantidad.h"
->>>>>>> c6fad72dd8fb7f6e0a0c0a82d5156d2f452c8bd0:include/DataInfoCompra.h
+#include "../Datatypes/ParCodigoCantidad.h"
 
 
 class DataInfoCompra {
