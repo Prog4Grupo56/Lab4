@@ -3,6 +3,7 @@
 
 #include "IUsuario.h"
 #include "ICompra.h"
+#include "ControladorCompra.h"
 
 
 class Fabrica {

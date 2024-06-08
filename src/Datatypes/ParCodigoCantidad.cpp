@@ -6,3 +6,7 @@ ParCodigoCantidad::ParCodigoCantidad(string _codigo, int _cantMinima){
     codigo = _codigo;
     cantidadMinima = _cantMinima;
 }
+
+string ParCodigoCantidad::getCodigo(){
+    return codigo;
+}

@@ -1,5 +1,6 @@
 #include "../../include/Datatypes/DataProducto.h"
 
+DataProducto::DataProducto(){}
 DataProducto::DataProducto(string _codigo, int _stock, float _precio, string _nombre, string _descripcion/*, Categoria _categoria*/){
     codigo = _codigo;
     stock = _stock;
