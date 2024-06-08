@@ -1,6 +1,10 @@
 #include "../include/Usuario.h"
 
-Usuario::Usuario(string _nickname, string _contrasenia, DTFecha* _fecha){
+Usuario::Usuario(){
+    
+};
+
+Usuario::Usuario(string _nickname, string _contrasenia, DTFecha _fecha){
     nickname = _nickname;
     contrasenia = _contrasenia;
     fecha = _fecha;
@@ -18,7 +22,7 @@ Usuario::~Usuario(){
 string Usuario::getNickname(){
     return nickname;
 };
-DTFecha* Usuario::getFecha(){
+DTFecha Usuario::getFecha(){
     return fecha;
 };
 
@@ -26,7 +30,7 @@ DTFecha* Usuario::getFecha(){
 void Usuario::setNickname(string _nickname){
     nickname = _nickname;
 };
-void Usuario::setFecha(DTFecha* _fecha){
+void Usuario::setFecha(DTFecha _fecha){
     fecha = _fecha;
 };
 void Usuario::setComentario(Comentario* c){

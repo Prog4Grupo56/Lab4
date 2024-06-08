@@ -13,23 +13,24 @@ class Usuario{
 
     private:
         string nickname;
-        DTFecha* fecha;
+        DTFecha fecha;
         string contrasenia;
         set<Comentario*> comentarios; //hay que ver que coleccion usamos
     public:
         //Constructor
-        Usuario(string _nickname, string _constrasenia, DTFecha* _fecha); // va este constructor?
+        Usuario();
+        Usuario(string _nickname, string _constrasenia, DTFecha _fecha);
         //Destructor
         virtual ~Usuario();
 
         /*======= GETTERS ========*/
         string getNickname();
-        DTFecha* getFecha();
+        DTFecha getFecha();
         set<DataComentario*> obtenerComentarios();
 
         /*======= SETTERS ========*/
         void setNickname(string _nickname);
-        void setFecha(DTFecha* _fecha);
+        void setFecha(DTFecha _fecha);
 
         void setComentario(Comentario* comentario); //Caso de uso dejar comentario
         

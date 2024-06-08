@@ -9,6 +9,7 @@ class DTDireccion {
         int numeroPuerta;
     public:
         // Constructor
+        DTDireccion();
         DTDireccion(string _calle, int _numPuerta);
         // Destructor
         ~DTDireccion();
