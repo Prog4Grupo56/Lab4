@@ -20,11 +20,11 @@ class Compra
 {
     private:
         float montoFinal;
-        ControladorCompra* contCompra;
+        //ControladorCompra* contCompra;
         set<CompraProducto*> paresCompraProducto;
         DTFecha fecha;
     public:
-        Compra(); //Aca adentro habria que calcular monto final?
+        Compra(); //Aca adentro habria que calcular monto final? no, creo
         ~Compra(); //Destructor
 
         /*======= GETTERS ========*/

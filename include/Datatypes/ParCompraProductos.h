@@ -15,13 +15,14 @@ class ParCompraProductos
        float montoF;
        set<DataProducto> dProductos;
     public:
-        ParCompraProductos(DTFecha _fechaActual, float montoF, set<DataProducto> _dProductos); //Constructor
+        ParCompraProductos();
+        ParCompraProductos(DTFecha _fechaActual, float _montoF, set<DataProducto> _dProductos); //Constructor
         ~ParCompraProductos(); //Destructor
 
         //Getters
         DTFecha getFecha();
         float getMontoFinal();
-        set<Producto*> getProductos();
+        set<DataProducto> getProductos();
 
 };
 
