@@ -9,14 +9,14 @@ class DataUsuario{
 
     private:
         string nickname;
-        DTFecha* fecha;
+        DTFecha fecha;
     public:
-        DataUsuario(string _nickname, DTFecha* _fecha);
+        DataUsuario(string _nickname, DTFecha _fecha);
 
         virtual ~DataUsuario();
 
         string getNickname();
-        DTFecha* getFecha();
+        DTFecha getFecha();
 
         void setNickname();
         void setFecha();
