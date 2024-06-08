@@ -7,18 +7,19 @@
 class DataCliente : public DataUsuario{
 
     private:
-        DTDireccion* direccion;
+        DTDireccion direccion;
         string ciudad;
+        string contrasena;
 
     public:
-        DataCliente(string _nickname, DTFecha* _fecha, DTDireccion* _direccion, string _ciudad);
+        DataCliente(string _nickname, string _contrasena, DTFecha _fecha, DTDireccion _direccion, string _ciudad);
 
         ~DataCliente();
        
-        DTDireccion* getDireccion();
+        DTDireccion getDireccion();
         string getCiudad();
   
-        void setDireccion(DTDireccion* _direccion);
+        void setDireccion(DTDireccion _direccion);
         void setCiudad(string _ciudad);
 };
 

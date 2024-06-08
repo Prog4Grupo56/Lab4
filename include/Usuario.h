@@ -18,7 +18,6 @@ class Usuario{
         set<Comentario*> comentarios; //hay que ver que coleccion usamos
     public:
         //Constructor
-        Usuario();
         Usuario(string _nickname, string _constrasenia, DTFecha _fecha);
         //Destructor
         virtual ~Usuario();

@@ -1,9 +1,5 @@
 #include "../include/Usuario.h"
 
-Usuario::Usuario(){
-    
-};
-
 Usuario::Usuario(string _nickname, string _contrasenia, DTFecha _fecha){
     nickname = _nickname;
     contrasenia = _contrasenia;

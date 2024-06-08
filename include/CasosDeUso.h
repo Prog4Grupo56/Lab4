@@ -1,7 +1,7 @@
 #include <iostream>
 #include "../include/DTFecha.h"
 #include "../include/DTDireccion.h"
-#include "../include/Cliente.h"
+#include "../include/DataCliente.h"
 using namespace std;
 
 void AltaDeUsuario();

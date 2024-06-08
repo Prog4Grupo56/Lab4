@@ -8,7 +8,6 @@ bool AltaCliente(){
     int dia, mes, ano;
     int numeroDePuerta;
     string calle;
-    Cliente* nuevoCliente;
     cout << "Ingrese un nickname: ";
     cin >> nickname;
     cout << "Ingrese una contraseña: ";
@@ -22,8 +21,8 @@ bool AltaCliente(){
     cin >> numeroDePuerta;
     cout << "Ingrese una ciudad: ";
     cin >> ciudad;
-    nuevoCliente = new Cliente(nickname,contrasena, DTFecha(dia,mes,ano), DTDireccion(calle, numeroDePuerta), ciudad);
-    delete nuevoCliente;
+    DataCliente dataCliente = DataCliente(nickname,contrasena, DTFecha(dia,mes,ano), DTDireccion(calle, numeroDePuerta), ciudad);
+    //ControladorUsuario.ingresarCliente(dataCliente);
     return true;
 }
  
