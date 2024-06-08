@@ -1,6 +1,6 @@
 #include "../include/Cliente.h"
 
-Cliente::Cliente(string _nickname, string _contrasenia, DTFecha* _fecha, DTDireccion* _direccion, string _ciudad):Usuario(_nickname, _contrasenia, _fecha), direccion(_direccion), ciudad(_ciudad) {};
+Cliente::Cliente(string _nickname, string _contrasenia, DTFecha _fecha, DTDireccion _direccion, string _ciudad):Usuario(_nickname, _contrasenia, _fecha), direccion(_direccion), ciudad(_ciudad) {};
 
 Cliente::~Cliente(){
     /*set<Vendedor*>::iterator it;
@@ -11,7 +11,7 @@ Cliente::~Cliente(){
 };
 
 /*======= GETTERS ========*/
-DTDireccion* Cliente::getDireccion(){
+DTDireccion Cliente::getDireccion(){
     return direccion;
 };  
 string Cliente::getCiudad(){
@@ -35,7 +35,7 @@ string Cliente::getCiudad(){
 }*/
 
 /*======= SETTERS ========*/
-void Cliente::setDireccion(DTDireccion* _direccion){
+void Cliente::setDireccion(DTDireccion _direccion){
     direccion = _direccion;
 };
 void Cliente::setCiudad(string _ciudad){

@@ -1,5 +1,9 @@
 #include "../include/DTDireccion.h"
 
+DTDireccion::DTDireccion(){
+
+};
+
 DTDireccion::DTDireccion(string _calle, int _numPuerta){
     calle = _calle;
     numeroPuerta = _numPuerta;

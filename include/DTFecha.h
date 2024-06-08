@@ -10,6 +10,7 @@ class DTFecha {
         int dia, mes, ano;
     public:
         // Constructor
+        DTFecha();
         DTFecha(int _dia, int _mes, int _ano);
         // Destructor
         ~DTFecha();
