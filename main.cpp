@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <limits>
-#include "include/CasosDeUso.h"
+#include "include/CasosDeUso/CasosDeUso.h"
 
 using namespace std;
 

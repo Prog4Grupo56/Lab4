@@ -1,31 +1,42 @@
-TARGET  	= main
-SRC_DIR 	= ./src
-INC_DIR 	= ./include
-OBJ_DIR 	= ./obj
-OBJ__O_DIR 	= obj
-OBJ     	=  main.o Comentario.o Usuario.o Cliente.o DTFecha.o DataVendedor.o DataUsuario.o CasosDeUso.o DTDireccion.o
-CFLAGS  	= -g -Wall 
+TARGET      = main
+SRC_DIR     = ./src
+INC_DIR     = ./include
+OBJ_DIR     = ./obj
+CFLAGS      = -g -Wall 
 
-#CREA EL EJECUTABLE
-$(TARGET): $(addprefix $(OBJ_DIR)/, $(OBJ))
+# Encuentra todos los archivos .cpp y .h en las subcarpetas de src y include
+SRC_FILES   = $(wildcard $(SRC_DIR)/CasosDeUso/*.cpp) $(wildcard $(SRC_DIR)/Clases/*.cpp) $(wildcard $(SRC_DIR)/Datatypes/*.cpp) main.cpp
+INC_FILES   = $(wildcard $(INC_DIR)/CasosDeUso/*.h) $(wildcard $(INC_DIR)/Clases/*.h) $(wildcard $(INC_DIR)/Datatypes/*.h)
+OBJ_FILES   = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC_FILES))
+
+# CREA EL EJECUTABLE
+$(TARGET): $(OBJ_FILES)
 	g++ $(CFLAGS) $^ -o $@
 
-#COMPILAR LOS ARCHIVOS CPP
-$(OBJ_DIR)/main.o: main.cpp $(INC_DIR)/Comentario.h $(INC_DIR)/Usuario.h $(INC_DIR)/Cliente.h $(INC_DIR)/DataVendedor.h $(INC_DIR)/DTFecha.h $(INC_DIR)/DataUsuario.h $(INC_DIR)/CasosDeUso.h $(INC_DIR)/DTDireccion.h | ${OBJ__O_DIR}
-	g++ -c $(CFLAGS) $< -o $@
+# COMPILAR LOS ARCHIVOS CPP
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp $(INC_FILES) | create_dirs
+	g++ -I$(INC_DIR) -c $(CFLAGS) $< -o $@
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp $(INC_DIR)/%.h | ${OBJ__O_DIR}
-	g++ -c $(CFLAGS) $< -o $@
+# Compilar main.cpp
+$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp $(INC_FILES) | create_dirs
+	g++ -I$(INC_DIR) -c $(CFLAGS) $< -o $@
 
-${OBJ__O_DIR}:
-	@mkdir -p ${OBJ__O_DIR}
+# Crear subcarpetas dentro de obj
+.PHONY: create_dirs
+create_dirs:
+	@mkdir -p $(OBJ_DIR)/CasosDeUso
+	@mkdir -p $(OBJ_DIR)/Clases
+	@mkdir -p $(OBJ_DIR)/Datatypes
 
-#BORRA LOS .o Y EL EJECUTABLE SI EXISTEN
+# BORRA LOS .o Y EL EJECUTABLE SI EXISTEN
 .PHONY: clean
 clean:
 	rm -f $(OBJ_DIR)/*.o $(TARGET)
+	rm -rf $(OBJ_DIR)/CasosDeUso
+	rm -rf $(OBJ_DIR)/Clases
+	rm -rf $(OBJ_DIR)/Datatypes
 
-#EJECUTAR EL PROGRAMA
+# EJECUTAR EL PROGRAMA
 .PHONY: run
 run: $(TARGET)
 	./$(TARGET)
