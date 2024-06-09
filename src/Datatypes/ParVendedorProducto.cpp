@@ -1,10 +1,11 @@
 #include "../../include/Datatypes/ParVendedorProducto.h"
 
-ParVendedorProducto::ParVendedorProducto():{
-    producto = DataProducto()
+ParVendedorProducto::ParVendedorProducto(){
+    producto = DataProducto();
 }
 
-ParVendedorProducto::ParVendedorProducto(string _nickname, DTFecha _fecha): fecha(_fecha){
+ParVendedorProducto::ParVendedorProducto(string _nickname, DataProducto prod){ 
+    producto = prod;
     nickname = _nickname;
 }
 
@@ -14,6 +15,6 @@ string ParVendedorProducto::getNickname(){
     return nickname;
 }
 
-DTFecha ParVendedorProducto::getFecha(){
-    return fecha;
+DataProducto ParVendedorProducto::getProducto(){
+    return producto;
 }
