@@ -19,6 +19,8 @@ class DTDireccion {
         // Setters
         void setCalle(string _calle);
         void setNumeroPuerta(int _numPuerta);
+
+        string toString();
 };
 
 #endif

@@ -36,6 +36,7 @@ public:
     virtual set<DataVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente) = 0;
     virtual void vendedoresASuscribirse(set<DataVendedor> vendedores) = 0;
     virtual set<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente) = 0;
+    virtual set<DataUsuario> obtenerListadoUsuarios() = 0;
     
 };
 

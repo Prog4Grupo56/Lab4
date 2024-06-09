@@ -2,7 +2,7 @@
 
 Usuario::Usuario(string _nickname, string _contrasenia, DTFecha _fecha){
     nickname = _nickname;
-    contrasenia = _contrasenia;
+    contrasena = _contrasenia;
     fecha = _fecha;
 };
 
@@ -21,6 +21,9 @@ string Usuario::getNickname(){
 DTFecha Usuario::getFecha(){
     return fecha;
 };
+string Usuario::getContrasena(){
+    return contrasena;
+}
 
 /*======= SETTERS ========*/
 void Usuario::setNickname(string _nickname){

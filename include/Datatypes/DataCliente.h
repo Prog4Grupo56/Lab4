@@ -9,7 +9,6 @@ class DataCliente : public DataUsuario{
     private:
         DTDireccion direccion;
         string ciudad;
-        string contrasena;
 
     public:
         DataCliente(string _nickname, string _contrasena, DTFecha _fecha, DTDireccion _direccion, string _ciudad);
@@ -21,6 +20,8 @@ class DataCliente : public DataUsuario{
   
         void setDireccion(DTDireccion _direccion);
         void setCiudad(string _ciudad);
+
+        string toString();
 };
 
 #endif

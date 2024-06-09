@@ -23,21 +23,21 @@ set<DTNotificacion> Cliente::getNotificaciones(){
     return notificaciones;
 }
 
-/*set<DataVendedor*> Cliente::obtenerSuscripciones(){
+set<DataVendedor> Cliente::obtenerSuscripciones(){
 
-    set<Vendedor*>::iterator it;
-    set<DataVendedor*> lista; 
 
-    for (it = suscripciones.begin(); it != suscripciones.end();++it){
-        Vendedor* v = *it;
-        string nickname = v->getNickname();
-        DTFecha* fecha = v->getFecha();
-        int RUT = v->getRUT();
-        DataVendedor* dataV = new DataVendedor(nickname, fecha, RUT);
-        lista.insert(dataV);
-    }
+    set<DataVendedor> lista; 
+
+    // for (Vendedor* v: suscripciones){
+    //     string nickname = v->getNickname();
+    //     DTFecha fecha = v->getFecha();
+    //     int RUT = v->getRUT();
+    //     string contrasena = v->getContrasena();
+    //     DataVendedor dataV = DataVendedor(nickname, contrasena, fecha, RUT);
+    //     lista.insert(dataV);
+    // }
     return lista; //limpiar memoria de dataVendedor al finalizar el caso de uso
-}*/
+}
 
 /*======= SETTERS ========*/
 void Cliente::setDireccion(DTDireccion _direccion){
@@ -55,9 +55,21 @@ void Cliente::eliminarSuscripcion(Vendedor* v){
     suscripciones.erase(v);
 }
 
-void Cliente::eliminarSuscripciones(set<DataVendedor*>){
+void Cliente::eliminarSuscripciones(set<DataVendedor> vendedores){
 
-    ////IMPLEMENTAAAAAAAAAAAAAAAAR
+    set<DataVendedor>::iterator it;
+    for (it = vendedores.begin(); it != vendedores.end(); ++it){
+        DataVendedor vend = *it;
+        string nickname = vend.getNickname();
+        set<Vendedor*>::iterator itv;
+        for (itv = suscripciones.begin(); itv != suscripciones.end(); ++itv){
+            Vendedor* v = *itv;
+            if (v->getNickname() == nickname){
+                eliminarSuscripcion(v);
+                break;
+            }
+        }
+    }
 };
 
 //void Cliente::notificar()
