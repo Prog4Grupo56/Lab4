@@ -9,12 +9,14 @@ class DataVendedor : public DataUsuario{
         int RUT;
     public:
         DataVendedor();
-        DataVendedor(string _nickname, DTFecha _fecha, int _RUT);
+        DataVendedor(string _nickname, string _constrasena, DTFecha _fecha, int _RUT);
         ~DataVendedor();
       
         int getRUT();
 
         void setRUT();
+
+        string toString();
 };
 
 #endif

@@ -14,7 +14,7 @@ class Usuario{
     private:
         string nickname;
         DTFecha fecha;
-        string contrasenia;
+        string contrasena;
         set<Comentario*> comentarios; //hay que ver que coleccion usamos
     public:
         //Constructor
@@ -25,6 +25,7 @@ class Usuario{
         /*======= GETTERS ========*/
         string getNickname();
         DTFecha getFecha();
+        string getContrasena();
         set<DataComentario*> obtenerComentarios();
 
         /*======= SETTERS ========*/
