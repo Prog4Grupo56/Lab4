@@ -16,7 +16,12 @@ DTDireccion Cliente::getDireccion(){
 };  
 string Cliente::getCiudad(){
     return ciudad;
+    
 };  
+
+set<DTNotificacion> Cliente::getNotificaciones(){
+    return notificaciones;
+}
 
 /*set<DataVendedor*> Cliente::obtenerSuscripciones(){
 

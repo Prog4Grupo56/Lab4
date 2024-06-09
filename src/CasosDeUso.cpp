@@ -1,4 +1,6 @@
 #include "../include/CasosDeUso.h"
+#include <stdexcept>
+#include <limits>
 
 bool AltaCliente(){
     string nickname;
@@ -36,25 +38,37 @@ void AltaDeUsuario(){
     cout << "1. Alta de cliente" << endl;
     cout << "2. Alta de vendedor" << endl;
     cout << "Seleccione una opcion: ";
-    cin >> tipo;
-    cout << "\n";
     
-    switch (tipo)
+    try
     {
-    case 0:
-        break;
-    case 1:
-        AltaCliente();
-        break;
-    case 2:
-        cout << "Alta de vendedor\n\n";
-        break;
+        cin >> tipo;
+        cout << "\n";
+        if (cin.fail()){
+            throw invalid_argument("Entrada invalida. Por favor, ingrese un numero.");
+        }
+        switch (tipo)
+        {
+            case 0:
+                break;
+            case 1:
+                AltaCliente();
+                break;
+            case 2:
+                cout << "Alta de vendedor\n\n";
+                break;
 
-    default:
-        cout << "Numero fuera de rango. Por favor, intente de nuevo." << endl;
-        break;
+            default:
+                cout << "Numero fuera de rango. Por favor, intente de nuevo." << endl;
+                break;
+        }
     }
-    
+    catch(const invalid_argument& e)
+        {
+            cerr << "Error: " << e.what() << '\n';
+            cin.clear(); //reestablece a funcionamiento normal la entrada
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); //descarta lo que haya quedado en el buffer de entrada
+            tipo = -1; // si no hago esto se setea a 0 y termina el loop, lo vi en el debugger.
+        }      
 }
 
 void ListadoDeUsuarios(){}

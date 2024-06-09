@@ -4,6 +4,7 @@
 #include "DTDireccion.h"
 #include "DataVendedor.h"
 #include "Vendedor.h"
+#include "DTNotificacion.h"
 
 class Vendedor;
 
@@ -13,7 +14,7 @@ class Cliente : public Usuario{
         DTDireccion direccion;
         string ciudad;
         set<Vendedor*> suscripciones;
-        //vector<DTNotificacion*> notificaciones;
+        set<DTNotificacion> notificaciones;
     public:
         //Constructor
         Cliente(string _nickname, string _contrasenia, DTFecha _fecha, DTDireccion _direccion, string _ciudad);
@@ -22,7 +23,7 @@ class Cliente : public Usuario{
        
         DTDireccion getDireccion();
         string getCiudad();
-        //set<DataNotificacion*> getNotificaciones();
+        set<DTNotificacion> getNotificaciones();
         //set<DataVendedor*> obtenerSuscripciones();
 
         void setDireccion(DTDireccion _direccion);
