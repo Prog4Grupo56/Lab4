@@ -12,7 +12,7 @@
 class ICompra {
 public:
 
-    virtual void crearPromocion(Vendedor v, DataCrearPromocion dataCrearP) = 0;
+    virtual void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP) = 0;
     virtual set<DataProducto> obtenerListaProductos() = 0;
     virtual void agregarProducto(ParCodigoCantidad parCodCant) = 0;
     virtual ParCompraProductos obtenerInfoCompra() = 0;

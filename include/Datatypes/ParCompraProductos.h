@@ -1,34 +1,28 @@
 #ifndef PARCOMPRAPRODUCTOS
 #define PARCOMPRAPRODUCTOS
 
-#include "../Clases/Compra.h"
-#include "../Clases/Producto.h"
+#include "../Datatypes/DataProducto.h"
 #include "DTFecha.h"
 
 #include <set>
 
 using namespace std;
 
-//Forward
-class Producto;
-class Compra;
-class DTFecha;
-
 class ParCompraProductos
 {
     private:
-       Compra* compra;
-       set<Producto*> productos;
+       DTFecha fechaActual;
+       float montoF;
+       set<DataProducto> dProductos;
     public:
-        ParCompraProductos(Compra* _compra, Producto* _productos); //Constructor
+        ParCompraProductos();
+        ParCompraProductos(DTFecha _fechaActual, float _montoF, set<DataProducto> _dProductos); //Constructor
         ~ParCompraProductos(); //Destructor
 
         //Getters
         DTFecha getFecha();
         float getMontoFinal();
-        set<Producto*> getProductos();
-        //Setters
-        //Precisa setters?
+        set<DataProducto> getProductos();
 
 };
 

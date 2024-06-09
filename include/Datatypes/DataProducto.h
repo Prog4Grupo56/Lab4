@@ -16,6 +16,7 @@ class DataProducto{
 
     public:
         //Constructor
+        DataProducto();
         DataProducto(string _codigo, int _stock, float _precio, string _nombre, string _descripcion/*, Categoria _categoria*/);
 
         //Destructor

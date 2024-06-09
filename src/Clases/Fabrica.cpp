@@ -19,6 +19,5 @@ IUsuario* Fabrica::getIUsuario() {
 }
 
 ICompra* Fabrica::getICompra() {
-    //return ControladorCompra::getInstancia(); 
-    return NULL;
+    return ControladorCompra::getInstancia(); 
 }
