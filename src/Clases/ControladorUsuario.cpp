@@ -16,9 +16,9 @@ ControladorUsuario* ControladorUsuario::getInstancia() {
 
 
 //dataEliminarComentario ControladorUsuario::getDataElimCom(){}
-DataCrearPromocion ControladorUsuario::getDataCrearP(){}
+DataCrearPromocion ControladorUsuario::getDataCrearP(){ return DataCrearPromocion();}
 
-DataEliminarSuscripcion ControladorUsuario::getDataElimSus(){}
+DataEliminarSuscripcion ControladorUsuario::getDataElimSus(){return DataEliminarSuscripcion();}
 
 void ControladorUsuario::setDataElimCom(){}
 void ControladorUsuario::setDataCrearP(){}
@@ -26,19 +26,19 @@ void ControladorUsuario::setDataElimSus(){}
 
 
     //Eliminar Comentario
-bool ControladorUsuario::ingresarCliente(DataCliente cliente){}
+bool ControladorUsuario::ingresarCliente(DataCliente cliente){return true;}
 
-bool ControladorUsuario::ingresarVendedor(DataVendedor vendedor){}
+bool ControladorUsuario::ingresarVendedor(DataVendedor vendedor){return true;}
 
-set<string> ControladorUsuario::obtenerListaNicknamesUsuarios(){}
+set<string> ControladorUsuario::obtenerListaNicknamesUsuarios(){return {};}
 
-set<DataComentario> ControladorUsuario::obtenerComentariosUsuario(){}
+set<DataComentario> ControladorUsuario::obtenerComentariosUsuario(){return {};}
 
 void ControladorUsuario::seleccionarComentario(DataComentario comentario){} 
 
 
     //Alta Promocion
-set<string> ControladorUsuario::obtenerListaNicknameVendedores(){}
+set<string> ControladorUsuario::obtenerListaNicknameVendedores(){return {};}
 
 void ControladorUsuario::seleccionarVendedor(string nickname){}
 
@@ -50,23 +50,23 @@ void ControladorUsuario::confirmarAltaPromocion(){}
 
 
     //Realizar Compra
-set<string> ControladorUsuario::obtenerListaNicknamesClientes(){}
+set<string> ControladorUsuario::obtenerListaNicknamesClientes(){return {};}
 
 void ControladorUsuario::obtenerClienteCompra(string nickname){}
 
 
     //Consultar Notificaciones
-set<DTNotificacion> ControladorUsuario::obtenerListaNotificaciones(string nicknameCliente){}
+set<DTNotificacion> ControladorUsuario::obtenerListaNotificaciones(string nicknameCliente){return {};}
 
 
     //Suscribirse a Notificaciones
-set<DataVendedor> ControladorUsuario::obtenerListaVendedoresNoSuscritos(string nicknameCliente){}
+set<DataVendedor> ControladorUsuario::obtenerListaVendedoresNoSuscritos(string nicknameCliente){return {};}
 
 void ControladorUsuario::vendedoresASuscribirse(set<DataVendedor> vendedores){} 
 
 
     //Eliminar Suscripcion
-set<DataVendedor> ControladorUsuario::obtenerListaVendedoresSuscritos(string nicknameCliente){}
+set<DataVendedor> ControladorUsuario::obtenerListaVendedoresSuscritos(string nicknameCliente){return {};}
 
 void ControladorUsuario::seleccionarVendedoresAEliminarSuscripciones(set<DataVendedor> vendedores){}
 

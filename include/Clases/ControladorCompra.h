@@ -19,6 +19,8 @@
 #include "../Datatypes/ParCompraProductos.h"
 
 class Compra;
+class Producto;
+class Promocion;
 
 using namespace std;
 

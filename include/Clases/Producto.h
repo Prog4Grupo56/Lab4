@@ -10,6 +10,7 @@
 
 class CompraProducto;
 class Compra;
+class CantMin;
 
 class Producto
 {

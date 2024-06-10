@@ -3,10 +3,11 @@
 
 #include <set>
 #include "../Datatypes/DTFecha.h"
+#include "../Clases/CantMin.h"
 #include "../Datatypes/DataPromocion.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 
-//class ;
+class CantMin;
 
 class Promocion
 {
@@ -16,6 +17,8 @@ class Promocion
         float descuento;
         DTFecha fechaVenc;
     
+        set<CantMin*> cantMinProductos;
+
     public:
         //Constructor
         Promocion(DataPromocion promocion);
@@ -27,11 +30,14 @@ class Promocion
         string getDescripcion();
         float getDescuento();
         DTFecha getFechaVenc();
+        set<CantMin*> getCantidadesMinimas();
     
-        void setNombre();
-        void setDescripcion();
-        void setDescuento();
-        void setFechaVenc();
+        void setNombre(string nombre_);
+        void setDescripcion(string descripcion_);
+        void setDescuento(float descuento_);
+        void setFechaVenc(DTFecha fecha_);
+
+        void agregarCantMinProducto(CantMin *cMinProd);
 
         DataPromocion getDataPromocion();
         set<ParCodigoCantidad> aplicaEnCompra(set<ParCodigoCantidad> prodCant);

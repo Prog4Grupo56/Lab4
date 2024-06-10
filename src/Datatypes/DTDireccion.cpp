@@ -26,3 +26,7 @@ void DTDireccion::setCalle(string _calle){
 void DTDireccion::setNumeroPuerta(int _numPuerta){
     numeroPuerta = _numPuerta;
 }
+
+string DTDireccion::toString(){
+    return calle + ", " + to_string(numeroPuerta);
+}

@@ -3,6 +3,7 @@
 
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DataComentario.h"
+//#include "../Clases/Producto.h"
 #include <set>
 #include "Usuario.h"
 
@@ -17,8 +18,9 @@ class Comentario
         set<Comentario*> respuestas;
         Comentario* padre;
         Usuario* comentador;
+        //Producto* producto;
     public:
-        Comentario(DTFecha* _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador);
+        Comentario(DTFecha* _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador /*Producto* _producto*/);
         ~Comentario();
 
         DTFecha* getFecha();

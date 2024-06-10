@@ -14,6 +14,7 @@ class DataCrearPromocion {
         set<ParCodigoCantidad> prodCant;
     public:
         //Constructor
+        DataCrearPromocion();
         DataCrearPromocion(string _vendedor, DataPromocion _infoP, set<ParCodigoCantidad> _prodCant);
         //Destructor
         ~DataCrearPromocion();

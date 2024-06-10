@@ -58,7 +58,7 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
     //     productosCompra.insert(obtenerDataProducto(productos, item.getCodigo()));
     // }
     // Calcular Monto Final
-    return ParCompraProductos(DTFecha(8,06,2024), 0, productosCompra); // Aca iria la fecha actual, como?
+    return ParCompraProductos(0, productosCompra); // Aca iria la fecha actual, como?
 }
 
 set<string> ControladorCompra::obtenerListaNicknamesClientes(){
