@@ -17,6 +17,7 @@ class DataPromocion{
     public:
         //Constructor
         DataPromocion(string _nombre, string _descripcion, DTFecha _fechaVenc, float _descuento);
+        DataPromocion();
 
         //Destructor
         ~DataPromocion();

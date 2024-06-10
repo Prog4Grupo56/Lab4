@@ -4,9 +4,9 @@ ParCodigoCantidad::~ParCodigoCantidad(){}
 
 ParCodigoCantidad::ParCodigoCantidad(string _codigo, int _cantMinima){
     codigo = _codigo;
-    cantidadMinima = _cantMinima;
+    cantidad = _cantMinima;
 }
 
-string ParCodigoCantidad::getCodigo(){
+string ParCodigoCantidad::getCodigo() const {
     return codigo;
 }

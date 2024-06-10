@@ -24,6 +24,8 @@ class CantMin
         CantMin(); //Constructor
         ~CantMin(); //Destructor
 
+        int getCantidadMinima();
+
         DTFecha obtenerFechaPromocion();
         bool pertenecePromocion(string codigo);
 };
