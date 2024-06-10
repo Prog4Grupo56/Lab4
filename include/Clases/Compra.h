@@ -20,19 +20,21 @@ class Compra
 {
     private:
         float montoFinal;
-        //ControladorCompra* contCompra;
-        set<CompraProducto*> paresCompraProducto;
+        ControladorCompra* contCompra;
+        set<CompraProducto*> SetCompraProducto;
         DTFecha fecha;
+        Cliente* cliente;
     public:
-        Compra(); //Aca adentro habria que calcular monto final? no, creo
+        Compra(Cliente* _cliente, float _montoFinal );
         ~Compra(); //Destructor
 
         /*======= GETTERS ========*/
         float getMontoFinal();
         DTFecha getFecha();
-        set<CompraProducto*> getParesCompraProducto(); //Este va?
+        set<CompraProducto*> getSetCompraProducto(); //Este va?
         /*======= SETTERS ========*/
         void setFecha(DTFecha f);
+        void agregarProducto(Producto* p, Compra* c);
 };
 
 #endif
