@@ -35,6 +35,10 @@ void Vendedor::setRUT(int _RUT){
     RUT = _RUT;
 };
 
+void Vendedor::setProducto(Producto* producto){
+    productos.insert(producto);
+}
+
 void Vendedor::agregarSuscriptor(Cliente* c){
     suscriptores.insert(c);
 }

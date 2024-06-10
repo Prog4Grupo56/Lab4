@@ -12,6 +12,8 @@
 //#include "../Datatypes/ParCodigoNombre.h"
 #include "../Datatypes/DTNotificacion.h"
 
+class Cliente;
+
 class IUsuario {
 public:
 
@@ -29,7 +31,7 @@ public:
     virtual void agregarProductoCantidad(ParCodigoCantidad parCodCant) = 0;
     virtual void confirmarAltaPromocion() = 0;
     virtual set<string> obtenerListaNicknamesClientes() = 0;
-    virtual Cliente obtenerClienteCompra(string nickname) = 0;
+    virtual Cliente* obtenerClienteCompra(string nickname) = 0;
     virtual void seleccionarVendedoresAEliminarSuscripciones(set<DataVendedor> vendedores) = 0;
     virtual set<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente) = 0;
     virtual void eliminarSuscripciones() = 0;

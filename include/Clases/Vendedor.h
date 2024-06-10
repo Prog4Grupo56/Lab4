@@ -8,15 +8,18 @@
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/DataVendedor.h"
 
+class Producto;
+class Promocion;
 class Cliente; //fwd declaration
+
 
 class Vendedor : public Usuario{
     private:
         int RUT;
         set<Cliente*> suscriptores;
         void notificarClientes(set<DataProducto> dtProductos, string nombrePromocion); // privado porque asi esta en el template
-        //set<Producto*> productos;
-       // set<Promocion*> promociones;
+        set<Producto*> productos;
+        set<Promocion*> promociones;
     public:
         Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, int _RUT);
         ~Vendedor();
@@ -29,12 +32,12 @@ class Vendedor : public Usuario{
 
         void setRUT(int _RUT);
         void agregarSuscriptor(Cliente* c);
-        //set productos y promociones?
+        void setProducto(Producto* producto);
 
         bool estaSuscrito(string nicknameCliente);
         void eliminarSuscriptor(Cliente* c);
 
-        //void agregarPromocionYNotificar(set<DataProducto> dtProductos, string nombrePromocion, Promocion* pr);
+        void agregarPromocionYNotificar(set<DataProducto> dtProductos, string nombrePromocion, Promocion* pr);
 
 };
 
