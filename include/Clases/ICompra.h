@@ -3,6 +3,7 @@
 
 #include <string>
 #include <set>
+#include <vector>
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "DataCrearPromocion.h"
 #include "../Datatypes/DataProducto.h"
@@ -13,7 +14,7 @@ class ICompra {
 public:
 
     virtual void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP) = 0;
-    virtual set<DataProducto> obtenerListaProductos() = 0;
+    virtual vector<DataProducto> obtenerListaProductos() = 0;
     virtual void agregarProducto(ParCodigoCantidad parCodCant) = 0;
     virtual ParCompraProductos obtenerInfoCompra() = 0;
     virtual set<string> obtenerListaNicknamesClientes() = 0;
