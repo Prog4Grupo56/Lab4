@@ -12,14 +12,15 @@ class ParCodigoCantidad
 {
     private:
         string codigo;
-        int cantidadMinima;
+        int cantidad;
     public:
+        ParCodigoCantidad(); //Constructor
         ParCodigoCantidad(string _codigo, int _cantMinima); //Constructor
         ~ParCodigoCantidad(); //Destructor
 
         //Getters
-        string getCodigo();
-        int getCantidadMinima();
+        string getCodigo() const;
+        int getCantidad() const;
         //Setters
         void setCodigo(string s);
         void setCantidadMinima(int c);

@@ -1,18 +1,12 @@
 #include "../../include/Datatypes/ParCompraProductos.h"
 
-ParCompraProductos::ParCompraProductos(){
-
-}
-
-ParCompraProductos::ParCompraProductos(DTFecha _fechaActual, float _montoF, set<DataProducto> _dProductos){
-    fechaActual = _fechaActual;
+ParCompraProductos::ParCompraProductos(float _montoF, set<DataProducto> _dProductos){
+    fechaActual = DTFecha(0,0,0);
     dProductos = _dProductos;
     montoF = montoF;
 }
 
-ParCompraProductos::~ParCompraProductos(){
-    
-}
+ParCompraProductos::~ParCompraProductos(){}
 
 DTFecha ParCompraProductos::getFecha(){
     return fechaActual;
