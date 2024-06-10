@@ -1,54 +1,28 @@
 #include "../../include/Clases/CompraProducto.h"
 
-CompraProducto::CompraProducto(Compra* _compra, int cant)
-{
-    cantidad = cant;
-    compra = _compra;
-};
-CompraProducto::~CompraProducto()
-{
+CompraProducto::CompraProducto(Compra* _c, int _cantidad){
+    c = _c;
+    cantidad = _cantidad;
+}
 
-};
+CompraProducto::~CompraProducto(){}
 
-
-Producto* CompraProducto::getProducto()
-{
-    return producto;
-};
-Compra* CompraProducto::getCompra()
-{
-    return compra;
-};
-int CompraProducto::getCantMin()
-{
-    return cantidadMinima;
-};
-int CompraProducto::getCantidad()
-{
+Compra* CompraProducto::getCompra(){
+    return c;
+}
+int CompraProducto::getCantidad(){
     return cantidad;
-};
-bool CompraProducto::getEstado()
-{
+}
+bool CompraProducto::getEstado(){
     return enviado;
-};
-
-void CompraProducto::setProducto(Producto* _p)
-{
-    producto = _p;
-};
-void CompraProducto::setCompra(Compra* _c)
-{
-    compra = _c;
-};
-void CompraProducto::setCantMin(int cant)
-{
-    cantidadMinima = cant;
-};
-void CompraProducto::setCantidad(int cant)
-{
+}
+//Setters
+void CompraProducto::setCompra(Compra* _c){
+    c = _c;
+}
+void CompraProducto::setCantidad(int cant){
     cantidad = cant;
-};
-void CompraProducto::setEstado(bool e)
-{
+}
+void CompraProducto::setEstado(bool e){
     enviado = e;
-};
+}

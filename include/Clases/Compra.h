@@ -13,7 +13,7 @@
 using namespace std;
 
 //Forward
-class controladorCompra;
+class ControladorCompra;
 class CompraProducto;
 
 class Compra
@@ -27,7 +27,7 @@ class Compra
     public:
         Compra(Cliente* _cliente, float _montoFinal );
         ~Compra(); //Destructor
-
+        
         /*======= GETTERS ========*/
         float getMontoFinal();
         DTFecha getFecha();
