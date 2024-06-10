@@ -1,52 +1,40 @@
 #include <iostream>
 #include <stdexcept>
 #include <limits>
-#include "include/Comentario.h"
-#include "include/Usuario.h"
-#include "include/Cliente.h"
+#include "include/CasosDeUso/CasosDeUso.h"
 
 using namespace std;
 
 int main(){
-    int opcion;
-
-    //PRUEBASSSSSSSSS
-    Cliente* cliente1 = new Cliente("Nico", "1234", NULL, NULL, "Montevideo");
-    Cliente* cliente2 = new Cliente("Nico", "1234", NULL, NULL, "Montevideo");
-
-    Comentario* comentario1 = new Comentario(NULL, "soy el primer comentario de Nico", 1, NULL, cliente1);
-    Comentario* comentario2 = new Comentario(NULL, "soy la primer respuesta del primer comentario de Nico", 2, comentario1, cliente2);
-    Comentario* comentario3 = new Comentario(NULL, "soy el segundo comentario de Nico", 1, comentario2, cliente1);
-    Comentario* comentario4 = new Comentario(NULL, "soy la segunda respuesta del primer comentario de Nico", 1, comentario1, cliente1);
-
-    
-    comentario1->setRespuesta(comentario2);
-    comentario1->setRespuesta(comentario4);
-    comentario2->setRespuesta(comentario3);
-
-    cliente1->setComentario(comentario1);
-    cliente2->setComentario(comentario2);
-    cliente1->setComentario(comentario3);
-    cliente1->setComentario(comentario4);
-
-    comentario1->desvincularPadre();
-    comentario1->eliminarComentario();
     
     /*====== MENÚ =====*/
+    int opcion;
     do{
         cout << "=================" << endl;
         cout << "Menu de opciones:" << endl;
         cout << "=================" << endl;
         cout << "0. Salir" << endl;
-        cout << "1. Crear Cliente" << endl;
-        cout << "2. Crear Vendedor" << endl;
-        cout << "3. Caso de uso 3" << endl;
+        cout << "1. Alta de usuario" << endl;
+        cout << "2. Listado de usuarios" << endl;
+        cout << "3. Alta de producto" << endl;
+        cout << "4. Consultar producto" << endl;
+        cout << "5. Crear promocion" << endl;
+        cout << "6. Consultar promocion" << endl;
+        cout << "7. Realizar compra" << endl;
+        cout << "8. Dejar comentario" << endl;
+        cout << "9. Eliminar comentario" << endl;
+        cout << "10. Enviar producto" << endl;
+        cout << "11. Expediente de usuario" << endl;
+        cout << "12. Suscribirse a notificaciones" << endl;
+        cout << "13. Consulta de notificaciones" << endl;
+        cout << "14. Eliminar suscripciones" << endl;
         //todos los casos de uso
         cout << "Seleccione una opcion: ";
 
         try
         {
             cin >> opcion;
+            cout << "\n";
             if (cin.fail()){
                 throw invalid_argument("Entrada invalida. Por favor, ingrese un numero.");
             }
@@ -56,13 +44,46 @@ int main(){
                     /* Salir */
                     break;
                 case 1:
-                    /* Caso de uso 1 */
+                    AltaDeUsuario();
                     break;
                 case 2:
-                    /* code */
+                    ListadoDeUsuarios();
                     break;
                 case 3:
-                    /* code */
+                    AltaDeProducto();
+                    break;
+                case 4:
+                    ConsultarProducto();
+                    break;
+                case 5:
+                    CrearPromocion();
+                    break;
+                case 6:
+                    ConsultarPromocion();
+                    break;
+                case 7:
+                    RealizarCompra();
+                    break;
+                case 8:
+                    DejarComentario();
+                    break;
+                case 9:
+                    EliminarComentario();
+                    break;
+                case 10:
+                    EnviarProducto();
+                    break;
+                case 11:
+                    ExpedienteDeUsuario();
+                    break;
+                case 12:
+                    SuscribirseANotificaciones();
+                    break;
+                case 13:
+                    ConsultaDeNotificaciones();
+                    break;
+                case 14:
+                    EliminarSuscripciones();
                     break;
         
                 default:
