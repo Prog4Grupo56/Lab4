@@ -6,6 +6,8 @@ DataPromocion::DataPromocion(string _nombre, string _descripcion, DTFecha _fecha
     descuento = _descuento;
 };
 
+DataPromocion::DataPromocion(){};
+
 DataPromocion::~DataPromocion(){};
 
 /*======= GETTERS ========*/

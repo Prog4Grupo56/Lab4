@@ -3,7 +3,10 @@
 DataCrearPromocion::DataCrearPromocion(string _vendedor, DataPromocion _infoP, set<ParCodigoCantidad> _prodCant): infoP(_infoP){
     vendedor = _vendedor;
     prodCant = _prodCant;
-};
+}
+DataCrearPromocion::DataCrearPromocion(){
+    infoP = DataPromocion();
+}
 
 DataCrearPromocion::~DataCrearPromocion(){};
 
