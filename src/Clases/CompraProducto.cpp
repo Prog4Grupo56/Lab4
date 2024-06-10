@@ -1,8 +1,8 @@
 #include "../../include/Clases/CompraProducto.h"
 
-CompraProducto::CompraProducto(Producto* _producto,Compra* _compra)
+CompraProducto::CompraProducto(Compra* _compra, int cant)
 {
-    producto = _producto;
+    cantidad = cant;
     compra = _compra;
 };
 CompraProducto::~CompraProducto()
@@ -10,7 +10,7 @@ CompraProducto::~CompraProducto()
 
 };
 
-      
+
 Producto* CompraProducto::getProducto()
 {
     return producto;
