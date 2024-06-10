@@ -2,9 +2,6 @@
 
 ControladorCompra* ControladorCompra::instancia = nullptr;
 
-Fabrica* f = Fabrica::getInstance();
-IUsuario* CU = f->getIUsuario();
-
 ControladorCompra::ControladorCompra(){
     
 }
@@ -22,12 +19,12 @@ ControladorCompra::~ControladorCompra(){
 
 void ControladorCompra::crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP){}
 
-set<DataProducto> ControladorCompra::obtenerListaProductos(){
-    set<DataProducto> dataProductos;
-    // for (const Producto* producto : productos) {
-    //     if (producto.getStock()>0)
-    //         dataProductos.insert(producto.getDataProducto());
-    // }
+vector<DataProducto> ControladorCompra::obtenerListaProductos(){
+    vector<DataProducto> dataProductos;
+    for (Producto* producto : productos) {
+        if (producto->getStock()>0)
+            dataProductos.push_back(producto->getDataProducto());
+    }
     return dataProductos;
 }
 
@@ -65,6 +62,8 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
 }
 
 set<string> ControladorCompra::obtenerListaNicknamesClientes(){
+    Fabrica* f = Fabrica::getInstance();
+    IUsuario* CU = f->getIUsuario();
     return CU->obtenerListaNicknamesClientes();
 }
 

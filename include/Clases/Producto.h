@@ -5,8 +5,11 @@
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/ParCodigoCantidad.h"
+#include "CantMin.h"
+#include "Compra.h"
 
-//class ;
+class CompraProducto;
+class Compra;
 
 class Producto
 {
@@ -17,10 +20,12 @@ class Producto
         string descripcion;
         int stock;
         float precio;
+        CantMin* cantMin;
+        set<CompraProducto*> compraProducto;
     
     public:
         //Constructor
-        //Promducto();
+        Producto();
 
         //Destructor
         ~Producto();
@@ -32,15 +37,17 @@ class Producto
         int getStock();
         float getPrecio();
     
-        void setCodigo();
+        void setCodigo(string _codigo);
         //void setCategoria();
-        void setNombre();
-        void setDescripcion();
-        void setStock();
-        void setPrecio();
-
+        void setNombre(string _nombre);
+        void setDescripcion(string _descripcion);
+        void setStock(int _stock);
+        void setPrecio(float _precio);
 
         //Operaciones:
+        DataProducto getDataProducto();
+        bool pertenecePromoVigente();
+        void crearEnvio(Compra* c, int cantidad);
         
 };
 
