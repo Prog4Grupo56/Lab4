@@ -16,12 +16,23 @@ DTDireccion Cliente::getDireccion(){
 };  
 string Cliente::getCiudad(){
     return ciudad;
-    
 };  
 
-set<DTNotificacion> Cliente::getNotificaciones(){
-    return notificaciones;
-}
+// set<DTNotificacion> Cliente::getNotificaciones(){
+//     set<DTNotificacion> copiaNotificaciones = notificaciones;
+
+//     // for (DTNotificacion notificacion : notificaciones){ //hago una copia para retornar
+//     //     DTNotificacion copia = DTNotificacion(notificacion.getNombreVendedor(), notificacion.getNombrePromocion(), notificacion.getProductos());
+//     //     copiaNotificaciones.insert(copia);
+//     // }
+
+//     // for (DTNotificacion notificacion : notificaciones){ //seteo en vacio las notificaciones
+//     //     notificaciones.erase(notificacion);
+//     // }
+
+//     notificaciones = {};
+//     return copiaNotificaciones;
+// }
 
 set<DataVendedor> Cliente::obtenerSuscripciones(){
 
@@ -72,4 +83,8 @@ void Cliente::eliminarSuscripciones(set<DataVendedor> vendedores){
     }
 };
 
-//void Cliente::notificar()
+void Cliente::notificar(string nombreVendedor, set<DataProducto> dtProductos, string nombrePromocion){
+    
+    // DTNotificacion notificacion = DTNotificacion(nombreVendedor, nombrePromocion, dtProductos);
+    // notificaciones.insert(notificacion);
+}

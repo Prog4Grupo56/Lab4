@@ -30,7 +30,7 @@ class Cliente : public Usuario{
         void setCiudad(string _ciudad);
         void agregarSuscripcion(Vendedor* vendedor);
 
-        //void notificar(cosasssssssssssssss);
+        void notificar(string nombreVendedor, set<DataProducto> dtProductos, string nombrePromocion);
 
         void eliminarSuscripciones(set<DataVendedor>);
         void eliminarSuscripcion(Vendedor* v);

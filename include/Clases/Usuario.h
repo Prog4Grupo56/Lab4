@@ -26,7 +26,7 @@ class Usuario{
         string getNickname();
         DTFecha getFecha();
         string getContrasena();
-        set<DataComentario*> obtenerComentarios();
+        set<DataComentario> obtenerComentarios();
 
         /*======= SETTERS ========*/
         void setNickname(string _nickname);
