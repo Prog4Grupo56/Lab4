@@ -10,9 +10,10 @@ class DataUsuario{
     private:
         string nickname;
         DTFecha fecha;
+        string contrasena;
     public:
         DataUsuario();
-        DataUsuario(string _nickname, DTFecha _fecha);
+        DataUsuario(string _nickname, string _contrasena, DTFecha _fecha);
 
         virtual ~DataUsuario();
 
@@ -21,6 +22,8 @@ class DataUsuario{
 
         void setNickname();
         void setFecha();
+
+        virtual string toString();
 };
 
 #endif
