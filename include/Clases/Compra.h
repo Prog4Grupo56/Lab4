@@ -27,14 +27,14 @@ class Compra
     public:
         Compra(Cliente* _cliente, float _montoFinal );
         ~Compra(); //Destructor
-        
+
         /*======= GETTERS ========*/
         float getMontoFinal();
         DTFecha getFecha();
-        set<CompraProducto*> getSetCompraProducto(); //Este va?
+        set<CompraProducto*> getSetCompraProducto(); 
         /*======= SETTERS ========*/
         void setFecha(DTFecha f);
-        void agregarProducto(Producto* p, Compra* c);
+        void agregarProducto(Compra* c, int cantidad);
 };
 
 #endif

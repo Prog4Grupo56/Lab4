@@ -32,7 +32,7 @@ void Compra::setFecha(DTFecha f)
     fecha = f;
 };
 
-void Compra::agregarProducto(Producto* p, Compra* c)
+void Compra::agregarProducto(Compra* c, int cantidad)
 {
-    SetCompraProducto.insert(new CompraProducto(p,c));
+    SetCompraProducto.insert(new CompraProducto(c,cantidad));
 };
