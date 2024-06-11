@@ -3,8 +3,10 @@
 
 #include "Usuario.h"
 #include "Cliente.h"
+#include "../Datatypes/ParCodigoNombre.h"
 
 class Cliente; //fwd declaration
+class ParCodigoNombre;
 
 class Vendedor : public Usuario{
     private:
@@ -18,7 +20,7 @@ class Vendedor : public Usuario{
         ~Vendedor();
       
         int getRUT();
-        //set<DataProducto> obtenerProductos();
+        vector<ParCodigoNombre> obtenerProductos();  //implementaaaar
         //DataVendedor* getDataVendedor();
     
         //obtener suscriptores y promociones?

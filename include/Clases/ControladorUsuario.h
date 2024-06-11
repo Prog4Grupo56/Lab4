@@ -1,6 +1,8 @@
 #ifndef CONTROLADOR_USUARIO
 #define CONTROLADOR_USUARIO
 
+#include <map>
+#include <vector>
 #include "../Datatypes/DTDireccion.h"
 #include "../Datatypes/DTNotificacion.h"
 #include "../Datatypes/DataVendedor.h"
@@ -8,6 +10,7 @@
 #include "../Datatypes/DataComentario.h"
 //#include "../Datatypes/dataEliminarComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
+#include "../Datatypes/ParCodigoNombre.h"
 
 #include "DataCrearPromocion.h"
 #include "DataEliminarSuscripcion.h"
@@ -24,22 +27,25 @@ class ControladorUsuario
 
         string nicknameC;
         //dataEliminarComentario dataElimCom;
-        //DataCrearPromocion dataCrearP;
+        DataCrearPromocion dataCrearP;
         DataEliminarSuscripcion dataElimSus;
-        set<Usuario*> usuarios;
-        set<Cliente*> clientes;
-        set<Vendedor*> vendedores;
+
+        map<string, Usuario*> usuarios;
+        map<string, Cliente*> clientes;
+        map<string, Vendedor*> vendedores;      //id RUT? xd
 
     public:
         static ControladorUsuario * getInstancia();
 
+        string getNickname();
         //dataEliminarComentario getDataElimCom();
         DataCrearPromocion getDataCrearP();
         DataEliminarSuscripcion getDataElimSus();
     
-        void setDataElimCom();
-        void setDataCrearP();
-        void setDataElimSus();
+        void setNickname(string nickCliente);
+        //void setDataElimCom(dataEliminarComentario data);
+        void setDataCrearP(DataCrearPromocion data);
+        void setDataElimSus(DataEliminarSuscripcion data);
 
         //Eliminar Comentario
         bool ingresarCliente(DataCliente cliente);
@@ -48,10 +54,11 @@ class ControladorUsuario
         set<DataComentario> obtenerComentariosUsuario();
         void seleccionarComentario(DataComentario comentario); 
         
-        //Alta Promocion
-        set<string> obtenerListaNicknameVendedores();
+        //Crear Promocion
+        void ingresarDatosPromocion(DataPromocion data);
+        vector<string> obtenerListaNicknameVendedores();
         void seleccionarVendedor(string nickname);
-        void obtenerListaProductosVendedor();
+        vector<ParCodigoNombre> obtenerListaProductosVendedor();
         void agregarProductoCantidad(ParCodigoCantidad parCodCant);  
         void confirmarAltaPromocion();
 

@@ -1,6 +1,8 @@
 #ifndef USUARIO
 #define USUARIO
 #include <set>
+#include <vector>
+#include <map>
 #include <string>
 #include "../Datatypes/DTFecha.h"
 #include "Comentario.h"

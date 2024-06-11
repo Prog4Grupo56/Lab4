@@ -10,3 +10,7 @@ ParCodigoCantidad::ParCodigoCantidad(string _codigo, int _cantMinima){
 string ParCodigoCantidad::getCodigo() const {
     return codigo;
 }
+
+int ParCodigoCantidad::getCantidad() const {
+    return cantidad;
+}

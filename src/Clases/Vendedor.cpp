@@ -39,3 +39,7 @@ bool Vendedor::estaSuscrito(string nicknameCliente){
     }
     return false;
 }
+
+vector<ParCodigoNombre> Vendedor::obtenerProductos(){
+    return {};
+} //Implementaaar

@@ -27,6 +27,7 @@ class CantMin
         int getCantidadMinima();
 
         DTFecha obtenerFechaPromocion();
+        bool pertenecePromocion(string codigo);
         
 };
 

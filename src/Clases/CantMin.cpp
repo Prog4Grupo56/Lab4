@@ -11,3 +11,7 @@ int CantMin::getCantidadMinima(){
 DTFecha CantMin::obtenerFechaPromocion(){
     return promocion->getFechaVenc();
 }
+
+bool CantMin::pertenecePromocion(string codigo){
+    return false;
+}
