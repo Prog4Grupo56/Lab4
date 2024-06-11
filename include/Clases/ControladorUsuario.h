@@ -14,6 +14,8 @@
 
 #include "Vendedor.h"
 
+class Usuario;
+
 //class ;
 
 class ControladorUsuario

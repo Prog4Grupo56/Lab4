@@ -18,8 +18,4 @@ void EnviarProducto(){}
 
 void ExpedienteDeUsuario(){}
 
-void SuscribirseANotificaciones(){}
-
 void ConsultaDeNotificaciones(){}
-
-void EliminarSuscripciones(){}

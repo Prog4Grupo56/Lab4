@@ -7,7 +7,6 @@
 
 #include <string>
 
-class DTFecha;
 class Producto;
 class Promocion;
 
@@ -27,7 +26,7 @@ class CantMin
         int getCantidadMinima();
 
         DTFecha obtenerFechaPromocion();
-        
+
 };
 
 #endif
