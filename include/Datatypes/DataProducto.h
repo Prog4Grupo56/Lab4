@@ -3,7 +3,7 @@
 #define DATAPRODUCTO
 using namespace std;
 
-//#include "../Clases/Categoria.h"
+#include "../Datatypes/Categoria.h"
 
 
 class DataProducto{
@@ -12,12 +12,12 @@ class DataProducto{
         string codigo, nombre, descripcion;
         int stock;
         float precio;
-        //Categoria categoria;
+        Categoria categoria;
 
     public:
         //Constructor
         DataProducto();
-        DataProducto(string _codigo, int _stock, float _precio, string _nombre, string _descripcion/*, Categoria _categoria*/);
+        DataProducto(string _codigo, int _stock, float _precio, string _nombre, string _descripcion, Categoria _categoria);
 
         //Destructor
         ~DataProducto();
@@ -28,7 +28,7 @@ class DataProducto{
         float getPrecio();
         string getNombre();
         string getDescripcion();
-        //Categoria getCategoria();
+        Categoria getCategoria();
         
 };
 

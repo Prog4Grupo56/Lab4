@@ -2,7 +2,7 @@
 #ifndef DTNOTIFICACION
 #define DTNOTIFICACION
 using namespace std;
-#include <set>
+#include <vector>
 
 #include "DataProducto.h"
 
@@ -10,17 +10,17 @@ using namespace std;
 class DTNotificacion {
     private:
         string nombreVendedor, nombrePromocion;
-        set<DataProducto> productos;
+        vector<DataProducto> productos;
     public:
         // Constructor
-        DTNotificacion(string _nombreVendedor, string _nombrePromocion, set<DataProducto> _productos);
+        DTNotificacion(string _nombreVendedor, string _nombrePromocion, vector<DataProducto> _productos);
         // Destructor
         ~DTNotificacion();
 
         // Getters
         string getNombreVendedor();
         string getNombrePromocion();
-        set<DataProducto> getProductos();
+        vector<DataProducto> getProductos();
         
 };
 

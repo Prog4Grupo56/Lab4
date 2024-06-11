@@ -1,6 +1,6 @@
 #include "../../include/Datatypes/DTNotificacion.h"
 
-DTNotificacion::DTNotificacion(string _nombreVendedor, string _nombrePromocion, set<DataProducto> _productos){
+DTNotificacion::DTNotificacion(string _nombreVendedor, string _nombrePromocion, vector<DataProducto> _productos){
     nombreVendedor = _nombreVendedor;
     nombrePromocion = _nombrePromocion;
     productos = _productos;
@@ -15,6 +15,6 @@ string DTNotificacion::getNombreVendedor(){
 string DTNotificacion::getNombrePromocion(){
     return nombrePromocion;
 }
-set<DataProducto> DTNotificacion::getProductos(){
+vector<DataProducto> DTNotificacion::getProductos(){
     return productos;
 }
