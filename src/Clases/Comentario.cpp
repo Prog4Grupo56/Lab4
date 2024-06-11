@@ -10,8 +10,7 @@ Comentario::Comentario(DTFecha _fecha, string _comentario, int _idComentario, Co
     producto = p;
 };
 
-Comentario::~Comentario(){
-};
+Comentario::~Comentario(){};
 
 /*======= GETTERS ========*/
 DTFecha Comentario::getFecha(){
@@ -23,7 +22,7 @@ string Comentario::getComentario(){
 int Comentario::getIdComentario(){
     return idComentario;
 };
-set<Comentario*> Comentario::getRespuestas(){
+map<int,Comentario*> Comentario::getRespuestas(){
     return respuestas;
 };
 Comentario* Comentario::getPadre(){
@@ -35,7 +34,7 @@ void Comentario::setComentario(string _comentario){
     comentario = _comentario;
 };
 void Comentario::setRespuesta(Comentario* respuesta){
-    respuestas.insert(respuesta);
+    respuestas[respuesta->getIdComentario()] = respuesta;
 };
 void Comentario::setPadre(Comentario* p){
     padre = p;
@@ -43,7 +42,7 @@ void Comentario::setPadre(Comentario* p){
 
 /*======= FUNCIONES ========*/
 void Comentario::desvincularHijo(Comentario* c){
-    respuestas.erase(c);
+    respuestas.erase(c->getIdComentario());
 }
 
 void Comentario::desvincularPadre(){
@@ -55,12 +54,12 @@ void Comentario::desvincularPadre(){
 void Comentario::eliminarComentario(){
     comentador->desvincularComentario(this); //desvincula al comentario del usuario
 
-    set<Comentario*>::iterator it;
-    for (it = respuestas.begin(); it != respuestas.end(); ++it){ //recorro el set
-        Comentario* respuesta = *it;
+    map<int,Comentario*>::iterator it;
+    for (it = respuestas.begin(); it != respuestas.end(); ++it){
+        Comentario* respuesta = it->second;
         respuesta->eliminarComentario();
     }
-    delete this; //no funca parece
+    delete this;
 }
 
 //falta setId y setFecha, pero creo que no se usan

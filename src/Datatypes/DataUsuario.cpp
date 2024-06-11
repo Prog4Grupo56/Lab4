@@ -19,7 +19,4 @@ DTFecha DataUsuario::getFecha(){
     return fecha;
 }
 
-string DataUsuario::toString(){
-    return "";
-}
 

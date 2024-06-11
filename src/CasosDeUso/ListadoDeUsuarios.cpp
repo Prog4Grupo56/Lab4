@@ -4,8 +4,8 @@ void ListadoDeUsuarios(){
     Fabrica* F = Fabrica::getInstance();
     IUsuario* IU = F->getIUsuario();
     
-    set<DataUsuario> lista = IU->obtenerListadoUsuarios();
-    for (DataUsuario dataUsuario : lista){ //si hago abstracto a DataUsuario no puedo hacer esto
-        cout << dataUsuario.toString() << endl;
+    vector<string> lista = IU->obtenerListadoUsuarios();
+    for (long unsigned int i = 0; i < lista.size(); i++){
+        cout << lista[i] << endl;
     }
 }

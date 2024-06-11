@@ -20,10 +20,7 @@ class DataUsuario{
         string getNickname();
         DTFecha getFecha();
 
-        void setNickname();
-        void setFecha();
-
-        virtual string toString(); 
+        virtual string toString() = 0; 
 };
 
 #endif
