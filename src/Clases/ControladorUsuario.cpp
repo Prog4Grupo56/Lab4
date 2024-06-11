@@ -49,11 +49,9 @@ void ControladorUsuario::ingresarDatosPromocion(DataPromocion data){
 
 vector<string> ControladorUsuario::obtenerListaNicknameVendedores(){ 
     vector<string> nicknameVendedores;
-
     for(const auto& par : vendedores){  //auto o map<string, Vendedor*>::iterator?
         nicknameVendedores.push_back(par.first);
     }
-    
     return nicknameVendedores;
 }
 
@@ -63,15 +61,23 @@ void ControladorUsuario::seleccionarVendedor(string nickname){
 
 vector<ParCodigoNombre> ControladorUsuario::obtenerListaProductosVendedor(){
     string vendedor = dataCrearP.getVendedor();
-
     vector<ParCodigoNombre> productos;
     productos = (vendedores[vendedor])->obtenerProductos();
-
     return productos;
 }
 
 void ControladorUsuario::agregarProductoCantidad(ParCodigoCantidad parCodCant){
+    vector<ParCodigoCantidad> prodCant = dataCrearP.getProdCant();
+    long unsigned int tamanio = prodCant.size();
+    bool fueAgregado = false;
 
+    long unsigned int it = 0;
+    while( it < tamanio || !fueAgregado){
+        fueAgregado = (prodCant[it].getCodigo() == parCodCant.getCodigo());
+    }
+    if(!fueAgregado){
+        dataCrearP.agregar(parCodCant);
+    }
 }  
 
 void ControladorUsuario::confirmarAltaPromocion(){}
