@@ -37,6 +37,8 @@ class Producto
         string getDescripcion();
         int getStock();
         float getPrecio();
+        CantMin* getCantMin();
+        set<CompraProducto*> getCompraProducto();
     
         void setCodigo(string _codigo);
         void setCategoria(Categoria _categoria);
@@ -44,6 +46,8 @@ class Producto
         void setDescripcion(string _descripcion);
         void setStock(int _stock);
         void setPrecio(float _precio);
+        void setCantMin(CantMin* _cantMin);
+        void setCompraProducto(set<CompraProducto*> _compraProducto);
 
         //Operaciones:
         DataProducto getDataProducto();
