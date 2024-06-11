@@ -18,4 +18,3 @@ void EnviarProducto(){}
 
 void ExpedienteDeUsuario(){}
 
-void ConsultaDeNotificaciones(){}

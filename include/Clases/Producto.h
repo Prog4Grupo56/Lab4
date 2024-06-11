@@ -16,7 +16,7 @@ class Producto
 {
     public:
         string codigo;
-        //Categoria categoria;
+        Categoria categoria;
         string nombre;
         string descripcion;
         int stock;
@@ -32,14 +32,14 @@ class Producto
         ~Producto();
 
         string getCodigo();
-        //string getCategoria();
+        string getCategoria();
         string getNombre();
         string getDescripcion();
         int getStock();
         float getPrecio();
     
         void setCodigo(string _codigo);
-        //void setCategoria();
+        void setCategoria(Categoria _categoria);
         void setNombre(string _nombre);
         void setDescripcion(string _descripcion);
         void setStock(int _stock);

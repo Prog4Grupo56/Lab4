@@ -6,6 +6,8 @@
 #include "ControladorCompra.h"
 #include "ControladorUsuario.h"
 
+class ControladorCompra;
+
 class Fabrica {
 private:
     Fabrica();
