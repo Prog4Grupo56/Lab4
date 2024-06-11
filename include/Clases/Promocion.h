@@ -9,7 +9,7 @@
 #include "../Datatypes/DataPromocion.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 
-//class ;
+class CantMin;
 
 class Promocion
 {
