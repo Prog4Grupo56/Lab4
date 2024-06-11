@@ -2,6 +2,8 @@
 #define PROMOCION
 
 #include <set>
+#include <map>
+#include <vector>
 #include "../Datatypes/DTFecha.h"
 #include "../Clases/CantMin.h"
 #include "../Datatypes/DataPromocion.h"
@@ -17,7 +19,7 @@ class Promocion
         float descuento;
         DTFecha fechaVenc;
     
-        set<CantMin*> cantMinProductos;
+        vector<CantMin*> cantMinProductos;
 
     public:
         //Constructor
@@ -30,7 +32,7 @@ class Promocion
         string getDescripcion();
         float getDescuento();
         DTFecha getFechaVenc();
-        set<CantMin*> getCantidadesMinimas();
+        vector<CantMin*> getCantidadesMinimas();
     
         void setNombre(string nombre_);
         void setDescripcion(string descripcion_);
@@ -40,7 +42,7 @@ class Promocion
         void agregarCantMinProducto(CantMin *cMinProd);
 
         DataPromocion getDataPromocion();
-        set<ParCodigoCantidad> aplicaEnCompra(set<ParCodigoCantidad> prodCant);
+        vector<ParCodigoCantidad> aplicaEnCompra(vector<ParCodigoCantidad> prodCant);
 };
 
 #endif
