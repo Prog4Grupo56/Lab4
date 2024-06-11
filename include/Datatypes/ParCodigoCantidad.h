@@ -19,11 +19,9 @@ class ParCodigoCantidad
         ~ParCodigoCantidad(); //Destructor
 
         //Getters
-        string getCodigo() const;
-        int getCantidad() const;
-        //Setters
-        void setCodigo(string s);
-        void setCantidadMinima(int c);
+        string getCodigo();
+        int getCantidad();
+
 };
 
 #endif
