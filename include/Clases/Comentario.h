@@ -14,7 +14,7 @@ class Producto;
 class Comentario
 {
     private:
-        DTFecha* fecha;
+        DTFecha fecha;
         string comentario;
         int idComentario;
         set<Comentario*> respuestas;
@@ -22,16 +22,16 @@ class Comentario
         Usuario* comentador;
         Producto* producto;
     public:
-        Comentario(DTFecha* _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador, Producto* p);
+        Comentario(DTFecha _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador, Producto* p);
         ~Comentario();
 
-        DTFecha* getFecha();
+        DTFecha getFecha();
         string getComentario();
         int getIdComentario();
         set<Comentario*> getRespuestas();
         Comentario* getPadre();
 
-        void setFecha(DTFecha* _fecha);
+        void setFecha(DTFecha _fecha);
         void setComentario(string _comentario);
         void setiDComentario(int id);
         void setRespuesta(Comentario* respuesta);

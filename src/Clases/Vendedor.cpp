@@ -63,7 +63,7 @@ bool Vendedor::estaSuscrito(string nicknameCliente){
 //     notificarClientes(dtProductos, nombrePromocion);
 // }
 
-void Vendedor::notificarClientes(set<DataProducto> dtProductos, string nombrePromocion){
+void Vendedor::notificarClientes(vector<DataProducto> dtProductos, string nombrePromocion){
     set<Cliente*>::iterator it;
     for (it = suscriptores.begin(); it != suscriptores.end(); ++it){
         Cliente* c = *it;

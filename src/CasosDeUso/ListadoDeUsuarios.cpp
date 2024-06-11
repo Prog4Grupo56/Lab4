@@ -5,7 +5,6 @@ void ListadoDeUsuarios(){
     IUsuario* IU = F->getIUsuario();
     
     set<DataUsuario> lista = IU->obtenerListadoUsuarios();
-    set<DataUsuario>::iterator it;
     for (DataUsuario dataUsuario : lista){ //si hago abstracto a DataUsuario no puedo hacer esto
         cout << dataUsuario.toString() << endl;
     }

@@ -15,8 +15,8 @@ class Cliente : public Usuario{
     private:
         DTDireccion direccion;
         string ciudad;
-        set<Vendedor*> suscripciones;
-        set<DTNotificacion> notificaciones;
+        map<string,Vendedor*> suscripciones;
+        vector<DTNotificacion> notificaciones;
     public:
         //Constructor
         Cliente(string _nickname, string _contrasenia, DTFecha _fecha, DTDireccion _direccion, string _ciudad);
@@ -25,16 +25,16 @@ class Cliente : public Usuario{
        
         DTDireccion getDireccion();
         string getCiudad();
-        set<DTNotificacion> getNotificaciones();
-        set<DataVendedor> obtenerSuscripciones();
+        vector<DTNotificacion> getNotificaciones();
+        vector<DataVendedor> obtenerSuscripciones();
 
         void setDireccion(DTDireccion _direccion);
         void setCiudad(string _ciudad);
         void agregarSuscripcion(Vendedor* vendedor);
 
-        void notificar(string nombreVendedor, set<DataProducto> dtProductos, string nombrePromocion);
+        void notificar(string nombreVendedor, vector<DataProducto> dtProductos, string nombrePromocion);
 
-        void eliminarSuscripciones(set<DataVendedor>);
+        void eliminarSuscripciones(vector<DataVendedor>);
         void eliminarSuscripcion(Vendedor* v);
 };
 

@@ -1,35 +1,36 @@
-// #include "../../include/CasosDeUso/CasosDeUso.h"
+#include "../../include/CasosDeUso/CasosDeUso.h"
 
 
-// void EliminarSuscripciones(){
-//     Fabrica* F = Fabrica::getInstance();
-//     IUsuario* IU = F->getIUsuario();
+void EliminarSuscripciones(){
+    Fabrica* F = Fabrica::getInstance();
+    IUsuario* IU = F->getIUsuario();
 
-//     cout << "Ingrese su nickname: " << endl;
-//     string nickname;
-//     cin >> nickname;
-//     set<DataVendedor> lista = IU->obtenerListaVendedoresSuscritos(nickname);
+    cout << "Ingrese su nickname: ";
+    string nickname;
+    cin >> nickname;
+    set<DataVendedor> lista = IU->obtenerListaVendedoresSuscritos(nickname);
 
-//     //imprimir vendedores
+    //imprimir vendedores
 
-//     int opcion;
-//     cout << "Elija una opcion: " << endl;
-//     cout << "0. Terminar.";
-//     cout << "1. Agregar vendedor.";
-//     cin >> opcion;
+    int opcion;
+    set<DataVendedor> listaVendedoresSeleccionados;
 
-//     do{
-        
-//     } while (opcion != 0);
-    
-//     cout << "Ingrese un vendedor: " << endl;
-//     string nickname;
-//     cin >> nickname;
+    do{
+         cout << "Elija una opcion: " << endl;
+         cout << "0. Terminar.";
+         cout << "1. Agregar vendedor." << endl;
+         cin >> opcion;
+           if (opcion == 1){
+                //imprimir vendedores
+                cout << "========";
+                cout << "Escriba el nombre del vendedor:";
+                string vendedor;
+                cin >> vendedor;
+                //find vendedor en lista
+                //insert vendedor en listaVendedoresSeleccionados
+           };
+    } while (opcion != 0);
 
-
-
-//     IU->seleccionarVendedoresAEliminarSuscripciones(vendedores);
-
-
-
-// }
+        IU->seleccionarVendedoresAEliminarSuscripciones(listaVendedoresSeleccionados); // vaciar dataelimsus en controladorUsuario
+        IU->eliminarSuscripciones();
+}

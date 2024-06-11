@@ -15,7 +15,7 @@ class Vendedor : public Usuario{
     private:
         int RUT;
         set<Cliente*> suscriptores;
-        void notificarClientes(set<DataProducto> dtProductos, string nombrePromocion); // privado porque asi esta en el template
+        void notificarClientes(vector<DataProducto> dtProductos, string nombrePromocion); // privado porque asi esta en el template
         set<Producto*> productos;
         set<Promocion*> promociones;
     public:

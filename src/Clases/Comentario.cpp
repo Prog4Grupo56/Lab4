@@ -1,6 +1,6 @@
 #include "../../include/Clases/Comentario.h"
 
-Comentario::Comentario(DTFecha* _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador, Producto* p){
+Comentario::Comentario(DTFecha _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador, Producto* p){
     fecha = _fecha;
     comentario = _comentario;
     idComentario = _idComentario;
@@ -11,11 +11,10 @@ Comentario::Comentario(DTFecha* _fecha, string _comentario, int _idComentario, C
 };
 
 Comentario::~Comentario(){
-    delete fecha;
 };
 
 /*======= GETTERS ========*/
-DTFecha* Comentario::getFecha(){
+DTFecha Comentario::getFecha(){
     return fecha;
 };
 string Comentario::getComentario(){

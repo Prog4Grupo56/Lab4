@@ -1,6 +1,7 @@
 #ifndef USUARIO
 #define USUARIO
-#include <set>
+#include <vector>
+#include <map>
 #include <string>
 #include "../Datatypes/DTFecha.h"
 #include "Comentario.h"
@@ -15,7 +16,7 @@ class Usuario{
         string nickname;
         DTFecha fecha;
         string contrasena;
-        set<Comentario*> comentarios; //hay que ver que coleccion usamos
+        map<int, Comentario*> comentarios;
     public:
         //Constructor
         Usuario(string _nickname, string _constrasenia, DTFecha _fecha);
@@ -26,7 +27,7 @@ class Usuario{
         string getNickname();
         DTFecha getFecha();
         string getContrasena();
-        set<DataComentario> obtenerComentarios();
+        vector<DataComentario> obtenerComentarios();
 
         /*======= SETTERS ========*/
         void setNickname(string _nickname);
