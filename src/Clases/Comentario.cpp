@@ -1,20 +1,20 @@
 #include "../../include/Clases/Comentario.h"
 
-Comentario::Comentario(DTFecha* _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador){
+Comentario::Comentario(DTFecha _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador, Producto* p){
     fecha = _fecha;
     comentario = _comentario;
     idComentario = _idComentario;
     //respuestas.empty(); // Ya lo inicializa como set vacio
     padre = _padre;
     comentador = _comentador;
+    producto = p;
 };
 
 Comentario::~Comentario(){
-    delete fecha;
 };
 
 /*======= GETTERS ========*/
-DTFecha* Comentario::getFecha(){
+DTFecha Comentario::getFecha(){
     return fecha;
 };
 string Comentario::getComentario(){

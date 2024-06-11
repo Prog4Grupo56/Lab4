@@ -24,6 +24,20 @@ DTFecha Usuario::getFecha(){
 string Usuario::getContrasena(){
     return contrasena;
 }
+vector<DataComentario> Usuario::obtenerComentarios(){
+    vector<DataComentario> lista;
+    map<int, Comentario*>::iterator it;
+
+    for (it = comentarios.begin(); it != comentarios.end(); ++it){
+        string comentario = it->second->getComentario();
+        DTFecha fecha = it->second->getFecha();
+        int id = it->second->getIdComentario();
+        DataComentario dataC = DataComentario(comentario, fecha, id);
+        lista.push_back(dataC);
+    }
+
+    return lista;
+}
 
 /*======= SETTERS ========*/
 void Usuario::setNickname(string _nickname){
@@ -33,12 +47,12 @@ void Usuario::setFecha(DTFecha _fecha){
     fecha = _fecha;
 };
 void Usuario::setComentario(Comentario* c){
-    comentarios.insert(c);
+    comentarios[c->getIdComentario()] = c;
 }
 
 /*======= FUNCIONES ========*/
 void Usuario::desvincularComentario(Comentario* c){
-    comentarios.erase(c);
+    comentarios.erase(c->getIdComentario());
 }
 
 

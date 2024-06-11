@@ -16,17 +16,28 @@ DTDireccion Cliente::getDireccion(){
 };  
 string Cliente::getCiudad(){
     return ciudad;
-    
 };  
 
-set<DTNotificacion> Cliente::getNotificaciones(){
-    return notificaciones;
-}
+// set<DTNotificacion> Cliente::getNotificaciones(){
+//     set<DTNotificacion> copiaNotificaciones = notificaciones;
 
-set<DataVendedor> Cliente::obtenerSuscripciones(){
+//     // for (DTNotificacion notificacion : notificaciones){ //hago una copia para retornar
+//     //     DTNotificacion copia = DTNotificacion(notificacion.getNombreVendedor(), notificacion.getNombrePromocion(), notificacion.getProductos());
+//     //     copiaNotificaciones.insert(copia);
+//     // }
+
+//     // for (DTNotificacion notificacion : notificaciones){ //seteo en vacio las notificaciones
+//     //     notificaciones.erase(notificacion);
+//     // }
+
+//     notificaciones = {};
+//     return copiaNotificaciones;
+// }
+
+vector<DataVendedor> Cliente::obtenerSuscripciones(){
 
 
-    set<DataVendedor> lista; 
+    vector<DataVendedor> lista; 
 
     // for (Vendedor* v: suscripciones){
     //     string nickname = v->getNickname();
@@ -48,28 +59,26 @@ void Cliente::setCiudad(string _ciudad){
 };
 
 void Cliente::agregarSuscripcion(Vendedor* v){
-    suscripciones.insert(v);
+    suscripciones[v->getNickname()] = v;
 }
 
 void Cliente::eliminarSuscripcion(Vendedor* v){
-    suscripciones.erase(v);
+    suscripciones.erase(v->getNickname());
 }
 
-void Cliente::eliminarSuscripciones(set<DataVendedor> vendedores){
+void Cliente::eliminarSuscripciones(vector<DataVendedor> vendedores){
 
-    set<DataVendedor>::iterator it;
-    for (it = vendedores.begin(); it != vendedores.end(); ++it){
-        DataVendedor vend = *it;
+    for (long unsigned int i = 0; i < vendedores.size(); i++){
+        DataVendedor vend = vendedores[i];
         string nickname = vend.getNickname();
-        set<Vendedor*>::iterator itv;
-        for (itv = suscripciones.begin(); itv != suscripciones.end(); ++itv){
-            Vendedor* v = *itv;
-            if (v->getNickname() == nickname){
-                eliminarSuscripcion(v);
-                break;
-            }
-        }
+
+        Vendedor* v = suscripciones[nickname];
+        eliminarSuscripcion(v);
     }
 };
 
-//void Cliente::notificar()
+void Cliente::notificar(string nombreVendedor, vector<DataProducto> dtProductos, string nombrePromocion){
+    
+    // DTNotificacion notificacion = DTNotificacion(nombreVendedor, nombrePromocion, dtProductos);
+    // notificaciones.insert(notificacion);
+}
