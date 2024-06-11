@@ -4,9 +4,11 @@
 #include "../Datatypes/DTDireccion.h"
 #include "../Datatypes/DataVendedor.h"
 #include "../Datatypes/DTNotificacion.h"
+#include "Usuario.h"
 #include "Vendedor.h"
 
 class Vendedor;
+class Usuario;
 
 class Cliente : public Usuario{
 

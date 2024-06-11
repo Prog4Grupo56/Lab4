@@ -7,7 +7,6 @@
 
 #include <string>
 
-class DTFecha;
 class Producto;
 class Promocion;
 

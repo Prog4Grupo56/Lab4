@@ -1,17 +1,15 @@
 #ifndef VENDEDOR
 #define VENDEDOR
 
-#include "Usuario.h"
-#include "Promocion.h"
-#include "Producto.h"
 #include "Cliente.h"
+#include "Usuario.h"
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/DataVendedor.h"
 
-class Producto;
+class Usuario;
+class Cliente;
+class Usuario;
 class Promocion;
-class Cliente; //fwd declaration
-
 
 class Vendedor : public Usuario{
     private:
