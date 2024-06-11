@@ -18,3 +18,14 @@ string DTNotificacion::getNombrePromocion(){
 vector<DataProducto> DTNotificacion::getProductos(){
     return productos;
 }
+
+string DTNotificacion::toString(){
+    string res;
+    res = nombreVendedor + ", " + nombrePromocion;
+
+    for(long unsigned int i = 0; i<productos.size(); i++){
+        DataProducto producto = productos[i];
+        res = res + ", " + producto.toString();
+    }
+    return res;
+};

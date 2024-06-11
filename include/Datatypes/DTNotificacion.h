@@ -1,6 +1,6 @@
-#include <iostream>
 #ifndef DTNOTIFICACION
 #define DTNOTIFICACION
+
 using namespace std;
 #include <vector>
 
@@ -21,7 +21,8 @@ class DTNotificacion {
         string getNombreVendedor();
         string getNombrePromocion();
         vector<DataProducto> getProductos();
-        
+
+        string toString();
 };
 
 #endif

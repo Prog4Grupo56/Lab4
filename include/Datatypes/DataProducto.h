@@ -3,7 +3,7 @@
 #define DATAPRODUCTO
 using namespace std;
 
-#include "../Datatypes/Categoria.h"
+#include "Categoria.h"
 
 
 class DataProducto{
@@ -29,6 +29,8 @@ class DataProducto{
         string getNombre();
         string getDescripcion();
         Categoria getCategoria();
+
+        string toString();
         
 };
 
