@@ -2,13 +2,11 @@
 
 DataProducto::DataProducto(){}
 DataProducto::DataProducto(string _codigo, int _stock, float _precio, string _nombre, string _descripcion, Categoria _categoria){
-DataProducto::DataProducto(string _codigo, int _stock, float _precio, string _nombre, string _descripcion, Categoria _categoria){
     codigo = _codigo;
     stock = _stock;
     precio = _precio;
     nombre = _nombre;
     descripcion = _descripcion;
-    categoria = _categoria;
     categoria = _categoria;
 };
 
@@ -32,4 +30,8 @@ string DataProducto::getDescripcion(){
 }
 Categoria DataProducto::getCategoria(){
     return categoria;
+}
+
+string DataProducto::toString(){
+    return codigo + ", " + nombre + ", " + descripcion + ", " + to_string(stock) + ", " + to_string(precio) + ", " + to_string(categoria);
 }

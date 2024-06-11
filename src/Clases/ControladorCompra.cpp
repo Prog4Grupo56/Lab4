@@ -29,7 +29,7 @@ vector<DataProducto> ControladorCompra::obtenerListaProductos(){
 }
 
 void ControladorCompra::agregarProducto(ParCodigoCantidad parCodCant){
-    set<ParCodigoCantidad> lista = dataInfoC->getProdCant();
+    vector<ParCodigoCantidad> lista = dataInfoC->getProdCant();
     bool existe = false;
     // for (ParCodigoCantidad item : lista) {
     //     existe = existe || item.getCodigo() == parCodCant.getCodigo();
@@ -52,7 +52,7 @@ DataProducto obtenerDataProducto(set<Producto*> &productos, string codigo){
 }
 
 ParCompraProductos ControladorCompra::obtenerInfoCompra(){
-    set<ParCodigoCantidad> lista = dataInfoC->getProdCant();
+    vector<ParCodigoCantidad> lista = dataInfoC->getProdCant();
     set<DataProducto> productosCompra;
     // for (ParCodigoCantidad item : lista) {
     //     productosCompra.insert(obtenerDataProducto(productos, item.getCodigo()));
