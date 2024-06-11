@@ -1,15 +1,14 @@
 #ifndef CONTROLADOR_COMPRA
 #define CONTROLADOR_COMPRA
 
-#include <set>
+#include <map>
 #include <vector>
 #include <string>
-#include "Compra.h"
-#include "DataInfoCompra.h"
+
 #include "Producto.h"
 #include "Promocion.h"
-#include "Vendedor.h"
 #include "ICompra.h"
+#include "DataInfoCompra.h"
 #include "DataCrearPromocion.h"
 #include "Fabrica.h"
 
@@ -19,8 +18,9 @@
 #include "../Datatypes/ParCompraProductos.h"
 
 class Compra;
-class Producto;
-class Promocion;
+class Vendedor;
+class Fabrica;
+
 
 using namespace std;
 
@@ -29,9 +29,9 @@ class ControladorCompra : public ICompra
     private:
         static ControladorCompra * instancia;
         DataInfoCompra * dataInfoC;
-        set<Compra*> compras;
-        set<Producto*> productos;
-        set<Promocion*> promociones;
+        vector<Compra*> compras;
+        map<string, Producto*> productos;
+        map<string, Promocion*> promociones;
         ControladorCompra();
     public:
         ~ControladorCompra();
@@ -40,7 +40,7 @@ class ControladorCompra : public ICompra
         vector<DataProducto> obtenerListaProductos();
         void agregarProducto(ParCodigoCantidad parCodCant);
         ParCompraProductos obtenerInfoCompra();
-        set<string> obtenerListaNicknamesClientes();
+        vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra();
 };

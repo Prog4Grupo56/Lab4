@@ -21,9 +21,8 @@ void ControladorCompra::crearPromocion(Vendedor* v, DataCrearPromocion* dataCrea
 
 vector<DataProducto> ControladorCompra::obtenerListaProductos(){
     vector<DataProducto> dataProductos;
-    for (Producto* producto : productos) {
-        if (producto->getStock()>0)
-            dataProductos.push_back(producto->getDataProducto());
+    for (std::map<string, Producto*>::iterator it = productos.begin(); it != productos.end(); ++it) {
+        dataProductos.push_back(it->second->getDataProducto());
     }
     return dataProductos;
 }
@@ -61,7 +60,7 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
     return ParCompraProductos(0, productosCompra); // Aca iria la fecha actual, como?
 }
 
-set<string> ControladorCompra::obtenerListaNicknamesClientes(){
+vector<string> ControladorCompra::obtenerListaNicknamesClientes(){
     Fabrica* f = Fabrica::getInstance();
     IUsuario* CU = f->getIUsuario();
     return CU->obtenerListaNicknamesClientes();

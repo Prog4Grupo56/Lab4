@@ -9,7 +9,9 @@ Producto::~Producto(){}
 string Producto::getCodigo(){
     return codigo;
 }
-//string Producto::getCategoria(){}
+string Producto::getCategoria(){
+    return to_string(categoria);
+}
 string Producto::getNombre(){
     return nombre;
 }
@@ -26,7 +28,9 @@ float Producto::getPrecio(){
 void Producto::setCodigo(string _codigo){
     codigo = _codigo;
 }
-//void sProducto::etCategoria(){}
+void Producto::setCategoria(Categoria _categoria){
+    categoria = _categoria;
+}
 void Producto::setNombre(string _nombre){
     nombre = _nombre;
 }
@@ -44,7 +48,7 @@ void Producto::setPrecio(float _precio){
 //Operaciones:
 
 DataProducto Producto::getDataProducto(){
-    return DataProducto(codigo, stock, precio, nombre, descripcion);
+    return DataProducto(codigo, stock, precio, nombre, descripcion, categoria);
 }
 
 bool Producto::pertenecePromoVigente(){

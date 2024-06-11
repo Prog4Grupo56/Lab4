@@ -20,12 +20,20 @@ class CantMin
        Producto* producto;
        Promocion* promocion;
     public:
-        CantMin(); //Constructor
-        ~CantMin(); //Destructor
+        CantMin();
+        CantMin(int _cantidadMinima, Producto* _producto);
+        ~CantMin();
 
         int getCantidadMinima();
+        Producto* getProducto();
+        Promocion* getPromocion();
+
+        void setCantidadMinima(int _cantidadMinima);
+        void setProducto(Producto* _producto);
+        void setPromocion(Promocion* _promocion);
 
         DTFecha obtenerFechaPromocion();
+        
 
 };
 
