@@ -14,7 +14,7 @@ class ParCodigoNombre
         string codigo;
         string nombre;
     public:
-        ParCodigoNombre(string _codigo, int _cantMinima); //Constructor
+        ParCodigoNombre(string _nombre, string _codigo); //Constructor
         ~ParCodigoNombre(); //Destructor
 
         //Getters

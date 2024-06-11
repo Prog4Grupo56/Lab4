@@ -1,13 +1,18 @@
-// #include "../../include/CasosDeUso/CasosDeUso.h"
+#include "../../include/CasosDeUso/CasosDeUso.h"
 
-// void ConsultaDeNotificaciones(){
-//     Fabrica* F = Fabrica::getInstance();
-//     IUsuario* IU = F->getIUsuario();
+void ConsultaDeNotificaciones(){
+    Fabrica* F = Fabrica::getInstance();
+    IUsuario* IU = F->getIUsuario();
 
-//     string nickname;
-//     cout << "Ingrese su nickname: " << endl;
-//     cin >> nickname; //esto hace el administrador?
+    string nickname;
+    cout << "Ingrese su nickname: " << endl;
+    cin >> nickname;
 
-//     set<DTNotificacion> notificaciones = IU->obtenerListaNotificaciones(nickname); 
-//     //imprimir notificaciones
-// }
+    vector<DTNotificacion> notificaciones = IU->obtenerListaNotificaciones(nickname); 
+
+    cout << "Notificaciones de " << nickname << ":" << endl;
+
+    for(long unsigned int i = 0; i < notificaciones.size(); i++){
+        cout << notificaciones[i].toString() << endl;
+    }
+}

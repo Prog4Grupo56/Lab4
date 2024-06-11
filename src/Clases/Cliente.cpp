@@ -18,36 +18,27 @@ string Cliente::getCiudad(){
     return ciudad;
 };  
 
-// set<DTNotificacion> Cliente::getNotificaciones(){
-//     set<DTNotificacion> copiaNotificaciones = notificaciones;
+vector<DTNotificacion> Cliente::getNotificaciones(){
+    vector<DTNotificacion> copiaNotificaciones = notificaciones;
 
-//     // for (DTNotificacion notificacion : notificaciones){ //hago una copia para retornar
-//     //     DTNotificacion copia = DTNotificacion(notificacion.getNombreVendedor(), notificacion.getNombrePromocion(), notificacion.getProductos());
-//     //     copiaNotificaciones.insert(copia);
-//     // }
-
-//     // for (DTNotificacion notificacion : notificaciones){ //seteo en vacio las notificaciones
-//     //     notificaciones.erase(notificacion);
-//     // }
-
-//     notificaciones = {};
-//     return copiaNotificaciones;
-// }
+    notificaciones = {};
+    return copiaNotificaciones;
+}
 
 vector<DataVendedor> Cliente::obtenerSuscripciones(){
 
-
     vector<DataVendedor> lista; 
 
-    // for (Vendedor* v: suscripciones){
-    //     string nickname = v->getNickname();
-    //     DTFecha fecha = v->getFecha();
-    //     int RUT = v->getRUT();
-    //     string contrasena = v->getContrasena();
-    //     DataVendedor dataV = DataVendedor(nickname, contrasena, fecha, RUT);
-    //     lista.insert(dataV);
-    // }
-    return lista; //limpiar memoria de dataVendedor al finalizar el caso de uso
+    map<string, Vendedor*>::iterator it;
+    for (it = suscripciones.begin(); it != suscripciones.end(); ++it){
+        string nickname = it->first;
+        DTFecha fecha = it->second->getFecha();
+        int RUT = it->second->getRUT();
+        string contrasena = it->second->getContrasena();
+        DataVendedor dataV = DataVendedor(nickname, contrasena, fecha, RUT);
+        lista.push_back(dataV);
+    }
+    return lista;
 }
 
 /*======= SETTERS ========*/
@@ -78,7 +69,6 @@ void Cliente::eliminarSuscripciones(vector<DataVendedor> vendedores){
 };
 
 void Cliente::notificar(string nombreVendedor, vector<DataProducto> dtProductos, string nombrePromocion){
-    
-    // DTNotificacion notificacion = DTNotificacion(nombreVendedor, nombrePromocion, dtProductos);
-    // notificaciones.insert(notificacion);
+    DTNotificacion notificacion = DTNotificacion(nombreVendedor, nombrePromocion, dtProductos);
+    notificaciones.push_back(notificacion);
 }
