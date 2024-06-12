@@ -4,8 +4,10 @@ void ListadoDeUsuarios(){
     Fabrica* F = Fabrica::getInstance();
     IUsuario* IU = F->getIUsuario();
     
-    vector<string> lista = IU->obtenerListadoUsuarios();
+    vector<DataUsuario> lista = IU->obtenerListadoUsuarios();
+
+    cout << "Usuarios: " << endl;
     for (long unsigned int i = 0; i < lista.size(); i++){
-        cout << lista[i] << endl;
+        cout << lista[i].toString() << endl;
     }
 }
