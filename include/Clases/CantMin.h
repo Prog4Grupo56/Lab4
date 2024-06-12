@@ -7,7 +7,6 @@
 
 #include <string>
 
-class DTFecha;
 class Producto;
 class Promocion;
 
@@ -29,6 +28,7 @@ class CantMin
         DTFecha obtenerFechaPromocion();
         bool pertenecePromocion(string codigo);
         
+
 };
 
 #endif

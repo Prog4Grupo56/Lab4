@@ -23,7 +23,7 @@ class DataUsuario{
         void setNickname();
         void setFecha();
 
-        virtual string toString();
+        virtual string toString(); 
 };
 
 #endif

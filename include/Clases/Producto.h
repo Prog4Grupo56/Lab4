@@ -6,11 +6,11 @@
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "CantMin.h"
-#include "Compra.h"
+#include "CompraProducto.h"
 
 class CompraProducto;
-class Compra;
 class CantMin;
+class Compra;
 
 class Producto
 {

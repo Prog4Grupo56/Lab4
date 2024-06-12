@@ -4,11 +4,14 @@
 #include <string>
 #include <set>
 #include <vector>
+#include "Vendedor.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "DataCrearPromocion.h"
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/DataVendedor.h"
 #include "../Datatypes/ParCompraProductos.h"
+
+class Vendedor;
 
 class ICompra {
 public:

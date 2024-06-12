@@ -8,14 +8,14 @@ class DataComentario{
 
     private:
         string comentario;
-        DTFecha* fecha;
+        DTFecha fecha;
         int idComentario;
     public:
-        DataComentario(string _comentario, DTFecha* _fecha, int id);
+        DataComentario(string _comentario, DTFecha _fecha, int id);
         ~DataComentario();
 
         string getComentario();
-        DTFecha* getFecha();
+        DTFecha getFecha();
         int getIdComentario();
 
 };

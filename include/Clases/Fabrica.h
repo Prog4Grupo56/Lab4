@@ -4,7 +4,7 @@
 #include "IUsuario.h"
 #include "ICompra.h"
 #include "ControladorCompra.h"
-
+#include "ControladorUsuario.h"
 
 class Fabrica {
 private:
