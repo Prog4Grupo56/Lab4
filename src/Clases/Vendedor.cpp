@@ -3,6 +3,10 @@
 Vendedor::Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, int _RUT):
 Usuario(_nickname, _contrasenia, _fecha), RUT(_RUT){};
 
+Vendedor::Vendedor(DataVendedor vendedor): Usuario(vendedor.getNickname(), vendedor.getContrasena(), vendedor.getFecha()){
+    RUT = vendedor.getRUT();
+};
+
 Vendedor::~Vendedor(){
     /*set<Cliente*>::iterator it;
     for (it=suscriptores.begin();it!=suscriptores.end();++it){
@@ -16,9 +20,8 @@ int Vendedor::getRUT(){
     return RUT;
 };
 
-// set<ParCodigoNombre> Vendedor::obtenerProductos(){
-
-//     set<ParCodigoNombre> lista;
+vector<ParCodigoNombre> Vendedor::obtenerProductos(){
+//     vector<ParCodigoNombre> lista;
 
 //     for(Producto* producto : productos){
 //         bool productoOcupado = producto->pertenecePromoVigente();
@@ -27,8 +30,9 @@ int Vendedor::getRUT(){
 //             lista.insert(par);
 //         }
 //     }
-//      return lista;
-// };
+//      return lista;*/
+    return {};
+};
 
 /*======= SETTERS ========*/
 void Vendedor::setRUT(int _RUT){

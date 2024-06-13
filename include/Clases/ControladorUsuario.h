@@ -8,10 +8,11 @@
 #include "../Datatypes/DataVendedor.h"
 #include "../Datatypes/DataCliente.h"
 #include "../Datatypes/DataComentario.h"
-//#include "../Datatypes/dataEliminarComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/ParCodigoNombre.h"
 
+#include "Fabrica.h"
+#include "DataEliminarComentario.h"
 #include "DataCrearPromocion.h"
 #include "DataEliminarSuscripcion.h"
 
@@ -28,9 +29,9 @@ class ControladorUsuario
         ControladorUsuario();
 
         string nicknameC;
-        //dataEliminarComentario dataElimCom;
-        DataCrearPromocion dataCrearP;
-        DataEliminarSuscripcion dataElimSus;
+        DataEliminarComentario* dataElimCom;
+        DataCrearPromocion* dataCrearP;
+        DataEliminarSuscripcion* dataElimSus;
 
         map<string, Usuario*> usuarios;
         map<string, Cliente*> clientes;
@@ -40,14 +41,14 @@ class ControladorUsuario
         static ControladorUsuario * getInstancia();
 
         string getNickname();
-        //dataEliminarComentario getDataElimCom();
-        DataCrearPromocion getDataCrearP();
-        DataEliminarSuscripcion getDataElimSus();
+        DataEliminarComentario* getDataElimCom();
+        DataCrearPromocion* getDataCrearP();
+        DataEliminarSuscripcion* getDataElimSus();
     
         void setNickname(string nickCliente);
-        //void setDataElimCom(dataEliminarComentario data);
-        void setDataCrearP(DataCrearPromocion data);
-        void setDataElimSus(DataEliminarSuscripcion data);
+        void setDataElimCom(DataEliminarComentario* data);
+        void setDataCrearP(DataCrearPromocion* data);
+        void setDataElimSus(DataEliminarSuscripcion* data);
 
         //Eliminar Comentario
         bool ingresarCliente(DataCliente cliente);
@@ -75,7 +76,7 @@ class ControladorUsuario
         set<DataVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente);
         void vendedoresASuscribirse(set<DataVendedor> vendedores); 
 
-        //Eliminar Suscripcion
+        //Eliminar Suscripcion  (Comparaciones con to_lower)
         set<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
         void seleccionarVendedoresAEliminarSuscripciones(set<DataVendedor> vendedores);
         void eliminarSuscripciones();

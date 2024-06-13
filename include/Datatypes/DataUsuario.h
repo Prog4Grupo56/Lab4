@@ -19,6 +19,7 @@ class DataUsuario{
 
         string getNickname();
         DTFecha getFecha();
+        string getContrasena();
 
         void setNickname();
         void setFecha();

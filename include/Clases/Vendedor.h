@@ -23,6 +23,7 @@ class Vendedor : public Usuario{
         set<Promocion*> promociones;
     public:
         Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, int _RUT);
+        Vendedor(DataVendedor vendedor);
         ~Vendedor();
       
         int getRUT();

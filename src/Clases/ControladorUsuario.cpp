@@ -3,9 +3,9 @@
 ControladorUsuario* ControladorUsuario::instancia = NULL;
 ControladorUsuario :: ControladorUsuario(){
     nicknameC ="";
-    //dataElimCom = DataEliminarComentario();
-    dataCrearP = DataCrearPromocion();
-    dataElimSus = DataEliminarSuscripcion();
+    dataElimCom = NULL;
+    dataCrearP = NULL;
+    dataElimSus = NULL;
 }
 
 ControladorUsuario* ControladorUsuario::getInstancia() {
@@ -16,24 +16,39 @@ ControladorUsuario* ControladorUsuario::getInstancia() {
 
     //GETTERS
 string ControladorUsuario::getNickname(){ return nicknameC;}
-//dataEliminarComentario ControladorUsuario::getDataElimCom(){ return dataElimCom}
-DataCrearPromocion ControladorUsuario::getDataCrearP(){ return dataCrearP;}
-DataEliminarSuscripcion ControladorUsuario::getDataElimSus(){ return dataElimSus;}
+DataEliminarComentario* ControladorUsuario::getDataElimCom(){ return dataElimCom;}
+DataCrearPromocion* ControladorUsuario::getDataCrearP(){ return dataCrearP;}
+DataEliminarSuscripcion* ControladorUsuario::getDataElimSus(){ return dataElimSus;}
 
     //SETTERS
 void ControladorUsuario::setNickname(string nickCliente){ nicknameC = nickCliente;}
-//void ControladorUsuario::setDataElimCom(dataEliminarComentario data){ dataElimCom = data;}
-void ControladorUsuario::setDataCrearP(DataCrearPromocion data){ dataCrearP = data;}
-void ControladorUsuario::setDataElimSus(DataEliminarSuscripcion data){ dataElimSus = data;}
+//Recordar agregar la liberacion de memoria del *data anterior
+void ControladorUsuario::setDataElimCom(DataEliminarComentario* data){ dataElimCom = data;} 
+void ControladorUsuario::setDataCrearP(DataCrearPromocion* data){ dataCrearP = data;}
+void ControladorUsuario::setDataElimSus(DataEliminarSuscripcion* data){ dataElimSus = data;}
 
 
     //OPERACIONES
 
-    //Eliminar Comentario
-bool ControladorUsuario::ingresarCliente(DataCliente cliente){return true;}
+    //Alta Usuario
+bool ControladorUsuario::ingresarCliente(DataCliente cliente){
+    bool noExiste = true;
+    string nickCliente = cliente.getNickname();
+
+    map<string, Usuario*>::const_iterator it = usuarios.begin();
+    while( it!=usuarios.end() && noExiste){
+        noExiste = it->first != nickCliente;
+        ++it;
+    }
+
+    Cliente* c = new Cliente(cliente); 
+    usuarios.insert(pair<string, Usuario*>(nickCliente, c) );
+    return noExiste;
+}
 
 bool ControladorUsuario::ingresarVendedor(DataVendedor vendedor){return true;}
 
+    //Eliminar Comentario
 set<string> ControladorUsuario::obtenerListaNicknamesUsuarios(){return {};}
 
 set<DataComentario> ControladorUsuario::obtenerComentariosUsuario(){return {};}
@@ -42,32 +57,32 @@ void ControladorUsuario::seleccionarComentario(DataComentario comentario){}
 
 
     //Crear Promocion
-
 void ControladorUsuario::ingresarDatosPromocion(DataPromocion data){ 
-    dataCrearP.setInfoP(data);
+    dataCrearP = new DataCrearPromocion();
+    dataCrearP->setInfoP(data);
 }
 
 vector<string> ControladorUsuario::obtenerListaNicknameVendedores(){ 
     vector<string> nicknameVendedores;
-    for(const auto& par : vendedores){  //auto o map<string, Vendedor*>::iterator?
+    for(const pair<string, Vendedor*> par : vendedores){  
         nicknameVendedores.push_back(par.first);
     }
     return nicknameVendedores;
 }
 
 void ControladorUsuario::seleccionarVendedor(string nickname){
-    dataCrearP.setVendedor(nickname);
+    dataCrearP->setVendedor(nickname);
 }
 
 vector<ParCodigoNombre> ControladorUsuario::obtenerListaProductosVendedor(){
-    string vendedor = dataCrearP.getVendedor();
+    string vendedor = dataCrearP->getVendedor();
     vector<ParCodigoNombre> productos;
     productos = (vendedores[vendedor])->obtenerProductos();
     return productos;
 }
 
 void ControladorUsuario::agregarProductoCantidad(ParCodigoCantidad parCodCant){
-    vector<ParCodigoCantidad> prodCant = dataCrearP.getProdCant();
+    vector<ParCodigoCantidad> prodCant = dataCrearP->getProdCant();
     long unsigned int tamanio = prodCant.size();
     bool fueAgregado = false;
 
@@ -76,11 +91,22 @@ void ControladorUsuario::agregarProductoCantidad(ParCodigoCantidad parCodCant){
         fueAgregado = (prodCant[it].getCodigo() == parCodCant.getCodigo());
     }
     if(!fueAgregado){
-        dataCrearP.agregar(parCodCant);
+        dataCrearP->agregar(parCodCant);
     }
 }  
 
-void ControladorUsuario::confirmarAltaPromocion(){}
+void ControladorUsuario::confirmarAltaPromocion(){
+    string nickVendedor = dataCrearP->getVendedor();
+    Vendedor* v = (vendedores[nickVendedor]); 
+    
+    Fabrica* f = Fabrica::getInstance();
+    ICompra* c = f->getICompra();
+
+    c->crearPromocion(v, dataCrearP);
+
+    dataCrearP->~DataCrearPromocion();
+    dataCrearP = NULL;
+}
 
 
     //Realizar Compra

@@ -18,7 +18,9 @@ string DataUsuario::getNickname(){
 DTFecha DataUsuario::getFecha(){
     return fecha;
 }
-
+string DataUsuario::getContrasena(){
+    return contrasena;
+}
 string DataUsuario::toString(){
     return "";
 }
