@@ -21,10 +21,7 @@ class DataUsuario{
         DTFecha getFecha();
         string getContrasena();
 
-        void setNickname();
-        void setFecha();
-
-        virtual string toString(); 
+        virtual string toString() = 0; 
 };
 
 #endif

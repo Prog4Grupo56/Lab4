@@ -21,17 +21,19 @@ int Vendedor::getRUT(){
 };
 
 vector<ParCodigoNombre> Vendedor::obtenerProductos(){
-//     vector<ParCodigoNombre> lista;
 
-//     for(Producto* producto : productos){
-//         bool productoOcupado = producto->pertenecePromoVigente();
-//         if (!productoOcupado){
-//             ParCodigoNombre par = ParCodigoNombre(producto->getNombre(), producto->getCodigo());
-//             lista.insert(par);
-//         }
-//     }
-//      return lista;*/
-    return {};
+    vector<ParCodigoNombre> lista;
+    map<string,Producto*>::iterator it;
+
+    for(it = productos.begin(); it != productos.end(); ++it){
+        Producto* producto = it->second;
+        bool productoOcupado = producto->pertenecePromoVigente();
+        if (!productoOcupado){
+            ParCodigoNombre par = ParCodigoNombre(producto->getNombre(), producto->getCodigo());
+            lista.push_back(par);
+        }
+    }
+    return lista;
 };
 
 /*======= SETTERS ========*/
@@ -40,37 +42,30 @@ void Vendedor::setRUT(int _RUT){
 };
 
 void Vendedor::setProducto(Producto* producto){
-    productos.insert(producto);
+    productos[producto->getNombre()] = producto;
 }
 
 void Vendedor::agregarSuscriptor(Cliente* c){
-    suscriptores.insert(c);
+    suscriptores[c->getNickname()] = c;
 }
 
 void Vendedor::eliminarSuscriptor(Cliente* c){
-    suscriptores.erase(c);
+    suscriptores.erase(c->getNickname());
 }
 
 bool Vendedor::estaSuscrito(string nicknameCliente){
-    set<Cliente*>::iterator it;
-    for(it = suscriptores.begin(); it != suscriptores.end(); ++it){
-        Cliente* c = *it;
-        if (c->getNickname() == nicknameCliente){
-            return true;
-        }
-    }
-    return false;
+    return suscriptores[nicknameCliente] != NULL;
 }
 
-// void Vendedor::agregarPromocionYNotificar(set<DataProducto> dtProductos, string nombrePromocion, Promocion* pr){
-//     promociones.insert(pr);
-//     notificarClientes(dtProductos, nombrePromocion);
-// }
+void Vendedor::agregarPromocionYNotificar(vector<DataProducto> dtProductos, string nombrePromocion, Promocion* pr){
+    promociones[pr->getNombre()] = pr;
+    notificarClientes(dtProductos, nombrePromocion);
+}
 
 void Vendedor::notificarClientes(vector<DataProducto> dtProductos, string nombrePromocion){
-    set<Cliente*>::iterator it;
+    map<string, Cliente*>::iterator it;
     for (it = suscriptores.begin(); it != suscriptores.end(); ++it){
-        Cliente* c = *it;
+        Cliente* c = it->second;
         c->notificar(this->getNickname(), dtProductos, nombrePromocion);
     }
 }

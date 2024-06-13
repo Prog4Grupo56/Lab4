@@ -17,9 +17,6 @@ class DataCliente : public DataUsuario{
        
         DTDireccion getDireccion();
         string getCiudad();
-  
-        void setDireccion(DTDireccion _direccion);
-        void setCiudad(string _ciudad);
 
         string toString();
 };

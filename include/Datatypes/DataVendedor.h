@@ -14,8 +14,6 @@ class DataVendedor : public DataUsuario{
       
         int getRUT();
 
-        void setRUT();
-
         string toString();
 };
 

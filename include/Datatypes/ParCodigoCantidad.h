@@ -20,9 +20,9 @@ class ParCodigoCantidad
         ~ParCodigoCantidad(); //Destructor
 
         //Getters
-        string getCodigo() const;
-        int getCantidad() const;
-        
+        string getCodigo();
+        int getCantidad();
+
 };
 
 #endif

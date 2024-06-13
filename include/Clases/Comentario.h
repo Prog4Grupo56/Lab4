@@ -4,7 +4,6 @@
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DataComentario.h"
 //#include "../Clases/Producto.h"
-#include <set>
 #include "Usuario.h"
 #include "Producto.h"
 
@@ -17,7 +16,7 @@ class Comentario
         DTFecha fecha;
         string comentario;
         int idComentario;
-        set<Comentario*> respuestas;
+        map<int,Comentario*> respuestas;
         Comentario* padre;
         Usuario* comentador;
         Producto* producto;
@@ -28,7 +27,7 @@ class Comentario
         DTFecha getFecha();
         string getComentario();
         int getIdComentario();
-        set<Comentario*> getRespuestas();
+        map<int,Comentario*> getRespuestas();
         Comentario* getPadre();
 
         void setFecha(DTFecha _fecha);
