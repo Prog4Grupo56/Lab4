@@ -55,5 +55,4 @@ void Usuario::desvincularComentario(Comentario* c){
     comentarios.erase(c->getIdComentario());
 }
 
-
-
+void  Usuario::eliminarComentario(int idComentario){}
