@@ -1,7 +1,7 @@
-#include <iostream>
 #ifndef DATACREARPROMOCION
 #define DATACREARPROMOCION
 
+#include <iostream>
 #include <vector>
 #include "../Datatypes/DataPromocion.h"
 #include "../Datatypes/ParCodigoCantidad.h"
@@ -29,6 +29,7 @@ class DataCrearPromocion {
         void setInfoP(DataPromocion _infoP);
         void setProdCant(vector<ParCodigoCantidad> _prodCant);
 
+        void agregar(ParCodigoCantidad par);
 };
 
 #endif

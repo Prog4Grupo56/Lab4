@@ -36,3 +36,5 @@ void DataCrearPromocion::setInfoP(DataPromocion _infoP){
 void DataCrearPromocion::setProdCant(vector<ParCodigoCantidad> _prodCant){
     prodCant = _prodCant;
 }
+
+void DataCrearPromocion::agregar(ParCodigoCantidad par){} //operacion necesaria en ControladorUsuario

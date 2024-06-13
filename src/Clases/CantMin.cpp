@@ -35,3 +35,7 @@ void CantMin::setPromocion(Promocion* _promocion){
 DTFecha CantMin::obtenerFechaPromocion(){
     return promocion->getFechaVenc();
 }
+
+bool CantMin::pertenecePromocion(string codigo){
+    return false;
+}
