@@ -2,6 +2,11 @@
 
 Cliente::Cliente(string _nickname, string _contrasenia, DTFecha _fecha, DTDireccion _direccion, string _ciudad):Usuario(_nickname, _contrasenia, _fecha), direccion(_direccion), ciudad(_ciudad) {};
 
+Cliente::Cliente(DataCliente cliente): Usuario(cliente.getNickname(), cliente.getContrasena(), cliente.getFecha()){
+    direccion = cliente.getDireccion();
+    ciudad = cliente.getCiudad();
+};
+
 Cliente::~Cliente(){
     /*set<Vendedor*>::iterator it;
     for (it=suscripciones.begin();it!=suscripciones.end();++it){

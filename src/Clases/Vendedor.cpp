@@ -3,6 +3,10 @@
 Vendedor::Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, int _RUT):
 Usuario(_nickname, _contrasenia, _fecha), RUT(_RUT){};
 
+Vendedor::Vendedor(DataVendedor vendedor): Usuario(vendedor.getNickname(), vendedor.getContrasena(), vendedor.getFecha()){
+    RUT = vendedor.getRUT();
+};
+
 Vendedor::~Vendedor(){
     /*set<Cliente*>::iterator it;
     for (it=suscriptores.begin();it!=suscriptores.end();++it){

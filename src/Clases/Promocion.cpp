@@ -9,7 +9,7 @@ string Promocion ::getDescripcion(){return descripcion;}
 float Promocion ::getDescuento(){return descuento;}
 DTFecha Promocion ::getFechaVenc(){return fechaVenc;}
 
-set<CantMin*> Promocion ::getCantidadesMinimas(){
+vector<CantMin*> Promocion ::getCantidadesMinimas(){
     return cantMinProductos;
 }
 
@@ -19,43 +19,36 @@ void Promocion ::setDescuento(float descuento_){ descuento = descuento_;}
 void Promocion ::setFechaVenc(DTFecha fecha_){ fechaVenc = fecha_;}
 
 void Promocion ::agregarCantMinProducto(CantMin *cMinProd){
-    cantMinProductos.insert(cMinProd);
+    cantMinProductos.push_back(cMinProd);
 }
 
 DataPromocion Promocion::getDataPromocion(){
     return DataPromocion(nombre, descripcion, fechaVenc, descuento);
 }
 
-set<ParCodigoCantidad> Promocion::aplicaEnCompra(set<ParCodigoCantidad> prodCant){
-    /*set<ParCodigoCantidad> aplican;
-
+vector<ParCodigoCantidad> Promocion::aplicaEnCompra(vector<ParCodigoCantidad> prodCant){
+    vector<ParCodigoCantidad> aplican;
     bool cumpleCmin = false;
     bool pertenece = false;
-    ParCodigoCantidad aux = ParCodigoCantidad();
 
-    set<CantMin*>::iterator it;
-    it = cantMinProductos.begin(); 
-    while(it != cantMinProductos.end() && pertenece && cumpleCmin ){
-        
-        set<ParCodigoCantidad>::iterator i;
-        i = prodCant.begin();
-        while(i != prodCant.end() && !(pertenece && cumpleCmin)){
+    long unsigned int it = 0;
+    while( it < cantMinProductos.size() ){
 
-            cumpleCmin = (*(*it)).getCantidadMinima()<=(*i).getCantidad(); 
-            pertenece = (*(*it)).pertenecePromocion( (*i).getCodigo());
-            if( pertenece && cumpleCmin ){
-                aux = (*i);
-                aplican.insert(aux);
+        long unsigned int i=0;
+        while( (i < prodCant.size()) && !(pertenece && cumpleCmin) ){
+            cumpleCmin = cantMinProductos[it]->getCantidadMinima() <= prodCant[i].getCantidad();
+            pertenece = cantMinProductos[it]->pertenecePromocion(prodCant[i].getCodigo());
+            if (pertenece && cumpleCmin) {
+                aplican.push_back(prodCant[i]);
             }
             ++i;
-        } 
-        if(pertenece && cumpleCmin){ // no inserte nada nuevo en aplican, entonces la promocion no aplica 
-            aplican.clear();
+        }
+        if (!(pertenece && cumpleCmin)) {   // Si no inserte, se recorren todos los prodCant y !(pertenece && cumpleCmin) termina en true
+            aplican.clear();     // No se insertó nada nuevo en aplican, la promoción no aplica
             return aplican;
         }
-        ++it;     
-    }
-    return aplican;*/
-    return {};
-}
 
+        ++it;
+    }
+    return aplican;
+}

@@ -33,6 +33,7 @@ class CantMin
         void setPromocion(Promocion* _promocion);
 
         DTFecha obtenerFechaPromocion();
+        bool pertenecePromocion(string codigo);
         
 
 };

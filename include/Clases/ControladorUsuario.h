@@ -1,14 +1,18 @@
 #ifndef CONTROLADOR_USUARIO
 #define CONTROLADOR_USUARIO
 
+#include <map>
+#include <vector>
 #include "../Datatypes/DTDireccion.h"
 #include "../Datatypes/DTNotificacion.h"
 #include "../Datatypes/DataVendedor.h"
 #include "../Datatypes/DataCliente.h"
 #include "../Datatypes/DataComentario.h"
-//#include "../Datatypes/dataEliminarComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
+#include "../Datatypes/ParCodigoNombre.h"
 
+#include "Fabrica.h"
+#include "DataEliminarComentario.h"
 #include "DataCrearPromocion.h"
 #include "DataEliminarSuscripcion.h"
 
@@ -25,23 +29,26 @@ class ControladorUsuario
         ControladorUsuario();
 
         string nicknameC;
-        //dataEliminarComentario dataElimCom;
-        //DataCrearPromocion dataCrearP;
-        DataEliminarSuscripcion dataElimSus;
-        set<Usuario*> usuarios;
-        set<Cliente*> clientes;
-        set<Vendedor*> vendedores;
+        DataEliminarComentario* dataElimCom;
+        DataCrearPromocion* dataCrearP;
+        DataEliminarSuscripcion* dataElimSus;
+
+        map<string, Usuario*> usuarios;
+        map<string, Cliente*> clientes;
+        map<string, Vendedor*> vendedores;      //id RUT? xd
 
     public:
         static ControladorUsuario * getInstancia();
 
-        //dataEliminarComentario getDataElimCom();
-        DataCrearPromocion getDataCrearP();
-        DataEliminarSuscripcion getDataElimSus();
+        string getNickname();
+        DataEliminarComentario* getDataElimCom();
+        DataCrearPromocion* getDataCrearP();
+        DataEliminarSuscripcion* getDataElimSus();
     
-        void setDataElimCom();
-        void setDataCrearP();
-        void setDataElimSus();
+        void setNickname(string nickCliente);
+        void setDataElimCom(DataEliminarComentario* data);
+        void setDataCrearP(DataCrearPromocion* data);
+        void setDataElimSus(DataEliminarSuscripcion* data);
 
         //Eliminar Comentario
         bool ingresarCliente(DataCliente cliente);
@@ -50,10 +57,11 @@ class ControladorUsuario
         set<DataComentario> obtenerComentariosUsuario();
         void seleccionarComentario(DataComentario comentario); 
         
-        //Alta Promocion
-        set<string> obtenerListaNicknameVendedores();
+        //Crear Promocion
+        void ingresarDatosPromocion(DataPromocion data);
+        vector<string> obtenerListaNicknameVendedores();
         void seleccionarVendedor(string nickname);
-        void obtenerListaProductosVendedor();
+        vector<ParCodigoNombre> obtenerListaProductosVendedor();
         void agregarProductoCantidad(ParCodigoCantidad parCodCant);  
         void confirmarAltaPromocion();
 
@@ -68,7 +76,7 @@ class ControladorUsuario
         set<DataVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente);
         void vendedoresASuscribirse(set<DataVendedor> vendedores); 
 
-        //Eliminar Suscripcion
+        //Eliminar Suscripcion  (Comparaciones con to_lower)
         set<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
         void seleccionarVendedoresAEliminarSuscripciones(set<DataVendedor> vendedores);
         void eliminarSuscripciones();
