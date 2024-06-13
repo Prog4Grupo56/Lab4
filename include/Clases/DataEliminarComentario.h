@@ -12,6 +12,7 @@ class DataEliminarComentario{
         string nickname;
         int idComentario;
     public:
+        DataEliminarComentario();
         DataEliminarComentario(string _nickname, int _idComentario);
         ~DataEliminarComentario();
 

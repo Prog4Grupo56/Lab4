@@ -3,6 +3,7 @@
 
 #include "../Datatypes/DTDireccion.h"
 #include "../Datatypes/DataVendedor.h"
+#include "../Datatypes/DataCliente.h"
 #include "../Datatypes/DTNotificacion.h"
 #include "Usuario.h"
 #include "Vendedor.h"
@@ -20,6 +21,7 @@ class Cliente : public Usuario{
     public:
         //Constructor
         Cliente(string _nickname, string _contrasenia, DTFecha _fecha, DTDireccion _direccion, string _ciudad);
+        Cliente(DataCliente cliente);
         //Destructor
         ~Cliente();
        

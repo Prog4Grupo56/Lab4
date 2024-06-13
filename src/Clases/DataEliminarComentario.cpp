@@ -1,5 +1,7 @@
 #include "../../include/Clases/DataEliminarComentario.h"
 
+DataEliminarComentario::DataEliminarComentario(){}
+
 DataEliminarComentario::DataEliminarComentario(string _nickname, int _idComentario){
     nickname = _nickname;
     idComentario = _idComentario;

@@ -14,8 +14,9 @@ class ParCodigoCantidad
         string codigo;
         int cantidad;
     public:
-        ParCodigoCantidad(); //Constructor
+    
         ParCodigoCantidad(string _codigo, int _cantMinima); //Constructor
+
         ~ParCodigoCantidad(); //Destructor
 
         //Getters

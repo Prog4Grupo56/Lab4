@@ -2,6 +2,10 @@
 #define VENDEDOR
 
 #include "Cliente.h"
+#include "../Datatypes/ParCodigoNombre.h"
+
+class Cliente; //fwd declaration
+class ParCodigoNombre;
 #include "Usuario.h"
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/DataVendedor.h"
@@ -9,7 +13,6 @@
 
 class Usuario;
 class Cliente;
-class Usuario;
 class Promocion;
 
 class Vendedor : public Usuario{
@@ -21,6 +24,7 @@ class Vendedor : public Usuario{
         map<string,Promocion*> promociones;
     public:
         Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, int _RUT);
+        Vendedor(DataVendedor vendedor);
         ~Vendedor();
       
         int getRUT();
