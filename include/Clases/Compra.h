@@ -21,6 +21,7 @@ class Compra
         Compra(Cliente* _clienteDeCompra, int _montoFinal);
         ~Compra(); //Destructor
 
+
         /*======= GETTERS ========*/
         float getMontoFinal();
         DTFecha getFecha();
