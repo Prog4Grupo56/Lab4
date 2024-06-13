@@ -13,7 +13,7 @@ void CrearPromocion()
     //Falta?
 
 
-    set<string> nicknamesVendedores = interfazUsuario -> obtenerListaNicknameVendedores();
+    vector<string> nicknamesVendedores = interfazUsuario -> obtenerListaNicknameVendedores();
 
 
     //====Imprimir nicknames====

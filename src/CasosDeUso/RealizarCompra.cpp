@@ -9,7 +9,7 @@ void RealizarCompra()
 Fabrica * fabrica = Fabrica::getInstance();
 ICompra * interfazCompra= fabrica -> getICompra();
 
-set<string> listaNicknames = interfazCompra->obtenerListaNicknamesClientes();
+vector<string> listaNicknames = interfazCompra->obtenerListaNicknamesClientes();
 
 
 //Imprimir nicks?
