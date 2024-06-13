@@ -197,7 +197,6 @@ vector<DataVendedor> ControladorUsuario::obtenerListaVendedoresNoSuscritos(strin
 void ControladorUsuario::vendedoresASuscribirse(vector<DataVendedor> _vendedores){
     Cliente* cliente = clientes[nicknameC];
 
-    DataVendedor dtVend;
     for(const pair<string, Vendedor*> par : vendedores){
         par.second->agregarSuscriptor(cliente);
         cliente->agregarSuscripcion(par.second);
@@ -205,9 +204,25 @@ void ControladorUsuario::vendedoresASuscribirse(vector<DataVendedor> _vendedores
 } 
 
     //Eliminar Suscripcion
-vector<DataVendedor> ControladorUsuario::obtenerListaVendedoresSuscritos(string nicknameCliente){return {};}
+vector<DataVendedor> ControladorUsuario::obtenerListaVendedoresSuscritos(string nicknameCliente){
+    dataElimSus = new DataEliminarSuscripcion();
+    dataElimSus->setNickname(nicknameCliente);
+    return clientes[nicknameCliente]->obtenerSuscripciones();
+}
 
-void ControladorUsuario::seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> vendedores){}
+void ControladorUsuario::seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> _vendedores){
+    dataElimSus->setVendedores(_vendedores);
+}
 
-void ControladorUsuario::eliminarSuscripciones(){}
+void ControladorUsuario::eliminarSuscripciones(){
+    Cliente* cliente = clientes[nicknameC];
+    vector<DataVendedor> elimVend = dataElimSus->getVendedores();
+    cliente->eliminarSuscripciones(elimVend);
+
+    for(const DataVendedor &vend : elimVend){
+        vendedores[vend.getNickname()]->eliminarSuscriptor(cliente);
+    }
+    dataElimSus->~DataEliminarSuscripcion();
+    dataElimSus = NULL;
+}
 
