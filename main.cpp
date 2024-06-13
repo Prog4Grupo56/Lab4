@@ -3,6 +3,8 @@
 #include <limits>
 #include "include/CasosDeUso/CasosDeUso.h"
 
+//poner opcion para cambiar fecha
+ 
 using namespace std;
 
 int main(){

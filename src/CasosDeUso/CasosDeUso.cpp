@@ -10,8 +10,6 @@ void ConsultarPromocion(){}
 
 void RealizarCompra(){}
 
-void DejarComentario(){}
-
 void EliminarComentario(){}
 
 void EnviarProducto(){}

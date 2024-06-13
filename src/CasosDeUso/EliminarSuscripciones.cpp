@@ -10,7 +10,6 @@ void EliminarSuscripciones(){
      cin >> nickname;
      cout << "========";
      vector<DataVendedor> lista = IU->obtenerListaVendedoresSuscritos(nickname);
-     vector<DataVendedor> aux = lista;
 
      int opcion;
      vector<DataVendedor> listaVendedoresSeleccionados;
@@ -28,15 +27,9 @@ void EliminarSuscripciones(){
                cout << "Escriba el nombre del vendedor:";
                string vendedor;
                cin >> vendedor;
-               for (char &c : vendedor) {
-                    c = tolower(c);
-               }
                
                for (long unsigned int i = 0; i < lista.size(); i++){ 
-                    for (char &c : aux[i].getNickname()) {
-                         c = tolower(c);
-                    }
-                    if (aux[i].getNickname() == vendedor){
+                    if (lista[i].getNickname() == vendedor){
                          listaVendedoresSeleccionados.push_back(lista[i]);
                          break;
                     }
