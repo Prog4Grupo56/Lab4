@@ -19,7 +19,7 @@ class Usuario{
         map<int, Comentario*> comentarios;
     public:
         //Constructor
-        Usuario(string _nickname, string _constrasenia, DTFecha _fecha);
+        Usuario(string _nickname, string _constrasenia, DTFecha _fecha); 
         //Destructor
         virtual ~Usuario();
 

@@ -1,8 +1,8 @@
-#include <iostream>
 #ifndef DATACREARPROMOCION
 #define DATACREARPROMOCION
 
-#include <set>
+#include <iostream>
+#include <vector>
 #include "../Datatypes/DataPromocion.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 
@@ -11,24 +11,25 @@ class DataCrearPromocion {
     private:
         string vendedor;
         DataPromocion infoP;
-        set<ParCodigoCantidad> prodCant;
+        vector<ParCodigoCantidad> prodCant;
     public:
         //Constructor
         DataCrearPromocion();
-        DataCrearPromocion(string _vendedor, DataPromocion _infoP, set<ParCodigoCantidad> _prodCant);
+        DataCrearPromocion(string _vendedor, DataPromocion _infoP, vector<ParCodigoCantidad> _prodCant);
         //Destructor
         ~DataCrearPromocion();
 
         //Getters   
         string getVendedor();
         DataPromocion getInfoP();
-        set<ParCodigoCantidad> getProdCant();
+        vector<ParCodigoCantidad> getProdCant();
 
         //Setters
         void setVendedor(string _vendedor);
         void setInfoP(DataPromocion _infoP);
-        void setProdCant(set<ParCodigoCantidad> _prodCant);
+        void setProdCant(vector<ParCodigoCantidad> _prodCant);
 
+        void agregar(ParCodigoCantidad par);
 };
 
 #endif
