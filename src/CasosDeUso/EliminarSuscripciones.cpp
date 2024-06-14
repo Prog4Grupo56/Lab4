@@ -35,11 +35,11 @@ void EliminarSuscripciones(){
                     }
                }
           }
-          cout << "========";
+          cout << "========"<< endl;
      } while (opcion != 0);
 
      IU->seleccionarVendedoresAEliminarSuscripciones(listaVendedoresSeleccionados); // vaciar dataelimsus en controladorUsuario
      IU->eliminarSuscripciones();
 
-     cout << "Suscripciones eliminadas correctamente.";
+     cout << "Suscripciones eliminadas exitosamente." << endl;
 }
