@@ -40,7 +40,9 @@ public:
     virtual vector<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente) = 0;
     virtual vector<DataCliente> obtenerListadoClientes() = 0;
     virtual vector<DataVendedor> obtenerListadoVendedores() = 0;
-    
+    virtual vector<DataComentario> obtenerListaComentariosProducto(string producto) = 0;
+    virtual void ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario) = 0;
+    virtual void ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre) = 0;
 };
 
 #endif

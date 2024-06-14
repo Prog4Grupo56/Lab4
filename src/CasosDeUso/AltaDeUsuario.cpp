@@ -26,14 +26,13 @@ void AltaCliente(){
     cin >> numeroDePuerta;
     cout << "Ingrese una ciudad: ";
     cin >> ciudad;
-    cout << "aaaaaaaaaaaaaaaaaa" << endl;
     DataCliente dataCliente = DataCliente(nickname, contrasena, DTFecha(dia,mes,ano), DTDireccion(calle, numeroDePuerta), ciudad);
-    cout << "aaaaaaaaaaaaaaaaaa";
+
     if (IU->ingresarCliente(dataCliente)){
-        cout << "Se ingresó correctamente el usuario.";
+        cout << "Se ingresó correctamente el usuario." << endl;
     }
     else{
-        cout << "El nickname esta ocupado. No se ingreso el usuario. ";
+        cout << "El nickname esta ocupado. No se ingreso el usuario." << endl;
     }
 }
 

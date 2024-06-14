@@ -77,6 +77,11 @@ class ControladorUsuario : public IUsuario{
         vector<string> obtenerListaNicknamesClientes();
         Cliente* obtenerClienteCompra(string nickname);
 
+        //Dejar comentario
+        vector<DataComentario> obtenerListaComentariosProducto(string codigoProducto);
+        void ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario);
+        void ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre);
+
         //Consultar Notificaciones
         vector<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente);
 
@@ -88,6 +93,6 @@ class ControladorUsuario : public IUsuario{
         vector<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
         void seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> vendedores);
         void eliminarSuscripciones();
-};
+};  
 
 #endif

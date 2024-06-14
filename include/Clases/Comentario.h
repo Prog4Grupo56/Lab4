@@ -29,6 +29,8 @@ class Comentario
         int getIdComentario();
         map<int,Comentario*> getRespuestas();
         Comentario* getPadre();
+        Producto* getProducto();
+        Usuario* getComentador();
 
         void setFecha(DTFecha _fecha);
         void setComentario(string _comentario);
