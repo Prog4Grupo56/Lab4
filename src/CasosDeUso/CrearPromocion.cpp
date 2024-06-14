@@ -6,6 +6,7 @@
 
 void CrearPromocion()
 {
+
     Fabrica* fabrica = Fabrica::getInstance();
     IUsuario* interfazUsuario = fabrica -> getIUsuario();
 
@@ -17,14 +18,21 @@ void CrearPromocion()
 
 
     //====Imprimir nicknames====
+    for(int i = 0; i < nicknamesVendedores.size();i++)
+    {
+        cout << nicknamesVendedores[i] << "\n";
+    }
     cout << "Seleccione un vendedor: \n";
     string seleccion;
     cin >> seleccion;
     interfazUsuario -> seleccionarVendedor(seleccion); //Queda guardado en dataCrearP
 
 
-    //set<ParCodigoNombre> productos = IUsuario -> obtenerListaProductosVendedor(); //El include esta en el IUsuario.h
-    //====Imprimir productos===
+    //vector<ParCodigoNombre> productos = interfazUsuario -> obtenerListaProductosVendedor(); //El include esta en el IUsuario.h
+    /*
+    for(int i = 0; i < productos.size();i++)
+        cout << productos.getNombre() << "\n";
+    */
     cout << "Seleccione un producto:\n";
     string id;
     cin >> id;

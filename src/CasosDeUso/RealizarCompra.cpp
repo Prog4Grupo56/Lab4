@@ -12,7 +12,8 @@ ICompra * interfazCompra= fabrica -> getICompra();
 vector<string> listaNicknames = interfazCompra->obtenerListaNicknamesClientes();
 
 
-//Imprimir nicks?
+for(int i = 0; i < listaNicknames.size(); i++)
+    cout << listaNicknames[i] << "\n";
 cout << "Seleccione un cliente: \n";
 string seleccion;
 cin >> seleccion;
