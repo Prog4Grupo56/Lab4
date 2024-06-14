@@ -264,3 +264,7 @@ void ControladorUsuario::eliminarSuscripciones(){
     dataElimSus = NULL;
 }
 
+    //Enviar Producto
+vector<ParCodigoNombre> ControladorUsuario::obtenerProductosPendientesEnvio(string nickVendedor){
+    return {};
+}

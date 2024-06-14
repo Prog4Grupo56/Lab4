@@ -93,6 +93,9 @@ class ControladorUsuario : public IUsuario{
         vector<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
         void seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> vendedores);
         void eliminarSuscripciones();
+
+        //Enviar Producto
+        vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
 };  
 
 #endif
