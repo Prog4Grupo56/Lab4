@@ -4,8 +4,8 @@ ParCompraProductos::ParCompraProductos(){
 
 }
 
-ParCompraProductos::ParCompraProductos(float _montoF, set<DataProducto> _dProductos){
-    fechaActual = DTFecha(0,0,0); // ver tema de fecha actual
+ParCompraProductos::ParCompraProductos(float _montoF, vector<DataProducto> _dProductos, DTFecha fecha){
+    fechaActual = fecha;
     dProductos = _dProductos;
     montoF = montoF;
 }
@@ -20,6 +20,6 @@ float ParCompraProductos::getMontoFinal(){
     return montoF;
 }
 
-set<DataProducto> ParCompraProductos::getProductos(){
+vector<DataProducto> ParCompraProductos::getProductos(){
     return dProductos;
 }

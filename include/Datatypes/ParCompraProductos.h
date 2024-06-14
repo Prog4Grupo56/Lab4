@@ -4,7 +4,7 @@
 #include "../Datatypes/DataProducto.h"
 #include "DTFecha.h"
 
-#include <set>
+#include <vector>
 
 using namespace std;
 
@@ -13,16 +13,16 @@ class ParCompraProductos
     private:
        DTFecha fechaActual;
        float montoF;
-       set<DataProducto> dProductos;
+       vector<DataProducto> dProductos;
     public:
         ParCompraProductos();
-        ParCompraProductos(float _montoF, set<DataProducto> _dProductos); //Constructor
+        ParCompraProductos(float _montoF, vector<DataProducto> _dProductos, DTFecha fecha); //Constructor
         ~ParCompraProductos(); //Destructor
 
         //Getters
         DTFecha getFecha();
         float getMontoFinal();
-        set<DataProducto> getProductos();
+        vector<DataProducto> getProductos();
 
 };
 
