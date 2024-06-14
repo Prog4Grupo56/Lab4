@@ -186,6 +186,28 @@ Cliente* ControladorUsuario::obtenerClienteCompra(string nickname){
     return clientes[nickname];
 }
 
+    //Dejar comentario
+vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(string codigoProducto){
+
+    vector<DataComentario> lista;
+
+    map<string,Usuario*>::iterator itU;
+
+    for(itU = usuarios.begin(); itU != usuarios.end(); ++itU){
+        Usuario* u = itU->second;
+        vector<DataComentario> comentariosUsuario = u->obtenerComentarios();
+        for (unsigned int i = 0; i < comentariosUsuario.size(); i++){
+            if (comentariosUsuario[i].getCodigoProducto() == codigoProducto){
+                lista.push_back(comentariosUsuario[i]);
+            }
+        }
+    }
+    return lista;
+}
+
+void ControladorUsuario::ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario){};
+
+void ControladorUsuario::ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre){};
 
     //Consultar Notificaciones
 vector<DTNotificacion> ControladorUsuario::obtenerListaNotificaciones(string nicknameCliente){
