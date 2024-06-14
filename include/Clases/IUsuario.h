@@ -6,10 +6,9 @@
 #include "../Datatypes/DataCliente.h"
 #include "../Datatypes/DataVendedor.h"
 #include "../Datatypes/DataComentario.h"
-#include "Cliente.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/DataPromocion.h"
-//#include "../Datatypes/ParCodigoNombre.h"
+#include "../Datatypes/ParCodigoNombre.h"
 #include "../Datatypes/DTNotificacion.h"
 
 class Cliente;
@@ -27,7 +26,7 @@ public:
     virtual void ingresarDatosPromocion(DataPromocion data) = 0;
     virtual vector<string> obtenerListaNicknameVendedores() = 0;
     virtual void seleccionarVendedor(string nickname) = 0;
-    // virtual vector<ParCodigoNombre> obtenerListaProductosVendedor(string nickname) = 0;
+    virtual vector<ParCodigoNombre> obtenerListaProductosVendedor(string nickname) = 0;
     virtual void agregarProductoCantidad(ParCodigoCantidad parCodCant) = 0;
     virtual void confirmarAltaPromocion() = 0;
     virtual vector<string> obtenerListaNicknamesClientes() = 0;
