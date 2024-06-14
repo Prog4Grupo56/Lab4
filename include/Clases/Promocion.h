@@ -23,7 +23,7 @@ class Promocion
 
     public:
         //Constructor
-        Promocion(DataPromocion promocion);
+        Promocion(DataPromocion _promocion, vector<CantMin*> _cantidadesMinimas);
 
         //Destructor
         ~Promocion();
