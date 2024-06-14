@@ -19,7 +19,7 @@ class Vendedor : public Usuario{
     private:
         int RUT;
         map<string,Cliente*> suscriptores;
-        void notificarClientes(vector<DataProducto> dtProductos, string nombrePromocion); // privado porque asi esta en el template
+        void notificarClientes(vector<DataProducto> dtProductos, string nombrePromocion);
         map<string,Producto*> productos;
         map<string,Promocion*> promociones;
     public:
@@ -29,9 +29,7 @@ class Vendedor : public Usuario{
       
         int getRUT();
         vector<ParCodigoNombre> obtenerProductos();
-        DataVendedor getDataVendedor(); //implementar
-    
-        //obtener suscriptores y promociones?
+        DataVendedor getDataVendedor();
 
         void setRUT(int _RUT);
         void agregarSuscriptor(Cliente* c);

@@ -8,11 +8,6 @@ Vendedor::Vendedor(DataVendedor vendedor): Usuario(vendedor.getNickname(), vende
 };
 
 Vendedor::~Vendedor(){
-    /*set<Cliente*>::iterator it;
-    for (it=suscriptores.begin();it!=suscriptores.end();++it){
-        Cliente* c = *it;
-        c->eliminarSuscripcion(this);
-    }*/
 };
 
 /*======= GETTERS ========*/
@@ -21,7 +16,7 @@ int Vendedor::getRUT(){
 };
 
 DataVendedor Vendedor::getDataVendedor(){
-    return DataVendedor(this->getNickname(), this->getContrasena(), this->getFecha(), RUT); //Faltan datos
+    return DataVendedor(this->getNickname(), this->getContrasena(), this->getFecha(), RUT);
 }
 
 vector<ParCodigoNombre> Vendedor::obtenerProductos(){

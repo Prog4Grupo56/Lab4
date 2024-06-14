@@ -14,5 +14,3 @@ void EliminarComentario(){}
 
 void EnviarProducto(){}
 
-void ExpedienteDeUsuario(){}
-
