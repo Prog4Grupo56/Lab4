@@ -26,9 +26,9 @@ void AltaCliente(){
     cin >> numeroDePuerta;
     cout << "Ingrese una ciudad: ";
     cin >> ciudad;
-
+    cout << "aaaaaaaaaaaaaaaaaa" << endl;
     DataCliente dataCliente = DataCliente(nickname, contrasena, DTFecha(dia,mes,ano), DTDireccion(calle, numeroDePuerta), ciudad);
-
+    cout << "aaaaaaaaaaaaaaaaaa";
     if (IU->ingresarCliente(dataCliente)){
         cout << "Se ingresó correctamente el usuario.";
     }
