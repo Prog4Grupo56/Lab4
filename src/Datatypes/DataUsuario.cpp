@@ -12,7 +12,7 @@ DataUsuario::~DataUsuario(){
     
 };
 
-string DataUsuario::getNickname(){
+string DataUsuario::getNickname() const{
     return nickname;
 }
 DTFecha DataUsuario::getFecha(){

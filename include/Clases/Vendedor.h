@@ -29,7 +29,7 @@ class Vendedor : public Usuario{
       
         int getRUT();
         vector<ParCodigoNombre> obtenerProductos();
-        DataVendedor getDataVendedor();
+        DataVendedor getDataVendedor(); //implementar
     
         //obtener suscriptores y promociones?
 
