@@ -62,7 +62,7 @@ class ControladorUsuario : public IUsuario{
         vector<string> obtenerListaNicknamesUsuarios();
         void seleccionarUsuario(string nickname); 
         vector<DataComentario> obtenerComentariosUsuario();
-        void seleccionarComentario(DataComentario comentario); 
+        void seleccionarComentario(int idComentario); 
         void eliminarComentario();
         
         //Crear Promocion

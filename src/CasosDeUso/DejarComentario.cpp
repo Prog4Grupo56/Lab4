@@ -24,7 +24,4 @@ void DejarComentario(){
         cout << listaProductos[i].getNombre() << endl;
     }
 
-    
-
-
 }
