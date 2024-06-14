@@ -1,6 +1,12 @@
 #include "../../include/Clases/Promocion.h"
 
-Promocion :: Promocion(DataPromocion dtPromocion){}
+Promocion :: Promocion(DataPromocion _promocion, vector<CantMin*> _cantidadesMinimas){
+    cantMinProductos = _cantidadesMinimas;
+    nombre = _promocion.getNombre();
+    descripcion = _promocion.getDescripcion();
+    descuento = _promocion.getDescuento();
+    fechaVenc = _promocion.getFechaVenc();
+}
 
 Promocion ::~Promocion(){}
 
