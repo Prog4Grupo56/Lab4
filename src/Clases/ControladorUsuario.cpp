@@ -106,9 +106,8 @@ vector<DataComentario> ControladorUsuario::obtenerComentariosUsuario(){
     return comentarios;
 }
 
-void ControladorUsuario::seleccionarComentario(DataComentario comentario){
-    int idComentario = comentario.getIdComentario();
-    dataElimCom->setIdComentario(idComentario);
+void ControladorUsuario::seleccionarComentario(int _idComentario){
+    dataElimCom->setIdComentario(_idComentario);
 }
 
 void ControladorUsuario::eliminarComentario(){
