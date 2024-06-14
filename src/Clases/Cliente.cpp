@@ -46,6 +46,10 @@ vector<DataVendedor> Cliente::obtenerSuscripciones(){
     return lista;
 }
 
+DataCliente Cliente::getDataCliente(){
+    return DataCliente(this->getNickname(), this->getContrasena(), this->getFecha(), direccion, ciudad);
+};
+
 /*======= SETTERS ========*/
 void Cliente::setDireccion(DTDireccion _direccion){
     direccion = _direccion;

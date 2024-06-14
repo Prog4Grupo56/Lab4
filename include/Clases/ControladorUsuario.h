@@ -23,8 +23,7 @@ class Usuario;
 
 //class ;
 
-class ControladorUsuario
-{
+class ControladorUsuario : public IUsuario{
     private:
         static ControladorUsuario* instancia;
         ControladorUsuario();
@@ -54,6 +53,10 @@ class ControladorUsuario
         //Alta Usuario
         bool ingresarCliente(DataCliente cliente);
         bool ingresarVendedor(DataVendedor vendedor);
+
+        //Listado de Usuarios
+        vector<DataCliente> obtenerListadoClientes();
+        vector<DataVendedor> obtenerListadoVendedores();
 
         //Eliminar Comentario
         vector<string> obtenerListaNicknamesUsuarios();

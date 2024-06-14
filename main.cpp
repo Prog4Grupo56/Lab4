@@ -3,6 +3,8 @@
 #include <limits>
 #include "include/CasosDeUso/CasosDeUso.h"
 
+//poner opcion para cambiar fecha
+ 
 using namespace std;
 
 int main(){
@@ -99,6 +101,8 @@ int main(){
             opcion = -1; // si no hago esto se setea a 0 y termina el loop, lo vi en el debugger.
         }      
     } while (opcion != 0);
+
+    //ELIMINAR MEMORIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
     return 0;
 

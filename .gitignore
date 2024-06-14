@@ -1,6 +1,5 @@
 .vscode/
 obj
 main.exe
-guardar
-.vscode/settings.json
-**/.vscode/
+main
+.gitignore
