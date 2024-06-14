@@ -11,13 +11,14 @@ Fabrica* Fabrica::getInstance() {
     return instancia;
 }
 
-// Tanto para IUsuario como para ICompra hace falta hacer cambios en los .h y .cpp
-
 IUsuario* Fabrica::getIUsuario() {
-    //return ControladorUsuario::getInstancia();
-    return NULL;
+    return ControladorUsuario::getInstancia();
 }
 
 ICompra* Fabrica::getICompra() {
     return ControladorCompra::getInstancia(); 
+}
+
+IFecha* Fabrica::getIFecha(){
+    return ControladorFecha::getInstancia();
 }
