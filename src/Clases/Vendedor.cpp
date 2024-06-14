@@ -21,7 +21,7 @@ int Vendedor::getRUT(){
 };
 
 DataVendedor Vendedor::getDataVendedor(){
-    return DataVendedor(); //Faltan datos
+    return DataVendedor(this->getNickname(), this->getContrasena(), this->getFecha(), RUT); //Faltan datos
 }
 
 vector<ParCodigoNombre> Vendedor::obtenerProductos(){

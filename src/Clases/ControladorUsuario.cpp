@@ -65,6 +65,22 @@ bool ControladorUsuario::ingresarVendedor(DataVendedor vendedor){
     return noExiste;
 }
 
+    //Listado de Usuarios
+vector<DataVendedor> ControladorUsuario::obtenerListadoVendedores(){
+    vector<DataVendedor> v;
+    for(const pair<string, Vendedor*> par : vendedores){  
+        v.push_back(par.second->getDataVendedor());
+    }
+    return v;
+};
+vector<DataCliente> ControladorUsuario::obtenerListadoClientes(){
+    vector<DataCliente> c;
+    for(const pair<string, Cliente*> par : clientes){  
+        c.push_back(par.second->getDataCliente());
+    }
+    return c;
+};
+
     //Eliminar Comentario
 vector<string> ControladorUsuario::obtenerListaNicknamesUsuarios(){
     vector<string> listaUsuarios;
@@ -135,8 +151,9 @@ void ControladorUsuario::agregarProductoCantidad(ParCodigoCantidad parCodCant){
     bool fueAgregado = false;
 
     long unsigned int it = 0;
-    while( it < tamanio || !fueAgregado){
+    while( it < tamanio && !fueAgregado){
         fueAgregado = (prodCant[it].getCodigo() == parCodCant.getCodigo());
+        ++it;
     }
     if(!fueAgregado){
         dataCrearP->agregar(parCodCant);

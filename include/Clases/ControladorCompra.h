@@ -24,8 +24,7 @@ class Fabrica;
 
 using namespace std;
 
-class ControladorCompra : public ICompra
-{
+class ControladorCompra : public ICompra{
     private:
         static ControladorCompra * instancia;
         DataInfoCompra * dataInfoC;
