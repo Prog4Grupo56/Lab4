@@ -38,7 +38,8 @@ public:
     virtual vector<DataVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente) = 0;
     virtual void vendedoresASuscribirse(vector<DataVendedor> vendedores) = 0;
     virtual vector<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente) = 0;
-    virtual vector<DataUsuario> obtenerListadoUsuarios() = 0;
+    virtual vector<DataCliente> obtenerListadoClientes() = 0;
+    virtual vector<DataVendedor> obtenerListadoVendedores() = 0;
     
 };
 
