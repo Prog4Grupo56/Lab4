@@ -12,18 +12,18 @@
 #include "../Datatypes/ParCodigoNombre.h"
 
 #include "Fabrica.h"
+#include "Vendedor.h"
+#include "Cliente.h"
 #include "DataEliminarComentario.h"
 #include "DataCrearPromocion.h"
 #include "DataEliminarSuscripcion.h"
 
-#include "Vendedor.h"
 
 class Usuario;
 
 //class ;
 
-class ControladorUsuario
-{
+class ControladorUsuario : public IUsuario{
     private:
         static ControladorUsuario* instancia;
         ControladorUsuario();
@@ -50,12 +50,20 @@ class ControladorUsuario
         void setDataCrearP(DataCrearPromocion* data);
         void setDataElimSus(DataEliminarSuscripcion* data);
 
-        //Eliminar Comentario
+        //Alta Usuario
         bool ingresarCliente(DataCliente cliente);
         bool ingresarVendedor(DataVendedor vendedor);
-        set<string> obtenerListaNicknamesUsuarios(); 
-        set<DataComentario> obtenerComentariosUsuario();
+
+        //Listado de Usuarios
+        vector<DataCliente> obtenerListadoClientes();
+        vector<DataVendedor> obtenerListadoVendedores();
+
+        //Eliminar Comentario
+        vector<string> obtenerListaNicknamesUsuarios();
+        void seleccionarUsuario(string nickname); 
+        vector<DataComentario> obtenerComentariosUsuario();
         void seleccionarComentario(DataComentario comentario); 
+        void eliminarComentario();
         
         //Crear Promocion
         void ingresarDatosPromocion(DataPromocion data);
@@ -66,19 +74,19 @@ class ControladorUsuario
         void confirmarAltaPromocion();
 
         //Realizar Compra
-        set<string> obtenerListaNicknamesClientes();
-        void obtenerClienteCompra(string nickname);
+        vector<string> obtenerListaNicknamesClientes();
+        Cliente* obtenerClienteCompra(string nickname);
 
         //Consultar Notificaciones
-        set<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente);
+        vector<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente);
 
         //Suscribirse a Notificaciones
-        set<DataVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente);
-        void vendedoresASuscribirse(set<DataVendedor> vendedores); 
+        vector<DataVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente);
+        void vendedoresASuscribirse(vector<DataVendedor> vendedores); 
 
-        //Eliminar Suscripcion  (Comparaciones con to_lower)
-        set<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
-        void seleccionarVendedoresAEliminarSuscripciones(set<DataVendedor> vendedores);
+        //Eliminar Suscripcion 
+        vector<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
+        void seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> vendedores);
         void eliminarSuscripciones();
 };
 

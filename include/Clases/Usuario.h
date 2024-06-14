@@ -35,7 +35,7 @@ class Usuario{
 
         void setComentario(Comentario* comentario); //Caso de uso dejar comentario
         
-        void eliminarComentario();
+        void eliminarComentario(int idComentario);
         void desvincularComentario(Comentario* c);
 };
 

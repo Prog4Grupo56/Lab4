@@ -29,6 +29,7 @@ class Cliente : public Usuario{
         string getCiudad();
         vector<DTNotificacion> getNotificaciones();
         vector<DataVendedor> obtenerSuscripciones();
+        DataCliente getDataCliente();
 
         void setDireccion(DTDireccion _direccion);
         void setCiudad(string _ciudad);

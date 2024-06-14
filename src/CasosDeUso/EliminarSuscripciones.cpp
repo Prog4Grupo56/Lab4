@@ -8,11 +8,8 @@ void EliminarSuscripciones(){
      cout << "Ingrese su nickname: ";
      string nickname;
      cin >> nickname;
+     cout << "========";
      vector<DataVendedor> lista = IU->obtenerListaVendedoresSuscritos(nickname);
-
-     for (long unsigned int i = 0; i < lista.size(); i++){
-          cout << lista[i].toString() << endl;
-     }
 
      int opcion;
      vector<DataVendedor> listaVendedoresSeleccionados;
@@ -22,20 +19,27 @@ void EliminarSuscripciones(){
           cout << "0. Terminar.";
           cout << "1. Agregar vendedor." << endl;
           cin >> opcion;
+          cout << "========";
           if (opcion == 1){
-               //imprimir vendedores
-
-
-
-               cout << "========";
+               for (long unsigned int i = 0; i < lista.size(); i++){ //imprimo 
+                    cout << lista[i].toString() << endl;
+               }
                cout << "Escriba el nombre del vendedor:";
                string vendedor;
                cin >> vendedor;
-               //find vendedor en lista
-               //insert vendedor en listaVendedoresSeleccionados
-          };
+               
+               for (long unsigned int i = 0; i < lista.size(); i++){ 
+                    if (lista[i].getNickname() == vendedor){
+                         listaVendedoresSeleccionados.push_back(lista[i]);
+                         break;
+                    }
+               }
+          }
+          cout << "========";
      } while (opcion != 0);
 
      IU->seleccionarVendedoresAEliminarSuscripciones(listaVendedoresSeleccionados); // vaciar dataelimsus en controladorUsuario
      IU->eliminarSuscripciones();
+
+     cout << "Suscripciones eliminadas correctamente.";
 }

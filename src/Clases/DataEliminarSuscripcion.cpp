@@ -4,7 +4,7 @@ DataEliminarSuscripcion::DataEliminarSuscripcion(){
 
 };
 
-DataEliminarSuscripcion::DataEliminarSuscripcion(string _nickname, set<DataVendedor> _vendedores): vendedores(_vendedores){
+DataEliminarSuscripcion::DataEliminarSuscripcion(string _nickname, vector<DataVendedor> _vendedores): vendedores(_vendedores){
     nickname = _nickname;
 };
 
@@ -15,7 +15,7 @@ string DataEliminarSuscripcion::getNickname(){
     return nickname;
 }
 
-set<DataVendedor> DataEliminarSuscripcion::getVendedores(){
+vector<DataVendedor> DataEliminarSuscripcion::getVendedores(){
     return vendedores;
 }
 
@@ -24,6 +24,6 @@ void DataEliminarSuscripcion::setNickname(string _nickname){
     nickname = _nickname;
 }
 
-void DataEliminarSuscripcion::setVendedores(set<DataVendedor> _vendedores){
+void DataEliminarSuscripcion::setVendedores(vector<DataVendedor> _vendedores){
     vendedores = _vendedores;
 }

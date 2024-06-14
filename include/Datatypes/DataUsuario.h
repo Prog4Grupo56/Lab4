@@ -17,7 +17,7 @@ class DataUsuario{
 
         virtual ~DataUsuario();
 
-        string getNickname();
+        string getNickname() const;
         DTFecha getFecha();
         string getContrasena();
 
