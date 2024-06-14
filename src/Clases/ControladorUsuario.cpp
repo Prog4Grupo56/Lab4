@@ -41,7 +41,7 @@ bool ControladorUsuario::ingresarCliente(DataCliente cliente){
         ++it;
     }
 
-    Cliente* c = new Cliente(cliente); 
+    Cliente* c = new Cliente(cliente);
     usuarios.insert(pair<string, Usuario*>(nickCliente, c) );
     return noExiste;
 }
@@ -87,10 +87,11 @@ void ControladorUsuario::agregarProductoCantidad(ParCodigoCantidad parCodCant){
     bool fueAgregado = false;
 
     long unsigned int it = 0;
-    while( it < tamanio || !fueAgregado){
+    while( it < tamanio || /*and?*/ !fueAgregado){
         fueAgregado = (prodCant[it].getCodigo() == parCodCant.getCodigo());
+        //falta aumentar it
     }
-    if(!fueAgregado){
+    if(!fueAgregado){ // hay que chequear si it < tamanio, no eso
         dataCrearP->agregar(parCodCant);
     }
 }  
