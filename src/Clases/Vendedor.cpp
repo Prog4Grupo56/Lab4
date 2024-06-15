@@ -88,3 +88,23 @@ vector<DataProducto> Vendedor::obtenerInfoProductos(){
     }
     return dProductos;
 }
+
+vector<ParCodigoNombre> Vendedor::obtenerProductosPendientesEnvio(){
+    vector<ParCodigoNombre> prodPend;
+
+    for(const pair<string, Producto*> par : productos){
+        vector<CompraProducto*> compraProductos = par.second->getCompraProducto();
+
+        if(!compraProductos.empty()){
+            long unsigned int it = 0;
+            while( it < compraProductos.size() && compraProductos[it]->getEstado()){
+                ++it;
+            }
+            if(compraProductos[it]->getEstado()){
+                prodPend.push_back(ParCodigoNombre(par.second->getNombre() ,par.second->getCodigo() ));
+            }
+        }
+    }
+
+    return prodPend;
+}

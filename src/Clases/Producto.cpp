@@ -56,14 +56,14 @@ bool Producto::pertenecePromoVigente(){
 }
 
 void Producto::crearEnvio(Compra* c, int cantidad){  
-    compraProducto.insert(new CompraProducto(c, cantidad));
+    compraProducto.push_back(new CompraProducto(c, cantidad));
 }
 
 CantMin* Producto::getCantMin(){
     return cantMin;
 }
 
-set<CompraProducto*> Producto::getCompraProducto(){
+vector<CompraProducto*> Producto::getCompraProducto(){
     return compraProducto;
 }
 
@@ -71,6 +71,6 @@ void Producto::setCantMin(CantMin* _cantMin){
     cantMin = _cantMin;
 }
 
-void Producto::setCompraProducto(set<CompraProducto*> _compraProducto){
+void Producto::setCompraProducto(vector<CompraProducto*> _compraProducto){
     compraProducto = _compraProducto;
 }

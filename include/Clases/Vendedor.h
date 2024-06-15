@@ -43,6 +43,8 @@ class Vendedor : public Usuario{
         vector<DataPromocion> obtenerInfoPromocionesVigentes(DTFecha _fecha);
         vector<DataProducto> obtenerInfoProductos();
 
+        vector<ParCodigoNombre> obtenerProductosPendientesEnvio();
+
 };
 
 #endif

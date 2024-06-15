@@ -124,8 +124,9 @@ vector<ParCodigoNombre> ControladorCompra::obtenerProductosPendientesEnvio(strin
     Fabrica* f = Fabrica::getInstance();
     IUsuario* IU = f->getIUsuario();
     
-    Vendedor* v = IU->obtenerVendedor(nickVendedor);
-    return {};
+    vector<ParCodigoNombre> prodPend = IU->obtenerProductosVendedorEnvio(nickVendedor);
+
+    return prodPend;
 }//implementar
 
 vector<ParNickFecha> ControladorCompra::obtenerParNickFechaEnvio(string producto){

@@ -22,7 +22,7 @@ class Producto
         int stock;
         float precio;
         CantMin* cantMin;
-        set<CompraProducto*> compraProducto;
+        vector<CompraProducto*> compraProducto;
     
     public:
         //Constructor
@@ -38,7 +38,7 @@ class Producto
         int getStock();
         float getPrecio();
         CantMin* getCantMin();
-        set<CompraProducto*> getCompraProducto();
+        vector<CompraProducto*> getCompraProducto();
     
         void setCodigo(string _codigo);
         void setCategoria(Categoria _categoria);
@@ -47,7 +47,7 @@ class Producto
         void setStock(int _stock);
         void setPrecio(float _precio);
         void setCantMin(CantMin* _cantMin);
-        void setCompraProducto(set<CompraProducto*> _compraProducto);
+        void setCompraProducto(vector<CompraProducto*> _compraProducto);
 
         //Operaciones:
         DataProducto getDataProducto();

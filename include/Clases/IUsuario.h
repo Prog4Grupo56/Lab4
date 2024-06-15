@@ -59,7 +59,7 @@ public:
 
     virtual string obtenerInfoUsuario(string nickname) = 0;
     //Enviar Producto
-    virtual Vendedor* obtenerVendedor(string nickVendedor) = 0;
+    virtual vector<ParCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor) = 0;
 
 };
 

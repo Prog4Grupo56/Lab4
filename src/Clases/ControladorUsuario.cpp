@@ -301,8 +301,11 @@ void ControladorUsuario::eliminarSuscripciones(){
 }
 
 //Enviar Producto
-Vendedor* ControladorUsuario::obtenerVendedor(string nickVendedor){}
+vector<ParCodigoNombre> ControladorUsuario::obtenerProductosVendedorEnvio(string nickVendedor){
+    return vendedores[nickVendedor]->obtenerProductosPendientesEnvio();
+}
 
+//Algun caso de uso
 string ControladorUsuario::obtenerInfoUsuario(string nickname){
 
     Fabrica* f = Fabrica::getInstance();
