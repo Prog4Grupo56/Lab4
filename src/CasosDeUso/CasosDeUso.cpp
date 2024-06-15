@@ -1,7 +1,5 @@
 #include "../../include/CasosDeUso/CasosDeUso.h"
 
-void AltaDeProducto(){}
-
 void ConsultarProducto(){}
 
 void CrearPromocion(){}

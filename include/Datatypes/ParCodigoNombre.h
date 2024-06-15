@@ -11,14 +11,14 @@ using namespace std;
 class ParCodigoNombre
 {
     private:
-        string codigo;
+        int codigo;
         string nombre;
     public:
-        ParCodigoNombre(string _nombre, string _codigo); //Constructor
+        ParCodigoNombre(string _nombre, int _codigo); //Constructor
         ~ParCodigoNombre(); //Destructor
 
         //Getters
-        string getCodigo();
+        int getCodigo();
         string getNombre();
         
 };

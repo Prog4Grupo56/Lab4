@@ -1,12 +1,21 @@
 #include "../../include/Clases/Producto.h"
 
 //Constructor
-Producto::Producto(){}
+Producto::Producto(int _codigo, Categoria _categoria, string _nombre, string _descripcion, int _stock, float _precio, Vendedor* _vendedor){
+    codigo = _codigo;
+    categoria = _categoria;
+    nombre = _nombre;
+    descripcion = _descripcion;
+    stock = _stock;
+    precio = _precio;
+    cantMin = NULL;
+    vendedor = _vendedor;
+}
 
 //Destructor
 Producto::~Producto(){}
 
-string Producto::getCodigo(){
+int Producto::getCodigo(){
     return codigo;
 }
 string Producto::getCategoria(){
@@ -25,7 +34,7 @@ float Producto::getPrecio(){
     return precio;
 }
 
-void Producto::setCodigo(string _codigo){
+void Producto::setCodigo(int _codigo){
     codigo = _codigo;
 }
 void Producto::setCategoria(Categoria _categoria){
