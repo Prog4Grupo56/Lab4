@@ -135,8 +135,12 @@ vector<DataPromocion> ControladorCompra::obtenerInfoPromociones(DTFecha _fecha){
 }
 
 string ControladorCompra::obtenerInfoPromocion(string nombre){
-    //Promocion* promocion = promociones[nombre];
-    //string info;
-    return "";
+    Promocion* promocion = promociones[nombre];
+    string info = "Vendedor: " + promocion->getCantidadesMinimas()[0]->getProducto()->getVendedor()->getNickname();
+    info += "Productos: ";
+    for(unsigned int i = 0 ; promocion->getCantidadesMinimas().size(); i++){
+        info += "\n\t" + promocion->getCantidadesMinimas()[i]->getProducto()->getDataProducto().toString();
+    }
+    return info;
 
 }
