@@ -10,6 +10,7 @@
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/DataVendedor.h"
 #include "../Datatypes/ParCompraProductos.h"
+#include "../Datatypes/ParNickFecha.h"
 
 class Vendedor;
 
@@ -24,6 +25,10 @@ public:
     virtual void seleccionarCliente(string nickname) = 0;
     virtual void confirmarCompra() = 0;
     
+    //Enviar Producto
+    virtual vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor) = 0; //Implementar
+    virtual vector<ParNickFecha> obtenerParNickFechaEnvio(string producto) = 0; //Implementar
+    virtual void enviarProducto() = 0; //Implementar
 };
 
 #endif

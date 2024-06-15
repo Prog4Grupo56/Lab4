@@ -15,6 +15,7 @@ el Sistema marca el producto en la compra como enviado
 void EnviarProducto(){
     Fabrica* F = Fabrica::getInstance();
     IUsuario* IU = F->getIUsuario();
+    ICompra* IC = F->getICompra();
 
     vector<string> listaNicknames = IU->obtenerListaNicknameVendedores();
 
@@ -30,11 +31,11 @@ void EnviarProducto(){
     IU->seleccionarUsuario(nickname);
     cout << "========";
 
-    vector<ParCodigoNombre> productos = IU->obtenerProductosPendientesEnvio(nickname); //Implementar
+    vector<ParCodigoNombre> productos = IC->obtenerProductosPendientesEnvio(nickname); //Implementar
 
     cout << "Productos del vendedor:" << endl;
     for (long unsigned int i = 0; i < productos.size(); i++){
-        cout << ( ( productos[i].getCodigo() ).append("-") ).append(productos[i].getNombre() ) << endl;
+        cout << productos[i].getCodigo() << "-" << productos[i].getNombre() << endl;
     }
 
     cout << "========";
@@ -43,18 +44,18 @@ void EnviarProducto(){
     cin >> producto;
     cout << "========";
 
-    vector<ParNickFecha> comprasProducto = IU -> obtenerParNickFechaEnvio(producto); // Implementar
+    vector<ParNickFecha> comprasProducto = IC -> obtenerParNickFechaEnvio(producto); // Implementar
 
     cout << "Clientes pendientes de envio del producto:" << endl;
     for (long unsigned int i = 0; i < comprasProducto.size(); i++){
-        cout << ( ( comprasProducto[i].getNickname() ).append("-") ).append(comprasProducto[i].getFecha().toString() ) << endl;
+        cout << comprasProducto[i].getNickname() << "-" << comprasProducto[i].getFecha().toString() << endl;
     }
 
     cout << "========";
     cout << "Seleccione uno (nombre): ";
-    string envio;
-    cin >> envio;
+    string cliente;
+    cin >> cliente;
     cout << "========";
 
-    
+    IC->enviarProducto();
 }

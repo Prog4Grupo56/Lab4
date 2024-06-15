@@ -96,8 +96,7 @@ class ControladorUsuario : public IUsuario{
         void eliminarSuscripciones();
 
         //Enviar Producto
-        vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);//Implementar
-        vector<ParNickFecha> obtenerParNickFechaEnvio(string producto); //Implementar
+        Vendedor* obtenerVendedor(string nickVendedor);
 };  
 
 #endif
