@@ -135,3 +135,8 @@ vector<ParNickFecha> ControladorCompra::obtenerParNickFechaEnvio(string producto
 void ControladorCompra::enviarProducto(){
 
 } //Implementar
+
+
+Producto* ControladorCompra::obtenerProducto(string _codigoProducto){
+    return productos[_codigoProducto];
+}

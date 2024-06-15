@@ -10,5 +10,4 @@ void ConsultarPromocion(){}
 
 void RealizarCompra(){}
 
-void ExpedienteDeUsuario(){}
-
+void CargarDatos(){}

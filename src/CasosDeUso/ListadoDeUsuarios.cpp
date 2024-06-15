@@ -8,14 +8,14 @@ void ListadoDeUsuarios(){
     vector<DataVendedor> listaVendedores = IU->obtenerListadoVendedores();
 
     cout << "Usuarios: " << endl;
-    cout << "========" << endl;
-    cout << "Clientes: " << endl;
+    cout << "\t" << endl;
+    cout << "\tClientes: " << endl;
     for (long unsigned int i = 0; i < listaClientes.size(); i++){
-        cout << listaClientes[i].toString() << endl;
+        cout << "\t" << listaClientes[i].toString() << endl;
     }
-    cout << "========" << endl;
-    cout << "Vendedores: " << endl;
-     for (long unsigned int i = 0; i < listaVendedores.size(); i++){
-        cout << listaVendedores[i].toString() << endl;
+    cout << "\tVendedores: " << endl;
+    for (long unsigned int i = 0; i < listaVendedores.size(); i++){
+        cout << "\t" << listaVendedores[i].toString() << endl;
     }
+    cout << "\n";
 }

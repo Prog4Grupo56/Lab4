@@ -29,6 +29,8 @@ class ControladorUsuario : public IUsuario{
         static ControladorUsuario* instancia;
         ControladorUsuario();
 
+        int cantidadComentarios;
+
         string nicknameC;
         DataEliminarComentario* dataElimCom;
         DataCrearPromocion* dataCrearP;
@@ -45,11 +47,13 @@ class ControladorUsuario : public IUsuario{
         DataEliminarComentario* getDataElimCom();
         DataCrearPromocion* getDataCrearP();
         DataEliminarSuscripcion* getDataElimSus();
+        int getCantidadComentarios();
     
         void setNickname(string nickCliente);
         void setDataElimCom(DataEliminarComentario* data);
         void setDataCrearP(DataCrearPromocion* data);
         void setDataElimSus(DataEliminarSuscripcion* data);
+        void setCantidadComentarios(int c);
 
         //Alta Usuario
         bool ingresarCliente(DataCliente cliente);
@@ -94,6 +98,9 @@ class ControladorUsuario : public IUsuario{
         vector<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
         void seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> vendedores);
         void eliminarSuscripciones();
+
+        //Expediente de usuario
+        string obtenerInfoUsuario(string nickname);
 
         //Enviar Producto
         Vendedor* obtenerVendedor(string nickVendedor);
