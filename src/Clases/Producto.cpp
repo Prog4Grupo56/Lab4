@@ -83,3 +83,11 @@ void Producto::setCantMin(CantMin* _cantMin){
 void Producto::setCompraProducto(set<CompraProducto*> _compraProducto){
     compraProducto = _compraProducto;
 }
+
+Vendedor* Producto::getVendedor(){
+    return vendedor;
+}
+
+void Producto::setVendedor(Vendedor* _vendedor){
+    vendedor = _vendedor;
+}
