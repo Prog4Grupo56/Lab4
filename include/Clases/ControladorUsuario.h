@@ -103,6 +103,7 @@ class ControladorUsuario : public IUsuario{
 
         //Enviar Producto
         vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
+
 };  
 
 #endif

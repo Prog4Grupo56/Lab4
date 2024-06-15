@@ -24,6 +24,8 @@ public:
     virtual void seleccionarCliente(string nickname) = 0;
     virtual void confirmarCompra() = 0;
     virtual Producto* obtenerProducto(string _codigoProducto) = 0;
+    virtual vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha) = 0;
+    virtual string obtenerInfoPromocion(string nombre) = 0;
 };
 
 #endif

@@ -4,8 +4,6 @@ void ConsultarProducto(){}
 
 void CrearPromocion(){}
 
-void ConsultarPromocion(){}
-
 void RealizarCompra(){}
 
 void CargarDatos(){}
