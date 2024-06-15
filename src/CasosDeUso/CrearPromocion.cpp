@@ -18,7 +18,7 @@ void CrearPromocion()
 
 
     //====Imprimir nicknames====
-    for(int i = 0; i < nicknamesVendedores.size();i++)
+    for(unsigned int i = 0; i < nicknamesVendedores.size();i++)
     {
         cout << nicknamesVendedores[i] << endl;
     }
