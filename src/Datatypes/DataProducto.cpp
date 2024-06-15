@@ -28,9 +28,9 @@ string DataProducto::getNombre(){
 string DataProducto::getDescripcion(){
     return descripcion;
 }
-/*Categoria DataProducto::getCategoria(){
+Categoria DataProducto::getCategoria(){
     return categoria;
-}*/
+}
 
 string DataProducto::toString(){
     return codigo + ", " + nombre + ", " + descripcion + ", " + to_string(stock) + ", " + to_string(precio) + ", " + to_string(categoria);
