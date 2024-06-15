@@ -14,3 +14,4 @@ void EnviarProducto(){}
 
 void ExpedienteDeUsuario(){}
 
+void CargarDatos(){}
