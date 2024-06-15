@@ -12,7 +12,7 @@ ICompra * interfazCompra= fabrica -> getICompra();
 vector<string> listaNicknames = interfazCompra->obtenerListaNicknamesClientes();
 
 
-for(int i = 0; i < listaNicknames.size(); i++)
+for(unsigned int i = 0; i < listaNicknames.size(); i++)
     cout << listaNicknames[i] << endl;
 cout << "Seleccione un cliente:" << endl;
 string seleccion;
@@ -42,7 +42,7 @@ while(continuar)
         cin >> id;
         cout << "Ingrese la cantidad deseada:" << endl;
         cin >> cant;
-        interfazCompra -> agregarProducto(ParCodigoCantidad(id,cant));
+        interfazCompra -> agregarProductoCantidad(ParCodigoCantidad(id,cant));
         cout << "Producto ingresado con éxito." << endl << endl;
     }
     else
