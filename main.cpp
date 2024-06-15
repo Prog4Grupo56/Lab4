@@ -7,10 +7,12 @@ using namespace std;
 
 int main(){
 
-
+   
     /*====== MENÚ =====*/
+
     int opcion;
     do{
+        
         cout << "=================" << endl;
         cout << "Menu de opciones:" << endl;
         cout << "=================" << endl;
@@ -31,66 +33,69 @@ int main(){
         cout << "14. Eliminar suscripciones" << endl;
         //todos los casos de uso
         cout << "Seleccione una opcion: ";
-
+        
         try
         {
+            
             cin >> opcion;
             cout << "\n";
             if (cin.fail()){
                 throw invalid_argument("Entrada invalida. Por favor, ingrese un numero.");
             }
+            
             switch (opcion)
             {
                 case 0:
                     /* Salir */
                     break;
                 case 1:
-                    AltaDeUsuario();
+                    //AltaDeUsuario();
                     break;
                 case 2:
-                    ListadoDeUsuarios();
+                    //ListadoDeUsuarios();
                     break;
                 case 3:
-                    AltaDeProducto();
+                    //AltaDeProducto();
                     break;
                 case 4:
-                    ConsultarProducto();
+                    //ConsultarProducto();
                     break;
                 case 5:
-                    CrearPromocion();
+                    //CrearPromocion();
                     break;
                 case 6:
-                    ConsultarPromocion();
+                    //ConsultarPromocion();
                     break;
                 case 7:
-                    RealizarCompra();
+                    //RealizarCompra();
                     break;
                 case 8:
-                    DejarComentario();
+                    //DejarComentario();
                     break;
                 case 9:
-                    EliminarComentario();
+                   // EliminarComentario();
                     break;
                 case 10:
-                    EnviarProducto();
+                    //EnviarProducto();
                     break;
                 case 11:
-                    ExpedienteDeUsuario();
+                    //ExpedienteDeUsuario();
                     break;
                 case 12:
-                    SuscribirseANotificaciones();
+                    //SuscribirseANotificaciones();
                     break;
                 case 13:
-                    ConsultaDeNotificaciones();
+                    //ConsultaDeNotificaciones();
                     break;
                 case 14:
-                    EliminarSuscripciones();
+                    //EliminarSuscripciones();
                     break;
         
                 default:
                     cout << "Numero fuera de rango. Por favor, intente de nuevo." << endl;
                     break;
             }
+            
         }
         catch(const invalid_argument& e)
         {

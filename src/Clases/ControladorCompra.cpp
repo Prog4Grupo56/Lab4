@@ -3,7 +3,6 @@
 ControladorCompra* ControladorCompra::instancia = nullptr;
 
 ControladorCompra::ControladorCompra(){
-    
 }
 
 ControladorCompra* ControladorCompra::getInstancia() {

@@ -13,14 +13,14 @@ vector<string> listaNicknames = interfazCompra->obtenerListaNicknamesClientes();
 
 
 for(int i = 0; i < listaNicknames.size(); i++)
-    cout << listaNicknames[i] << "\n";
-cout << "Seleccione un cliente: \n";
+    cout << listaNicknames[i] << endl;
+cout << "Seleccione un cliente:" << endl;
 string seleccion;
 cin >> seleccion;
 interfazCompra -> seleccionarCliente(seleccion); //Queda un dataInfoCompra guardado con el nick seleccionado
 
 
-cout << "Seleccione los productos a vender: \n";
+cout << "Seleccione los productos a vender:" << endl;
 vector<DataProducto> listaProductos = interfazCompra -> obtenerListaProductos();
 bool continuar = true;
 int opcion = 1; //Para el menu
@@ -28,8 +28,8 @@ string id; int cant; //Id y cantidad del producto
 while(continuar)
 {
 
-    cout << "1. Agregar nuevo producto.\n";
-    cout << "0. Terminar.\n";
+    cout << "1. Agregar nuevo producto." << endl;
+    cout << "0. Terminar." << endl;
     cin >> opcion;
     if(opcion == 1)
     {
@@ -38,12 +38,12 @@ while(continuar)
             cout << listaProductos[i].getCodigo() << " - " << listaProductos[i].getNombre();
         };
 
-        cout << "Ingrese la ID del producto: \n";
+        cout << "Ingrese la ID del producto:" << endl;
         cin >> id;
-        cout << "Ingrese la cantidad deseada: \n";
+        cout << "Ingrese la cantidad deseada:" << endl;
         cin >> cant;
         interfazCompra -> agregarProducto(ParCodigoCantidad(id,cant));
-        cout << "Producto ingresado con éxito.\n\n";
+        cout << "Producto ingresado con éxito." << endl << endl;
     }
     else
     {
