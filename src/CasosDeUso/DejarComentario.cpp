@@ -35,7 +35,7 @@ void DejarComentario(){
     cout << "========" << endl;
     cout << "¿Desea realizar un comentario nuevo o responder a uno existente?" << endl;
     cout << "0. Nuevo." << endl;
-    cout << "Responder." << endl;
+    cout << "1. Responder." << endl;
     cout << "========" << endl;
 
     int opcion;

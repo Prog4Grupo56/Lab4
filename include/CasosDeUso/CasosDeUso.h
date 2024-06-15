@@ -20,3 +20,4 @@ void ExpedienteDeUsuario();
 void SuscribirseANotificaciones();
 void ConsultaDeNotificaciones();
 void EliminarSuscripciones();
+void CargarDatos();

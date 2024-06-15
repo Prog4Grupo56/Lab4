@@ -5,6 +5,7 @@
 #include <string>
 #include "../Datatypes/DTFecha.h"
 #include "Comentario.h"
+#include "Producto.h"
 
 using namespace std;
 
@@ -37,6 +38,11 @@ class Usuario{
         
         void eliminarComentario(int idComentario);
         void desvincularComentario(Comentario* c);
+
+        void agregarComentarioNuevo(string comentario, Producto* pr, DTFecha _fecha, int idComentario);
+        void agregarComentarioRespuesta(string comentario, Producto* pr, DTFecha _fecha, int idComentario, Comentario* padre);
+
+        Comentario* buscarComentario(int id);
 };
 
 #endif

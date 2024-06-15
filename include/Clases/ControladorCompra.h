@@ -42,6 +42,7 @@ class ControladorCompra : public ICompra{
         vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra();
+        Producto* obtenerProducto(string _codigoProducto);
 };
 
 #endif

@@ -19,6 +19,7 @@ string ControladorUsuario::getNickname(){ return nicknameC;}
 DataEliminarComentario* ControladorUsuario::getDataElimCom(){ return dataElimCom;}
 DataCrearPromocion* ControladorUsuario::getDataCrearP(){ return dataCrearP;}
 DataEliminarSuscripcion* ControladorUsuario::getDataElimSus(){ return dataElimSus;}
+int ControladorUsuario::getCantidadComentarios(){ return cantidadComentarios;}
 
     //SETTERS
 void ControladorUsuario::setNickname(string nickCliente){ nicknameC = nickCliente;}
@@ -26,6 +27,7 @@ void ControladorUsuario::setNickname(string nickCliente){ nicknameC = nickClient
 void ControladorUsuario::setDataElimCom(DataEliminarComentario* data){ dataElimCom = data;} 
 void ControladorUsuario::setDataCrearP(DataCrearPromocion* data){ dataCrearP = data;}
 void ControladorUsuario::setDataElimSus(DataEliminarSuscripcion* data){ dataElimSus = data;}
+void ControladorUsuario::setCantidadComentarios(int c){cantidadComentarios = c;}
 
 
     //OPERACIONES
@@ -205,9 +207,43 @@ vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(strin
     return lista;
 }
 
-void ControladorUsuario::ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario){};
+void ControladorUsuario::ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario){
 
-void ControladorUsuario::ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre){};
+    Fabrica* F = Fabrica::getInstance();
+    ICompra* IC = F->getICompra();
+    IFecha* IF = F->getIFecha();
+
+    DTFecha fecha = IF->getFechaActual();
+
+    Producto* pr = IC->obtenerProducto(codigoProducto);
+
+    Usuario* u = usuarios[nickname];
+    u->agregarComentarioNuevo(comentario, pr, fecha, cantidadComentarios);
+    cantidadComentarios++;
+}
+
+void ControladorUsuario::ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre){
+    Fabrica* F = Fabrica::getInstance();
+    ICompra* IC = F->getICompra();
+    IFecha* IF = F->getIFecha();
+
+    DTFecha fecha = IF->getFechaActual();
+    Producto* pr = IC->obtenerProducto(codigoProducto);
+
+    Usuario* u = usuarios[nickname];
+
+    map<string,Usuario*>::iterator it;
+    Comentario* comentarioPadre = NULL;
+    for(it = usuarios.begin(); it != usuarios.end(); ++it){
+        Comentario* comentarioPadre = it->second->buscarComentario(idPadre);
+        if (comentarioPadre != NULL){
+            break;
+        }
+    }
+
+    u->agregarComentarioRespuesta(comentario, pr, fecha, cantidadComentarios, comentarioPadre);
+    cantidadComentarios++;
+};
 
     //Consultar Notificaciones
 vector<DTNotificacion> ControladorUsuario::obtenerListaNotificaciones(string nicknameCliente){
