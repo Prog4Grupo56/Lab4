@@ -329,9 +329,8 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
         for(unsigned int i = 0; i<promociones.size(); i++){
             info += "\n\t" + promociones[i].toString();
         }
-        info+="\n\n";
     }
-    info+="\n\n";
+    info+="\n";
     return info;
 }
     
