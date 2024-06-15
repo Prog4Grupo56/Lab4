@@ -30,5 +30,31 @@ void EnviarProducto(){
     IU->seleccionarUsuario(nickname);
     cout << "========";
 
-    vector<ParCodigoNombre> productos = IU->obtenerProductosPendientesEnvio(nickname);
+    vector<ParCodigoNombre> productos = IU->obtenerProductosPendientesEnvio(nickname); //Implementar
+
+    cout << "Productos del vendedor:" << endl;
+    for (long unsigned int i = 0; i < productos.size(); i++){
+        cout << ( ( productos[i].getCodigo() ).append("-") ).append(productos[i].getNombre() ) << endl;
+    }
+
+    cout << "========";
+    cout << "Seleccione uno (codigo): ";
+    string producto;
+    cin >> producto;
+    cout << "========";
+
+    vector<ParNickFecha> comprasProducto = IU -> obtenerParNickFechaEnvio(producto); // Implementar
+
+    cout << "Clientes pendientes de envio del producto:" << endl;
+    for (long unsigned int i = 0; i < comprasProducto.size(); i++){
+        cout << ( ( comprasProducto[i].getNickname() ).append("-") ).append(comprasProducto[i].getFecha().toString() ) << endl;
+    }
+
+    cout << "========";
+    cout << "Seleccione uno (nombre): ";
+    string envio;
+    cin >> envio;
+    cout << "========";
+
+    
 }

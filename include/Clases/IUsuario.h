@@ -58,7 +58,8 @@ public:
     virtual void ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre) = 0;
 
     //Enviar Producto
-    virtual vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor) = 0;
+    virtual vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor) = 0; //Implementar
+    virtual vector<ParNickFecha> obtenerParNickFechaEnvio(string producto) = 0; //Implementar
 };
 
 #endif

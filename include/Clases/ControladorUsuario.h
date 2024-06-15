@@ -10,6 +10,7 @@
 #include "../Datatypes/DataComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/ParCodigoNombre.h"
+#include "../Datatypes/ParNickFecha.h"
 
 #include "Fabrica.h"
 #include "Vendedor.h"
@@ -95,7 +96,8 @@ class ControladorUsuario : public IUsuario{
         void eliminarSuscripciones();
 
         //Enviar Producto
-        vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
+        vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);//Implementar
+        vector<ParNickFecha> obtenerParNickFechaEnvio(string producto); //Implementar
 };  
 
 #endif

@@ -267,4 +267,7 @@ void ControladorUsuario::eliminarSuscripciones(){
     //Enviar Producto
 vector<ParCodigoNombre> ControladorUsuario::obtenerProductosPendientesEnvio(string nickVendedor){
     return {};
-}
+}//implementar
+vector<ParNickFecha> ControladorUsuario::obtenerParNickFechaEnvio(string producto){
+    return {};
+} //Implementar 
