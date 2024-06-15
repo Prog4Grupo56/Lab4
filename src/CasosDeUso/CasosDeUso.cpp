@@ -12,3 +12,4 @@ void RealizarCompra(){}
 
 void ExpedienteDeUsuario(){}
 
+void CargarDatos(){}
