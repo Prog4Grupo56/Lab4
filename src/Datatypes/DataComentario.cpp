@@ -1,6 +1,6 @@
 #include "../../include/Datatypes/DataComentario.h"
 
-DataComentario::DataComentario(string _comentario, DTFecha _fecha, int id, string _comentador, string _codigoProducto){
+DataComentario::DataComentario(string _comentario, DTFecha _fecha, int id, string _comentador, int _codigoProducto){
     comentario = _comentario;
     fecha = _fecha;
     idComentario = id;
