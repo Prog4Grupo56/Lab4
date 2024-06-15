@@ -62,3 +62,26 @@ void Usuario::eliminarComentario(int idComentario){
     comentario->desvincularPadre();
     comentario->eliminarComentario();
 }
+
+
+void Usuario::agregarComentarioNuevo(string comentario, Producto* pr, DTFecha _fecha, int idComentario){
+    Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, NULL, this, pr);
+    comentarios[idComentario] = comentarioNuevo;
+}
+
+void Usuario::agregarComentarioRespuesta(string comentario, Producto* pr, DTFecha _fecha, int idComentario, Comentario* padre){
+    Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, padre, this, pr);
+    comentarios[idComentario] = comentarioNuevo;
+}
+
+Comentario* Usuario::buscarComentario(int id){
+    map<int,Comentario*>::iterator it;
+    Comentario* res = NULL;
+    for(it = comentarios.begin(); it != comentarios.end(); ++it){
+        if (it->first == id){
+            res = it->second;
+        }
+    }
+
+    return res;
+}

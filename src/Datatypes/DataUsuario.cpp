@@ -23,3 +23,4 @@ DTFecha DataUsuario::getFecha(){
 string DataUsuario::getContrasena(){
     return contrasena;
 }
+

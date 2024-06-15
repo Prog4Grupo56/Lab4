@@ -8,8 +8,6 @@
 using namespace std;
 
 int main(){
-
-    DataCliente d = DataCliente("nico", "hola", DTFecha(12,1,2002), DTDireccion("priamo", 1552), "montevideo");
     
     /*====== MENÚ =====*/
     int opcion;
@@ -32,7 +30,7 @@ int main(){
         cout << "12. Suscribirse a notificaciones" << endl;
         cout << "13. Consulta de notificaciones" << endl;
         cout << "14. Eliminar suscripciones" << endl;
-        //todos los casos de uso
+        cout << "15. Cargar datos" << endl;
         cout << "Seleccione una opcion: ";
 
         try
@@ -89,7 +87,9 @@ int main(){
                 case 14:
                     EliminarSuscripciones();
                     break;
-        
+                case 15:
+                    CargarDatos();
+                    break;
                 default:
                     cout << "Numero fuera de rango. Por favor, intente de nuevo." << endl;
                     break;

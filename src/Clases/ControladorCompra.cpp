@@ -119,3 +119,6 @@ void ControladorCompra::confirmarCompra(){
     dataInfoC = NULL;
 }
 
+Producto* ControladorCompra::obtenerProducto(string _codigoProducto){
+    return productos[_codigoProducto];
+}
