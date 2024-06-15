@@ -43,6 +43,8 @@ class ControladorCompra : public ICompra{
         void seleccionarCliente(string nickname);
         void confirmarCompra();
         Producto* obtenerProducto(string _codigoProducto);
+        vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha);
+        string obtenerInfoPromocion(string nombre);
 };
 
 #endif

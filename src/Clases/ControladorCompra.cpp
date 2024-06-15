@@ -122,3 +122,21 @@ void ControladorCompra::confirmarCompra(){
 Producto* ControladorCompra::obtenerProducto(string _codigoProducto){
     return productos[_codigoProducto];
 }
+
+vector<DataPromocion> ControladorCompra::obtenerInfoPromociones(DTFecha _fecha){
+    vector<DataPromocion> dPromociones;
+    for (std::map<string, Promocion*>::iterator it = promociones.begin(); it != promociones.end(); ++it) {
+        Promocion* promocionsActual = it->second;
+        if (_fecha<=promocionsActual->getFechaVenc()){
+            dPromociones.push_back(it->second->getDataPromocion());
+        }
+    }
+    return dPromociones;
+}
+
+string ControladorCompra::obtenerInfoPromocion(string nombre){
+    //Promocion* promocion = promociones[nombre];
+    //string info;
+    return "";
+
+}
