@@ -2,13 +2,14 @@
 #include <stdexcept>
 #include <limits>
 #include "include/CasosDeUso/CasosDeUso.h"
-
 //poner opcion para cambiar fecha
  
 using namespace std;
 
 int main(){
-    
+
+    DataCliente d = DataCliente("nico", "hola", DTFecha(12,1,2002), DTDireccion("priamo", 1552), "montevideo");
+
     /*====== MENÚ =====*/
     int opcion;
     do{
@@ -30,6 +31,7 @@ int main(){
         cout << "12. Suscribirse a notificaciones" << endl;
         cout << "13. Consulta de notificaciones" << endl;
         cout << "14. Eliminar suscripciones" << endl;
+        //todos los casos de uso
         cout << "15. Cargar datos" << endl;
         cout << "Seleccione una opcion: ";
 
@@ -87,6 +89,7 @@ int main(){
                 case 14:
                     EliminarSuscripciones();
                     break;
+
                 case 15:
                     CargarDatos();
                     break;
@@ -103,9 +106,6 @@ int main(){
             opcion = -1; // si no hago esto se setea a 0 y termina el loop, lo vi en el debugger.
         }      
     } while (opcion != 0);
-
     //ELIMINAR MEMORIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-
     return 0;
-
 }
