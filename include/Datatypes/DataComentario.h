@@ -11,7 +11,7 @@ class DataComentario{
         DTFecha fecha;
         int idComentario;
         string comentador;
-        string codigoProducto;
+        int codigoProducto;
     public:
         DataComentario(string _comentario, DTFecha _fecha, int id, string _comentador, int _codigoProducto);
         ~DataComentario();
@@ -20,7 +20,7 @@ class DataComentario{
         DTFecha getFecha();
         int getIdComentario();
         string getComentador();
-        string getCodigoProducto();
+        int getCodigoProducto();
         
         string toString();
 

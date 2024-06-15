@@ -4,7 +4,7 @@ void ConsultarProducto(){
     Fabrica* F = Fabrica::getInstance();
     ICompra* IC = F->getICompra();
 
-    string codigo;
+    int codigo;
     vector<DataProducto> listadoDeProductos = IC->obtenerListaProductos();
 
     cout << "Nombres y códigos de los productos: " << endl;

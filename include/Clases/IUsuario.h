@@ -53,14 +53,17 @@ public:
     virtual vector<DataVendedor> obtenerListadoVendedores() = 0;
 
     //Dejar Comentario
-    virtual vector<DataComentario> obtenerListaComentariosProducto(string producto) = 0;
-    virtual void ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario) = 0;
-    virtual void ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre) = 0;
+    virtual vector<DataComentario> obtenerListaComentariosProducto(int producto) = 0;
+    virtual void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario) = 0;
+    virtual void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, int idPadre) = 0;
 
     virtual string obtenerInfoUsuario(string nickname) = 0;
 
     //Enviar Producto
     virtual vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor) = 0;
+
+    //Alta Producto
+    virtual Vendedor* obtenerVendedor(string vendedor) = 0;
 };
 
 #endif

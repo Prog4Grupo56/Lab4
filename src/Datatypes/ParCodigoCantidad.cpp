@@ -2,12 +2,12 @@
 
 ParCodigoCantidad::~ParCodigoCantidad(){}
 
-ParCodigoCantidad::ParCodigoCantidad(string _codigo, int _cantMinima){
+ParCodigoCantidad::ParCodigoCantidad(int _codigo, int _cantMinima){
     codigo = _codigo;
     cantidad = _cantMinima;
 }
 
-string ParCodigoCantidad::getCodigo() {
+int ParCodigoCantidad::getCodigo() {
     return codigo;
 }
 

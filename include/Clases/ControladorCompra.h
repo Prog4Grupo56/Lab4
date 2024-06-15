@@ -29,9 +29,10 @@ class ControladorCompra : public ICompra{
         static ControladorCompra * instancia;
         DataInfoCompra * dataInfoC;
         vector<Compra*> compras;
-        map<string, Producto*> productos;
+        map<int, Producto*> productos;
         map<string, Promocion*> promociones;
         ControladorCompra();
+        int cantidadProductos;
     public:
         ~ControladorCompra();
         static ControladorCompra* getInstancia();
@@ -42,9 +43,11 @@ class ControladorCompra : public ICompra{
         vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra();
-        Producto* obtenerProducto(string _codigoProducto);
+        Producto* obtenerProducto(int _codigoProducto);
         vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha);
         string obtenerInfoPromocion(string nombre);
+
+        void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor);
 };
 
 #endif
