@@ -36,8 +36,10 @@ void AltaDeProducto(){
     cout << "Ingrese la categoria del producto: ";
     cin >> categoria;
 
+    // IC->confirmarAltaProducto(vendedor, );
 
 
-    // IC->confirmarAltaProducto();
+
+    
 
 }

@@ -8,14 +8,15 @@
 #include "CantMin.h"
 #include "CompraProducto.h"
 
+class Vendedor;
 class CompraProducto;
 class CantMin;
 class Compra;
 
 class Producto
-{
+{ 
     public:
-        string codigo;
+        int codigo;
         Categoria categoria;
         string nombre;
         string descripcion;
@@ -23,15 +24,16 @@ class Producto
         float precio;
         CantMin* cantMin;
         set<CompraProducto*> compraProducto;
+        Vendedor* vendedor;
     
     public:
         //Constructor
-        Producto();
+        Producto(int codigo, Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor);
 
         //Destructor
         ~Producto();
 
-        string getCodigo();
+        int getCodigo();
         string getCategoria();
         string getNombre();
         string getDescripcion();
@@ -40,7 +42,7 @@ class Producto
         CantMin* getCantMin();
         set<CompraProducto*> getCompraProducto();
     
-        void setCodigo(string _codigo);
+        void setCodigo(int _codigo);
         void setCategoria(Categoria _categoria);
         void setNombre(string _nombre);
         void setDescripcion(string _descripcion);

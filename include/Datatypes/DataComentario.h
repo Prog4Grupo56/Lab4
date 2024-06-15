@@ -13,7 +13,7 @@ class DataComentario{
         string comentador;
         string codigoProducto;
     public:
-        DataComentario(string _comentario, DTFecha _fecha, int id, string _comentador, string _codigoProducto);
+        DataComentario(string _comentario, DTFecha _fecha, int id, string _comentador, int _codigoProducto);
         ~DataComentario();
 
         string getComentario();
