@@ -300,3 +300,41 @@ void ControladorUsuario::eliminarSuscripciones(){
     dataElimSus = NULL;
 }
 
+string ControladorUsuario::obtenerInfoUsuario(string nickname){
+
+    Fabrica* f = Fabrica::getInstance();
+    IFecha* IF = f->getIFecha();
+    DTFecha fechaActual = IF->getFechaActual();
+
+    Cliente* cliente = clientes[nickname];
+    Vendedor* vendedor = vendedores[nickname];
+    string info;
+    if(cliente!=NULL){
+        info = cliente->getNickname() + ", " + cliente->getFecha().toString();
+        vector<Compra*> compras = cliente->getCompras();
+        info += "\n\tCompras:";
+        for(unsigned int i = 0; i<compras.size(); i++){
+            info+= "\n\t" + compras[i]->getFecha().toString() + ", " + to_string(compras[i]->getMontoFinal());
+        }
+    }
+    if(vendedor!=NULL){
+        info = vendedor->getNickname() + ", " + vendedor->getFecha().toString();
+        vector<DataProducto> productos = vendedor->obtenerInfoProductos();
+        info += "\n\tProductos:";
+        for(unsigned int i = 0; i<productos.size(); i++){
+            info += "\n\t" + productos[i].toString();
+        }
+        info += "\n\tPromociones:";
+        vector<DataPromocion> promociones = vendedor->obtenerInfoPromocionesVigentes(fechaActual);
+        for(unsigned int i = 0; i<promociones.size(); i++){
+            info += "\n\t" + promociones[i].toString();
+        }
+    }
+    info+="\n";
+    return info;
+}
+    
+//Enviar Producto
+vector<ParCodigoNombre> ControladorUsuario::obtenerProductosPendientesEnvio(string nickVendedor){
+    return {};
+}

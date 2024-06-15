@@ -8,11 +8,6 @@ Cliente::Cliente(DataCliente cliente): Usuario(cliente.getNickname(), cliente.ge
 };
 
 Cliente::~Cliente(){
-    /*set<Vendedor*>::iterator it;
-    for (it=suscripciones.begin();it!=suscripciones.end();++it){
-        Vendedor* v = *it;
-        v->eliminarSuscriptor(this);
-    }*/
 };
 
 /*======= GETTERS ========*/
@@ -80,4 +75,16 @@ void Cliente::eliminarSuscripciones(vector<DataVendedor> vendedores){
 void Cliente::notificar(string nombreVendedor, vector<DataProducto> dtProductos, string nombrePromocion){
     DTNotificacion notificacion = DTNotificacion(nombreVendedor, nombrePromocion, dtProductos);
     notificaciones.push_back(notificacion);
+}
+
+vector<Compra*> Cliente::getCompras(){
+    return compras;
+}
+
+void Cliente::setCompras(vector<Compra*> _compras){
+    compras = _compras;
+}
+
+void Cliente::agregarCompra(Compra* _compra){
+    compras.push_back(_compra);
 }

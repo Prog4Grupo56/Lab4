@@ -7,6 +7,7 @@
 #include "../Datatypes/DTNotificacion.h"
 #include "Usuario.h"
 #include "Vendedor.h"
+#include "Compra.h"
 
 class Vendedor;
 class Usuario;
@@ -18,6 +19,7 @@ class Cliente : public Usuario{
         string ciudad;
         map<string,Vendedor*> suscripciones;
         vector<DTNotificacion> notificaciones;
+        vector<Compra*> compras;
     public:
         //Constructor
         Cliente(string _nickname, string _contrasenia, DTFecha _fecha, DTDireccion _direccion, string _ciudad);
@@ -30,10 +32,14 @@ class Cliente : public Usuario{
         vector<DTNotificacion> getNotificaciones();
         vector<DataVendedor> obtenerSuscripciones();
         DataCliente getDataCliente();
+        vector<Compra*> getCompras();
 
         void setDireccion(DTDireccion _direccion);
         void setCiudad(string _ciudad);
+        void setCompras(vector<Compra*> _compras);
+
         void agregarSuscripcion(Vendedor* vendedor);
+        void agregarCompra(Compra* _compra);
 
         void notificar(string nombreVendedor, vector<DataProducto> dtProductos, string nombrePromocion);
 
