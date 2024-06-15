@@ -6,6 +6,7 @@ ControladorUsuario :: ControladorUsuario(){
     dataElimCom = NULL;
     dataCrearP = NULL;
     dataElimSus = NULL;
+    cantidadComentarios = 0;
 }
 
 ControladorUsuario* ControladorUsuario::getInstancia() {
@@ -189,7 +190,7 @@ Cliente* ControladorUsuario::obtenerClienteCompra(string nickname){
 }
 
     //Dejar comentario
-vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(string codigoProducto){
+vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(int codigoProducto){
 
     vector<DataComentario> lista;
 
@@ -207,7 +208,7 @@ vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(strin
     return lista;
 }
 
-void ControladorUsuario::ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario){
+void ControladorUsuario::ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario){
 
     Fabrica* F = Fabrica::getInstance();
     ICompra* IC = F->getICompra();
@@ -218,11 +219,11 @@ void ControladorUsuario::ingresarComentarioNuevo(string nickname, string codigoP
     Producto* pr = IC->obtenerProducto(codigoProducto);
 
     Usuario* u = usuarios[nickname];
-    u->agregarComentarioNuevo(comentario, pr, fecha, cantidadComentarios);
     cantidadComentarios++;
+    u->agregarComentarioNuevo(comentario, pr, fecha, cantidadComentarios);
 }
 
-void ControladorUsuario::ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre){
+void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, int idPadre){
     Fabrica* F = Fabrica::getInstance();
     ICompra* IC = F->getICompra();
     IFecha* IF = F->getIFecha();
@@ -241,8 +242,8 @@ void ControladorUsuario::ingresarComentarioRespuesta(string nickname, string cod
         }
     }
 
-    u->agregarComentarioRespuesta(comentario, pr, fecha, cantidadComentarios, comentarioPadre);
     cantidadComentarios++;
+    u->agregarComentarioRespuesta(comentario, pr, fecha, cantidadComentarios, comentarioPadre);
 };
 
     //Consultar Notificaciones
@@ -337,4 +338,10 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
 //Enviar Producto
 vector<ParCodigoNombre> ControladorUsuario::obtenerProductosPendientesEnvio(string nickVendedor){
     return {};
+}
+
+//Alta Producto
+
+Vendedor* ControladorUsuario::obtenerVendedor(string vendedor){
+    return vendedores[vendedor];
 }

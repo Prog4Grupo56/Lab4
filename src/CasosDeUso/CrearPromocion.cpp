@@ -34,7 +34,7 @@ void CrearPromocion()
         cout << productos.getNombre() << endl;
     */
     cout << "Seleccione un producto:" << endl;
-    string id;
+    int id;
     cin >> id;
     cout << "Ingrese la cantidad minima:" << endl;
     int cant;

@@ -29,7 +29,7 @@ void DejarComentario(){
     cout << "========" << endl;
 
     cout << "Ingrese un producto (codigo): ";
-    string producto;
+    int producto;
     cin >> producto;
     
     cout << "========" << endl;
@@ -51,7 +51,7 @@ void DejarComentario(){
     }
     else{
         vector<DataComentario> listaComentariosProducto = IU->obtenerListaComentariosProducto(producto);
-        cout << "Comentarios sobre " << producto << "(comentario, fecha, id):" << endl;
+        cout << "Comentarios sobre el producto " << producto << " (comentario, fecha, id):" << endl;
         for (unsigned int i = 0; i < listaComentariosProducto.size(); i++){
             cout << listaComentariosProducto[i].toString() << endl;
         }

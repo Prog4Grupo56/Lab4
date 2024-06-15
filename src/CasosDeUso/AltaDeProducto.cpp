@@ -33,13 +33,28 @@ void AltaDeProducto(){
     cin >> descripcion;
 
     int categoria;
-    cout << "Ingrese la categoria del producto: ";
+    cout << "Ingrese la categoria del producto: " << endl;
+    cout << "\t" << "1. Ropa" << endl;
+    cout << "\t" << "2. Electrodomesticos" << endl;
+    cout << "\t" << "3. Otros" << endl;
     cin >> categoria;
 
-    // IC->confirmarAltaProducto(vendedor, );
+    Categoria categ;
 
-
+    if (categoria == 1){
+        categ = Ropa; 
+    }
+    else if (categoria == 2){
+        categ = Electrodomesticos;
+    }
+    else{
+        categ = Otros;
+    }
 
     
+    Vendedor* v = IU->obtenerVendedor(vendedor);
+    IC->confirmarAltaProducto(categ, nombreProducto, descripcion, stock, precio, v);
+
+
 
 }

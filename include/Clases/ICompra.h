@@ -23,9 +23,10 @@ public:
     virtual vector<string> obtenerListaNicknamesClientes() = 0;
     virtual void seleccionarCliente(string nickname) = 0;
     virtual void confirmarCompra() = 0;
-    virtual Producto* obtenerProducto(string _codigoProducto) = 0;
+    virtual Producto* obtenerProducto(int _codigoProducto) = 0;
     virtual vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha) = 0;
     virtual string obtenerInfoPromocion(string nombre) = 0;
+    virtual void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor) = 0;
 };
 
 #endif
