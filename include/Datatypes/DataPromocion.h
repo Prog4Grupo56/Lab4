@@ -28,6 +28,8 @@ class DataPromocion{
         DTFecha getFechaVenc();
         float getDescuento();
 
+        string toString();
+
 };
 
 #endif

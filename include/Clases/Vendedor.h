@@ -40,6 +40,9 @@ class Vendedor : public Usuario{
 
         void agregarPromocionYNotificar(vector<DataProducto> dtProductos, string nombrePromocion, Promocion* pr);
 
+        vector<DataPromocion> obtenerInfoPromocionesVigentes(DTFecha _fecha);
+        vector<DataProducto> obtenerInfoProductos();
+
 };
 
 #endif

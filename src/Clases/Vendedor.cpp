@@ -69,3 +69,22 @@ void Vendedor::notificarClientes(vector<DataProducto> dtProductos, string nombre
     }
 }
 
+vector<DataPromocion> Vendedor::obtenerInfoPromocionesVigentes(DTFecha _fecha){
+    vector<DataPromocion> dPromociones;
+    for (std::map<string, Promocion*>::iterator it = promociones.begin(); it != promociones.end(); ++it) {
+        Promocion* promocionActual = it->second;
+        if(_fecha<=promocionActual->getFechaVenc()){
+            dPromociones.push_back(promocionActual->getDataPromocion());
+        }
+    }
+    return dPromociones;
+}
+
+vector<DataProducto> Vendedor::obtenerInfoProductos(){
+    vector<DataProducto> dProductos;
+    for (std::map<string, Producto*>::iterator it = productos.begin(); it != productos.end(); ++it) {
+        Producto* productoActual = it->second;
+        dProductos.push_back(productoActual->getDataProducto());
+    }
+    return dProductos;
+}
