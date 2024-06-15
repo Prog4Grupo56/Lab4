@@ -6,8 +6,10 @@ DataUsuario::DataUsuario(){
 
 DataUsuario::DataUsuario(string _nickname, string _contrasena, DTFecha _fecha){
     nickname = _nickname;
+    contrasena = _contrasena;
     fecha = _fecha;
 }
+
 DataUsuario::~DataUsuario(){
     
 };
@@ -20,8 +22,5 @@ DTFecha DataUsuario::getFecha(){
 }
 string DataUsuario::getContrasena(){
     return contrasena;
-}
-string DataUsuario::toString(){
-    return "";
 }
 

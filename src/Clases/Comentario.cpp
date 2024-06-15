@@ -28,7 +28,12 @@ map<int,Comentario*> Comentario::getRespuestas(){
 Comentario* Comentario::getPadre(){
     return padre;
 };
-
+Producto* Comentario::getProducto(){
+    return producto;
+}
+Usuario* Comentario::getComentador(){
+    return comentador;
+}
 /*======= SETTERS ========*/
 void Comentario::setComentario(string _comentario){
     comentario = _comentario;

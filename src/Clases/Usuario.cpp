@@ -32,7 +32,9 @@ vector<DataComentario> Usuario::obtenerComentarios(){
         string comentario = it->second->getComentario();
         DTFecha fecha = it->second->getFecha();
         int id = it->second->getIdComentario();
-        DataComentario dataC = DataComentario(comentario, fecha, id);
+        string comentador = it->second->getComentador()->getNickname();
+        string codigoProd = it->second->getProducto()->getCodigo();
+        DataComentario dataC = DataComentario(comentario, fecha, id, comentador, codigoProd);
         lista.push_back(dataC);
     }
 
@@ -59,4 +61,27 @@ void Usuario::eliminarComentario(int idComentario){
     Comentario* comentario = comentarios[idComentario];
     comentario->desvincularPadre();
     comentario->eliminarComentario();
+}
+
+
+void Usuario::agregarComentarioNuevo(string comentario, Producto* pr, DTFecha _fecha, int idComentario){
+    Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, NULL, this, pr);
+    comentarios[idComentario] = comentarioNuevo;
+}
+
+void Usuario::agregarComentarioRespuesta(string comentario, Producto* pr, DTFecha _fecha, int idComentario, Comentario* padre){
+    Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, padre, this, pr);
+    comentarios[idComentario] = comentarioNuevo;
+}
+
+Comentario* Usuario::buscarComentario(int id){
+    map<int,Comentario*>::iterator it;
+    Comentario* res = NULL;
+    for(it = comentarios.begin(); it != comentarios.end(); ++it){
+        if (it->first == id){
+            res = it->second;
+        }
+    }
+
+    return res;
 }

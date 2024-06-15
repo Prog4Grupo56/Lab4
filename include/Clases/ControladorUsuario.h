@@ -28,6 +28,8 @@ class ControladorUsuario : public IUsuario{
         static ControladorUsuario* instancia;
         ControladorUsuario();
 
+        int cantidadComentarios;
+
         string nicknameC;
         DataEliminarComentario* dataElimCom;
         DataCrearPromocion* dataCrearP;
@@ -44,11 +46,13 @@ class ControladorUsuario : public IUsuario{
         DataEliminarComentario* getDataElimCom();
         DataCrearPromocion* getDataCrearP();
         DataEliminarSuscripcion* getDataElimSus();
+        int getCantidadComentarios();
     
         void setNickname(string nickCliente);
         void setDataElimCom(DataEliminarComentario* data);
         void setDataCrearP(DataCrearPromocion* data);
         void setDataElimSus(DataEliminarSuscripcion* data);
+        void setCantidadComentarios(int c);
 
         //Alta Usuario
         bool ingresarCliente(DataCliente cliente);
@@ -62,7 +66,7 @@ class ControladorUsuario : public IUsuario{
         vector<string> obtenerListaNicknamesUsuarios();
         void seleccionarUsuario(string nickname); 
         vector<DataComentario> obtenerComentariosUsuario();
-        void seleccionarComentario(DataComentario comentario); 
+        void seleccionarComentario(int idComentario); 
         void eliminarComentario();
         
         //Crear Promocion
@@ -77,6 +81,11 @@ class ControladorUsuario : public IUsuario{
         vector<string> obtenerListaNicknamesClientes();
         Cliente* obtenerClienteCompra(string nickname);
 
+        //Dejar comentario
+        vector<DataComentario> obtenerListaComentariosProducto(string codigoProducto);
+        void ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario);
+        void ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre);
+
         //Consultar Notificaciones
         vector<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente);
 
@@ -88,6 +97,12 @@ class ControladorUsuario : public IUsuario{
         vector<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
         void seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> vendedores);
         void eliminarSuscripciones();
-};
+
+        //Expediente de usuario
+        string obtenerInfoUsuario(string nickname);
+
+        //Enviar Producto
+        vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
+};  
 
 #endif

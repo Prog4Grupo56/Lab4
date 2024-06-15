@@ -37,11 +37,12 @@ class ControladorCompra : public ICompra{
         static ControladorCompra* getInstancia();
         void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP);
         vector<DataProducto> obtenerListaProductos();
-        void agregarProducto(ParCodigoCantidad parCodCant);
+        void agregarProductoCantidad(ParCodigoCantidad parCodCant);
         ParCompraProductos obtenerInfoCompra();
         vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra();
+        Producto* obtenerProducto(string _codigoProducto);
 };
 
 #endif
