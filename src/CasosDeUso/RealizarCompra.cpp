@@ -1,7 +1,7 @@
 #include  "../../include/CasosDeUso/CasosDeUso.h"
 
 #include  "../../include/Clases/ICompra.h"
-#include "../include/Clases/Fabrica.h"
+#include "../../include/Clases/Fabrica.h"
 
 void RealizarCompra()
 {
@@ -24,7 +24,7 @@ cout << "Seleccione los productos a vender:" << endl;
 vector<DataProducto> listaProductos = interfazCompra -> obtenerListaProductos();
 bool continuar = true;
 int opcion = 1; //Para el menu
-string id; int cant; //Id y cantidad del producto
+int id; int cant; //Id y cantidad del producto
 while(continuar)
 {
 
