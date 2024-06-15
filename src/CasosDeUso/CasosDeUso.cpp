@@ -2,8 +2,13 @@
 
 void ConsultarProducto(){}
 
-void CrearPromocion(){}
+void ConsultarPromocion(){}
 
-void RealizarCompra(){}
+void DejarComentario(){}
 
-void CargarDatos(){}
+void EliminarComentario(){}
+
+void EnviarProducto(){}
+
+void ExpedienteDeUsuario(){}
+
