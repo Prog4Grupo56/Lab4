@@ -28,6 +28,8 @@ class ControladorUsuario : public IUsuario{
         static ControladorUsuario* instancia;
         ControladorUsuario();
 
+        int cantidadComentarios;
+
         string nicknameC;
         DataEliminarComentario* dataElimCom;
         DataCrearPromocion* dataCrearP;
@@ -44,11 +46,13 @@ class ControladorUsuario : public IUsuario{
         DataEliminarComentario* getDataElimCom();
         DataCrearPromocion* getDataCrearP();
         DataEliminarSuscripcion* getDataElimSus();
+        int getCantidadComentarios();
     
         void setNickname(string nickCliente);
         void setDataElimCom(DataEliminarComentario* data);
         void setDataCrearP(DataCrearPromocion* data);
         void setDataElimSus(DataEliminarSuscripcion* data);
+        void setCantidadComentarios(int c);
 
         //Alta Usuario
         bool ingresarCliente(DataCliente cliente);
