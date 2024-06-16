@@ -54,8 +54,8 @@ public:
 
     //Dejar Comentario
     virtual vector<DataComentario> obtenerListaComentariosProducto(int producto) = 0;
-    virtual void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario) = 0;
-    virtual void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, int idPadre) = 0;
+    virtual void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario, DTFecha _fecha) = 0;
+    virtual void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre) = 0;
 
     virtual string obtenerInfoUsuario(string nickname) = 0;
 
