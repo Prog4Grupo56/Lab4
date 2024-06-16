@@ -18,9 +18,7 @@ void EliminarComentario(){
     
     vector<DataComentario> listaComentarios = IU->obtenerComentariosUsuario();
 
-    std::string comentarios = "Comentarios de ";
-    comentarios.append(nickname.append(":"));
-    cout << comentarios << endl;
+    cout << "Comentarios de " << nickname << ":" << endl;
     for (long unsigned int i = 0; i < listaComentarios.size(); i++){
         string id = to_string(listaComentarios[i].getIdComentario()).append("-");
         string fecha = listaComentarios[i].getFecha().toString().append(":");

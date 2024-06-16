@@ -24,7 +24,7 @@ void EnviarProducto(){
         cout << listaNicknames[i] << endl;
     }
 
-    cout << "========";
+    cout << "========"<< endl;
     cout << "Seleccione uno: ";
     string nickname;
     cin >> nickname;
@@ -38,20 +38,20 @@ void EnviarProducto(){
         cout << productos[i].getCodigo() << "-" << productos[i].getNombre() << endl;
     }
 
-    cout << "========";
+    cout << "========"<< endl;
     cout << "Seleccione uno (codigo): ";
     int producto;
     cin >> producto;
     cout << "========";
 
-    vector<ParNickFecha> comprasProducto = IC -> obtenerParNickFechaEnvio(producto); // Implementar
+    vector<ParNickFecha> clientesCompra = IC -> obtenerParNickFechaEnvio(producto); // Implementar
 
-    cout << "Clientes pendientes de envio del producto:" << endl;
-    for (long unsigned int i = 0; i < comprasProducto.size(); i++){
-        cout << comprasProducto[i].getNickname() << "-" << comprasProducto[i].getFecha().toString() << endl;
+    cout << "Clientes a enviar el producto:" << endl;
+    for (long unsigned int i = 0; i < clientesCompra.size(); i++){
+        cout << clientesCompra[i].getNickname() << " - " << clientesCompra[i].getFecha().toString() << endl;
     }
 
-    cout << "========";
+    cout << "========"<< endl;
     cout << "Seleccione uno (nombre): ";
     string cliente;
     cin >> cliente;
