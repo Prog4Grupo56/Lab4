@@ -12,7 +12,7 @@ void DejarComentario(){
 
     cout << "Usuarios:" << endl;
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
-        cout << listaNicknames[i] << endl;
+        cout << "\t" << listaNicknames[i] << endl;
     }
 
     cout << "========" << endl;
@@ -26,7 +26,7 @@ void DejarComentario(){
     cout << "Productos:" << endl;
     vector<DataProducto> listaProductos = IC->obtenerListaProductos();
     for (long unsigned int i = 0; i < listaProductos.size(); i++){
-        cout << listaProductos[i].getNombre() << ", " <<listaProductos[i].getCodigo() << endl;
+        cout << "\t" << listaProductos[i].getNombre() << ", " <<listaProductos[i].getCodigo() << endl;
     }
     
     cout << "========" << endl;
@@ -37,8 +37,8 @@ void DejarComentario(){
     
     cout << "========" << endl;
     cout << "¿Desea realizar un comentario nuevo o responder a uno existente?" << endl;
-    cout << "0. Nuevo." << endl;
-    cout << "1. Responder." << endl;
+    cout << "\t" << "0. Nuevo." << endl;
+    cout << "\t" << "1. Responder." << endl;
     cout << "========" << endl;
 
     int opcion;
@@ -56,7 +56,7 @@ void DejarComentario(){
         vector<DataComentario> listaComentariosProducto = IU->obtenerListaComentariosProducto(producto);
         cout << "Comentarios sobre el producto " << producto << " (comentario, fecha, id):" << endl;
         for (unsigned int i = 0; i < listaComentariosProducto.size(); i++){
-            cout << listaComentariosProducto[i].toString() << endl;
+            cout << "\t" << listaComentariosProducto[i].toString() << endl;
         }
 
         cout << "========" << endl;
@@ -67,7 +67,7 @@ void DejarComentario(){
 
         cout << "Ingrese el comentario: ";
         string comentario;
-        cin >> comentario;
+        getline(cin, comentario);
 
         cout << "========" << endl;
 
@@ -75,6 +75,5 @@ void DejarComentario(){
     }
 
     cout << "Se ingresó su comentario exitosamente." << endl;
-    cout << "========" << endl;
 
 }

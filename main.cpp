@@ -8,8 +8,6 @@ using namespace std;
 
 int main(){
 
-    DataCliente d = DataCliente("nico", "hola", DTFecha(12,1,2002), DTDireccion("priamo", 1552), "montevideo");
-
     /*====== MENÚ =====*/
     int opcion;
     do{
