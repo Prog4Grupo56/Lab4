@@ -10,6 +10,7 @@
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/DataVendedor.h"
 #include "../Datatypes/ParCompraProductos.h"
+#include "DataInfoCompra.h"
 
 class Vendedor;
 
@@ -23,6 +24,7 @@ public:
     virtual vector<string> obtenerListaNicknamesClientes() = 0;
     virtual void seleccionarCliente(string nickname) = 0;
     virtual void confirmarCompra() = 0;
+    virtual void confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra) = 0;
     virtual Producto* obtenerProducto(int _codigoProducto) = 0;
     virtual vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha) = 0;
     virtual string obtenerInfoPromocion(string nombre) = 0;

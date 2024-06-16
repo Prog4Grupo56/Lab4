@@ -104,6 +104,23 @@ void CargarDatos(){
     DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);
     IC->crearPromocion(V14, DCPM4);
 
+//INGRESO DE COMPRAS
+    //CO1
+    vector<ParCodigoCantidad> PCC1;
+    PCC1.push_back(ParCodigoCantidad(2, 2));
+    PCC1.push_back(ParCodigoCantidad(4, 1));
+    PCC1.push_back(ParCodigoCantidad(8, 1));
+    DataInfoCompra* CO1 = new DataInfoCompra(US4.getNickname(), 57581993, PCC1);
+    IC->confirmarCompraCargaDeDatos(CO1);
+    //CO2
+    //CO3
+    //CO4
+    //CO5
+    //CO6
+    //CO7
+    //CO8
+    //CO9
+
 //INGRESO DE COMENTARIOS
     //CM1
     IU->ingresarComentarioNuevo("juan87", 1, "¿La camiseta azul esta disponible en talla M?", DTFecha(01,06,2024));

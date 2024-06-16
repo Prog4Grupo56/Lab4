@@ -43,11 +43,14 @@ class ControladorCompra : public ICompra{
         vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra();
+        void confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra);
         Producto* obtenerProducto(int _codigoProducto);
         vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha);
         string obtenerInfoPromocion(string nombre);
 
         void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor);
+
+        
 };
 
 #endif
