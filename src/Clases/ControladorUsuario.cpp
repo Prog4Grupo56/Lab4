@@ -331,14 +331,11 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
     info+="\n";
     return info;
 }
-    
-//Enviar Producto
-vector<ParCodigoNombre> ControladorUsuario::obtenerProductosPendientesEnvio(string nickVendedor){
-    return {};
-}
 
 //Alta Producto
 
 Vendedor* ControladorUsuario::obtenerVendedor(string vendedor){
-    return vendedores[vendedor];
+    map<string,Vendedor*>::iterator itV;
+    itV = vendedores.find(vendedor);
+    return itV == vendedores.end() ? NULL : vendedores[vendedor];
 }
