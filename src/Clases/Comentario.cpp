@@ -68,10 +68,10 @@ void Comentario::eliminarComentario(){
     delete this;
 }
 
-string Comentario::obtenerNicknameComentador(){
-    return comentador->getNickname();
-}
-int Comentario::obtenerCodigoProdComentado(){
-    return producto->getCodigo();
-}
+ string Comentario::obtenerNicknameComentador(){
+     return comentador->getNickname();
+ }
+ int Comentario::obtenerCodigoProdComentado(){
+     return producto->getCodigo();
+ }
 
