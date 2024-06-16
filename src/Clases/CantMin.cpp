@@ -37,5 +37,5 @@ DTFecha CantMin::obtenerFechaPromocion(){
 }
 
 bool CantMin::pertenecePromocion(int codigo){
-    return false;
+    return codigo==producto->getCodigo();
 }
