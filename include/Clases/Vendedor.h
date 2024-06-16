@@ -15,21 +15,21 @@ class Promocion;
 
 class Vendedor : public Usuario{
     private:
-        int RUT;
+        string RUT;
         map<string,Cliente*> suscriptores;
         void notificarClientes(vector<DataProducto> dtProductos, string nombrePromocion);
         map<string,Producto*> productos;
         map<string,Promocion*> promociones;
     public:
-        Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, int _RUT);
+        Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, string _RUT);
         Vendedor(DataVendedor vendedor);
         ~Vendedor();
       
-        int getRUT();
+        string getRUT();
         vector<ParCodigoNombre> obtenerProductos();
         DataVendedor getDataVendedor();
 
-        void setRUT(int _RUT);
+        void setRUT(string _RUT);
         void agregarSuscriptor(Cliente* c);
         void setProducto(Producto* producto);
 

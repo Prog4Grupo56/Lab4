@@ -6,13 +6,13 @@
 class DataVendedor : public DataUsuario{
 
     private:
-        int RUT;
+        string RUT;
     public:
         DataVendedor();
-        DataVendedor(string _nickname, string _constrasena, DTFecha _fecha, long int _RUT);
+        DataVendedor(string _nickname, string _constrasena, DTFecha _fecha, string _RUT);
         ~DataVendedor();
       
-        long int getRUT();
+        string getRUT();
 
         string toString();
 };

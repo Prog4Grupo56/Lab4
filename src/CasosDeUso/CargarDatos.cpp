@@ -7,17 +7,17 @@ void CargarDatos(){
     ICompra* IC = F->getICompra();
 
 //INGRESO DE USUARIOS
-    DataVendedor US1 = DataVendedor("ana23", "qwer1234", DTFecha(15,05,1988), 212345678001);
+    DataVendedor US1 = DataVendedor("ana23", "qwer1234", DTFecha(15,05,1988), "212345678001");
     IU->ingresarVendedor(US1);
-    DataVendedor US2 = DataVendedor("carlos78", "asdfghj", DTFecha(18,06,1968), 356789012345);
+    DataVendedor US2 = DataVendedor("carlos78", "asdfghj", DTFecha(18,06,1968), "356789012345");
     IU->ingresarVendedor(US2);
-    DataVendedor US3 = DataVendedor("diegom", "zxcvbn", DTFecha(28,07,1993), 190123456789);
+    DataVendedor US3 = DataVendedor("diegom", "zxcvbn", DTFecha(28,07,1993), "190123456789");
     IU->ingresarVendedor(US3);
     DataCliente US4 = DataCliente("juan87", "1qaz2wsx", DTFecha(20,10,1992), DTDireccion("Av. 18 de Julio", 456), "Melo");
     IU->ingresarCliente(US4);
     DataCliente US5 = DataCliente("laura", "3edc4rfv", DTFecha(22,9,1979), DTDireccion("Rondeau", 1617), "Montevideo");
     IU->ingresarCliente(US5);
-    DataVendedor US6 = DataVendedor("maria01", "5tgb6yhn", DTFecha(25,03,1985), 321098765432);
+    DataVendedor US6 = DataVendedor("maria01", "5tgb6yhn", DTFecha(25,03,1985), "321098765432");
     IU->ingresarVendedor(US6);
     DataCliente US7 = DataCliente("natalia", "poiuyt", DTFecha(14,04,1982), DTDireccion("Paysandú", 2021), "Salto");
     IU->ingresarCliente(US7);
@@ -25,7 +25,7 @@ void CargarDatos(){
     IU->ingresarCliente(US8);
     DataCliente US9 = DataCliente("roberto", "mnbvcx", DTFecha(12,8,1990), DTDireccion("Av. Brasil", 1011), "Montevideo");
     IU->ingresarCliente(US9);
-    DataVendedor US10 = DataVendedor("sofia25", "1234asdf", DTFecha(07,12,1983), 445678901234);
+    DataVendedor US10 = DataVendedor("sofia25", "1234asdf", DTFecha(07,12,1983), "445678901234");
     IU->ingresarVendedor(US10);
 
 //INGRESO DE PRODUCTOS
