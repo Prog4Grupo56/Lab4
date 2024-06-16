@@ -42,7 +42,7 @@ class Comentario
         void desvincularHijo(Comentario* c);
 
         string obtenerNicknameComentador();
-        string obtenerCodigoProdComentado();
+        int obtenerCodigoProdComentado();
 };
 
 #endif

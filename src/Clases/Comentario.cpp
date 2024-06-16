@@ -71,7 +71,7 @@ void Comentario::eliminarComentario(){
 string Comentario::obtenerNicknameComentador(){
     return comentador->getNickname();
 }
-string Comentario::obtenerCodigoProdComentado(){
+int Comentario::obtenerCodigoProdComentado(){
     return producto->getCodigo();
 }
 
