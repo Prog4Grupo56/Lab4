@@ -33,7 +33,7 @@ vector<DataVendedor> Cliente::obtenerSuscripciones(){
     for (it = suscripciones.begin(); it != suscripciones.end(); ++it){
         string nickname = it->first;
         DTFecha fecha = it->second->getFecha();
-        int RUT = it->second->getRUT();
+        string RUT = it->second->getRUT();
         string contrasena = it->second->getContrasena();
         DataVendedor dataV = DataVendedor(nickname, contrasena, fecha, RUT);
         lista.push_back(dataV);
