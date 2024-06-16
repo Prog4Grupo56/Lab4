@@ -33,5 +33,5 @@ Categoria DataProducto::getCategoria(){
 }
 
 string DataProducto::toString(){
-    return codigo + ", " + nombre + ", " + descripcion + ", " + to_string(stock) + ", " + to_string(precio) + ", " + to_string(categoria);
+    return "Codigo: " + to_string(codigo) + " | Nombre: " + nombre + " | Descripcion: " + descripcion + " | Stock: " + to_string(stock) + " | Precio: " + to_string(precio) + " | Categoria: " + to_string(categoria);
 }
