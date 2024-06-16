@@ -6,6 +6,7 @@
 
 
 #include "Usuario.h"
+#include "Producto.h"
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/DataPromocion.h"
 #include "../Datatypes/DataVendedor.h"

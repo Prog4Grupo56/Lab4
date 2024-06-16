@@ -217,7 +217,7 @@ void ControladorUsuario::ingresarComentarioNuevo(string nickname, int codigoProd
 
     Usuario* u = usuarios[nickname];
     cantidadComentarios++;
-    u->agregarComentarioNuevo(comentario, pr, _fecha, cantidadComentarios);
+    u->agregarComentarioNuevo(comentario, pr->getCodigo(), _fecha, cantidadComentarios);
 }
 
 void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre){
@@ -238,7 +238,7 @@ void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigo
     }
 
     cantidadComentarios++;
-    u->agregarComentarioRespuesta(comentario, pr, _fecha, cantidadComentarios, comentarioPadre);
+    u->agregarComentarioRespuesta(comentario, pr->getCodigo(), _fecha, cantidadComentarios, comentarioPadre);
 };
 
     //Consultar Notificaciones
