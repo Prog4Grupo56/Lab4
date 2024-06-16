@@ -35,6 +35,7 @@ Usuario* Comentario::getComentador(){
     return comentador;
 }
 /*======= SETTERS ========*/
+//falta setId y setFecha, pero creo que no se usan
 void Comentario::setComentario(string _comentario){
     comentario = _comentario;
 };
@@ -67,4 +68,10 @@ void Comentario::eliminarComentario(){
     delete this;
 }
 
-//falta setId y setFecha, pero creo que no se usan
+string Comentario::obtenerNicknameComentador(){
+    return comentador->getNickname();
+}
+string Comentario::obtenerCodigoProdComentado(){
+    return producto->getCodigo();
+}
+

@@ -4,12 +4,13 @@
 #include <map>
 #include <string>
 #include "../Datatypes/DTFecha.h"
+#include "../Datatypes/DataComentario.h"
 #include "Comentario.h"
-#include "Producto.h"
 
 using namespace std;
 
 class Comentario; //fwd
+class Producto;
 
 class Usuario{
 

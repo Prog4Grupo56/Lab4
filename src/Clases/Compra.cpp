@@ -37,3 +37,7 @@ void Compra::setMontoFinal(int _montoFinal){
 void Compra::setCliente(Cliente* _cliente){
     clienteDeCompra = _cliente;
 }
+
+string Compra::getNickCliente(){
+    return clienteDeCompra->getNickname();
+}

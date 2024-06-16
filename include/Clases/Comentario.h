@@ -3,7 +3,6 @@
 
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DataComentario.h"
-//#include "../Clases/Producto.h"
 #include "Usuario.h"
 #include "Producto.h"
 
@@ -41,6 +40,9 @@ class Comentario
         void desvincularPadre();
         void eliminarComentario(); //este es el destructor??
         void desvincularHijo(Comentario* c);
+
+        string obtenerNicknameComentador();
+        string obtenerCodigoProdComentado();
 };
 
 #endif

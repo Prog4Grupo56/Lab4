@@ -4,16 +4,17 @@
 #include "Cliente.h"
 #include "../Datatypes/ParCodigoNombre.h"
 
-class Cliente; //fwd declaration
-class ParCodigoNombre;
+
 #include "Usuario.h"
 #include "../Datatypes/DataProducto.h"
+#include "../Datatypes/DataPromocion.h"
 #include "../Datatypes/DataVendedor.h"
 #include "../Datatypes/ParCodigoNombre.h"
 
 class Usuario;
 class Cliente;
 class Promocion;
+class ParCodigoNombre;
 
 class Vendedor : public Usuario{
     private:

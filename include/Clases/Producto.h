@@ -5,6 +5,7 @@
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/ParCodigoCantidad.h"
+#include "../Datatypes/ParNickFecha.h"
 #include "CantMin.h"
 #include "CompraProducto.h"
 
@@ -53,6 +54,7 @@ class Producto
         DataProducto getDataProducto();
         bool pertenecePromoVigente();
         void crearEnvio(Compra* c, int cantidad);
+        vector<ParNickFecha> obtenerClienteFecha();
         
 };
 

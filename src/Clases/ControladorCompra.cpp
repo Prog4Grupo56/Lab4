@@ -127,11 +127,11 @@ vector<ParCodigoNombre> ControladorCompra::obtenerProductosPendientesEnvio(strin
     vector<ParCodigoNombre> prodPend = IU->obtenerProductosVendedorEnvio(nickVendedor);
 
     return prodPend;
-}//implementar
+}
 
 vector<ParNickFecha> ControladorCompra::obtenerParNickFechaEnvio(string producto){
-    return {};
-} //Implementar 
+    return productos[producto]->obtenerClienteFecha();
+} 
 
 void ControladorCompra::enviarProducto(){
 

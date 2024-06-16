@@ -26,10 +26,10 @@ public:
     virtual void confirmarCompra() = 0;
     
     //Enviar Producto
-    virtual vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor) = 0; //Implementar
+    virtual vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor) = 0; 
     virtual vector<ParNickFecha> obtenerParNickFechaEnvio(string producto) = 0; //Implementar
     virtual void enviarProducto() = 0; //Implementar
-    
+
     virtual Producto* obtenerProducto(string _codigoProducto) = 0;
 };
 
