@@ -10,6 +10,7 @@
 #include "../Datatypes/DataComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/ParCodigoNombre.h"
+#include "../Datatypes/ParNickFecha.h"
 
 #include "Fabrica.h"
 #include "Vendedor.h"
@@ -102,7 +103,7 @@ class ControladorUsuario : public IUsuario{
         string obtenerInfoUsuario(string nickname);
 
         //Enviar Producto
-        vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
+        vector<ParCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor);
 
         //Alta Producto
         Vendedor* obtenerVendedor(string vendedor);
