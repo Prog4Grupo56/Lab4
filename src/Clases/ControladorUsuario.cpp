@@ -341,5 +341,7 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
 //Alta Producto
 
 Vendedor* ControladorUsuario::obtenerVendedor(string vendedor){
-    return vendedores[vendedor];
+    map<string,Vendedor*>::iterator itV;
+    itV = vendedores.find(vendedor);
+    return itV == vendedores.end() ? NULL : vendedores[vendedor];
 }

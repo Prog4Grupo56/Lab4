@@ -119,6 +119,29 @@ void ControladorCompra::confirmarCompra(){
     dataInfoC = NULL;
 }
 
+void ControladorCompra::confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra){
+    Fabrica* f = Fabrica::getInstance();
+    IUsuario* CU = f->getIUsuario();
+    Cliente* cliente = CU->obtenerClienteCompra(dataInfoCompra->getCliente());
+    Compra* compra = new Compra(cliente, dataInfoCompra->getMontoF());
+    vector<ParCodigoCantidad> productosCompra = dataInfoCompra->getProdCant();
+
+    for(unsigned int i = 0; i < productosCompra.size(); i++){
+        Producto* productoActual = productos[productosCompra[i].getCodigo()];
+        if (productoActual!=NULL){
+            productoActual->crearEnvio(compra, productosCompra[i].getCantidad());
+            productoActual->setStock(productoActual->getStock() - productosCompra[i].getCantidad());
+        }
+    }
+
+    vector<Compra*> comprasCliente = cliente->getCompras();
+    comprasCliente.push_back(compra);
+    cliente->setCompras(comprasCliente);
+    compras.push_back(compra);
+    delete dataInfoCompra;
+    dataInfoCompra = NULL;
+}
+
     //Enviar Producto
 vector<ParCodigoNombre> ControladorCompra::obtenerProductosPendientesEnvio(string nickVendedor){
     Fabrica* f = Fabrica::getInstance();
@@ -173,3 +196,5 @@ void ControladorCompra::confirmarAltaProducto(Categoria categoria, string nombre
     vendedor->setProducto(productoNuevo);
 
 }
+
+

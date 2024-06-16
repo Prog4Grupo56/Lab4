@@ -44,6 +44,7 @@ class ControladorCompra : public ICompra{
         vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra();
+        void confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra);
 
         //Enviar Producto
         vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
@@ -56,6 +57,8 @@ class ControladorCompra : public ICompra{
         string obtenerInfoPromocion(string nombre);
 
         void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor);
+
+        
 };
 
 #endif
