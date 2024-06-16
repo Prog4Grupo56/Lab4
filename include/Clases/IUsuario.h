@@ -62,8 +62,6 @@ public:
     //Enviar Producto
     virtual vector<ParCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor) = 0;
 
-    virtual vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor) = 0;
-
     //Alta Producto
     virtual Vendedor* obtenerVendedor(string vendedor) = 0;
 };

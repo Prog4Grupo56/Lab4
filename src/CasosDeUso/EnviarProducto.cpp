@@ -40,7 +40,7 @@ void EnviarProducto(){
 
     cout << "========";
     cout << "Seleccione uno (codigo): ";
-    string producto;
+    int producto;
     cin >> producto;
     cout << "========";
 

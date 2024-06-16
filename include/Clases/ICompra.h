@@ -27,7 +27,7 @@ public:
     
     //Enviar Producto
     virtual vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor) = 0; 
-    virtual vector<ParNickFecha> obtenerParNickFechaEnvio(string producto) = 0; //Implementar
+    virtual vector<ParNickFecha> obtenerParNickFechaEnvio(int producto) = 0; //Implementar
     virtual void enviarProducto() = 0; //Implementar
 
     //virtual Producto* obtenerProducto(string _codigoProducto) = 0;
