@@ -5,6 +5,7 @@
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/ParCodigoCantidad.h"
+#include "../Datatypes/ParNickFecha.h"
 #include "CantMin.h"
 #include "CompraProducto.h"
 
@@ -23,7 +24,7 @@ class Producto
         int stock;
         float precio;
         CantMin* cantMin;
-        set<CompraProducto*> compraProducto;
+        vector<CompraProducto*> compraProducto;
         Vendedor* vendedor;
     
     public:
@@ -40,7 +41,7 @@ class Producto
         int getStock();
         float getPrecio();
         CantMin* getCantMin();
-        set<CompraProducto*> getCompraProducto();
+        vector<CompraProducto*> getCompraProducto();
         Vendedor* getVendedor();
     
         void setCodigo(int _codigo);
@@ -50,13 +51,14 @@ class Producto
         void setStock(int _stock);
         void setPrecio(float _precio);
         void setCantMin(CantMin* _cantMin);
-        void setCompraProducto(set<CompraProducto*> _compraProducto);
+        void setCompraProducto(vector<CompraProducto*> _compraProducto);
         void setVendedor(Vendedor* _vendedor);
 
         //Operaciones:
         DataProducto getDataProducto();
         bool pertenecePromoVigente();
         void crearEnvio(Compra* c, int cantidad);
+        vector<ParNickFecha> obtenerClienteFecha();
         
 };
 
