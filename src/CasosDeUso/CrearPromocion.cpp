@@ -48,7 +48,7 @@ void CrearPromocion()
 
     vector<string> listaNicknames = IU->obtenerListaNicknameVendedores();
 
-    cout << "Vendedores:" << endl;
+    cout << "Vendedores:\n" << endl;
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
         cout << "\t" << listaNicknames[i] << endl;
     }
@@ -57,21 +57,56 @@ void CrearPromocion()
     cout << "Seleccione uno:";
     string seleccion;
     cin >> seleccion;
+    cout << "========";
+
     IU -> seleccionarVendedor(seleccion); //Queda guardado en dataCrearP
 
+    // vector<ParCodigoNombre> productos = IU -> obtenerListaProductosVendedor();
+    // cout << "Productos del vendedor "<< seleccion << ": " << endl;
+    // for (long unsigned int i = 0; i < listaNicknames.size(); i++){
+    //     cout << "\t" << listaNicknames[i] << endl;
+    // }
 
-    //vector<ParCodigoNombre> productos = IU -> obtenerListaProductosVendedor(); //El include esta en el IUsuario.h
-    /*
-    for(int i = 0; i < productos.size();i++)
-        cout << productos.getNombre() << endl;
-    */
-    cout << "Seleccione un producto:" << endl;
-    int id;
-    cin >> id;
-    cout << "Ingrese la cantidad minima:" << endl;
-    int cant;
-    cin >> cant;
-    IU -> agregarProductoCantidad(ParCodigoCantidad(id,cant));
+    bool continuar = true;
+    int opcion = 1; //Para el menu
+    int id; int cant; //Id y cantidad del producto
+    while(continuar)
+    {
+
+        vector<ParCodigoNombre> listaProductos = IU -> obtenerListaProductosVendedor();
+        cout << "Productos del vendedor "<< seleccion << ": " << endl;
+        for (long unsigned int i = 0; i < listaProductos.size(); i++){
+            cout << "\t" << listaProductos[i].getNombre() << " - " << listaProductos[i].getCodigo() << endl;
+        }
+
+        
+        IU -> agregarProductoCantidad(ParCodigoCantidad(id,cant));
+
+        cout << "\nDesea agregar otro producto?";
+        cout << "\n\t0. Terminar." << endl;
+        cout << "\t1. Agregar nuevo producto." << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        if(opcion == 1){
+            cout << "\nProductos:";
+
+            //listaProductos = listaProductos.erase();
+            for (long unsigned int i = 0; i < listaProductos.size(); i++){
+            cout << "\t" << listaProductos[i].getNombre() << " - " << listaProductos[i].getCodigo() << endl;
+            }
+
+            cout << "\n\nIngrese el codigo del producto: ";
+            cin >> id;
+            cout << "\nIngrese la cantidad deseada: ";
+            cin >> cant;
+            cout << "\nProducto ingresado con exito." << endl;
+            
+        }else{
+            continuar = false;
+        }
+    }
+
 
 
     IU -> confirmarAltaPromocion();
