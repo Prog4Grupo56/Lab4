@@ -22,6 +22,7 @@ void ConsultarPromocion(){
         cout<< "Ingrese el nombre de la promocion: ";
         cin >> nombre;
         string info = IC->obtenerInfoPromocion(nombre);
+        cout << "\n" + info;
     }
 
 }

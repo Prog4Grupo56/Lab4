@@ -3,6 +3,7 @@
 ControladorCompra* ControladorCompra::instancia = nullptr;
 
 ControladorCompra::ControladorCompra(){
+    cantidadProductos = 0;
 }
 
 ControladorCompra* ControladorCompra::getInstancia() {
@@ -43,7 +44,7 @@ void ControladorCompra::seleccionarCliente(string nickname){
 
 vector<DataProducto> ControladorCompra::obtenerListaProductos(){
     vector<DataProducto> dataProductos;
-    for (std::map<string, Producto*>::iterator it = productos.begin(); it != productos.end(); ++it) {
+    for (std::map<int, Producto*>::iterator it = productos.begin(); it != productos.end(); ++it) {
         dataProductos.push_back(it->second->getDataProducto());
     }
     return dataProductos;
@@ -118,7 +119,7 @@ void ControladorCompra::confirmarCompra(){
     dataInfoC = NULL;
 }
 
-Producto* ControladorCompra::obtenerProducto(string _codigoProducto){
+Producto* ControladorCompra::obtenerProducto(int _codigoProducto){
     return productos[_codigoProducto];
 }
 
@@ -134,8 +135,22 @@ vector<DataPromocion> ControladorCompra::obtenerInfoPromociones(DTFecha _fecha){
 }
 
 string ControladorCompra::obtenerInfoPromocion(string nombre){
-    //Promocion* promocion = promociones[nombre];
-    //string info;
-    return "";
+    Promocion* promocion = promociones[nombre];
+    string info = "Vendedor: " + promocion->getCantidadesMinimas()[0]->getProducto()->getVendedor()->getNickname();
+    info += "Productos: ";
+    for(unsigned int i = 0 ; promocion->getCantidadesMinimas().size(); i++){
+        info += "\n\t" + promocion->getCantidadesMinimas()[i]->getProducto()->getDataProducto().toString();
+    }
+    return info;
+}
+
+    //Alta de Producto
+void ControladorCompra::confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor){
+
+    cantidadProductos++; //codigo
+    Producto* productoNuevo = new Producto(cantidadProductos, categoria, nombre, descripcion, stock, precio, vendedor);
+    productos[cantidadProductos] = productoNuevo;
+
+    vendedor->setProducto(productoNuevo);
 
 }

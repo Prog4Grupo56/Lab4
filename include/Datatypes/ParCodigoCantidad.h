@@ -11,16 +11,16 @@ using namespace std;
 class ParCodigoCantidad
 {
     private:
-        string codigo;
+        int codigo;
         int cantidad;
     public:
     
-        ParCodigoCantidad(string _codigo, int _cantMinima); //Constructor
+        ParCodigoCantidad(int _codigo, int _cantMinima); //Constructor
 
         ~ParCodigoCantidad(); //Destructor
 
         //Getters
-        string getCodigo();
+        int getCodigo();
         int getCantidad();
 
 };

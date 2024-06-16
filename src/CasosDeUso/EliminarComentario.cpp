@@ -8,15 +8,13 @@ void EliminarComentario(){
 
     cout << "Usuarios:" << endl;
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
-        cout << listaNicknames[i] << endl;
+        cout << "\t" << listaNicknames[i] << endl;
     }
 
-    cout << "========";
     cout << "Seleccione uno: ";
     string nickname;
     cin >> nickname;
     IU->seleccionarUsuario(nickname);
-    cout << "========";
     
     vector<DataComentario> listaComentarios = IU->obtenerComentariosUsuario();
 
@@ -29,15 +27,15 @@ void EliminarComentario(){
         string c = listaComentarios[i].getComentario();
 
         cout << id.append(fecha) << endl;
-        cout << c << endl;
+        cout << "\t" << c << endl;
     }
 
-    cout << "========";
+    cout << "========" << endl;
     cout << "Seleccione uno: ";
     int idComentario;
     cin >> idComentario;
     IU->seleccionarComentario(idComentario);
-    cout << "========";
+    cout << "========" << endl;
 
     IU->eliminarComentario();
 }

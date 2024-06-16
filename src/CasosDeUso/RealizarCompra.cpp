@@ -1,7 +1,7 @@
 #include  "../../include/CasosDeUso/CasosDeUso.h"
 
 #include  "../../include/Clases/ICompra.h"
-#include "../include/Clases/Fabrica.h"
+#include "../../include/Clases/Fabrica.h"
 
 void RealizarCompra()
 {
@@ -14,7 +14,7 @@ vector<string> listaNicknames = interfazCompra->obtenerListaNicknamesClientes();
 
 for(unsigned int i = 0; i < listaNicknames.size(); i++)
     cout << listaNicknames[i] << endl;
-cout << "Seleccione un cliente:" << endl;
+cout << "Seleccione un cliente:";
 string seleccion;
 cin >> seleccion;
 interfazCompra -> seleccionarCliente(seleccion); //Queda un dataInfoCompra guardado con el nick seleccionado
@@ -24,7 +24,7 @@ cout << "Seleccione los productos a vender:" << endl;
 vector<DataProducto> listaProductos = interfazCompra -> obtenerListaProductos();
 bool continuar = true;
 int opcion = 1; //Para el menu
-string id; int cant; //Id y cantidad del producto
+int id; int cant; //Id y cantidad del producto
 while(continuar)
 {
 
@@ -38,7 +38,7 @@ while(continuar)
             cout << listaProductos[i].getCodigo() << " - " << listaProductos[i].getNombre();
         };
 
-        cout << "Ingrese la ID del producto:" << endl;
+        cout << "\nIngrese la ID del producto:" << endl;
         cin >> id;
         cout << "Ingrese la cantidad deseada:" << endl;
         cin >> cant;
@@ -55,6 +55,7 @@ while(continuar)
 
 ParCompraProductos infoCompra = interfazCompra -> obtenerInfoCompra(); //Almacena los productos, fecha actual y monto final, incluyendo descuentos
 
+// falta lo de mostrar
 
 interfazCompra->confirmarCompra();
 
