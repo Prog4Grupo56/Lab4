@@ -83,10 +83,10 @@ class ControladorUsuario : public IUsuario{
         Cliente* obtenerClienteCompra(string nickname);
 
         //Dejar comentario
-        vector<DataComentario> obtenerListaComentariosProducto(string codigoProducto);
-        void ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario);
-        void ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre);
-
+        vector<DataComentario> obtenerListaComentariosProducto(int codigoProducto);
+        void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario, DTFecha _fecha);
+        void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre);
+ 
         //Consultar Notificaciones
         vector<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente);
 
@@ -104,6 +104,10 @@ class ControladorUsuario : public IUsuario{
 
         //Enviar Producto
         vector<ParCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor);
+
+        //Alta Producto
+        Vendedor* obtenerVendedor(string vendedor);
+
 };  
 
 #endif

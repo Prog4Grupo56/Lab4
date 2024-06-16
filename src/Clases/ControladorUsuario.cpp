@@ -6,6 +6,7 @@ ControladorUsuario :: ControladorUsuario(){
     dataElimCom = NULL;
     dataCrearP = NULL;
     dataElimSus = NULL;
+    cantidadComentarios = 0;
 }
 
 ControladorUsuario* ControladorUsuario::getInstancia() {
@@ -189,7 +190,7 @@ Cliente* ControladorUsuario::obtenerClienteCompra(string nickname){
 }
 
     //Dejar comentario
-vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(string codigoProducto){
+vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(int codigoProducto){
 
     vector<DataComentario> lista;
 
@@ -207,27 +208,22 @@ vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(strin
     return lista;
 }
 
-void ControladorUsuario::ingresarComentarioNuevo(string nickname, string codigoProducto, string comentario){
+void ControladorUsuario::ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario, DTFecha _fecha){
 
     Fabrica* F = Fabrica::getInstance();
     ICompra* IC = F->getICompra();
-    IFecha* IF = F->getIFecha();
-
-    DTFecha fecha = IF->getFechaActual();
 
     Producto* pr = IC->obtenerProducto(codigoProducto);
 
     Usuario* u = usuarios[nickname];
-    u->agregarComentarioNuevo(comentario, pr, fecha, cantidadComentarios);
     cantidadComentarios++;
+    u->agregarComentarioNuevo(comentario, pr, _fecha, cantidadComentarios);
 }
 
-void ControladorUsuario::ingresarComentarioRespuesta(string nickname, string codigoProducto, string comentario, int idPadre){
+void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre){
     Fabrica* F = Fabrica::getInstance();
     ICompra* IC = F->getICompra();
-    IFecha* IF = F->getIFecha();
 
-    DTFecha fecha = IF->getFechaActual();
     Producto* pr = IC->obtenerProducto(codigoProducto);
 
     Usuario* u = usuarios[nickname];
@@ -241,8 +237,8 @@ void ControladorUsuario::ingresarComentarioRespuesta(string nickname, string cod
         }
     }
 
-    u->agregarComentarioRespuesta(comentario, pr, fecha, cantidadComentarios, comentarioPadre);
     cantidadComentarios++;
+    u->agregarComentarioRespuesta(comentario, pr, _fecha, cantidadComentarios, comentarioPadre);
 };
 
     //Consultar Notificaciones
@@ -312,26 +308,28 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
     IFecha* IF = f->getIFecha();
     DTFecha fechaActual = IF->getFechaActual();
 
-    Cliente* cliente = clientes[nickname];
-    Vendedor* vendedor = vendedores[nickname];
+    map<string,Cliente*>::iterator itC;
+    itC = clientes.find(nickname);
+    map<string,Vendedor*>::iterator itV;
+    itV = vendedores.find(nickname);
     string info;
-    if(cliente!=NULL){
-        info = cliente->getNickname() + ", " + cliente->getFecha().toString();
-        vector<Compra*> compras = cliente->getCompras();
+    if(itC != clientes.end()){
+        info = itC->second->getNickname() + ", " + itC->second->getFecha().toString();
+        vector<Compra*> compras = itC->second->getCompras();
         info += "\n\tCompras:";
         for(unsigned int i = 0; i<compras.size(); i++){
             info+= "\n\t" + compras[i]->getFecha().toString() + ", " + to_string(compras[i]->getMontoFinal());
         }
     }
-    if(vendedor!=NULL){
-        info = vendedor->getNickname() + ", " + vendedor->getFecha().toString();
-        vector<DataProducto> productos = vendedor->obtenerInfoProductos();
+    if(itV!=vendedores.end()){
+        info = itV->second->getNickname() + ", " + itV->second->getFecha().toString();
+        vector<DataProducto> productos = itV->second->obtenerInfoProductos();
         info += "\n\tProductos:";
         for(unsigned int i = 0; i<productos.size(); i++){
             info += "\n\t" + productos[i].toString();
         }
         info += "\n\tPromociones:";
-        vector<DataPromocion> promociones = vendedor->obtenerInfoPromocionesVigentes(fechaActual);
+        vector<DataPromocion> promociones = itV->second->obtenerInfoPromocionesVigentes(fechaActual);
         for(unsigned int i = 0; i<promociones.size(); i++){
             info += "\n\t" + promociones[i].toString();
         }
@@ -340,3 +338,8 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
     return info;
 }
 
+//Alta Producto
+
+Vendedor* ControladorUsuario::obtenerVendedor(string vendedor){
+    return vendedores[vendedor];
+}

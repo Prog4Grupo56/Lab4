@@ -4,6 +4,9 @@ void DejarComentario(){
     Fabrica* F = Fabrica::getInstance();
     IUsuario* IU = F->getIUsuario();
     ICompra* IC = F->getICompra();
+    IFecha* IF = F->getIFecha();
+
+    DTFecha fecha = IF->getFechaActual();
 
     vector<string> listaNicknames = IU->obtenerListaNicknamesUsuarios();
 
@@ -29,7 +32,7 @@ void DejarComentario(){
     cout << "========" << endl;
 
     cout << "Ingrese un producto (codigo): ";
-    string producto;
+    int producto;
     cin >> producto;
     
     cout << "========" << endl;
@@ -46,12 +49,12 @@ void DejarComentario(){
         string comentario;
         cin >> comentario;
 
-        IU->ingresarComentarioNuevo(nickname, producto, comentario);
+        IU->ingresarComentarioNuevo(nickname, producto, comentario, fecha);
 
     }
     else{
         vector<DataComentario> listaComentariosProducto = IU->obtenerListaComentariosProducto(producto);
-        cout << "Comentarios sobre " << producto << "(comentario, fecha, id):" << endl;
+        cout << "Comentarios sobre el producto " << producto << " (comentario, fecha, id):" << endl;
         for (unsigned int i = 0; i < listaComentariosProducto.size(); i++){
             cout << listaComentariosProducto[i].toString() << endl;
         }
@@ -68,7 +71,7 @@ void DejarComentario(){
 
         cout << "========" << endl;
 
-        IU->ingresarComentarioRespuesta(nickname, producto, comentario, id);
+        IU->ingresarComentarioRespuesta(nickname, producto, comentario, fecha, id);
     }
 
     cout << "Se ingresó su comentario exitosamente." << endl;

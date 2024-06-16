@@ -1,7 +1,7 @@
 #include "../../include/Datatypes/DataProducto.h"
 
 DataProducto::DataProducto(){}
-DataProducto::DataProducto(string _codigo, int _stock, float _precio, string _nombre, string _descripcion, Categoria _categoria){
+DataProducto::DataProducto(int _codigo, int _stock, float _precio, string _nombre, string _descripcion, Categoria _categoria){
     codigo = _codigo;
     stock = _stock;
     precio = _precio;
@@ -13,7 +13,7 @@ DataProducto::DataProducto(string _codigo, int _stock, float _precio, string _no
 DataProducto::~DataProducto(){};
 
 /*======= GETTERS ========*/
-string DataProducto::getCodigo(){
+int DataProducto::getCodigo(){
     return codigo;
 }
 int DataProducto::getStock(){
@@ -28,9 +28,9 @@ string DataProducto::getNombre(){
 string DataProducto::getDescripcion(){
     return descripcion;
 }
-/*Categoria DataProducto::getCategoria(){
+Categoria DataProducto::getCategoria(){
     return categoria;
-}*/
+}
 
 string DataProducto::toString(){
     return codigo + ", " + nombre + ", " + descripcion + ", " + to_string(stock) + ", " + to_string(precio) + ", " + to_string(categoria);

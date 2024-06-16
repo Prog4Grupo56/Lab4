@@ -33,7 +33,7 @@ vector<DataComentario> Usuario::obtenerComentarios(){
         DTFecha fecha = it->second->getFecha();
         int id = it->second->getIdComentario();
         string comentador = it->second->obtenerNicknameComentador();//getComentador()->getNickname();
-        string codigoProd = it->second->obtenerCodigoProdComentado();//getProducto()->getCodigo();
+        int codigoProd = it->second->obtenerCodigoProdComentado();//getProducto()->getCodigo();
         DataComentario dataC = DataComentario(comentario, fecha, id, comentador, codigoProd);
         lista.push_back(dataC);
     }

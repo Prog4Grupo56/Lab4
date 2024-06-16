@@ -1,6 +1,6 @@
 #include "../../include/Clases/Vendedor.h"
 
-Vendedor::Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, int _RUT):
+Vendedor::Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, string _RUT):
 Usuario(_nickname, _contrasenia, _fecha), RUT(_RUT){};
 
 Vendedor::Vendedor(DataVendedor vendedor): Usuario(vendedor.getNickname(), vendedor.getContrasena(), vendedor.getFecha()){
@@ -11,7 +11,7 @@ Vendedor::~Vendedor(){
 };
 
 /*======= GETTERS ========*/
-int Vendedor::getRUT(){
+string Vendedor::getRUT(){
     return RUT;
 };
 
@@ -36,7 +36,7 @@ vector<ParCodigoNombre> Vendedor::obtenerProductos(){
 };
 
 /*======= SETTERS ========*/
-void Vendedor::setRUT(int _RUT){
+void Vendedor::setRUT(string _RUT){
     RUT = _RUT;
 };
 

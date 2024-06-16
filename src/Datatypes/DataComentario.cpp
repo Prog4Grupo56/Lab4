@@ -1,6 +1,6 @@
 #include "../../include/Datatypes/DataComentario.h"
 
-DataComentario::DataComentario(string _comentario, DTFecha _fecha, int id, string _comentador, string _codigoProducto){
+DataComentario::DataComentario(string _comentario, DTFecha _fecha, int id, string _comentador, int _codigoProducto){
     comentario = _comentario;
     fecha = _fecha;
     idComentario = id;
@@ -19,7 +19,7 @@ DTFecha DataComentario::getFecha(){
 int DataComentario::getIdComentario(){
     return idComentario;
 }
-string DataComentario::getCodigoProducto(){
+int DataComentario::getCodigoProducto(){
     return codigoProducto;
 }
 string DataComentario::getComentador(){
@@ -27,5 +27,5 @@ string DataComentario::getComentador(){
 }
 
 string DataComentario::toString(){
-    return comentario + ", " + fecha.toString() + ", " + to_string(idComentario) + ", " + comentador + ", " + codigoProducto;
+    return comentario + ", " + fecha.toString() + ", " + to_string(idComentario) + ", " + comentador + ", " + to_string(codigoProducto);
 };

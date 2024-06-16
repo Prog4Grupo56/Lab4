@@ -45,7 +45,7 @@ void AltaVendedor(){
     string nickname;
     string contrasena;
     int dia, mes, ano;
-    int RUT;
+    string RUT;
 
     cout << "Ingrese un nickname: ";
     cin >> nickname;

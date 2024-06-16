@@ -30,7 +30,11 @@ public:
     virtual vector<ParNickFecha> obtenerParNickFechaEnvio(string producto) = 0; //Implementar
     virtual void enviarProducto() = 0; //Implementar
 
-    virtual Producto* obtenerProducto(string _codigoProducto) = 0;
+    //virtual Producto* obtenerProducto(string _codigoProducto) = 0;
+    virtual Producto* obtenerProducto(int _codigoProducto) = 0;
+    virtual vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha) = 0;
+    virtual string obtenerInfoPromocion(string nombre) = 0;
+    virtual void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor) = 0;
 };
 
 #endif

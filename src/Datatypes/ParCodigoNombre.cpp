@@ -2,12 +2,12 @@
 
 ParCodigoNombre::~ParCodigoNombre(){}
 
-ParCodigoNombre::ParCodigoNombre(string _nombre, string _codigo){
+ParCodigoNombre::ParCodigoNombre(string _nombre, int _codigo){
     codigo = _codigo;
     nombre = _nombre;
 }
 
-string ParCodigoNombre::getCodigo(){
+int ParCodigoNombre::getCodigo(){
     return codigo;
 }
 
