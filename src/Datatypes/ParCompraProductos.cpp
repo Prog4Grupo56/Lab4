@@ -4,10 +4,10 @@ ParCompraProductos::ParCompraProductos(){
 
 }
 
-ParCompraProductos::ParCompraProductos(float _montoF, vector<DataProducto> _dProductos, DTFecha fecha){
-    fechaActual = fecha;
+ParCompraProductos::ParCompraProductos(float _montoF, vector<DataProducto> _dProductos, DTFecha _fecha){
+    fechaActual = _fecha;
     dProductos = _dProductos;
-    montoF = montoF;
+    montoF = _montoF;
 }
 
 ParCompraProductos::~ParCompraProductos(){}

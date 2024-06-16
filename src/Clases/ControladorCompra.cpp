@@ -77,7 +77,6 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
             montoFinal += productoActual->getPrecio(); // Para cada producto que este dentro de dataInfoC sumo el precio al total
         }
     }
-
     for (std::map<string, Promocion*>::iterator it = promociones.begin(); it != promociones.end(); ++it) {
         Promocion* promocionActual = it->second;
         vector<ParCodigoCantidad> productosPromocion = promocionActual->aplicaEnCompra(dataInfoC->getProdCant());
@@ -94,7 +93,6 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
         }
 
     }
-
     dataInfoC->setMontoF(montoFinal);
     return ParCompraProductos(montoFinal, dProductos, fechaActual);
 }
@@ -113,7 +111,9 @@ void ControladorCompra::confirmarCompra(){
             productoActual->setStock(productoActual->getStock() - productosCompra[i].getCantidad());
         }
     }
-
+    vector<Compra*> comprasCliente = cliente->getCompras();
+    comprasCliente.push_back(compra);
+    cliente->setCompras(comprasCliente);
     compras.push_back(compra);
     delete dataInfoC;
     dataInfoC = NULL;
