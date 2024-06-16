@@ -113,13 +113,48 @@ void CargarDatos(){
     DataInfoCompra* CO1 = new DataInfoCompra(US4.getNickname(), 57581993, PCC1);
     IC->confirmarCompraCargaDeDatos(CO1);
     //CO2
+    vector<ParCodigoCantidad> PCC2;
+    PCC2.push_back(ParCodigoCantidad(5, 1));
+    DataInfoCompra* CO2 = new DataInfoCompra(US4.getNickname(), 599.99, PCC2);
+    IC->confirmarCompraCargaDeDatos(CO2);
     //CO3
+    vector<ParCodigoCantidad> PCC3;
+    PCC3.push_back(ParCodigoCantidad(14, 10));
+    DataInfoCompra* CO3 = new DataInfoCompra(US5.getNickname(), 150000, PCC3);
+    IC->confirmarCompraCargaDeDatos(CO3);
     //CO4
+    vector<ParCodigoCantidad> PCC4;
+    PCC4.push_back(ParCodigoCantidad(11, 1));
+    PCC4.push_back(ParCodigoCantidad(12, 1));
+    PCC4.push_back(ParCodigoCantidad(13, 1));
+    DataInfoCompra* CO4 = new DataInfoCompra(US7.getNickname(), 11734, PCC4);
+    IC->confirmarCompraCargaDeDatos(CO4);
     //CO5
+    vector<ParCodigoCantidad> PCC5;
+    PCC5.push_back(ParCodigoCantidad(3, 2));
+    PCC5.push_back(ParCodigoCantidad(6, 3));
+    DataInfoCompra* CO5 = new DataInfoCompra(US4.getNickname(), 1263984, PCC5);
+    IC->confirmarCompraCargaDeDatos(CO5);
     //CO6
+    vector<ParCodigoCantidad> PCC6;
+    PCC6.push_back(ParCodigoCantidad(1, 2));
+    DataInfoCompra* CO6 = new DataInfoCompra(US5.getNickname(), 2800, PCC6);
+    IC->confirmarCompraCargaDeDatos(CO6);
     //CO7
+    vector<ParCodigoCantidad> PCC7;
+    PCC7.push_back(ParCodigoCantidad(1, 3));
+    DataInfoCompra* CO7 = new DataInfoCompra(US7.getNickname(), 4200, PCC7);
+    IC->confirmarCompraCargaDeDatos(CO7);
     //CO8
+    vector<ParCodigoCantidad> PCC8;
+    PCC8.push_back(ParCodigoCantidad(1, 4));
+    DataInfoCompra* CO8 = new DataInfoCompra(US8.getNickname(), 5600, PCC8);
+    IC->confirmarCompraCargaDeDatos(CO8);
     //CO9
+    vector<ParCodigoCantidad> PCC9;
+    PCC9.push_back(ParCodigoCantidad(1, 5));
+    DataInfoCompra* CO9 = new DataInfoCompra(US9.getNickname(), 7000, PCC9);
+    IC->confirmarCompraCargaDeDatos(CO9);
 
 //INGRESO DE COMENTARIOS
     //CM1
