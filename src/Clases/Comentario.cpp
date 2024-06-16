@@ -1,13 +1,13 @@
 #include "../../include/Clases/Comentario.h"
 
-Comentario::Comentario(DTFecha _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador, Producto* p){
+Comentario::Comentario(DTFecha _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador, int _codigo){
     fecha = _fecha;
     comentario = _comentario;
     idComentario = _idComentario;
     //respuestas.empty(); // Ya lo inicializa como set vacio
     padre = _padre;
     comentador = _comentador;
-    producto = p;
+    codProducto = _codigo;
 };
 
 Comentario::~Comentario(){};
@@ -28,8 +28,8 @@ map<int,Comentario*> Comentario::getRespuestas(){
 Comentario* Comentario::getPadre(){
     return padre;
 };
-Producto* Comentario::getProducto(){
-    return producto;
+int Comentario::getProducto(){
+    return codProducto;
 }
 Usuario* Comentario::getComentador(){
     return comentador;
@@ -68,10 +68,10 @@ void Comentario::eliminarComentario(){
     delete this;
 }
 
- string Comentario::obtenerNicknameComentador(){
-     return comentador->getNickname();
- }
- int Comentario::obtenerCodigoProdComentado(){
-     return producto->getCodigo();
- }
+string Comentario::obtenerNicknameComentador(){
+    return comentador->getNickname();
+}
+int Comentario::obtenerCodigoProdComentado(){
+    return codProducto;
+}
 

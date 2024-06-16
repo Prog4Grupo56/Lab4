@@ -64,13 +64,13 @@ void Usuario::eliminarComentario(int idComentario){
 }
 
 
-void Usuario::agregarComentarioNuevo(string comentario, Producto* pr, DTFecha _fecha, int idComentario){
-    Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, NULL, this, pr);
+void Usuario::agregarComentarioNuevo(string comentario, int _codigo, DTFecha _fecha, int idComentario){
+    Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, NULL, this, _codigo);
     comentarios[idComentario] = comentarioNuevo;
 }
 
-void Usuario::agregarComentarioRespuesta(string comentario, Producto* pr, DTFecha _fecha, int idComentario, Comentario* padre){
-    Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, padre, this, pr);
+void Usuario::agregarComentarioRespuesta(string comentario, int _codigo, DTFecha _fecha, int idComentario, Comentario* padre){
+    Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, padre, this, _codigo);
     comentarios[idComentario] = comentarioNuevo;
 }
 

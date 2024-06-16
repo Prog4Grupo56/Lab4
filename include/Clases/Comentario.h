@@ -4,10 +4,8 @@
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DataComentario.h"
 #include "Usuario.h"
-#include "Producto.h"
 
 class Usuario; //fwd
-class Producto;
 
 class Comentario
 {
@@ -18,9 +16,9 @@ class Comentario
         map<int,Comentario*> respuestas;
         Comentario* padre;
         Usuario* comentador;
-        Producto* producto;
+        int codProducto;
     public:
-        Comentario(DTFecha _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador, Producto* p);
+        Comentario(DTFecha _fecha, string _comentario, int _idComentario, Comentario* _padre, Usuario* _comentador, int _codigo);
         ~Comentario();
 
         DTFecha getFecha();
@@ -28,7 +26,7 @@ class Comentario
         int getIdComentario();
         map<int,Comentario*> getRespuestas();
         Comentario* getPadre();
-        Producto* getProducto();
+        int getProducto();
         Usuario* getComentador();
 
         void setFecha(DTFecha _fecha);
