@@ -119,6 +119,25 @@ void ControladorCompra::confirmarCompra(){
     dataInfoC = NULL;
 }
 
+    //Enviar Producto
+vector<ParCodigoNombre> ControladorCompra::obtenerProductosPendientesEnvio(string nickVendedor){
+    Fabrica* f = Fabrica::getInstance();
+    IUsuario* IU = f->getIUsuario();
+    
+    vector<ParCodigoNombre> prodPend = IU->obtenerProductosVendedorEnvio(nickVendedor);
+
+    return prodPend;
+}
+
+vector<ParNickFecha> ControladorCompra::obtenerParNickFechaEnvio(int producto){
+    return productos[producto]->obtenerClienteFecha();
+} 
+
+void ControladorCompra::enviarProducto(){
+
+} //Implementar
+
+
 Producto* ControladorCompra::obtenerProducto(int _codigoProducto){
     return productos[_codigoProducto];
 }

@@ -3,6 +3,7 @@
 
 #include <set>
 #include "Compra.h"
+#include "../Datatypes/ParNickFecha.h"
 
 
 using namespace std;
@@ -12,7 +13,7 @@ class Compra;
 class CompraProducto
 {
     private:
-        Compra* c;
+        Compra* compra;
         int cantidad;
         bool enviado;
     public:
@@ -27,6 +28,8 @@ class CompraProducto
         void setCompra(Compra* _c);
         void setCantidad(int cant);
         void setEstado(bool e);
+
+        ParNickFecha obtenerClienteFecha() const;
 };
 
 #endif

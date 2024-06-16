@@ -3,6 +3,7 @@
 
 #include <set>
 #include "../Datatypes/DTFecha.h"
+#include "Cliente.h"
 
 using namespace std;
 
@@ -26,10 +27,12 @@ class Compra
         float getMontoFinal();
         DTFecha getFecha();
         Cliente* getCliente();
+        string getNickCliente();
         /*======= SETTERS ========*/
         void setFecha(DTFecha f);
         void setMontoFinal(int _montoFinal);
         void setCliente(Cliente* _cliente);
+
 };
 
 #endif

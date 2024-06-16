@@ -217,7 +217,7 @@ void ControladorUsuario::ingresarComentarioNuevo(string nickname, int codigoProd
 
     Usuario* u = usuarios[nickname];
     cantidadComentarios++;
-    u->agregarComentarioNuevo(comentario, pr, _fecha, cantidadComentarios);
+    u->agregarComentarioNuevo(comentario, pr->getCodigo(), _fecha, cantidadComentarios);
 }
 
 void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre){
@@ -238,7 +238,7 @@ void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigo
     }
 
     cantidadComentarios++;
-    u->agregarComentarioRespuesta(comentario, pr, _fecha, cantidadComentarios, comentarioPadre);
+    u->agregarComentarioRespuesta(comentario, pr->getCodigo(), _fecha, cantidadComentarios, comentarioPadre);
 };
 
     //Consultar Notificaciones
@@ -296,6 +296,12 @@ void ControladorUsuario::eliminarSuscripciones(){
     dataElimSus = NULL;
 }
 
+//Enviar Producto
+vector<ParCodigoNombre> ControladorUsuario::obtenerProductosVendedorEnvio(string nickVendedor){
+    return vendedores[nickVendedor]->obtenerProductosPendientesEnvio();
+}
+
+//Algun caso de uso
 string ControladorUsuario::obtenerInfoUsuario(string nickname){
 
     Fabrica* f = Fabrica::getInstance();
@@ -330,11 +336,6 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
     }
     info+="\n";
     return info;
-}
-    
-//Enviar Producto
-vector<ParCodigoNombre> ControladorUsuario::obtenerProductosPendientesEnvio(string nickVendedor){
-    return {};
 }
 
 //Alta Producto
