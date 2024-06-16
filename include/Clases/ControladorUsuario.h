@@ -83,9 +83,9 @@ class ControladorUsuario : public IUsuario{
 
         //Dejar comentario
         vector<DataComentario> obtenerListaComentariosProducto(int codigoProducto);
-        void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario);
-        void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, int idPadre);
-
+        void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario, DTFecha _fecha);
+        void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre);
+ 
         //Consultar Notificaciones
         vector<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente);
 

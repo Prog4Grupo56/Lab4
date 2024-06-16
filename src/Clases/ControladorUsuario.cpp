@@ -208,27 +208,22 @@ vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(int c
     return lista;
 }
 
-void ControladorUsuario::ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario){
+void ControladorUsuario::ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario, DTFecha _fecha){
 
     Fabrica* F = Fabrica::getInstance();
     ICompra* IC = F->getICompra();
-    IFecha* IF = F->getIFecha();
-
-    DTFecha fecha = IF->getFechaActual();
 
     Producto* pr = IC->obtenerProducto(codigoProducto);
 
     Usuario* u = usuarios[nickname];
     cantidadComentarios++;
-    u->agregarComentarioNuevo(comentario, pr, fecha, cantidadComentarios);
+    u->agregarComentarioNuevo(comentario, pr, _fecha, cantidadComentarios);
 }
 
-void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, int idPadre){
+void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre){
     Fabrica* F = Fabrica::getInstance();
     ICompra* IC = F->getICompra();
-    IFecha* IF = F->getIFecha();
 
-    DTFecha fecha = IF->getFechaActual();
     Producto* pr = IC->obtenerProducto(codigoProducto);
 
     Usuario* u = usuarios[nickname];
@@ -243,7 +238,7 @@ void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigo
     }
 
     cantidadComentarios++;
-    u->agregarComentarioRespuesta(comentario, pr, fecha, cantidadComentarios, comentarioPadre);
+    u->agregarComentarioRespuesta(comentario, pr, _fecha, cantidadComentarios, comentarioPadre);
 };
 
     //Consultar Notificaciones
