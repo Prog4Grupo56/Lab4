@@ -17,5 +17,4 @@ void ListadoDeUsuarios(){
     for (long unsigned int i = 0; i < listaVendedores.size(); i++){
         cout << "\t" << "\t" << listaVendedores[i].toString() << endl;
     }
-    cout << "\n";
 }
