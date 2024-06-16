@@ -96,6 +96,12 @@ int main(){
                     cout << "Numero fuera de rango. Por favor, intente de nuevo." << endl;
                     break;
             }
+            if (opcion!=0){
+                cout << "\nPresione enter para continuar.";
+                string dummy;
+                cin.ignore();
+                getline(cin, dummy);
+            }
         }
         catch(const invalid_argument& e)
         {
