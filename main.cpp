@@ -7,7 +7,8 @@
 using namespace std;
 
 int main(){
-
+    ControladorFecha* CF = ControladorFecha::getInstancia();
+    CF->setFechaActual(DTFecha(16,6,2024));
     /*====== MENÚ =====*/
     int opcion;
     do{

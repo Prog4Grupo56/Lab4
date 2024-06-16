@@ -72,6 +72,7 @@ void Usuario::agregarComentarioNuevo(string comentario, Producto* pr, DTFecha _f
 void Usuario::agregarComentarioRespuesta(string comentario, Producto* pr, DTFecha _fecha, int idComentario, Comentario* padre){
     Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, padre, this, pr);
     comentarios[idComentario] = comentarioNuevo;
+    padre->setRespuesta(comentarioNuevo);
 }
 
 Comentario* Usuario::buscarComentario(int id){
@@ -80,6 +81,7 @@ Comentario* Usuario::buscarComentario(int id){
     for(it = comentarios.begin(); it != comentarios.end(); ++it){
         if (it->first == id){
             res = it->second;
+            break;
         }
     }
 

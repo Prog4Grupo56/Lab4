@@ -1,4 +1,6 @@
 #include "../../include/CasosDeUso/CasosDeUso.h"
+#include <iostream>
+#include <string>
 
 void DejarComentario(){
     Fabrica* F = Fabrica::getInstance();
@@ -67,6 +69,7 @@ void DejarComentario(){
 
         cout << "Ingrese el comentario: ";
         string comentario;
+        cin.ignore();
         getline(cin, comentario);
 
         cout << "========" << endl;

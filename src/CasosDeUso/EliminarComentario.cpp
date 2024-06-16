@@ -38,4 +38,6 @@ void EliminarComentario(){
     cout << "========" << endl;
 
     IU->eliminarComentario();
+
+    cout << "Comentario y respuestas eliminadas exitosamente.";
 }

@@ -231,7 +231,7 @@ void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigo
     map<string,Usuario*>::iterator it;
     Comentario* comentarioPadre = NULL;
     for(it = usuarios.begin(); it != usuarios.end(); ++it){
-        Comentario* comentarioPadre = it->second->buscarComentario(idPadre);
+        comentarioPadre = it->second->buscarComentario(idPadre);
         if (comentarioPadre != NULL){
             break;
         }
