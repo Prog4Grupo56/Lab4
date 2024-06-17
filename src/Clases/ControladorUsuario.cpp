@@ -15,6 +15,20 @@ ControladorUsuario* ControladorUsuario::getInstancia() {
     return instancia;
 }
 
+ControladorUsuario::~ControladorUsuario(){
+    map<string,Usuario*>::iterator itUsuario;
+
+    for(itUsuario = usuarios.begin(); itUsuario != usuarios.end(); ++itUsuario){ //elimino usuarios (CLIENTES Y VENDEDORES INCLUIDOS)
+        delete itUsuario->second;
+    }
+
+    delete dataCrearP;
+    delete dataElimCom;
+    delete dataElimSus;
+
+    
+};
+
     //GETTERS
 string ControladorUsuario::getNickname(){ return nicknameC;}
 DataEliminarComentario* ControladorUsuario::getDataElimCom(){ return dataElimCom;}

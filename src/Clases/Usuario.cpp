@@ -7,10 +7,11 @@ Usuario::Usuario(string _nickname, string _contrasenia, DTFecha _fecha){
 };
 
 Usuario::~Usuario(){
-    /*deslinkearme de ControladorUsuario*/
 
-    //delete fecha;
-    //eliminar mis comentarios
+    map<int,Comentario*>::iterator it;
+    for (it = comentarios.begin(); it != comentarios.end(); ++it){
+        eliminarComentario(it->first);
+    }
 
 };
 
