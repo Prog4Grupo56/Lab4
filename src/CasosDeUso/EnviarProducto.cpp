@@ -31,7 +31,7 @@ void EnviarProducto(){
     IU->seleccionarUsuario(nickname);
     cout << "========";
 
-    vector<ParCodigoNombre> productos = IC->obtenerProductosPendientesEnvio(nickname); //Implementar
+    vector<ParCodigoNombre> productos = IC->obtenerProductosPendientesEnvio(nickname); 
 
     cout << "Productos del vendedor:" << endl;
     for (long unsigned int i = 0; i < productos.size(); i++){
@@ -44,7 +44,7 @@ void EnviarProducto(){
     cin >> producto;
     cout << "========";
 
-    vector<ParNickFecha> clientesCompra = IC -> obtenerParNickFechaEnvio(producto); // Implementar
+    vector<ParNickFecha> clientesCompra = IC -> obtenerParNickFechaEnvio(producto);
 
     cout << "Clientes a enviar el producto:" << endl;
     for (long unsigned int i = 0; i < clientesCompra.size(); i++){
