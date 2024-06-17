@@ -49,7 +49,8 @@ class ControladorCompra : public ICompra{
         //Enviar Producto
         vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
         vector<ParNickFecha> obtenerParNickFechaEnvio(int producto); 
-        void enviarProducto(int producto, string cliente); //Implementar
+        void enviarProducto(int producto, string cliente);
+        vector<string> obtenerListaNicknameVendedores(); 
 
         //Producto* obtenerProducto(string _codigoProducto);
         Producto* obtenerProducto(int _codigoProducto);

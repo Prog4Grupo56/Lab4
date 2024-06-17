@@ -34,12 +34,11 @@ DataPromocion Promocion::getDataPromocion(){
 
 vector<ParCodigoCantidad> Promocion::aplicaEnCompra(vector<ParCodigoCantidad> prodCant){
     vector<ParCodigoCantidad> aplican;
-    bool cumpleCmin = false;
-    bool pertenece = false;
-
+    
     long unsigned int it = 0;
     while( it < cantMinProductos.size() ){
-
+        bool cumpleCmin = false;
+        bool pertenece = false;
         long unsigned int i=0;
         while( (i < prodCant.size()) && !(pertenece && cumpleCmin) ){
             cumpleCmin = cantMinProductos[it]->getCantidadMinima() <= prodCant[i].getCantidad();
