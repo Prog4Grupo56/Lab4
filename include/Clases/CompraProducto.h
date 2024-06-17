@@ -30,6 +30,7 @@ class CompraProducto
         void setEstado(bool e);
 
         ParNickFecha obtenerClienteFecha() const;
+        bool esCompraDeCliente(string _cliente) const;
 };
 
 #endif

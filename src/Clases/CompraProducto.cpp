@@ -30,3 +30,6 @@ void CompraProducto::setEstado(bool e){
 ParNickFecha CompraProducto::obtenerClienteFecha() const{
     return ParNickFecha(compra->getNickCliente(), compra->getFecha());
 }
+bool CompraProducto::esCompraDeCliente(string _cliente) const{
+    return (compra->getNickCliente() == _cliente);
+}
