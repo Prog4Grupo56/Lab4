@@ -25,7 +25,7 @@ public:
     virtual vector<string> obtenerListaNicknamesClientes() = 0;
     virtual void seleccionarCliente(string nickname) = 0;
     virtual void confirmarCompra() = 0;
-    virtual void confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra) = 0;
+    virtual void confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra, DTFecha _fecha) = 0;
     
     //Enviar Producto
     virtual vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor) = 0; 

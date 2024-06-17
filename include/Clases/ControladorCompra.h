@@ -44,7 +44,7 @@ class ControladorCompra : public ICompra{
         vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra();
-        void confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra);
+        void confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra, DTFecha _fecha);
 
         //Enviar Producto
         vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);

@@ -119,11 +119,12 @@ void ControladorCompra::confirmarCompra(){
     dataInfoC = NULL;
 }
 
-void ControladorCompra::confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra){
+void ControladorCompra::confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra, DTFecha _fecha){
     Fabrica* f = Fabrica::getInstance();
     IUsuario* CU = f->getIUsuario();
     Cliente* cliente = CU->obtenerClienteCompra(dataInfoCompra->getCliente());
     Compra* compra = new Compra(cliente, dataInfoCompra->getMontoF());
+    compra->setFecha(_fecha);
     vector<ParCodigoCantidad> productosCompra = dataInfoCompra->getProdCant();
 
     for(unsigned int i = 0; i < productosCompra.size(); i++){

@@ -66,8 +66,6 @@ for (unsigned int i = 0; i<dProductos.size(); i++){
 }
 cout << "\n";
 
-// falta lo de mostrar
-
 interfazCompra->confirmarCompra();
 
 };
