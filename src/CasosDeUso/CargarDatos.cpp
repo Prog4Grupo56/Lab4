@@ -76,85 +76,84 @@ void CargarDatos(){
     IC->confirmarAltaProducto(Otros, "Reloj de Pared", "Reloj de pared vintage", 20, 150.50, V15);
 
 //INGRESO DE PROMOCIONES
-//     //PM1
-//     DataPromocion PM1 = DataPromocion("Casa nueva", "Para que puedas ahorrar en la casa nueva", DTFecha(25, 10, 2024), 30);
-//     vector<ParCodigoCantidad> PC1;
-//     PC1.push_back(ParCodigoCantidad(2, 1));
-//     PC1.push_back(ParCodigoCantidad(4, 1));
-//     PC1.push_back(ParCodigoCantidad(8, 1));
-//     DataCrearPromocion* DCPM1 = new DataCrearPromocion(V2->getNickname(), PM1, PC1);
-//     IC->crearPromocion(V2, DCPM1);
-//     //PM2
-//     DataPromocion PM2 = DataPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
-//     vector<ParCodigoCantidad> PC2;
-//     PC2.push_back(ParCodigoCantidad(3, 2));
-//     PC2.push_back(ParCodigoCantidad(6, 3));
-//     DataCrearPromocion* DCPM2 = new DataCrearPromocion(V3->getNickname(), PM2, PC2);
-//     IC->crearPromocion(V3, DCPM2);
-//     //PM3
-//     DataPromocion PM3 = DataPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
-//     vector<ParCodigoCantidad> PC3;
-//     PC3.push_back(ParCodigoCantidad(5, 2));
-//     DataCrearPromocion* DCPM3 = new DataCrearPromocion(V5->getNickname(), PM3, PC3);
-//     IC->crearPromocion(V5, DCPM3);
-//     //PM4
-//     DataPromocion PM4 = DataPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
-//     vector<ParCodigoCantidad> PC4;
-//     PC1.push_back(ParCodigoCantidad(14, 1));
-//     DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);
-//     IC->crearPromocion(V14, DCPM4);
-
-// //INGRESO DE COMPRAS
-//     //CO1
-//     vector<ParCodigoCantidad> PCC1;
-//     PCC1.push_back(ParCodigoCantidad(2, 2));
-//     PCC1.push_back(ParCodigoCantidad(4, 1));
-//     PCC1.push_back(ParCodigoCantidad(8, 1));
-//     DataInfoCompra* CO1 = new DataInfoCompra(US4.getNickname(), 57581.993, PCC1);
-//     IC->confirmarCompraCargaDeDatos(CO1, DTFecha(01,05,2024));
-//     //CO2
-//     vector<ParCodigoCantidad> PCC2;
-//     PCC2.push_back(ParCodigoCantidad(5, 1));
-//     DataInfoCompra* CO2 = new DataInfoCompra(US4.getNickname(), 599.99, PCC2);
-//     IC->confirmarCompraCargaDeDatos(CO2, DTFecha(01,05,2024));
-//     //CO3
-//     vector<ParCodigoCantidad> PCC3;
-//     PCC3.push_back(ParCodigoCantidad(14, 10));
-//     DataInfoCompra* CO3 = new DataInfoCompra(US5.getNickname(), 150000, PCC3);
-//     IC->confirmarCompraCargaDeDatos(CO3, DTFecha(15,05,2024));
-//     //CO4
-//     vector<ParCodigoCantidad> PCC4;
-//     PCC4.push_back(ParCodigoCantidad(11, 1));
-//     PCC4.push_back(ParCodigoCantidad(12, 1));
-//     PCC4.push_back(ParCodigoCantidad(13, 1));
-//     DataInfoCompra* CO4 = new DataInfoCompra(US7.getNickname(), 11734, PCC4);
-//     IC->confirmarCompraCargaDeDatos(CO4, DTFecha(25,04,2024));
-//     //CO5
-//     vector<ParCodigoCantidad> PCC5;
-//     PCC5.push_back(ParCodigoCantidad(3, 2));
-//     PCC5.push_back(ParCodigoCantidad(6, 3));
-//     DataInfoCompra* CO5 = new DataInfoCompra(US4.getNickname(), 1263984, PCC5);
-//     IC->confirmarCompraCargaDeDatos(CO5, DTFecha(20,05,2024));
-//     //CO6
-//     vector<ParCodigoCantidad> PCC6;
-//     PCC6.push_back(ParCodigoCantidad(1, 2));
-//     DataInfoCompra* CO6 = new DataInfoCompra(US5.getNickname(), 2800, PCC6);
-//     IC->confirmarCompraCargaDeDatos(CO6, DTFecha(12,05,2024));
-//     //CO7
-//     vector<ParCodigoCantidad> PCC7;
-//     PCC7.push_back(ParCodigoCantidad(1, 3));
-//     DataInfoCompra* CO7 = new DataInfoCompra(US7.getNickname(), 4200, PCC7);
-//     IC->confirmarCompraCargaDeDatos(CO7, DTFecha(13,05,2024));
-//     //CO8
-//     vector<ParCodigoCantidad> PCC8;
-//     PCC8.push_back(ParCodigoCantidad(1, 4));
-//     DataInfoCompra* CO8 = new DataInfoCompra(US8.getNickname(), 5600, PCC8);
-//     IC->confirmarCompraCargaDeDatos(CO8, DTFecha(14,05,2024));
-//     //CO9
-//     vector<ParCodigoCantidad> PCC9;
-//     PCC9.push_back(ParCodigoCantidad(1, 5));
-//     DataInfoCompra* CO9 = new DataInfoCompra(US9.getNickname(), 7000, PCC9);
-//     IC->confirmarCompraCargaDeDatos(CO9, DTFecha(015,05,2024));
+    //PM1
+    DataPromocion PM1 = DataPromocion("Casa nueva", "Para que puedas ahorrar en la casa nueva", DTFecha(25, 10, 2024), 30);
+    vector<ParCodigoCantidad> PC1;
+    PC1.push_back(ParCodigoCantidad(2, 1));
+    PC1.push_back(ParCodigoCantidad(4, 1));
+    PC1.push_back(ParCodigoCantidad(8, 1));
+    DataCrearPromocion* DCPM1 = new DataCrearPromocion(V2->getNickname(), PM1, PC1);
+    IC->crearPromocion(V2, DCPM1);
+    //PM2
+    DataPromocion PM2 = DataPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
+    vector<ParCodigoCantidad> PC2;
+    PC2.push_back(ParCodigoCantidad(3, 2));
+    PC2.push_back(ParCodigoCantidad(6, 3));
+    DataCrearPromocion* DCPM2 = new DataCrearPromocion(V3->getNickname(), PM2, PC2);
+    IC->crearPromocion(V3, DCPM2);
+    //PM3
+    DataPromocion PM3 = DataPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
+    vector<ParCodigoCantidad> PC3;
+    PC3.push_back(ParCodigoCantidad(5, 2));
+    DataCrearPromocion* DCPM3 = new DataCrearPromocion(V5->getNickname(), PM3, PC3);
+    IC->crearPromocion(V5, DCPM3);
+    //PM4
+    DataPromocion PM4 = DataPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
+    vector<ParCodigoCantidad> PC4;
+    PC1.push_back(ParCodigoCantidad(14, 1));
+    DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);
+    IC->crearPromocion(V14, DCPM4);
+//INGRESO DE COMPRAS
+    //CO1
+    IC->seleccionarCliente(US4.getNickname());
+    IC->agregarProductoCantidad(ParCodigoCantidad(2, 2));
+    IC->agregarProductoCantidad(ParCodigoCantidad(4, 1));
+    IC->agregarProductoCantidad(ParCodigoCantidad(8, 1));
+    IC->obtenerInfoCompra();
+    IC->confirmarCompra(DTFecha(01,05,2024));
+    //CO2
+    IC->seleccionarCliente(US4.getNickname());
+    IC->agregarProductoCantidad(ParCodigoCantidad(5, 1));
+    IC->obtenerInfoCompra();
+    IC->confirmarCompra(DTFecha(01,05,2024));
+    //CO3
+    IC->seleccionarCliente(US5.getNickname());
+    IC->agregarProductoCantidad(ParCodigoCantidad(14, 10));
+    IC->obtenerInfoCompra();
+    IC->confirmarCompra(DTFecha(15,05,2024));
+    //CO4
+    IC->seleccionarCliente(US7.getNickname());
+    IC->agregarProductoCantidad(ParCodigoCantidad(11, 1));
+    IC->agregarProductoCantidad(ParCodigoCantidad(12, 1));
+    IC->agregarProductoCantidad(ParCodigoCantidad(13, 1));
+    IC->obtenerInfoCompra();
+    IC->confirmarCompra(DTFecha(25,04,2024));
+    //CO5
+    IC->seleccionarCliente(US4.getNickname());
+    IC->agregarProductoCantidad(ParCodigoCantidad(3, 2));
+    IC->agregarProductoCantidad(ParCodigoCantidad(6, 3));
+    IC->obtenerInfoCompra();
+    IC->confirmarCompra(DTFecha(20,05,2024));
+    //CO6
+    IC->seleccionarCliente(US5.getNickname());
+    IC->agregarProductoCantidad(ParCodigoCantidad(1, 2));
+    IC->obtenerInfoCompra();
+    IC->confirmarCompra(DTFecha(12,05,2024));
+    //CO7
+    IC->seleccionarCliente(US7.getNickname());
+    IC->agregarProductoCantidad(ParCodigoCantidad(1, 3));
+    IC->obtenerInfoCompra();
+    IC->confirmarCompra(DTFecha(13,05,2024));
+    //CO8
+    IC->seleccionarCliente(US8.getNickname());
+    IC->agregarProductoCantidad(ParCodigoCantidad(1, 4));
+    IC->obtenerInfoCompra();
+    IC->confirmarCompra(DTFecha(14,05,2024));
+    //CO9
+    IC->seleccionarCliente(US9.getNickname());
+    IC->agregarProductoCantidad(ParCodigoCantidad(1, 5));
+    IC->obtenerInfoCompra();
+    IC->confirmarCompra(DTFecha(015,05,2024));
 
 //INGRESO DE COMENTARIOS
     //CM1

@@ -8,6 +8,7 @@ void RealizarCompra()
 
 Fabrica * fabrica = Fabrica::getInstance();
 ICompra * interfazCompra= fabrica -> getICompra();
+IFecha * IF = fabrica->getIFecha();
 
 vector<string> listaNicknames = interfazCompra->obtenerListaNicknamesClientes();
 
@@ -64,8 +65,16 @@ cout << "\nProductos:";
 for (unsigned int i = 0; i<dProductos.size(); i++){
     cout << "\n\t" << dProductos[i].toString();
 }
-cout << "\n";
-
-interfazCompra->confirmarCompra();
+cout << "\n\nDesea confirmar la compra?";
+cout << "\n\t0. No." << endl;
+cout << "\t1. Si." << endl;
+cout << "Seleccione una opcion: ";
+int confirmarCompra;
+cin >> confirmarCompra;
+if (confirmarCompra==1){
+    interfazCompra->confirmarCompra(IF->getFechaActual());
+}else{
+    interfazCompra->cancelarCompra();
+}
 
 };
