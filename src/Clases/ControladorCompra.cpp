@@ -77,7 +77,6 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
             montoFinal += productoActual->getPrecio(); // Para cada producto que este dentro de dataInfoC sumo el precio al total
         }
     }
-
     for (std::map<string, Promocion*>::iterator it = promociones.begin(); it != promociones.end(); ++it) {
         Promocion* promocionActual = it->second;
         vector<ParCodigoCantidad> productosPromocion = promocionActual->aplicaEnCompra(dataInfoC->getProdCant());
@@ -94,7 +93,6 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
         }
 
     }
-
     dataInfoC->setMontoF(montoFinal);
     return ParCompraProductos(montoFinal, dProductos, fechaActual);
 }
@@ -113,11 +111,62 @@ void ControladorCompra::confirmarCompra(){
             productoActual->setStock(productoActual->getStock() - productosCompra[i].getCantidad());
         }
     }
-
+    vector<Compra*> comprasCliente = cliente->getCompras();
+    comprasCliente.push_back(compra);
+    cliente->setCompras(comprasCliente);
     compras.push_back(compra);
     delete dataInfoC;
     dataInfoC = NULL;
 }
+
+void ControladorCompra::confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra, DTFecha _fecha){
+    Fabrica* f = Fabrica::getInstance();
+    IUsuario* CU = f->getIUsuario();
+    Cliente* cliente = CU->obtenerClienteCompra(dataInfoCompra->getCliente());
+    Compra* compra = new Compra(cliente, dataInfoCompra->getMontoF());
+    compra->setFecha(_fecha);
+    vector<ParCodigoCantidad> productosCompra = dataInfoCompra->getProdCant();
+
+    for(unsigned int i = 0; i < productosCompra.size(); i++){
+        Producto* productoActual = productos[productosCompra[i].getCodigo()];
+        if (productoActual!=NULL){
+            productoActual->crearEnvio(compra, productosCompra[i].getCantidad());
+            productoActual->setStock(productoActual->getStock() - productosCompra[i].getCantidad());
+        }
+    }
+
+    vector<Compra*> comprasCliente = cliente->getCompras();
+    comprasCliente.push_back(compra);
+    cliente->setCompras(comprasCliente);
+    compras.push_back(compra);
+    delete dataInfoCompra;
+    dataInfoCompra = NULL;
+}
+
+    //Enviar Producto
+vector<ParCodigoNombre> ControladorCompra::obtenerProductosPendientesEnvio(string nickVendedor){
+    Fabrica* f = Fabrica::getInstance();
+    IUsuario* IU = f->getIUsuario();
+    
+    vector<ParCodigoNombre> prodPend = IU->obtenerProductosVendedorEnvio(nickVendedor);
+
+    return prodPend;
+}
+
+vector<ParNickFecha> ControladorCompra::obtenerParNickFechaEnvio(int producto){
+    return productos[producto]->obtenerClienteFecha();
+} 
+
+void ControladorCompra::enviarProducto(int _producto, string _cliente){
+    vector<CompraProducto*> comprasProducto = productos[_producto]->getCompraProducto();
+    for(CompraProducto* cp : comprasProducto){
+        if(cp->esCompraDeCliente(_cliente)){
+            cp->setEstado(true);
+            break;
+        }
+    }
+} //Implementar
+
 
 Producto* ControladorCompra::obtenerProducto(int _codigoProducto){
     return productos[_codigoProducto];
@@ -154,3 +203,5 @@ void ControladorCompra::confirmarAltaProducto(Categoria categoria, string nombre
     vendedor->setProducto(productoNuevo);
 
 }
+
+

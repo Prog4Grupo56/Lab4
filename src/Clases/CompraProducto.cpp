@@ -1,14 +1,14 @@
 #include "../../include/Clases/CompraProducto.h"
 
 CompraProducto::CompraProducto(Compra* _c, int _cantidad){
-    c = _c;
+    compra = _c;
     cantidad = _cantidad;
 }
 
 CompraProducto::~CompraProducto(){}
 
 Compra* CompraProducto::getCompra(){
-    return c;
+    return compra;
 }
 int CompraProducto::getCantidad(){
     return cantidad;
@@ -18,11 +18,18 @@ bool CompraProducto::getEstado(){
 }
 //Setters
 void CompraProducto::setCompra(Compra* _c){
-    c = _c;
+    compra = _c;
 }
 void CompraProducto::setCantidad(int cant){
     cantidad = cant;
 }
 void CompraProducto::setEstado(bool e){
     enviado = e;
+}
+
+ParNickFecha CompraProducto::obtenerClienteFecha() const{
+    return ParNickFecha(compra->getNickCliente(), compra->getFecha());
+}
+bool CompraProducto::esCompraDeCliente(string _cliente) const{
+    return (compra->getNickCliente() == _cliente);
 }

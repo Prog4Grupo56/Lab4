@@ -7,10 +7,10 @@
 #include "../Datatypes/DTNotificacion.h"
 #include "Usuario.h"
 #include "Vendedor.h"
-#include "Compra.h"
 
 class Vendedor;
 class Usuario;
+class Compra;
 
 class Cliente : public Usuario{
 

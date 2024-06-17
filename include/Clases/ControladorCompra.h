@@ -16,6 +16,7 @@
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/ParCompraProductos.h"
+#include "../Datatypes/ParNickFecha.h"
 
 class Compra;
 class Vendedor;
@@ -43,11 +44,21 @@ class ControladorCompra : public ICompra{
         vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra();
+        void confirmarCompraCargaDeDatos(DataInfoCompra* dataInfoCompra, DTFecha _fecha);
+
+        //Enviar Producto
+        vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
+        vector<ParNickFecha> obtenerParNickFechaEnvio(int producto); 
+        void enviarProducto(int producto, string cliente); //Implementar
+
+        //Producto* obtenerProducto(string _codigoProducto);
         Producto* obtenerProducto(int _codigoProducto);
         vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha);
         string obtenerInfoPromocion(string nombre);
 
         void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor);
+
+        
 };
 
 #endif

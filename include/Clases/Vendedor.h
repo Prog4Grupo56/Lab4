@@ -3,8 +3,12 @@
 
 #include "Cliente.h"
 #include "../Datatypes/ParCodigoNombre.h"
+
+
 #include "Usuario.h"
+#include "Producto.h"
 #include "../Datatypes/DataProducto.h"
+#include "../Datatypes/DataPromocion.h"
 #include "../Datatypes/DataVendedor.h"
 #include "../Datatypes/ParCodigoNombre.h"
 
@@ -12,6 +16,7 @@ class ParCodigoNombre;
 class Usuario;
 class Cliente;
 class Promocion;
+class ParCodigoNombre;
 
 class Vendedor : public Usuario{
     private:
@@ -40,6 +45,8 @@ class Vendedor : public Usuario{
 
         vector<DataPromocion> obtenerInfoPromocionesVigentes(DTFecha _fecha);
         vector<DataProducto> obtenerInfoProductos();
+
+        vector<ParCodigoNombre> obtenerProductosPendientesEnvio();
 
 };
 

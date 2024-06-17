@@ -4,12 +4,13 @@
 #include <map>
 #include <string>
 #include "../Datatypes/DTFecha.h"
+#include "../Datatypes/DataComentario.h"
 #include "Comentario.h"
-#include "Producto.h"
 
 using namespace std;
 
 class Comentario; //fwd
+class Producto;
 
 class Usuario{
 
@@ -39,8 +40,8 @@ class Usuario{
         void eliminarComentario(int idComentario);
         void desvincularComentario(Comentario* c);
 
-        void agregarComentarioNuevo(string comentario, Producto* pr, DTFecha _fecha, int idComentario);
-        void agregarComentarioRespuesta(string comentario, Producto* pr, DTFecha _fecha, int idComentario, Comentario* padre);
+        void agregarComentarioNuevo(string comentario, int _codigo, DTFecha _fecha, int idComentario);
+        void agregarComentarioRespuesta(string comentario, int _codigo, DTFecha _fecha, int idComentario, Comentario* padre);
 
         Comentario* buscarComentario(int id);
 };
