@@ -156,8 +156,14 @@ vector<ParNickFecha> ControladorCompra::obtenerParNickFechaEnvio(int producto){
     return productos[producto]->obtenerClienteFecha();
 } 
 
-void ControladorCompra::enviarProducto(){
-
+void ControladorCompra::enviarProducto(int _producto, string _cliente){
+    vector<CompraProducto*> comprasProducto = productos[_producto]->getCompraProducto();
+    for(CompraProducto* cp : comprasProducto){
+        if(cp->esCompraDeCliente(_cliente)){
+            cp->setEstado(true);
+            break;
+        }
+    }
 } //Implementar
 
 
