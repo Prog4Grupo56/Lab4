@@ -312,7 +312,7 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
         vector<Compra*> compras = itC->second->getCompras();
         info += "\n\tCompras:";
         for(unsigned int i = 0; i<compras.size(); i++){
-            info+= "\n\t" + compras[i]->getFecha().toString() + ", " + to_string(compras[i]->getMontoFinal());
+            info+= "\n\t\t" + compras[i]->getFecha().toString() + ", " + to_string(compras[i]->getMontoFinal());
         }
     }
     if(itV!=vendedores.end()){
@@ -320,12 +320,12 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
         vector<DataProducto> productos = itV->second->obtenerInfoProductos();
         info += "\n\tProductos:";
         for(unsigned int i = 0; i<productos.size(); i++){
-            info += "\n\t" + productos[i].toString();
+            info += "\n\t\t" + productos[i].toString();
         }
         info += "\n\tPromociones:";
         vector<DataPromocion> promociones = itV->second->obtenerInfoPromocionesVigentes(fechaActual);
         for(unsigned int i = 0; i<promociones.size(); i++){
-            info += "\n\t" + promociones[i].toString();
+            info += "\n\t\t" + promociones[i].toString();
         }
     }
     info+="\n";
