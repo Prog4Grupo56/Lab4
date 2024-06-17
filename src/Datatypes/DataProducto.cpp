@@ -33,5 +33,15 @@ Categoria DataProducto::getCategoria(){
 }
 
 string DataProducto::toString(){
-    return "Codigo: " + to_string(codigo) + " | Nombre: " + nombre + " | Descripcion: " + descripcion + " | Stock: " + to_string(stock) + " | Precio: " + to_string(precio) + " | Categoria: " + to_string(categoria);
+    string _categoria;
+    if (categoria == Ropa){
+        _categoria = "Ropa";
+    }
+    else if (categoria == Electrodomesticos){
+        _categoria = "Electrodomesticos";
+    }
+    else{
+        _categoria = "Otros";
+    }
+    return "Codigo: " + to_string(codigo) + " | Nombre: " + nombre + " | Descripcion: " + descripcion + " | Stock: " + to_string(stock) + " | Precio: " + to_string(precio) + " | Categoria: " + _categoria ;
 }

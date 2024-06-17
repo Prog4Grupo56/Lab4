@@ -7,9 +7,8 @@
 using namespace std;
 
 int main(){
-
-    DataCliente d = DataCliente("nico", "hola", DTFecha(12,1,2002), DTDireccion("priamo", 1552), "montevideo");
-
+    ControladorFecha* CF = ControladorFecha::getInstancia();
+    CF->setFechaActual(DTFecha(17,6,2024));
     /*====== MENÚ =====*/
     int opcion;
     do{
@@ -112,6 +111,8 @@ int main(){
             opcion = -1; // si no hago esto se setea a 0 y termina el loop, lo vi en el debugger.
         }      
     } while (opcion != 0);
-    //ELIMINAR MEMORIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+    LimpiarMemoria();
+
     return 0;
 }

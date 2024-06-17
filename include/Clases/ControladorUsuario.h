@@ -42,6 +42,7 @@ class ControladorUsuario : public IUsuario{
 
     public:
         static ControladorUsuario * getInstancia();
+        ~ControladorUsuario();
 
         string getNickname();
         DataEliminarComentario* getDataElimCom();
