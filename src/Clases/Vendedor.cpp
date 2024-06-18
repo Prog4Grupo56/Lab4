@@ -22,7 +22,7 @@ DataVendedor Vendedor::getDataVendedor(){
 vector<ParCodigoNombre> Vendedor::obtenerProductos(){
 
     vector<ParCodigoNombre> lista;
-    map<string,Producto*>::iterator it;
+    map<int,Producto*>::iterator it;
 
     for(it = productos.begin(); it != productos.end(); ++it){
         Producto* producto = it->second;
@@ -41,7 +41,7 @@ void Vendedor::setRUT(string _RUT){
 };
 
 void Vendedor::setProducto(Producto* producto){
-    productos[producto->getNombre()] = producto;
+    productos[producto->getCodigo()] = producto;
 }
 
 void Vendedor::agregarSuscriptor(Cliente* c){
@@ -82,7 +82,7 @@ vector<DataPromocion> Vendedor::obtenerInfoPromocionesVigentes(DTFecha _fecha){
 
 vector<DataProducto> Vendedor::obtenerInfoProductos(){
     vector<DataProducto> dProductos;
-    for (std::map<string, Producto*>::iterator it = productos.begin(); it != productos.end(); ++it) {
+    for (std::map<int, Producto*>::iterator it = productos.begin(); it != productos.end(); ++it) {
         Producto* productoActual = it->second;
         dProductos.push_back(productoActual->getDataProducto());
     }
@@ -92,7 +92,7 @@ vector<DataProducto> Vendedor::obtenerInfoProductos(){
 vector<ParCodigoNombre> Vendedor::obtenerProductosPendientesEnvio(){
     vector<ParCodigoNombre> prodPend;
 
-    for(const pair<string, Producto*> par : productos){
+    for(const pair<int, Producto*> par : productos){
         vector<CompraProducto*> compraProductos = par.second->getCompraProducto();
 
         if(!compraProductos.empty()){

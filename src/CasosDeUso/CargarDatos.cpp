@@ -100,7 +100,7 @@ void CargarDatos(){
     //PM4
     DataPromocion PM4 = DataPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
     vector<ParCodigoCantidad> PC4;
-    PC1.push_back(ParCodigoCantidad(14, 1));
+    PC4.push_back(ParCodigoCantidad(14, 1));
     DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);
     IC->crearPromocion(V14, DCPM4);
 //INGRESO DE COMPRAS
