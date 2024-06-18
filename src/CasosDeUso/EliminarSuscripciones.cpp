@@ -5,26 +5,34 @@ void EliminarSuscripciones(){
      Fabrica* F = Fabrica::getInstance();
      IUsuario* IU = F->getIUsuario();
 
-     cout << "Ingrese su nickname: ";
+     vector<DataCliente> listaClientes = IU->obtenerListadoClientes();
+    cout << "Clientes: " << endl;
+    for (long unsigned int i = 0; i < listaClientes.size(); i++){
+        cout << "\t" << listaClientes[i].toString() << endl;
+    }
+
+     cout << "\nIngrese su nickname: ";
      string nickname;
      cin >> nickname;
-     cout << "========";
+
      vector<DataVendedor> lista = IU->obtenerListaVendedoresSuscritos(nickname);
 
      int opcion;
      vector<DataVendedor> listaVendedoresSeleccionados;
 
      do{
-          cout << "Elija una opcion: " << endl;
-          cout << "0. Terminar.";
-          cout << "1. Agregar vendedor." << endl;
+          cout << "\nDesea eliminar un vendedor?" << endl;
+          cout << "0. Terminar." << endl;
+          cout << "1. Agregar." << endl;
+          cout << "Ingrese una opcion: ";
           cin >> opcion;
-          cout << "========";
+          
           if (opcion == 1){
+               cout << "\nVendedores:";
                for (long unsigned int i = 0; i < lista.size(); i++){ //imprimo 
-                    cout << lista[i].toString() << endl;
+                    cout << "\n\t" << lista[i].toString();
                }
-               cout << "Escriba el nombre del vendedor:";
+               cout << "\nEscriba el nombre del vendedor: ";
                string vendedor;
                cin >> vendedor;
                
@@ -35,11 +43,10 @@ void EliminarSuscripciones(){
                     }
                }
           }
-          cout << "========"<< endl;
      } while (opcion != 0);
 
      IU->seleccionarVendedoresAEliminarSuscripciones(listaVendedoresSeleccionados); // vaciar dataelimsus en controladorUsuario
      IU->eliminarSuscripciones();
 
-     cout << "Suscripciones eliminadas exitosamente." << endl;
+     cout << "\nSuscripciones eliminadas exitosamente." << endl;
 }

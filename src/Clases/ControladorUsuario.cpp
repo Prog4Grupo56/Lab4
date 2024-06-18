@@ -185,7 +185,7 @@ void ControladorUsuario::confirmarAltaPromocion(){
 
     c->crearPromocion(v, dataCrearP);
 
-    delete dataCrearP;
+    dataCrearP->~DataCrearPromocion();
     dataCrearP = NULL;
 }
 
@@ -281,9 +281,10 @@ vector<DataVendedor> ControladorUsuario::obtenerListaVendedoresNoSuscritos(strin
 void ControladorUsuario::vendedoresASuscribirse(vector<DataVendedor> _vendedores){
     Cliente* cliente = clientes[nicknameC];
 
-    for(const pair<string, Vendedor*> par : vendedores){
-        par.second->agregarSuscriptor(cliente);
-        cliente->agregarSuscripcion(par.second);
+    for(unsigned int i = 0; i<_vendedores.size(); i++){
+        Vendedor* vendedor = vendedores[_vendedores[i].getNickname()];
+        vendedor->agregarSuscriptor(cliente);
+        cliente->agregarSuscripcion(vendedor);
     }
 } 
 

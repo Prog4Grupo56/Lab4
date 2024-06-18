@@ -6,8 +6,14 @@ void SuscribirseANotificaciones(){
     Fabrica* F = Fabrica::getInstance();
     IUsuario* IU = F->getIUsuario();
 
+    vector<DataCliente> listaClientes = IU->obtenerListadoClientes();
+    cout << "Clientes: " << endl;
+    for (long unsigned int i = 0; i < listaClientes.size(); i++){
+        cout << "\t" << listaClientes[i].toString() << endl;
+    }
+
     string nickname;
-    cout << "Ingrese su nickname: ";
+    cout << "\nIngrese su nickname: ";
     cin >> nickname;
 
     vector<DataVendedor> lista = IU->obtenerListaVendedoresNoSuscritos(nickname);
@@ -16,17 +22,17 @@ void SuscribirseANotificaciones(){
 
     int opcion;
     do{
-        cout << "¿Desea agregar un vendedor? " << endl;
-        cout << "\t" << "0. No." << endl;
-        cout << "\t" << "1. Si." << endl;
+        cout << "\nDesea agregar un vendedor? " << endl;
+        cout << "\t" << "0. Terminar." << endl;
+        cout << "\t" << "1. Agregar." << endl;
         cout << "Ingrese una opcion: ";
         cin >> opcion;
         if (opcion == 1){
-            cout << "Lista de vendedores: " << endl;
+            cout << "\nVendedores: " << endl;
             for (long unsigned int i = 0; i < lista.size(); i++){ //imprimo 
                 cout << "\t" << lista[i].toString() << endl;
             }
-            cout << "Escriba el nombre del vendedor: ";
+            cout << "\nEscriba el nombre del vendedor: ";
             string vendedor;
             cin >> vendedor;
             
@@ -39,7 +45,8 @@ void SuscribirseANotificaciones(){
         }
     } while (opcion != 0);
 
+    cout << "\n" << listaVendedoresSeleccionados.size() << "\n";
     IU->vendedoresASuscribirse(listaVendedoresSeleccionados);
 
-    cout << "Se suscribió existosamente."<< endl;
+    cout << "\nSe suscribio existosamente."<< endl;
 }

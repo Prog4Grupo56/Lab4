@@ -66,7 +66,7 @@ void CrearPromocion()
     int opcion = 1; //Para el menu
     while(continuar)
     {
-        cout << "\n¿Desea agregar otro producto?";
+        cout << "\nDesea agregar otro producto?";
         cout << "\n\t0. Terminar." << endl;
         cout << "\t1. Agregar nuevo producto." << endl;
         cout << "Seleccione una opcion: ";
@@ -92,5 +92,5 @@ void CrearPromocion()
     }
 
     IU -> confirmarAltaPromocion();
-    cout << "Promocion ingresada con exito." << endl;
+    cout << "\nPromocion ingresada con exito." << endl;
 };
