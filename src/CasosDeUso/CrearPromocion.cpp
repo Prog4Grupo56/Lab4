@@ -61,7 +61,6 @@ void CrearPromocion()
 
     IU->seleccionarVendedor(seleccion); 
 
-    cout << "nashe";
     vector<ParCodigoNombre> listaProductos = IU->obtenerListaProductosVendedor(); // Error
     cout << "Productos de "<< seleccion << ": " << endl;
     for (long unsigned int i = 0; i < listaProductos.size(); i++){

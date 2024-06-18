@@ -23,7 +23,7 @@ class Vendedor : public Usuario{
         string RUT;
         map<string,Cliente*> suscriptores;
         void notificarClientes(vector<DataProducto> dtProductos, string nombrePromocion);
-        map<string,Producto*> productos;
+        map<int,Producto*> productos;
         map<string,Promocion*> promociones;
     public:
         Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, string _RUT);
