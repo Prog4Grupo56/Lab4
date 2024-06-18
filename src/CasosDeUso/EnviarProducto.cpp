@@ -2,10 +2,9 @@
 
 void EnviarProducto(){
     Fabrica* F = Fabrica::getInstance();
-    IUsuario* IU = F->getIUsuario();
     ICompra* IC = F->getICompra();
 
-    vector<string> listaNicknames = IU->obtenerListaNicknameVendedores();
+    vector<string> listaNicknames = IC->obtenerListaNicknameVendedores();
 
     cout << "Vendedores:" << endl;
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
@@ -16,7 +15,6 @@ void EnviarProducto(){
     cout << "Seleccione uno: ";
     string nickname;
     cin >> nickname;
-    IU->seleccionarUsuario(nickname);
     cout << "========";
 
     vector<ParCodigoNombre> productos = IC->obtenerProductosPendientesEnvio(nickname); 
