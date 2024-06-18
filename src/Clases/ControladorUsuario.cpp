@@ -332,7 +332,7 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
         vector<Compra*> compras = itC->second->getCompras();
         info += "\n\tCompras:";
         for(unsigned int i = 0; i<compras.size(); i++){
-            info+= "\n\t\t" + compras[i]->getFecha().toString() + ", " + to_string(compras[i]->getMontoFinal());
+            info+= "\n\t\tFecha: " + compras[i]->getFecha().toString() + " | Monto final: " + to_string(compras[i]->getMontoFinal());
             vector<CompraProducto*> compraProductos = compras[i]->obtenerCompraProductos();
             for(unsigned int j = 0; j < compraProductos.size(); j++){
                 DataProducto dProd = compraProductos[j]->getProducto()->getDataProducto();
