@@ -13,6 +13,6 @@ void ConsultaDeNotificaciones(){
     cout << "Notificaciones de " << nickname << ":" << endl;
 
     for(long unsigned int i = 0; i < notificaciones.size(); i++){
-        cout << notificaciones[i].toString() << endl;
+        cout << "\t" << notificaciones[i].toString() << endl;
     }
 }
