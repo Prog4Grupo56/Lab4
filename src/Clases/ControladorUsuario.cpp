@@ -333,6 +333,11 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
         info += "\n\tCompras:";
         for(unsigned int i = 0; i<compras.size(); i++){
             info+= "\n\t\t" + compras[i]->getFecha().toString() + ", " + to_string(compras[i]->getMontoFinal());
+            vector<CompraProducto*> compraProductos = compras[i]->obtenerCompraProductos();
+            for(unsigned int j = 0; j < compraProductos.size(); j++){
+                DataProducto dProd = compraProductos[j]->getProducto()->getDataProducto();
+                info += "\n\t\t\t" + dProd.toString();
+            }
         }
     }
     if(itV!=vendedores.end()){

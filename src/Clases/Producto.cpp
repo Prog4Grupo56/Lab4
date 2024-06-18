@@ -68,8 +68,10 @@ bool Producto::pertenecePromoVigente(){
     }
 }
 
-void Producto::crearEnvio(Compra* c, int cantidad){  
-    compraProducto.push_back(new CompraProducto(c, cantidad));
+void Producto::crearEnvio(Compra* c, int cantidad){
+    CompraProducto* nuevoCompraProducto = new CompraProducto(c, cantidad, this);
+    compraProducto.push_back(nuevoCompraProducto);
+    c->agregarCompraProducto(nuevoCompraProducto);
 }
 
 CantMin* Producto::getCantMin(){

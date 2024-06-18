@@ -41,3 +41,11 @@ void Compra::setCliente(Cliente* _cliente){
 string Compra::getNickCliente(){
     return clienteDeCompra->getNickname();
 }
+
+void Compra::agregarCompraProducto(CompraProducto* compraProducto){
+    compraProductos.push_back(compraProducto);
+}
+
+vector<CompraProducto*> Compra::obtenerCompraProductos(){
+    return compraProductos;
+}
