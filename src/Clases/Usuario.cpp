@@ -7,10 +7,11 @@ Usuario::Usuario(string _nickname, string _contrasenia, DTFecha _fecha){
 };
 
 Usuario::~Usuario(){
-    /*deslinkearme de ControladorUsuario*/
 
-    //delete fecha;
-    //eliminar mis comentarios
+    map<int,Comentario*>::iterator it;
+    for (it = comentarios.begin(); it != comentarios.end(); ++it){
+        eliminarComentario(it->first);
+    }
 
 };
 
@@ -72,6 +73,7 @@ void Usuario::agregarComentarioNuevo(string comentario, int _codigo, DTFecha _fe
 void Usuario::agregarComentarioRespuesta(string comentario, int _codigo, DTFecha _fecha, int idComentario, Comentario* padre){
     Comentario* comentarioNuevo = new Comentario(_fecha, comentario, idComentario, padre, this, _codigo);
     comentarios[idComentario] = comentarioNuevo;
+    padre->setRespuesta(comentarioNuevo);
 }
 
 Comentario* Usuario::buscarComentario(int id){
@@ -80,6 +82,7 @@ Comentario* Usuario::buscarComentario(int id){
     for(it = comentarios.begin(); it != comentarios.end(); ++it){
         if (it->first == id){
             res = it->second;
+            break;
         }
     }
 

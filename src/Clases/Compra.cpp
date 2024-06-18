@@ -4,7 +4,7 @@ Compra::Compra(){
 
 }
 
-Compra::Compra(Cliente* _clienteDeCompra, int _montoFinal){
+Compra::Compra(Cliente* _clienteDeCompra, float _montoFinal){
     clienteDeCompra = _clienteDeCompra;
     montoFinal = _montoFinal;
 }
@@ -30,7 +30,7 @@ void Compra::setFecha(DTFecha f){
     fecha = f;
 }
 
-void Compra::setMontoFinal(int _montoFinal){
+void Compra::setMontoFinal(float _montoFinal){
     montoFinal = _montoFinal;
 }
 

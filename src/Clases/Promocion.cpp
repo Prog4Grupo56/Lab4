@@ -35,6 +35,7 @@ DataPromocion Promocion::getDataPromocion(){
 vector<ParCodigoCantidad> Promocion::aplicaEnCompra(vector<ParCodigoCantidad> prodCant){
     vector<ParCodigoCantidad> aplican;
     
+
     long unsigned int it = 0;
     while( it < cantMinProductos.size() ){
         bool cumpleCmin = false;
