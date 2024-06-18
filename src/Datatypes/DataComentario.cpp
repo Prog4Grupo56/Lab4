@@ -27,5 +27,5 @@ string DataComentario::getComentador(){
 }
 
 string DataComentario::toString(){
-    return comentario + ", " + fecha.toString() + ", " + to_string(idComentario);
+    return "Comentario: " + comentario + " | Fecha: " + fecha.toString() + " | Id: " + to_string(idComentario);
 };
