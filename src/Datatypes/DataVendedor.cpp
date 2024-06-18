@@ -11,5 +11,5 @@ string DataVendedor::getRUT(){
 }
 
 string DataVendedor::toString(){
-    return this->getNickname() + ", " + this->getFecha().toString() + ", " + RUT;
+    return "Nickname: " + this->getNickname() + " | Fecha de nacimiento: " + this->getFecha().toString() + " | Rut: " + RUT;
 }

@@ -17,5 +17,5 @@ string DataCliente::getCiudad(){
 
 
 string DataCliente::toString(){
-    return this->getNickname() + ", " + this->getFecha().toString() + ", " + this->getDireccion().toString() + ", " +  ciudad;
+    return "Nickname: " + this->getNickname() + " | Fecha de nacimiento: " + this->getFecha().toString() + " | Direccion: " + this->getDireccion().toString() + " | Ciudad: " +  ciudad;
 }

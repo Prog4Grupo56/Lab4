@@ -28,6 +28,6 @@ float DataPromocion::getDescuento(){
 }
 
 string DataPromocion::toString(){
-    return nombre + ", " + descripcion + ", " + fechaVenc.toString() + ", " + to_string(descuento);
+    return "Nombre: " + nombre + " | Descripcion: " + descripcion + " | Fecha de vencimiento:  " + fechaVenc.toString() + " | Descuento: " + to_string(descuento);
 }
 

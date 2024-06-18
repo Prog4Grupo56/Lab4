@@ -34,7 +34,7 @@ void CrearPromocion()
     cin >> descripcion;
 
     float descuento;
-    cout << "Ingrese el precio de la promocion: ";
+    cout << "Ingrese el descuento de la promocion: ";
     cin >> descuento;
 
     int dia, mes, ano;
@@ -44,7 +44,7 @@ void CrearPromocion()
     cin >> ano;
 
     DataPromocion dataPromocion = DataPromocion(nombre, descripcion, DTFecha(dia,mes,ano), descuento);
-    IU -> ingresarDatosPromocion(dataPromocion);
+    IU->ingresarDatosPromocion(dataPromocion);
 
     vector<string> listaNicknames = IU->obtenerListaNicknameVendedores();
 
@@ -59,29 +59,28 @@ void CrearPromocion()
     cin >> seleccion;
     cout << "========";
 
-    IU -> seleccionarVendedor(seleccion); //Queda guardado en dataCrearP
+    IU->seleccionarVendedor(seleccion); 
 
-    // vector<ParCodigoNombre> productos = IU -> obtenerListaProductosVendedor();
-    // cout << "Productos del vendedor "<< seleccion << ": " << endl;
-    // for (long unsigned int i = 0; i < listaNicknames.size(); i++){
-    //     cout << "\t" << listaNicknames[i] << endl;
-    // }
+    vector<ParCodigoNombre> listaProductos = IU->obtenerListaProductosVendedor(); // Error
+    cout << "Productos de "<< seleccion << ": " << endl;
+    for (long unsigned int i = 0; i < listaProductos.size(); i++){
+        cout << "\t" << listaProductos[i].getNombre() << " - " << listaProductos[i].getCodigo() << endl;
+    }
+
+    cout << "========"<< endl;
+    cout << "Seleccione uno (codigo, cantidad):";
+    int id; int cant; 
+    cin >> id;
+    cin >> cant;
+    cout << "========";
+
+    IU->agregarProductoCantidad(ParCodigoCantidad(id,cant));
+
 
     bool continuar = true;
     int opcion = 1; //Para el menu
-    int id; int cant; //Id y cantidad del producto
     while(continuar)
     {
-
-        vector<ParCodigoNombre> listaProductos = IU -> obtenerListaProductosVendedor();
-        cout << "Productos del vendedor "<< seleccion << ": " << endl;
-        for (long unsigned int i = 0; i < listaProductos.size(); i++){
-            cout << "\t" << listaProductos[i].getNombre() << " - " << listaProductos[i].getCodigo() << endl;
-        }
-
-        
-        IU -> agregarProductoCantidad(ParCodigoCantidad(id,cant));
-
         cout << "\nDesea agregar otro producto?";
         cout << "\n\t0. Terminar." << endl;
         cout << "\t1. Agregar nuevo producto." << endl;
@@ -89,17 +88,17 @@ void CrearPromocion()
         cin >> opcion;
 
         if(opcion == 1){
-            cout << "\nProductos:";
 
-            //listaProductos = listaProductos.erase();
+            cout << "\nAgregar mas productos: " << endl;
             for (long unsigned int i = 0; i < listaProductos.size(); i++){
-            cout << "\t" << listaProductos[i].getNombre() << " - " << listaProductos[i].getCodigo() << endl;
+                cout << "\n\t" << listaProductos[i].getNombre() << " - " << listaProductos[i].getCodigo() << endl;
             }
 
             cout << "\n\nIngrese el codigo del producto: ";
             cin >> id;
             cout << "\nIngrese la cantidad deseada: ";
             cin >> cant;
+            IU->agregarProductoCantidad(ParCodigoCantidad(id,cant));
             cout << "\nProducto ingresado con exito." << endl;
             
         }else{
@@ -107,8 +106,6 @@ void CrearPromocion()
         }
     }
 
-
-
     IU -> confirmarAltaPromocion();
-
+    cout << "Promocion ingresado con exito." << endl;
 };

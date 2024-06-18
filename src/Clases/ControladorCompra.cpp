@@ -155,9 +155,15 @@ void ControladorCompra::enviarProducto(int _producto, string _cliente){
             break;
         }
     }
-} //Implementar
+}
 
+vector<string> ControladorCompra::obtenerListaNicknameVendedores(){
+    Fabrica* f = Fabrica::getInstance();
+    IUsuario* IU = f->getIUsuario();
+    return IU->obtenerListaNicknameVendedores();
+} 
 
+//Algun caso de uso
 Producto* ControladorCompra::obtenerProducto(int _codigoProducto){
     return productos[_codigoProducto];
 }

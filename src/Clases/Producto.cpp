@@ -61,11 +61,17 @@ DataProducto Producto::getDataProducto(){
 }
 
 bool Producto::pertenecePromoVigente(){
-    return DTFecha(9,06,2024) <= cantMin->obtenerFechaPromocion(); // REVISAR LO DE LA FECHA ACTUAL
+    if(cantMin != NULL){
+        return DTFecha(9,06,2024) <= cantMin->obtenerFechaPromocion(); // REVISAR LO DE LA FECHA ACTUAL
+    }else{
+        return false;
+    }
 }
 
-void Producto::crearEnvio(Compra* c, int cantidad){  
-    compraProducto.push_back(new CompraProducto(c, cantidad));
+void Producto::crearEnvio(Compra* c, int cantidad){
+    CompraProducto* nuevoCompraProducto = new CompraProducto(c, cantidad, this);
+    compraProducto.push_back(nuevoCompraProducto);
+    c->agregarCompraProducto(nuevoCompraProducto);
 }
 
 CantMin* Producto::getCantMin(){

@@ -23,10 +23,10 @@ vector<ParCodigoNombre> Vendedor::obtenerProductos(){
 
     vector<ParCodigoNombre> lista;
     map<int,Producto*>::iterator it;
-
     for(it = productos.begin(); it != productos.end(); ++it){
         Producto* producto = it->second;
         bool productoOcupado = producto->pertenecePromoVigente();
+        cout << "obtenerProductos";
         if (!productoOcupado){
             ParCodigoNombre par = ParCodigoNombre(producto->getNombre(), producto->getCodigo());
             lista.push_back(par);
