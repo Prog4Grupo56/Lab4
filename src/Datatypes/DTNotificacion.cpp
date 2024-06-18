@@ -21,11 +21,11 @@ vector<DataProducto> DTNotificacion::getProductos(){
 
 string DTNotificacion::toString(){
     string res;
-    res = nombreVendedor + ", " + nombrePromocion;
+    res = "Nombre vendedor: " + nombreVendedor + " | Nombre promocion: " + nombrePromocion;
 
     for(long unsigned int i = 0; i<productos.size(); i++){
         DataProducto producto = productos[i];
-        res = res + ", " + producto.toString();
+        res = res + "\n\t\t " + producto.toString();
     }
     return res;
 };

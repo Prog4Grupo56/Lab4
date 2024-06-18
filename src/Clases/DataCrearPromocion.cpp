@@ -37,4 +37,6 @@ void DataCrearPromocion::setProdCant(vector<ParCodigoCantidad> _prodCant){
     prodCant = _prodCant;
 }
 
-void DataCrearPromocion::agregar(ParCodigoCantidad par){} //operacion necesaria en ControladorUsuario
+void DataCrearPromocion::agregar(ParCodigoCantidad par){
+    prodCant.push_back(par);
+}

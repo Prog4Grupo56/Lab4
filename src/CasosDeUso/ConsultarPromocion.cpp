@@ -20,7 +20,8 @@ void ConsultarPromocion(){
     if (opcion==1){
         string nombre;
         cout<< "Ingrese el nombre de la promocion: ";
-        cin >> nombre;
+        cin.ignore();
+        getline(cin, nombre);
         string info = IC->obtenerInfoPromocion(nombre);
         cout << "\n" + info;
     }

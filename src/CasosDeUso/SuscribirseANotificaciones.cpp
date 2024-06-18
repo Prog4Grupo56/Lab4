@@ -14,17 +14,17 @@ void SuscribirseANotificaciones(){
 
     vector<DataVendedor> listaVendedoresSeleccionados;
 
-    cout << "========" << endl;
     int opcion;
     do{
-        cout << "Elija una opcion: " << endl;
-        cout << "0. Terminar.";
-        cout << "1. Agregar vendedor." << endl;
+        cout << "¿Desea agregar un vendedor? " << endl;
+        cout << "\t" << "0. No." << endl;
+        cout << "\t" << "1. Si." << endl;
+        cout << "Ingrese una opcion: ";
         cin >> opcion;
-        cout << "========" << endl;
         if (opcion == 1){
+            cout << "Lista de vendedores: " << endl;
             for (long unsigned int i = 0; i < lista.size(); i++){ //imprimo 
-                cout << lista[i].toString() << endl;
+                cout << "\t" << lista[i].toString() << endl;
             }
             cout << "Escriba el nombre del vendedor: ";
             string vendedor;
@@ -37,7 +37,6 @@ void SuscribirseANotificaciones(){
                 }
             }
         }
-        cout << "========" << endl;
     } while (opcion != 0);
 
     IU->vendedoresASuscribirse(listaVendedoresSeleccionados);

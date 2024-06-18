@@ -5,7 +5,7 @@ void ConsultaDeNotificaciones(){
     IUsuario* IU = F->getIUsuario();
 
     string nickname;
-    cout << "Ingrese su nickname: " << endl;
+    cout << "Ingrese su nickname: ";
     cin >> nickname;
 
     vector<DTNotificacion> notificaciones = IU->obtenerListaNotificaciones(nickname); 
@@ -13,6 +13,6 @@ void ConsultaDeNotificaciones(){
     cout << "Notificaciones de " << nickname << ":" << endl;
 
     for(long unsigned int i = 0; i < notificaciones.size(); i++){
-        cout << notificaciones[i].toString() << endl;
+        cout << "\t" << notificaciones[i].toString() << endl;
     }
 }

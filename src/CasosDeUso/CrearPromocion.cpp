@@ -12,11 +12,13 @@ void CrearPromocion()
 
     string nombre;
     cout << "Ingrese el nombre de la promocion: ";
-    cin >> nombre;
+    cin.ignore();
+    getline(cin, nombre);
 
     string descripcion;
     cout << "Ingrese la descripcion de la promocion: ";
-    cin >> descripcion;
+    cin.ignore();
+    getline(cin, descripcion);
 
     float descuento;
     cout << "Ingrese el descuento de la promocion: ";
@@ -33,16 +35,14 @@ void CrearPromocion()
 
     vector<string> listaNicknames = IU->obtenerListaNicknameVendedores();
 
-    cout << "Vendedores:\n" << endl;
+    cout << "Vendedores:" << endl;
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
         cout << "\t" << listaNicknames[i] << endl;
     }
 
-    cout << "========"<< endl;
-    cout << "Seleccione uno:";
+    cout << "Seleccione uno: ";
     string seleccion;
     cin >> seleccion;
-    cout << "========" << endl;
 
     IU->seleccionarVendedor(seleccion); 
 
@@ -52,14 +52,12 @@ void CrearPromocion()
         cout << "\n\t" << listaProductos[i].getNombre() << " - " << listaProductos[i].getCodigo() << endl;
     }
 
-    cout << "========"<< endl;
     cout << "Ingrese el codigo del producto: ";
     int id; 
     cin >> id;
     cout << "\nIngrese la cantidad deseada: ";
     int cant; 
     cin >> cant;
-    cout << "========";
 
     IU->agregarProductoCantidad(ParCodigoCantidad(id,cant));
 
@@ -68,7 +66,7 @@ void CrearPromocion()
     int opcion = 1; //Para el menu
     while(continuar)
     {
-        cout << "\nDesea agregar otro producto?";
+        cout << "\n¿Desea agregar otro producto?";
         cout << "\n\t0. Terminar." << endl;
         cout << "\t1. Agregar nuevo producto." << endl;
         cout << "Seleccione una opcion: ";
@@ -94,5 +92,5 @@ void CrearPromocion()
     }
 
     IU -> confirmarAltaPromocion();
-    cout << "Promocion ingresado con exito." << endl;
+    cout << "Promocion ingresada con exito." << endl;
 };
