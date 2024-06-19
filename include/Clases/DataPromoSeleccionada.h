@@ -2,27 +2,27 @@
 #define DATAPROMOSELECCIONADA
 #include <set>
 #include <string>
-#include "../Datatypes/DataVendedor.h"
+#include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/DataProducto.h"
 
 class DataPromoSeleccionada {
     private:
         set<DataProducto> productos;
-        DataVendedor vendedor;
+        DTVendedor vendedor;
     public:
         //Constructor
         DataPromoSeleccionada();
-        DataPromoSeleccionada(set<DataProducto> _productos, DataVendedor _vendedor);
+        DataPromoSeleccionada(set<DataProducto> _productos, DTVendedor _vendedor);
         //Destructor
         ~DataPromoSeleccionada();
 
         //Getters   
         set<DataProducto> getProductos();
-        DataVendedor getVendedor();
+        DTVendedor getVendedor();
 
         //Setters
         void setProductos(set<DataProducto> _productos);
-        void setVendedor(DataVendedor _vendedor);
+        void setVendedor(DTVendedor _vendedor);
 
 };
 

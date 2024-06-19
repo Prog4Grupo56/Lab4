@@ -5,7 +5,7 @@ void EliminarSuscripciones(){
      Fabrica* F = Fabrica::getInstance();
      IUsuario* IU = F->getIUsuario();
 
-     vector<DataCliente> listaClientes = IU->obtenerListadoClientes();
+     vector<DTCliente> listaClientes = IU->obtenerListadoClientes();
     cout << "Clientes: " << endl;
     for (long unsigned int i = 0; i < listaClientes.size(); i++){
         cout << "\t" << listaClientes[i].toString() << endl;
@@ -15,10 +15,10 @@ void EliminarSuscripciones(){
      string nickname;
      cin >> nickname;
 
-     vector<DataVendedor> lista = IU->obtenerListaVendedoresSuscritos(nickname);
+     vector<DTVendedor> lista = IU->obtenerListaVendedoresSuscritos(nickname);
 
      int opcion;
-     vector<DataVendedor> listaVendedoresSeleccionados;
+     vector<DTVendedor> listaVendedoresSeleccionados;
 
      do{
           cout << "\nDesea eliminar un vendedor?" << endl;

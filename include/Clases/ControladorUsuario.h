@@ -5,8 +5,8 @@
 #include <vector>
 #include "../Datatypes/DTDireccion.h"
 #include "../Datatypes/DTNotificacion.h"
-#include "../Datatypes/DataVendedor.h"
-#include "../Datatypes/DataCliente.h"
+#include "../Datatypes/DTVendedor.h"
+#include "../Datatypes/DTCliente.h"
 #include "../Datatypes/DataComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/ParCodigoNombre.h"
@@ -57,12 +57,12 @@ class ControladorUsuario : public IUsuario{
         void setCantidadComentarios(int c);
 
         //Alta Usuario
-        bool ingresarCliente(DataCliente cliente);
-        bool ingresarVendedor(DataVendedor vendedor);
+        bool ingresarCliente(DTCliente cliente);
+        bool ingresarVendedor(DTVendedor vendedor);
 
         //Listado de Usuarios
-        vector<DataCliente> obtenerListadoClientes();
-        vector<DataVendedor> obtenerListadoVendedores();
+        vector<DTCliente> obtenerListadoClientes();
+        vector<DTVendedor> obtenerListadoVendedores();
 
         //Eliminar Comentario
         vector<string> obtenerListaNicknamesUsuarios();
@@ -92,12 +92,12 @@ class ControladorUsuario : public IUsuario{
         vector<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente);
 
         //Suscribirse a Notificaciones
-        vector<DataVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente);
-        void vendedoresASuscribirse(vector<DataVendedor> vendedores); 
+        vector<DTVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente);
+        void vendedoresASuscribirse(vector<DTVendedor> vendedores); 
 
         //Eliminar Suscripcion 
-        vector<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
-        void seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> vendedores);
+        vector<DTVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
+        void seleccionarVendedoresAEliminarSuscripciones(vector<DTVendedor> vendedores);
         void eliminarSuscripciones();
 
         //Expediente de usuario

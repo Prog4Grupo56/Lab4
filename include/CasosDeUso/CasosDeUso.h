@@ -1,7 +1,7 @@
 #include <iostream>
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DTDireccion.h"
-#include "../Datatypes/DataCliente.h"
+#include "../Datatypes/DTCliente.h"
 #include "../Clases/Fabrica.h"
 
 using namespace std;

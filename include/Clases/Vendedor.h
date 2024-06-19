@@ -9,7 +9,7 @@
 #include "Producto.h"
 #include "../Datatypes/DataProducto.h"
 #include "../Datatypes/DataPromocion.h"
-#include "../Datatypes/DataVendedor.h"
+#include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/ParCodigoNombre.h"
 
 class ParCodigoNombre;
@@ -27,12 +27,12 @@ class Vendedor : public Usuario{
         map<string,Promocion*> promociones;
     public:
         Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, string _RUT);
-        Vendedor(DataVendedor vendedor);
+        Vendedor(DTVendedor vendedor);
         ~Vendedor();
       
         string getRUT();
         vector<ParCodigoNombre> obtenerProductos(DTFecha _fecha);
-        DataVendedor getDataVendedor();
+        DTVendedor getDataVendedor();
 
         void setRUT(string _RUT);
         void agregarSuscriptor(Cliente* c);

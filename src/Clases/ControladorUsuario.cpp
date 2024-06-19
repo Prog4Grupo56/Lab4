@@ -48,7 +48,7 @@ void ControladorUsuario::setCantidadComentarios(int c){cantidadComentarios = c;}
     //OPERACIONES
 
     //Alta Usuario
-bool ControladorUsuario::ingresarCliente(DataCliente cliente){
+bool ControladorUsuario::ingresarCliente(DTCliente cliente){
     bool noExiste = true;
     string nickCliente = cliente.getNickname();
 
@@ -65,7 +65,7 @@ bool ControladorUsuario::ingresarCliente(DataCliente cliente){
     return noExiste;
 }
 
-bool ControladorUsuario::ingresarVendedor(DataVendedor vendedor){
+bool ControladorUsuario::ingresarVendedor(DTVendedor vendedor){
     bool noExiste = true;
     string nickCliente = vendedor.getNickname();
 
@@ -83,15 +83,15 @@ bool ControladorUsuario::ingresarVendedor(DataVendedor vendedor){
 }
 
     //Listado de Usuarios
-vector<DataVendedor> ControladorUsuario::obtenerListadoVendedores(){
-    vector<DataVendedor> v;
+vector<DTVendedor> ControladorUsuario::obtenerListadoVendedores(){
+    vector<DTVendedor> v;
     for(const pair<string, Vendedor*> par : vendedores){  
         v.push_back(par.second->getDataVendedor());
     }
     return v;
 };
-vector<DataCliente> ControladorUsuario::obtenerListadoClientes(){
-    vector<DataCliente> c;
+vector<DTCliente> ControladorUsuario::obtenerListadoClientes(){
+    vector<DTCliente> c;
     for(const pair<string, Cliente*> par : clientes){  
         c.push_back(par.second->getDataCliente());
     }
@@ -265,11 +265,11 @@ vector<DTNotificacion> ControladorUsuario::obtenerListaNotificaciones(string nic
 
 
     //Suscribirse a Notificaciones
-vector<DataVendedor> ControladorUsuario::obtenerListaVendedoresNoSuscritos(string nicknameCliente){
+vector<DTVendedor> ControladorUsuario::obtenerListaVendedoresNoSuscritos(string nicknameCliente){
     nicknameC = nicknameCliente;
-    vector<DataVendedor> listaVendNoSus;
+    vector<DTVendedor> listaVendNoSus;
 
-    DataVendedor dtVend;
+    DTVendedor dtVend;
     for(const pair<string, Vendedor*> par : vendedores){
         par.second->estaSuscrito(nicknameCliente);
         if(!(par.second->estaSuscrito(nicknameCliente))){
@@ -281,7 +281,7 @@ vector<DataVendedor> ControladorUsuario::obtenerListaVendedoresNoSuscritos(strin
     return listaVendNoSus;
 }
 
-void ControladorUsuario::vendedoresASuscribirse(vector<DataVendedor> _vendedores){
+void ControladorUsuario::vendedoresASuscribirse(vector<DTVendedor> _vendedores){
     Cliente* cliente = clientes[nicknameC];
 
     for(unsigned int i = 0; i<_vendedores.size(); i++){
@@ -292,22 +292,22 @@ void ControladorUsuario::vendedoresASuscribirse(vector<DataVendedor> _vendedores
 } 
 
     //Eliminar Suscripcion
-vector<DataVendedor> ControladorUsuario::obtenerListaVendedoresSuscritos(string nicknameCliente){
+vector<DTVendedor> ControladorUsuario::obtenerListaVendedoresSuscritos(string nicknameCliente){
     dataElimSus = new DataEliminarSuscripcion();
     dataElimSus->setNickname(nicknameCliente);
     return clientes[nicknameCliente]->obtenerSuscripciones();
 }
 
-void ControladorUsuario::seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> _vendedores){
+void ControladorUsuario::seleccionarVendedoresAEliminarSuscripciones(vector<DTVendedor> _vendedores){
     dataElimSus->setVendedores(_vendedores);
 }
 
 void ControladorUsuario::eliminarSuscripciones(){
     Cliente* cliente = clientes[nicknameC];
-    vector<DataVendedor> elimVend = dataElimSus->getVendedores();
+    vector<DTVendedor> elimVend = dataElimSus->getVendedores();
     cliente->eliminarSuscripciones(elimVend);
 
-    for(const DataVendedor &vend : elimVend){
+    for(const DTVendedor &vend : elimVend){
         vendedores[vend.getNickname()]->eliminarSuscriptor(cliente);
     }
     dataElimSus->~DataEliminarSuscripcion();
