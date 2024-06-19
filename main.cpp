@@ -44,7 +44,6 @@ int main(){
             {
                 case 0:
                     /* Salir */
-                    //LimpiarMemoria();
                     break;
                 case 1:
                     AltaDeUsuario();
