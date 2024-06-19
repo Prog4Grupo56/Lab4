@@ -5,7 +5,7 @@
 #include <vector>
 #include "../Datatypes/DTCliente.h"
 #include "../Datatypes/DTVendedor.h"
-#include "../Datatypes/DataComentario.h"
+#include "../Datatypes/DTComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/DTPromocion.h"
 #include "../Datatypes/ParCodigoNombre.h"

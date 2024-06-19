@@ -4,7 +4,7 @@
 #include "DTFecha.h"
 #include <string>
 
-class DataComentario{
+class DTComentario{
 
     private:
         string comentario;
@@ -13,8 +13,8 @@ class DataComentario{
         string comentador;
         int codigoProducto;
     public:
-        DataComentario(string _comentario, DTFecha _fecha, int id, string _comentador, int _codigoProducto);
-        ~DataComentario();
+        DTComentario(string _comentario, DTFecha _fecha, int id, string _comentador, int _codigoProducto);
+        ~DTComentario();
 
         string getComentario();
         DTFecha getFecha();

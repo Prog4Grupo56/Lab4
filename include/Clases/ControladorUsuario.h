@@ -7,7 +7,7 @@
 #include "../Datatypes/DTNotificacion.h"
 #include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/DTCliente.h"
-#include "../Datatypes/DataComentario.h"
+#include "../Datatypes/DTComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/ParCodigoNombre.h"
 #include "../Datatypes/ParNickFecha.h"
