@@ -35,7 +35,7 @@ void CrearPromocion()
 
     vector<string> listaNicknames = IU->obtenerListaNicknameVendedores();
 
-    cout << "Vendedores:" << endl;
+    cout << "\nVendedores:" << endl;
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
         cout << "\t" << listaNicknames[i] << endl;
     }
@@ -47,12 +47,12 @@ void CrearPromocion()
     IU->seleccionarVendedor(seleccion); 
 
     vector<ParCodigoNombre> listaProductos = IU->obtenerListaProductosVendedor(); // Error
-    cout << "Productos de "<< seleccion << ": " << endl;
+    cout << "\nProductos de "<< seleccion << ": " << endl;
     for (long unsigned int i = 0; i < listaProductos.size(); i++){
-        cout << "\n\t" << listaProductos[i].getNombre() << " - " << listaProductos[i].getCodigo() << endl;
+        cout << "\n\tNombre: " << listaProductos[i].getNombre() << " | Codigo: " << listaProductos[i].getCodigo();
     }
 
-    cout << "Ingrese el codigo del producto: ";
+    cout << "\n\nIngrese el codigo del producto: ";
     int id; 
     cin >> id;
     cout << "\nIngrese la cantidad deseada: ";
@@ -76,7 +76,7 @@ void CrearPromocion()
 
             cout << "\nAgregar mas productos: " << endl;
             for (long unsigned int i = 0; i < listaProductos.size(); i++){
-                cout << "\n\t" << listaProductos[i].getNombre() << " - " << listaProductos[i].getCodigo() << endl;
+                cout << "\n\tNombre: " << listaProductos[i].getNombre() << " | Codigo: " << listaProductos[i].getCodigo();
             }
 
             cout << "\n\nIngrese el codigo del producto: ";

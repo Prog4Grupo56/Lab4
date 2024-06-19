@@ -93,18 +93,17 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
     }
     for (std::map<string, Promocion*>::iterator it = promociones.begin(); it != promociones.end(); ++it) {
         Promocion* promocionActual = it->second;
-        vector<ParCodigoCantidad> productosPromocion = promocionActual->aplicaEnCompra(dataInfoC->getProdCant());
-        
-        if(!productosPromocion.empty()){
-
-            float descuento = promocionActual->getDescuento();
-            for(unsigned int i = 0; i < productosPromocion.size(); i++){
-                ParCodigoCantidad parCodCantActual = productosPromocion[i];
-                Producto* productoActual = productos[parCodCantActual.getCodigo()];
-                montoFinal -= productoActual->getPrecio() * ((descuento/100)) * productosCompra[i].getCantidad(); // Para cada producto que aplica le resto al monto final el descuento aplicado a ese producto
-            }
+        if ( !(promocionActual->getFechaVenc()<=fechaActual)){
+            vector<ParCodigoCantidad> productosPromocion = promocionActual->aplicaEnCompra(dataInfoC->getProdCant());
+            if(!productosPromocion.empty()){
+                float descuento = promocionActual->getDescuento();
+                for(unsigned int i = 0; i < productosPromocion.size(); i++){
+                    ParCodigoCantidad parCodCantActual = productosPromocion[i];
+                    Producto* productoActual = productos[parCodCantActual.getCodigo()];
+                    montoFinal -= productoActual->getPrecio() * ((descuento/100)) * productosPromocion[i].getCantidad(); // Para cada producto que aplica le resto al monto final el descuento aplicado a ese producto
+                }
+             }
         }
-
     }
     dataInfoC->setMontoF(montoFinal);
     return ParCompraProductos(montoFinal, dProductos, fechaActual);
