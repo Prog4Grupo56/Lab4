@@ -43,7 +43,8 @@ class ControladorUsuario : public IUsuario{
     public:
         static ControladorUsuario * getInstancia();
         ~ControladorUsuario();
-
+        void limpiarCU();
+        
         string getNickname();
         DataEliminarComentario* getDataElimCom();
         DataCrearPromocion* getDataCrearP();

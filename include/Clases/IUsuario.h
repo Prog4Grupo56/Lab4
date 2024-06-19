@@ -15,6 +15,7 @@ class Cliente;
 
 class IUsuario {
 public:
+    virtual void limpiarCU() = 0;
 
     //Alta Usuario
     virtual bool ingresarCliente(DataCliente cliente) = 0;

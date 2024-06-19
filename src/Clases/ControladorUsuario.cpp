@@ -24,10 +24,12 @@ ControladorUsuario::~ControladorUsuario(){
 
     delete dataCrearP;
     delete dataElimCom;
-    delete dataElimSus;
-
-    
+    delete dataElimSus;    
 };
+
+void ControladorUsuario::limpiarCU(){
+    instancia->~ControladorUsuario();
+}
 
     //GETTERS
 string ControladorUsuario::getNickname(){ return nicknameC;}
