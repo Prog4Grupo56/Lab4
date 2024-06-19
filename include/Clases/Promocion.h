@@ -6,7 +6,7 @@
 #include <vector>
 #include "../Datatypes/DTFecha.h"
 #include "../Clases/CantMin.h"
-#include "../Datatypes/DataPromocion.h"
+#include "../Datatypes/DTPromocion.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 
 class CantMin;
@@ -23,8 +23,8 @@ class Promocion
 
     public:
         //Constructor
-        Promocion(DataPromocion _promocion);
-        Promocion(DataPromocion _promocion, vector<CantMin*> _cantidadesMinimas);
+        Promocion(DTPromocion _promocion);
+        Promocion(DTPromocion _promocion, vector<CantMin*> _cantidadesMinimas);
 
         //Destructor
         ~Promocion();
@@ -42,7 +42,7 @@ class Promocion
 
         void agregarCantMinProducto(CantMin *cMinProd);
 
-        DataPromocion getDataPromocion();
+        DTPromocion getDataPromocion();
         vector<ParCodigoCantidad> aplicaEnCompra(vector<ParCodigoCantidad> prodCant);
 };
 

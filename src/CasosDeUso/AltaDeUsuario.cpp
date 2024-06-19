@@ -35,7 +35,7 @@ void AltaCliente(){
     cin >> numeroDePuerta;
     cout << "Ingrese una ciudad: ";
     cin >> ciudad;
-    DataCliente dataCliente = DataCliente(nickname, contrasena, DTFecha(dia,mes,ano), DTDireccion(calle, numeroDePuerta), ciudad);
+    DTCliente dataCliente = DTCliente(nickname, contrasena, DTFecha(dia,mes,ano), DTDireccion(calle, numeroDePuerta), ciudad);
 
     if (IU->ingresarCliente(dataCliente)){
         cout << "Se ingresó correctamente el usuario." << endl;
@@ -85,7 +85,7 @@ void AltaVendedor(){
         }
     }
 
-    DataVendedor dataVendedor = DataVendedor(nickname, contrasena, DTFecha(dia,mes,ano), RUT);
+    DTVendedor dataVendedor = DTVendedor(nickname, contrasena, DTFecha(dia,mes,ano), RUT);
 
     if (IU->ingresarVendedor(dataVendedor)){
         cout << "Se ingresó correctamente el usuario.";

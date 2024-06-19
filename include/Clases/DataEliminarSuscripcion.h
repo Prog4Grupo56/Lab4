@@ -2,26 +2,26 @@
 #define DATAELIMINARSUSCRIPCION
 #include <vector>
 #include <string>
-#include "../Datatypes/DataVendedor.h"
+#include "../Datatypes/DTVendedor.h"
 
 class DataEliminarSuscripcion {
     private:
         string nickname;
-        vector<DataVendedor> vendedores;
+        vector<DTVendedor> vendedores;
     public:
         //Constructor
         DataEliminarSuscripcion();
-        DataEliminarSuscripcion(string _nickname, vector<DataVendedor> _vendedores);
+        DataEliminarSuscripcion(string _nickname, vector<DTVendedor> _vendedores);
         //Destructor
         ~DataEliminarSuscripcion();
 
         //Getters   
         string getNickname();
-        vector<DataVendedor> getVendedores();
+        vector<DTVendedor> getVendedores();
 
         //Setters
         void setNickname(string _nickname);
-        void setVendedores(vector<DataVendedor> _vendedores);
+        void setVendedores(vector<DTVendedor> _vendedores);
 
 };
 

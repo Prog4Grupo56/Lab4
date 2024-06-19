@@ -6,7 +6,7 @@ void SuscribirseANotificaciones(){
     Fabrica* F = Fabrica::getInstance();
     IUsuario* IU = F->getIUsuario();
 
-    vector<DataCliente> listaClientes = IU->obtenerListadoClientes();
+    vector<DTCliente> listaClientes = IU->obtenerListadoClientes();
     cout << "Clientes: " << endl;
     for (long unsigned int i = 0; i < listaClientes.size(); i++){
         cout << "\t" << listaClientes[i].toString() << endl;
@@ -16,9 +16,9 @@ void SuscribirseANotificaciones(){
     cout << "\nIngrese su nickname: ";
     cin >> nickname;
 
-    vector<DataVendedor> lista = IU->obtenerListaVendedoresNoSuscritos(nickname);
+    vector<DTVendedor> lista = IU->obtenerListaVendedoresNoSuscritos(nickname);
 
-    vector<DataVendedor> listaVendedoresSeleccionados;
+    vector<DTVendedor> listaVendedoresSeleccionados;
 
     int opcion;
     do{

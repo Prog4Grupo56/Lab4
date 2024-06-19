@@ -7,8 +7,8 @@
 #include "Vendedor.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "DataCrearPromocion.h"
-#include "../Datatypes/DataProducto.h"
-#include "../Datatypes/DataVendedor.h"
+#include "../Datatypes/DTProducto.h"
+#include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/ParCompraProductos.h"
 #include "DataInfoCompra.h"
 #include "../Datatypes/ParNickFecha.h"
@@ -20,7 +20,7 @@ public:
     virtual void limpiarCC() = 0;
 
     virtual void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP) = 0;
-    virtual vector<DataProducto> obtenerListaProductos() = 0;
+    virtual vector<DTProducto> obtenerListaProductos() = 0;
     virtual void agregarProductoCantidad(ParCodigoCantidad parCodCant) = 0;
     virtual ParCompraProductos obtenerInfoCompra() = 0;
     virtual vector<string> obtenerListaNicknamesClientes() = 0;
@@ -37,7 +37,7 @@ public:
 
     //virtual Producto* obtenerProducto(string _codigoProducto) = 0;
     virtual Producto* obtenerProducto(int _codigoProducto) = 0;
-    virtual vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha) = 0;
+    virtual vector<DTPromocion> obtenerInfoPromociones(DTFecha _fecha) = 0;
     virtual string obtenerInfoPromocion(string nombre) = 0;
     virtual void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor) = 0;
 };

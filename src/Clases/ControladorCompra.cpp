@@ -37,7 +37,7 @@ void ControladorCompra::limpiarCC(){
 
 void ControladorCompra::crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP){
     vector<ParCodigoCantidad> parCodCant = dataCrearP->getProdCant();
-    vector<DataProducto> dProductos;
+    vector<DTProducto> dProductos;
     vector<CantMin*> cantidadesMinimas;
     Promocion* promo = new Promocion(dataCrearP->getInfoP());
     for(unsigned int i = 0; i < parCodCant.size(); i++){
@@ -62,8 +62,8 @@ void ControladorCompra::seleccionarCliente(string nickname){
     dataInfoC = new DataInfoCompra(nickname);
 }
 
-vector<DataProducto> ControladorCompra::obtenerListaProductos(){
-    vector<DataProducto> dataProductos;
+vector<DTProducto> ControladorCompra::obtenerListaProductos(){
+    vector<DTProducto> dataProductos;
     for (std::map<int, Producto*>::iterator it = productos.begin(); it != productos.end(); ++it) {
         dataProductos.push_back(it->second->getDataProducto());
     }
@@ -87,7 +87,7 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
     IFecha* IF = f->getIFecha();
     DTFecha fechaActual = IF->getFechaActual();
     float montoFinal = 0;
-    vector<DataProducto> dProductos;
+    vector<DTProducto> dProductos;
     vector<ParCodigoCantidad> productosCompra = dataInfoC->getProdCant();
 
     for(unsigned int i = 0; i < productosCompra.size(); i++){
@@ -171,8 +171,8 @@ Producto* ControladorCompra::obtenerProducto(int _codigoProducto){
     return productos[_codigoProducto];
 }
 
-vector<DataPromocion> ControladorCompra::obtenerInfoPromociones(DTFecha _fecha){
-    vector<DataPromocion> dPromociones;
+vector<DTPromocion> ControladorCompra::obtenerInfoPromociones(DTFecha _fecha){
+    vector<DTPromocion> dPromociones;
     for (std::map<string, Promocion*>::iterator it = promociones.begin(); it != promociones.end(); ++it) {
         Promocion* promocionsActual = it->second;
         if (_fecha<=promocionsActual->getFechaVenc()){

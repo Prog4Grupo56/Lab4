@@ -30,7 +30,7 @@ void CrearPromocion()
     cin >> mes;
     cin >> ano;
 
-    DataPromocion dataPromocion = DataPromocion(nombre, descripcion, DTFecha(dia,mes,ano), descuento);
+    DTPromocion dataPromocion = DTPromocion(nombre, descripcion, DTFecha(dia,mes,ano), descuento);
     IU->ingresarDatosPromocion(dataPromocion);
 
     vector<string> listaNicknames = IU->obtenerListaNicknameVendedores();

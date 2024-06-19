@@ -25,8 +25,8 @@ DTFecha Usuario::getFecha(){
 string Usuario::getContrasena(){
     return contrasena;
 }
-vector<DataComentario> Usuario::obtenerComentarios(){
-    vector<DataComentario> lista;
+vector<DTComentario> Usuario::obtenerComentarios(){
+    vector<DTComentario> lista;
     map<int, Comentario*>::iterator it;
 
     for (it = comentarios.begin(); it != comentarios.end(); ++it){
@@ -35,7 +35,7 @@ vector<DataComentario> Usuario::obtenerComentarios(){
         int id = it->second->getIdComentario();
         string comentador = it->second->obtenerNicknameComentador();//getComentador()->getNickname();
         int codigoProd = it->second->obtenerCodigoProdComentado();//getProducto()->getCodigo();
-        DataComentario dataC = DataComentario(comentario, fecha, id, comentador, codigoProd);
+        DTComentario dataC = DTComentario(comentario, fecha, id, comentador, codigoProd);
         lista.push_back(dataC);
     }
 

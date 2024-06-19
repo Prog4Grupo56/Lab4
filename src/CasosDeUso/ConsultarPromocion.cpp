@@ -5,7 +5,7 @@ void ConsultarPromocion(){
     Fabrica* F = Fabrica::getInstance();
     ICompra* IC = F->getICompra();
     IFecha* IF = F->getIFecha();
-    vector<DataPromocion> promociones = IC->obtenerInfoPromociones(IF->getFechaActual());
+    vector<DTPromocion> promociones = IC->obtenerInfoPromociones(IF->getFechaActual());
     cout << "Promociones:";
     for(unsigned int i = 0; i<promociones.size(); i++){
         cout << "\n\t" << promociones[i].toString();

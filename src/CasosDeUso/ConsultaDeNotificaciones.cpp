@@ -4,7 +4,7 @@ void ConsultaDeNotificaciones(){
     Fabrica* F = Fabrica::getInstance();
     IUsuario* IU = F->getIUsuario();
 
-    vector<DataCliente> listaClientes = IU->obtenerListadoClientes();
+    vector<DTCliente> listaClientes = IU->obtenerListadoClientes();
     cout << "Clientes: " << endl;
     for (long unsigned int i = 0; i < listaClientes.size(); i++){
         cout << "\t" << listaClientes[i].toString() << endl;

@@ -56,8 +56,8 @@ void Producto::setPrecio(float _precio){
 
 //Operaciones:
 
-DataProducto Producto::getDataProducto(){
-    return DataProducto(codigo, stock, precio, nombre, descripcion, categoria);
+DTProducto Producto::getDataProducto(){
+    return DTProducto(codigo, stock, precio, nombre, descripcion, categoria);
 }
 
 bool Producto::pertenecePromoVigente(DTFecha _fecha){

@@ -7,9 +7,9 @@
 
 #include "Usuario.h"
 #include "Producto.h"
-#include "../Datatypes/DataProducto.h"
-#include "../Datatypes/DataPromocion.h"
-#include "../Datatypes/DataVendedor.h"
+#include "../Datatypes/DTProducto.h"
+#include "../Datatypes/DTPromocion.h"
+#include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/ParCodigoNombre.h"
 
 class ParCodigoNombre;
@@ -22,17 +22,17 @@ class Vendedor : public Usuario{
     private:
         string RUT;
         map<string,Cliente*> suscriptores;
-        void notificarClientes(vector<DataProducto> dtProductos, string nombrePromocion);
+        void notificarClientes(vector<DTProducto> dtProductos, string nombrePromocion);
         map<int,Producto*> productos;
         map<string,Promocion*> promociones;
     public:
         Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, string _RUT);
-        Vendedor(DataVendedor vendedor);
+        Vendedor(DTVendedor vendedor);
         ~Vendedor();
       
         string getRUT();
         vector<ParCodigoNombre> obtenerProductos(DTFecha _fecha);
-        DataVendedor getDataVendedor();
+        DTVendedor getDataVendedor();
 
         void setRUT(string _RUT);
         void agregarSuscriptor(Cliente* c);
@@ -41,10 +41,10 @@ class Vendedor : public Usuario{
         bool estaSuscrito(string nicknameCliente);
         void eliminarSuscriptor(Cliente* c);
 
-        void agregarPromocionYNotificar(vector<DataProducto> dtProductos, string nombrePromocion, Promocion* pr);
+        void agregarPromocionYNotificar(vector<DTProducto> dtProductos, string nombrePromocion, Promocion* pr);
 
-        vector<DataPromocion> obtenerInfoPromocionesVigentes(DTFecha _fecha);
-        vector<DataProducto> obtenerInfoProductos();
+        vector<DTPromocion> obtenerInfoPromocionesVigentes(DTFecha _fecha);
+        vector<DTProducto> obtenerInfoProductos();
 
         vector<ParCodigoNombre> obtenerProductosPendientesEnvio();
 

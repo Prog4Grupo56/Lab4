@@ -10,25 +10,25 @@ void CargarDatos(){
     IF->setFechaActual(DTFecha(24,06,2024));
 
 //INGRESO DE USUARIOS
-    DataVendedor US1 = DataVendedor("ana23", "qwer1234", DTFecha(15,05,1988), "212345678001");
+    DTVendedor US1 = DTVendedor("ana23", "qwer1234", DTFecha(15,05,1988), "212345678001");
     IU->ingresarVendedor(US1);
-    DataVendedor US2 = DataVendedor("carlos78", "asdfghj", DTFecha(18,06,1968), "356789012345");
+    DTVendedor US2 = DTVendedor("carlos78", "asdfghj", DTFecha(18,06,1968), "356789012345");
     IU->ingresarVendedor(US2);
-    DataVendedor US3 = DataVendedor("diegom", "zxcvbn", DTFecha(28,07,1993), "190123456789");
+    DTVendedor US3 = DTVendedor("diegom", "zxcvbn", DTFecha(28,07,1993), "190123456789");
     IU->ingresarVendedor(US3);
-    DataCliente US4 = DataCliente("juan87", "1qaz2wsx", DTFecha(20,10,1992), DTDireccion("Av. 18 de Julio", 456), "Melo");
+    DTCliente US4 = DTCliente("juan87", "1qaz2wsx", DTFecha(20,10,1992), DTDireccion("Av. 18 de Julio", 456), "Melo");
     IU->ingresarCliente(US4);
-    DataCliente US5 = DataCliente("laura", "3edc4rfv", DTFecha(22,9,1979), DTDireccion("Rondeau", 1617), "Montevideo");
+    DTCliente US5 = DTCliente("laura", "3edc4rfv", DTFecha(22,9,1979), DTDireccion("Rondeau", 1617), "Montevideo");
     IU->ingresarCliente(US5);
-    DataVendedor US6 = DataVendedor("maria01", "5tgb6yhn", DTFecha(25,03,1985), "321098765432");
+    DTVendedor US6 = DTVendedor("maria01", "5tgb6yhn", DTFecha(25,03,1985), "321098765432");
     IU->ingresarVendedor(US6);
-    DataCliente US7 = DataCliente("natalia", "poiuyt", DTFecha(14,04,1982), DTDireccion("Paysandú", 2021), "Salto");
+    DTCliente US7 = DTCliente("natalia", "poiuyt", DTFecha(14,04,1982), DTDireccion("Paysandú", 2021), "Salto");
     IU->ingresarCliente(US7);
-    DataCliente US8 = DataCliente("pablo10", "lkjhgv", DTFecha(30,11,1995), DTDireccion("Av. Rivera", 1819), "Mercedes");
+    DTCliente US8 = DTCliente("pablo10", "lkjhgv", DTFecha(30,11,1995), DTDireccion("Av. Rivera", 1819), "Mercedes");
     IU->ingresarCliente(US8);
-    DataCliente US9 = DataCliente("roberto", "mnbvcx", DTFecha(12,8,1990), DTDireccion("Av. Brasil", 1011), "Montevideo");
+    DTCliente US9 = DTCliente("roberto", "mnbvcx", DTFecha(12,8,1990), DTDireccion("Av. Brasil", 1011), "Montevideo");
     IU->ingresarCliente(US9);
-    DataVendedor US10 = DataVendedor("sofia25", "1234asdf", DTFecha(07,12,1983), "445678901234");
+    DTVendedor US10 = DTVendedor("sofia25", "1234asdf", DTFecha(07,12,1983), "445678901234");
     IU->ingresarVendedor(US10);
 
 //INGRESO DE PRODUCTOS
@@ -80,7 +80,7 @@ void CargarDatos(){
 
 //INGRESO DE PROMOCIONES
     //PM1
-    DataPromocion PM1 = DataPromocion("Casa nueva", "Para que puedas ahorrar en la casa nueva", DTFecha(25, 10, 2024), 30);
+    DTPromocion PM1 = DTPromocion("Casa nueva", "Para que puedas ahorrar en la casa nueva", DTFecha(25, 10, 2024), 30);
     vector<ParCodigoCantidad> PC1;
     PC1.push_back(ParCodigoCantidad(2, 1));
     PC1.push_back(ParCodigoCantidad(4, 1));
@@ -88,20 +88,20 @@ void CargarDatos(){
     DataCrearPromocion* DCPM1 = new DataCrearPromocion(V2->getNickname(), PM1, PC1);
     IC->crearPromocion(V2, DCPM1);
     //PM2
-    DataPromocion PM2 = DataPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
+    DTPromocion PM2 = DTPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
     vector<ParCodigoCantidad> PC2;
     PC2.push_back(ParCodigoCantidad(3, 2));
     PC2.push_back(ParCodigoCantidad(6, 3));
     DataCrearPromocion* DCPM2 = new DataCrearPromocion(V3->getNickname(), PM2, PC2);
     IC->crearPromocion(V3, DCPM2);
     //PM3
-    DataPromocion PM3 = DataPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
+    DTPromocion PM3 = DTPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
     vector<ParCodigoCantidad> PC3;
     PC3.push_back(ParCodigoCantidad(5, 2));
     DataCrearPromocion* DCPM3 = new DataCrearPromocion(V5->getNickname(), PM3, PC3);
     IC->crearPromocion(V5, DCPM3);
     //PM4
-    DataPromocion PM4 = DataPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
+    DTPromocion PM4 = DTPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
     vector<ParCodigoCantidad> PC4;
     PC4.push_back(ParCodigoCantidad(14, 1));
     DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);

@@ -4,7 +4,7 @@
 #include <map>
 #include <string>
 #include "../Datatypes/DTFecha.h"
-#include "../Datatypes/DataComentario.h"
+#include "../Datatypes/DTComentario.h"
 #include "Comentario.h"
 
 using namespace std;
@@ -29,7 +29,7 @@ class Usuario{
         string getNickname();
         DTFecha getFecha();
         string getContrasena();
-        vector<DataComentario> obtenerComentarios();
+        vector<DTComentario> obtenerComentarios();
 
         /*======= SETTERS ========*/
         void setNickname(string _nickname);
