@@ -35,7 +35,7 @@ class Producto
         ~Producto();
 
         int getCodigo();
-        string getCategoria();
+        Categoria getCategoria();
         string getNombre();
         string getDescripcion();
         int getStock();

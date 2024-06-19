@@ -15,8 +15,17 @@ void AltaCliente(){
 
     cout << "Ingrese un nickname: ";
     cin >> nickname;
-    cout << "Ingrese una contraseña: ";
-    cin >> contrasena;
+    bool contrasenaOk = false;
+    while (!contrasenaOk){
+        cout << "Ingrese una contraseña (al menos seis caracteres): ";
+        cin >> contrasena;
+        if (contrasena.length() < 6){
+            cout << "\nContraseña invalida." << endl;
+        }
+        else{
+            contrasenaOk = true;
+        }
+    }
     cout << "Ingrese una fecha (dia mes año): ";
     cin >> dia;
     cin >> mes;
@@ -49,14 +58,32 @@ void AltaVendedor(){
 
     cout << "Ingrese un nickname: ";
     cin >> nickname;
-    cout << "Ingrese una contraseña: ";
-    cin >> contrasena;
+    bool contrasenaOk = false;
+    while (!contrasenaOk){
+        cout << "Ingrese una contraseña (al menos seis caracteres): ";
+        cin >> contrasena;
+        if (contrasena.length() < 6){
+            cout << "\nContraseña invalida." << endl;
+        }
+        else{
+            contrasenaOk = true;
+        }
+    }
     cout << "Ingrese una fecha (dia mes año): ";
     cin >> dia;
     cin >> mes;
     cin >> ano;
-    cout << "Ingrese un RUT: ";
-    cin >> RUT;
+    bool RUTok = false;
+    while (!RUTok){
+        cout << "Ingrese un RUT (doce caracteres): ";
+        cin >> RUT;
+        if (RUT.length() != 12){
+            cout << "\nRUT invalido." << endl;
+        }
+        else{
+            RUTok = true;
+        }
+    }
 
     DataVendedor dataVendedor = DataVendedor(nickname, contrasena, DTFecha(dia,mes,ano), RUT);
 
