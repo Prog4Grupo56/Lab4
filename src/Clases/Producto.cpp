@@ -18,8 +18,8 @@ Producto::~Producto(){}
 int Producto::getCodigo(){
     return codigo;
 }
-string Producto::getCategoria(){
-    return to_string(categoria);
+Categoria Producto::getCategoria(){
+    return categoria;
 }
 string Producto::getNombre(){
     return nombre;
