@@ -12,6 +12,7 @@ class ControladorFecha : public IFecha{
         ControladorFecha();
     public:
         ~ControladorFecha();
+        void limpiarCF();
         static ControladorFecha* getInstancia();
         DTFecha getFechaActual();
         void setFechaActual(DTFecha _fecha);
