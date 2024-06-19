@@ -19,7 +19,7 @@ ControladorUsuario::~ControladorUsuario(){
     map<string,Usuario*>::iterator itUsuario;
 
     for(itUsuario = usuarios.begin(); itUsuario != usuarios.end(); ++itUsuario){ //elimino usuarios (CLIENTES Y VENDEDORES INCLUIDOS)
-        delete itUsuario->second;
+        itUsuario->second->~Usuario();
     }
 
     delete dataCrearP;

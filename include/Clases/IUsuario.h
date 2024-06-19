@@ -15,6 +15,7 @@ class Cliente;
 
 class IUsuario {
 public:
+
     //Alta Usuario
     virtual bool ingresarCliente(DataCliente cliente) = 0;
     virtual bool ingresarVendedor(DataVendedor vendedor) = 0;

@@ -46,7 +46,7 @@ void CrearPromocion()
 
     IU->seleccionarVendedor(seleccion); 
 
-    vector<ParCodigoNombre> listaProductos = IU->obtenerListaProductosVendedor(); // Error
+    vector<ParCodigoNombre> listaProductos = IU->obtenerListaProductosVendedor(); 
     cout << "\nProductos de "<< seleccion << ": " << endl;
     for (long unsigned int i = 0; i < listaProductos.size(); i++){
         cout << "\n\tNombre: " << listaProductos[i].getNombre() << " | Codigo: " << listaProductos[i].getCodigo();
