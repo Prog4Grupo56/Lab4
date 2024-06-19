@@ -6,7 +6,7 @@ using namespace std;
 #include "Categoria.h"
 
 
-class DataProducto{
+class DTProducto{
 
     private:
         string nombre, descripcion;
@@ -16,11 +16,11 @@ class DataProducto{
 
     public:
         //Constructor
-        DataProducto();
-        DataProducto(int _codigo, int _stock, float _precio, string _nombre, string _descripcion, Categoria _categoria);
+        DTProducto();
+        DTProducto(int _codigo, int _stock, float _precio, string _nombre, string _descripcion, Categoria _categoria);
 
         //Destructor
-        ~DataProducto();
+        ~DTProducto();
 
         //Getters
         int getCodigo();

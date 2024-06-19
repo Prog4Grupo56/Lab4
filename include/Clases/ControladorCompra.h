@@ -13,7 +13,7 @@
 #include "Fabrica.h"
 
 #include "../Datatypes/DTFecha.h"
-#include "../Datatypes/DataProducto.h"
+#include "../Datatypes/DTProducto.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/ParCompraProductos.h"
 #include "../Datatypes/ParNickFecha.h"
@@ -38,7 +38,7 @@ class ControladorCompra : public ICompra{
         ~ControladorCompra();
         static ControladorCompra* getInstancia();
         void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP);
-        vector<DataProducto> obtenerListaProductos();
+        vector<DTProducto> obtenerListaProductos();
         void agregarProductoCantidad(ParCodigoCantidad parCodCant);
         ParCompraProductos obtenerInfoCompra();
         vector<string> obtenerListaNicknamesClientes();
@@ -54,7 +54,7 @@ class ControladorCompra : public ICompra{
 
         //Producto* obtenerProducto(string _codigoProducto);
         Producto* obtenerProducto(int _codigoProducto);
-        vector<DataPromocion> obtenerInfoPromociones(DTFecha _fecha);
+        vector<DTPromocion> obtenerInfoPromociones(DTFecha _fecha);
         string obtenerInfoPromocion(string nombre);
 
         void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor);

@@ -4,23 +4,23 @@
 using namespace std;
 #include <vector>
 
-#include "DataProducto.h"
+#include "DTProducto.h"
 
 
 class DTNotificacion {
     private:
         string nombreVendedor, nombrePromocion;
-        vector<DataProducto> productos;
+        vector<DTProducto> productos;
     public:
         // Constructor
-        DTNotificacion(string _nombreVendedor, string _nombrePromocion, vector<DataProducto> _productos);
+        DTNotificacion(string _nombreVendedor, string _nombrePromocion, vector<DTProducto> _productos);
         // Destructor
         ~DTNotificacion();
 
         // Getters
         string getNombreVendedor();
         string getNombrePromocion();
-        vector<DataProducto> getProductos();
+        vector<DTProducto> getProductos();
 
         string toString();
 };

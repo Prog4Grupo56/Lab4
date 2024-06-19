@@ -1,6 +1,6 @@
 #include "../../include/Datatypes/DTNotificacion.h"
 
-DTNotificacion::DTNotificacion(string _nombreVendedor, string _nombrePromocion, vector<DataProducto> _productos){
+DTNotificacion::DTNotificacion(string _nombreVendedor, string _nombrePromocion, vector<DTProducto> _productos){
     nombreVendedor = _nombreVendedor;
     nombrePromocion = _nombrePromocion;
     productos = _productos;
@@ -15,7 +15,7 @@ string DTNotificacion::getNombreVendedor(){
 string DTNotificacion::getNombrePromocion(){
     return nombrePromocion;
 }
-vector<DataProducto> DTNotificacion::getProductos(){
+vector<DTProducto> DTNotificacion::getProductos(){
     return productos;
 }
 
@@ -24,7 +24,7 @@ string DTNotificacion::toString(){
     res = "Nombre vendedor: " + nombreVendedor + " | Nombre promocion: " + nombrePromocion;
 
     for(long unsigned int i = 0; i<productos.size(); i++){
-        DataProducto producto = productos[i];
+        DTProducto producto = productos[i];
         res = res + "\n\t\t " + producto.toString();
     }
     return res;

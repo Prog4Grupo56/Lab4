@@ -3,30 +3,30 @@
 
 #include <iostream>
 #include <vector>
-#include "../Datatypes/DataPromocion.h"
+#include "../Datatypes/DTPromocion.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 
 
 class DataCrearPromocion {
     private:
         string vendedor;
-        DataPromocion infoP;
+        DTPromocion infoP;
         vector<ParCodigoCantidad> prodCant;
     public:
         //Constructor
         DataCrearPromocion();
-        DataCrearPromocion(string _vendedor, DataPromocion _infoP, vector<ParCodigoCantidad> _prodCant);
+        DataCrearPromocion(string _vendedor, DTPromocion _infoP, vector<ParCodigoCantidad> _prodCant);
         //Destructor
         ~DataCrearPromocion();
 
         //Getters   
         string getVendedor();
-        DataPromocion getInfoP();
+        DTPromocion getInfoP();
         vector<ParCodigoCantidad> getProdCant();
 
         //Setters
         void setVendedor(string _vendedor);
-        void setInfoP(DataPromocion _infoP);
+        void setInfoP(DTPromocion _infoP);
         void setProdCant(vector<ParCodigoCantidad> _prodCant);
 
         void agregar(ParCodigoCantidad par);

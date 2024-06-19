@@ -55,12 +55,12 @@ bool Vendedor::estaSuscrito(string nicknameCliente){
     return suscriptores[nicknameCliente] != NULL;
 }
 
-void Vendedor::agregarPromocionYNotificar(vector<DataProducto> dtProductos, string nombrePromocion, Promocion* pr){
+void Vendedor::agregarPromocionYNotificar(vector<DTProducto> dtProductos, string nombrePromocion, Promocion* pr){
     promociones[pr->getNombre()] = pr;
     notificarClientes(dtProductos, nombrePromocion);
 }
 
-void Vendedor::notificarClientes(vector<DataProducto> dtProductos, string nombrePromocion){
+void Vendedor::notificarClientes(vector<DTProducto> dtProductos, string nombrePromocion){
     map<string, Cliente*>::iterator it;
     for (it = suscriptores.begin(); it != suscriptores.end(); ++it){
         Cliente* c = it->second;
@@ -68,8 +68,8 @@ void Vendedor::notificarClientes(vector<DataProducto> dtProductos, string nombre
     }
 }
 
-vector<DataPromocion> Vendedor::obtenerInfoPromocionesVigentes(DTFecha _fecha){
-    vector<DataPromocion> dPromociones;
+vector<DTPromocion> Vendedor::obtenerInfoPromocionesVigentes(DTFecha _fecha){
+    vector<DTPromocion> dPromociones;
     for (std::map<string, Promocion*>::iterator it = promociones.begin(); it != promociones.end(); ++it) {
         Promocion* promocionActual = it->second;
         if(_fecha<=promocionActual->getFechaVenc()){
@@ -79,8 +79,8 @@ vector<DataPromocion> Vendedor::obtenerInfoPromocionesVigentes(DTFecha _fecha){
     return dPromociones;
 }
 
-vector<DataProducto> Vendedor::obtenerInfoProductos(){
-    vector<DataProducto> dProductos;
+vector<DTProducto> Vendedor::obtenerInfoProductos(){
+    vector<DTProducto> dProductos;
     for (std::map<int, Producto*>::iterator it = productos.begin(); it != productos.end(); ++it) {
         Producto* productoActual = it->second;
         dProductos.push_back(productoActual->getDataProducto());

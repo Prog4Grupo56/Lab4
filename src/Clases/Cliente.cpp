@@ -72,7 +72,7 @@ void Cliente::eliminarSuscripciones(vector<DTVendedor> vendedores){
     }
 };
 
-void Cliente::notificar(string nombreVendedor, vector<DataProducto> dtProductos, string nombrePromocion){
+void Cliente::notificar(string nombreVendedor, vector<DTProducto> dtProductos, string nombrePromocion){
     DTNotificacion notificacion = DTNotificacion(nombreVendedor, nombrePromocion, dtProductos);
     notificaciones.push_back(notificacion);
 }

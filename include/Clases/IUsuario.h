@@ -7,7 +7,7 @@
 #include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/DataComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
-#include "../Datatypes/DataPromocion.h"
+#include "../Datatypes/DTPromocion.h"
 #include "../Datatypes/ParCodigoNombre.h"
 #include "../Datatypes/DTNotificacion.h"
 
@@ -27,7 +27,7 @@ public:
     virtual void eliminarComentario() = 0;
 
     //Crear Promocion
-    virtual void ingresarDatosPromocion(DataPromocion data) = 0;
+    virtual void ingresarDatosPromocion(DTPromocion data) = 0;
     virtual vector<string> obtenerListaNicknameVendedores() = 0;
     virtual void seleccionarVendedor(string nickname) = 0;
     virtual vector<ParCodigoNombre> obtenerListaProductosVendedor() = 0;

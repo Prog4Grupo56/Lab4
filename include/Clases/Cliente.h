@@ -41,7 +41,7 @@ class Cliente : public Usuario{
         void agregarSuscripcion(Vendedor* vendedor);
         void agregarCompra(Compra* _compra);
 
-        void notificar(string nombreVendedor, vector<DataProducto> dtProductos, string nombrePromocion);
+        void notificar(string nombreVendedor, vector<DTProducto> dtProductos, string nombrePromocion);
 
         void eliminarSuscripciones(vector<DTVendedor>);
         void eliminarSuscripcion(Vendedor* v);

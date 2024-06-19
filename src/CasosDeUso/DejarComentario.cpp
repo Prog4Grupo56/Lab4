@@ -26,7 +26,7 @@ void DejarComentario(){
     cout << "========" << endl;
 
     cout << "Productos:" << endl;
-    vector<DataProducto> listaProductos = IC->obtenerListaProductos();
+    vector<DTProducto> listaProductos = IC->obtenerListaProductos();
     for (long unsigned int i = 0; i < listaProductos.size(); i++){
         cout << "\t" << listaProductos[i].getNombre() << ", " <<listaProductos[i].getCodigo() << endl;
     }
