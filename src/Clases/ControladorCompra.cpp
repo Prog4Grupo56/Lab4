@@ -35,13 +35,15 @@ void ControladorCompra::crearPromocion(Vendedor* v, DataCrearPromocion* dataCrea
     vector<ParCodigoCantidad> parCodCant = dataCrearP->getProdCant();
     vector<DataProducto> dProductos;
     vector<CantMin*> cantidadesMinimas;
+    Promocion* promo = new Promocion(dataCrearP->getInfoP());
     for(unsigned int i = 0; i < parCodCant.size(); i++){
         Producto* productoActual = productos[parCodCant[i].getCodigo()];
         dProductos.push_back(productoActual->getDataProducto());
         CantMin* cantMin = new CantMin(parCodCant[i].getCantidad(), productoActual);
-        cantidadesMinimas.push_back(cantMin);
+        promo->agregarCantMinProducto(cantMin);
+        productoActual->setCantMin(cantMin);
+        cantMin->setPromocion(promo);
     }
-    Promocion* promo = new Promocion(dataCrearP->getInfoP(), cantidadesMinimas);
     promociones[promo->getNombre()] = promo;
     v->agregarPromocionYNotificar(dProductos, promo->getNombre(), promo);
 }
