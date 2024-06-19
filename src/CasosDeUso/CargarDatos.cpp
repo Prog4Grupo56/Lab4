@@ -80,7 +80,7 @@ void CargarDatos(){
 
 //INGRESO DE PROMOCIONES
     //PM1
-    DataPromocion PM1 = DataPromocion("Casa nueva", "Para que puedas ahorrar en la casa nueva", DTFecha(25, 10, 2024), 30);
+    DTPromocion PM1 = DTPromocion("Casa nueva", "Para que puedas ahorrar en la casa nueva", DTFecha(25, 10, 2024), 30);
     vector<ParCodigoCantidad> PC1;
     PC1.push_back(ParCodigoCantidad(2, 1));
     PC1.push_back(ParCodigoCantidad(4, 1));
@@ -88,20 +88,20 @@ void CargarDatos(){
     DataCrearPromocion* DCPM1 = new DataCrearPromocion(V2->getNickname(), PM1, PC1);
     IC->crearPromocion(V2, DCPM1);
     //PM2
-    DataPromocion PM2 = DataPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
+    DTPromocion PM2 = DTPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
     vector<ParCodigoCantidad> PC2;
     PC2.push_back(ParCodigoCantidad(3, 2));
     PC2.push_back(ParCodigoCantidad(6, 3));
     DataCrearPromocion* DCPM2 = new DataCrearPromocion(V3->getNickname(), PM2, PC2);
     IC->crearPromocion(V3, DCPM2);
     //PM3
-    DataPromocion PM3 = DataPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
+    DTPromocion PM3 = DTPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
     vector<ParCodigoCantidad> PC3;
     PC3.push_back(ParCodigoCantidad(5, 2));
     DataCrearPromocion* DCPM3 = new DataCrearPromocion(V5->getNickname(), PM3, PC3);
     IC->crearPromocion(V5, DCPM3);
     //PM4
-    DataPromocion PM4 = DataPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
+    DTPromocion PM4 = DTPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
     vector<ParCodigoCantidad> PC4;
     PC4.push_back(ParCodigoCantidad(14, 1));
     DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);

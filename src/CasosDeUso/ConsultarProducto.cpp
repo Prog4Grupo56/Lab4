@@ -5,7 +5,7 @@ void ConsultarProducto(){
     ICompra* IC = F->getICompra();
 
     int codigo;
-    vector<DataProducto> listadoDeProductos = IC->obtenerListaProductos();
+    vector<DTProducto> listadoDeProductos = IC->obtenerListaProductos();
 
     cout << "Nombres y códigos de los productos: " << endl;
     for(long unsigned int i = 0; i < listadoDeProductos.size(); i++){

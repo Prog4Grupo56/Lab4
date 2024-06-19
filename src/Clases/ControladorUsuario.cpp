@@ -135,7 +135,7 @@ void ControladorUsuario::eliminarComentario(){
 } 
 
     //Crear Promocion
-void ControladorUsuario::ingresarDatosPromocion(DataPromocion data){ 
+void ControladorUsuario::ingresarDatosPromocion(DTPromocion data){ 
     dataCrearP = new DataCrearPromocion();
     dataCrearP->setInfoP(data);
 }
@@ -344,20 +344,20 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
             info+= "\n\t\tFecha: " + compras[i]->getFecha().toString() + " | Monto final: " + to_string(compras[i]->getMontoFinal());
             vector<CompraProducto*> compraProductos = compras[i]->obtenerCompraProductos();
             for(unsigned int j = 0; j < compraProductos.size(); j++){
-                DataProducto dProd = compraProductos[j]->getProducto()->getDataProducto();
+                DTProducto dProd = compraProductos[j]->getProducto()->getDataProducto();
                 info += "\n\t\t\t" + dProd.toString();
             }
         }
     }
     if(itV!=vendedores.end()){
         info = itV->second->getNickname() + ", " + itV->second->getFecha().toString();
-        vector<DataProducto> productos = itV->second->obtenerInfoProductos();
+        vector<DTProducto> productos = itV->second->obtenerInfoProductos();
         info += "\n\tProductos:";
         for(unsigned int i = 0; i<productos.size(); i++){
             info += "\n\t\t" + productos[i].toString();
         }
         info += "\n\tPromociones:";
-        vector<DataPromocion> promociones = itV->second->obtenerInfoPromocionesVigentes(fechaActual);
+        vector<DTPromocion> promociones = itV->second->obtenerInfoPromocionesVigentes(fechaActual);
         for(unsigned int i = 0; i<promociones.size(); i++){
             info += "\n\t\t" + promociones[i].toString();
         }

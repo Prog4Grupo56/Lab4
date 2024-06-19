@@ -72,7 +72,7 @@ class ControladorUsuario : public IUsuario{
         void eliminarComentario();
         
         //Crear Promocion
-        void ingresarDatosPromocion(DataPromocion data);
+        void ingresarDatosPromocion(DTPromocion data);
         vector<string> obtenerListaNicknameVendedores();
         void seleccionarVendedor(string nickname);
         vector<ParCodigoNombre> obtenerListaProductosVendedor();

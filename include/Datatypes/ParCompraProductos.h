@@ -1,7 +1,7 @@
 #ifndef PARCOMPRAPRODUCTOS
 #define PARCOMPRAPRODUCTOS
 
-#include "../Datatypes/DataProducto.h"
+#include "../Datatypes/DTProducto.h"
 #include "DTFecha.h"
 
 #include <vector>
@@ -13,16 +13,16 @@ class ParCompraProductos
     private:
        DTFecha fechaActual;
        float montoF;
-       vector<DataProducto> dProductos;
+       vector<DTProducto> dProductos;
     public:
         ParCompraProductos();
-        ParCompraProductos(float _montoF, vector<DataProducto> _dProductos, DTFecha fecha); //Constructor
+        ParCompraProductos(float _montoF, vector<DTProducto> _dProductos, DTFecha fecha); //Constructor
         ~ParCompraProductos(); //Destructor
 
         //Getters
         DTFecha getFecha();
         float getMontoFinal();
-        vector<DataProducto> getProductos();
+        vector<DTProducto> getProductos();
 
 };
 

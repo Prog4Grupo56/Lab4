@@ -1,7 +1,7 @@
-#include "../../include/Datatypes/DataProducto.h"
+#include "../../include/Datatypes/DTProducto.h"
 
-DataProducto::DataProducto(){}
-DataProducto::DataProducto(int _codigo, int _stock, float _precio, string _nombre, string _descripcion, Categoria _categoria){
+DTProducto::DTProducto(){}
+DTProducto::DTProducto(int _codigo, int _stock, float _precio, string _nombre, string _descripcion, Categoria _categoria){
     codigo = _codigo;
     stock = _stock;
     precio = _precio;
@@ -10,29 +10,29 @@ DataProducto::DataProducto(int _codigo, int _stock, float _precio, string _nombr
     categoria = _categoria;
 };
 
-DataProducto::~DataProducto(){};
+DTProducto::~DTProducto(){};
 
 /*======= GETTERS ========*/
-int DataProducto::getCodigo(){
+int DTProducto::getCodigo(){
     return codigo;
 }
-int DataProducto::getStock(){
+int DTProducto::getStock(){
     return stock;
 }
-float DataProducto::getPrecio(){
+float DTProducto::getPrecio(){
     return precio;
 }
-string DataProducto::getNombre(){
+string DTProducto::getNombre(){
     return nombre;
 }
-string DataProducto::getDescripcion(){
+string DTProducto::getDescripcion(){
     return descripcion;
 }
-Categoria DataProducto::getCategoria(){
+Categoria DTProducto::getCategoria(){
     return categoria;
 }
 
-string DataProducto::toString(){
+string DTProducto::toString(){
     string _categoria;
     if (categoria == Ropa){
         _categoria = "Ropa";

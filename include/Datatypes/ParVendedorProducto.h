@@ -1,21 +1,21 @@
 #ifndef PARVENDEDORPRODUCTO
 #define PARVENDEDORPRODUCTO
 
-#include "DataProducto.h"
+#include "DTProducto.h"
 #include <string>
 
 class ParVendedorProducto{
 
     private:
         string nickname;
-        DataProducto producto;
+        DTProducto producto;
     public:
         ParVendedorProducto();
-        ParVendedorProducto(string _nickname, DataProducto prod);
+        ParVendedorProducto(string _nickname, DTProducto prod);
         ~ParVendedorProducto();
 
         string getNickname();
-        DataProducto getProducto();
+        DTProducto getProducto();
 
 };
 

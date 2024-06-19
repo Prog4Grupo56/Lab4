@@ -1,6 +1,6 @@
 #include "../../include/Clases/Promocion.h"
 
-Promocion :: Promocion(DataPromocion _promocion){
+Promocion :: Promocion(DTPromocion _promocion){
     cantMinProductos = {};
     nombre = _promocion.getNombre();
     descripcion = _promocion.getDescripcion();
@@ -8,7 +8,7 @@ Promocion :: Promocion(DataPromocion _promocion){
     fechaVenc = _promocion.getFechaVenc();
 }
 
-Promocion :: Promocion(DataPromocion _promocion, vector<CantMin*> _cantidadesMinimas){
+Promocion :: Promocion(DTPromocion _promocion, vector<CantMin*> _cantidadesMinimas){
     cantMinProductos = _cantidadesMinimas;
     nombre = _promocion.getNombre();
     descripcion = _promocion.getDescripcion();
@@ -36,8 +36,8 @@ void Promocion ::agregarCantMinProducto(CantMin *cMinProd){
     cantMinProductos.push_back(cMinProd);
 }
 
-DataPromocion Promocion::getDataPromocion(){
-    return DataPromocion(nombre, descripcion, fechaVenc, descuento);
+DTPromocion Promocion::getDataPromocion(){
+    return DTPromocion(nombre, descripcion, fechaVenc, descuento);
 }
 
 vector<ParCodigoCantidad> Promocion::aplicaEnCompra(vector<ParCodigoCantidad> prodCant){

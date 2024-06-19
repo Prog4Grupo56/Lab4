@@ -1,10 +1,10 @@
 #include "../../include/Datatypes/ParVendedorProducto.h"
 
 ParVendedorProducto::ParVendedorProducto(){
-    producto = DataProducto();
+    producto = DTProducto();
 }
 
-ParVendedorProducto::ParVendedorProducto(string _nickname, DataProducto prod){ 
+ParVendedorProducto::ParVendedorProducto(string _nickname, DTProducto prod){ 
     producto = prod;
     nickname = _nickname;
 }
@@ -15,6 +15,6 @@ string ParVendedorProducto::getNickname(){
     return nickname;
 }
 
-DataProducto ParVendedorProducto::getProducto(){
+DTProducto ParVendedorProducto::getProducto(){
     return producto;
 }
