@@ -60,12 +60,11 @@ DataProducto Producto::getDataProducto(){
     return DataProducto(codigo, stock, precio, nombre, descripcion, categoria);
 }
 
-bool Producto::pertenecePromoVigente(){
+bool Producto::pertenecePromoVigente(DTFecha _fecha){
     if(cantMin != NULL){
-        return DTFecha(9,06,2024) <= cantMin->obtenerFechaPromocion(); // REVISAR LO DE LA FECHA ACTUAL
-    }else{
-        return false;
+        return _fecha <= cantMin->obtenerFechaPromocion(); // REVISAR LO DE LA FECHA ACTUAL
     }
+    return false;
 }
 
 void Producto::crearEnvio(Compra* c, int cantidad){

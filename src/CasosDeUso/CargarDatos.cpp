@@ -5,6 +5,9 @@ void CargarDatos(){
     Fabrica* F = Fabrica::getInstance();
     IUsuario* IU = F->getIUsuario();
     ICompra* IC = F->getICompra();
+    IFecha* IF =  F->getIFecha();
+
+    IF->setFechaActual(DTFecha(24,06,2024));
 
 //INGRESO DE USUARIOS
     DataVendedor US1 = DataVendedor("ana23", "qwer1234", DTFecha(15,05,1988), "212345678001");

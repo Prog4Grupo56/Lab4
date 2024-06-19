@@ -56,7 +56,7 @@ class Producto
 
         //Operaciones:
         DataProducto getDataProducto();
-        bool pertenecePromoVigente();
+        bool pertenecePromoVigente(DTFecha _fecha);
         void crearEnvio(Compra* c, int cantidad);
         vector<ParNickFecha> obtenerClienteFecha();
         

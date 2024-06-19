@@ -31,7 +31,7 @@ class Vendedor : public Usuario{
         ~Vendedor();
       
         string getRUT();
-        vector<ParCodigoNombre> obtenerProductos();
+        vector<ParCodigoNombre> obtenerProductos(DTFecha _fecha);
         DataVendedor getDataVendedor();
 
         void setRUT(string _RUT);

@@ -19,13 +19,13 @@ DataVendedor Vendedor::getDataVendedor(){
     return DataVendedor(this->getNickname(), this->getContrasena(), this->getFecha(), RUT); 
 }
 
-vector<ParCodigoNombre> Vendedor::obtenerProductos(){
+vector<ParCodigoNombre> Vendedor::obtenerProductos(DTFecha _fecha){
 
     vector<ParCodigoNombre> lista;
     map<int,Producto*>::iterator it;
     for(it = productos.begin(); it != productos.end(); ++it){
         Producto* producto = it->second;
-        bool productoOcupado = producto->pertenecePromoVigente();
+        bool productoOcupado = producto->pertenecePromoVigente(_fecha);
         if (!productoOcupado){
             ParCodigoNombre par = ParCodigoNombre(producto->getNombre(), producto->getCodigo());
             lista.push_back(par);
@@ -100,5 +100,5 @@ vector<ParCodigoNombre> Vendedor::obtenerProductosPendientesEnvio(){
         }
     }
     return prodPend;
-    
+
 }

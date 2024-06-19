@@ -22,3 +22,4 @@ void ConsultaDeNotificaciones();
 void EliminarSuscripciones();
 void CargarDatos();
 void LimpiarMemoria();
+void CambiarFecha();

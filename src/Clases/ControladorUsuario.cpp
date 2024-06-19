@@ -153,10 +153,13 @@ void ControladorUsuario::seleccionarVendedor(string nickname){
 }
 
 vector<ParCodigoNombre> ControladorUsuario::obtenerListaProductosVendedor(){
+    Fabrica* f = Fabrica::getInstance();
+    IFecha* IF = f->getIFecha();
+    
     string vendedor = dataCrearP->getVendedor();
 
     vector<ParCodigoNombre> productos;
-    productos = (vendedores[vendedor])->obtenerProductos();
+    productos = (vendedores[vendedor])->obtenerProductos(IF->getFechaActual());
 
     return productos;
 }

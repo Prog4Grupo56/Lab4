@@ -7,8 +7,6 @@
 using namespace std;
 
 int main(){
-    ControladorFecha* CF = ControladorFecha::getInstancia();
-    CF->setFechaActual(DTFecha(17,6,2024));
     /*====== MENÚ =====*/
     int opcion;
     do{
@@ -32,6 +30,7 @@ int main(){
         cout << "14. Eliminar suscripciones" << endl;
         //todos los casos de uso
         cout << "15. Cargar datos" << endl;
+        cout << "16. Cambiar fecha" << endl;
         cout << "Seleccione una opcion: ";
 
         try
@@ -91,6 +90,9 @@ int main(){
 
                 case 15:
                     CargarDatos();
+                    break;
+                case 16:
+                    CambiarFecha();
                     break;
                 default:
                     cout << "Numero fuera de rango. Por favor, intente de nuevo." << endl;
