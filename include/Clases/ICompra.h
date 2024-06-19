@@ -17,6 +17,7 @@ class Vendedor;
 
 class ICompra {
 public:
+    virtual void limpiarCC() = 0;
 
     virtual void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP) = 0;
     virtual vector<DataProducto> obtenerListaProductos() = 0;

@@ -44,7 +44,7 @@ int main(){
             {
                 case 0:
                     /* Salir */
-                    LimpiarMemoria();
+                    //LimpiarMemoria();
                     break;
                 case 1:
                     AltaDeUsuario();
@@ -88,13 +88,15 @@ int main(){
                 case 14:
                     EliminarSuscripciones();
                     break;
-
                 case 15:
                     CargarDatos();
                     break;
                 case 16:
                     CambiarFecha();
                     break;
+                case 17:
+                    LimpiarMemoria();
+                    break;    
                 default:
                     cout << "Numero fuera de rango. Por favor, intente de nuevo." << endl;
                     break;
@@ -115,7 +117,7 @@ int main(){
         }      
     } while (opcion != 0);
 
-    LimpiarMemoria();
+    //LimpiarMemoria();
 
     return 0;
 }
