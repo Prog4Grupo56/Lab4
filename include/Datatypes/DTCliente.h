@@ -1,19 +1,19 @@
 #ifndef DATACLIENTE
 #define DATACLIENTE
 
-#include "DataUsuario.h"
+#include "DTUsuario.h"
 #include "DTDireccion.h"
 
-class DataCliente : public DataUsuario{
+class DTCliente : public DTUsuario{
 
     private:
         DTDireccion direccion;
         string ciudad;
 
     public:
-        DataCliente(string _nickname, string _contrasena, DTFecha _fecha, DTDireccion _direccion, string _ciudad);
+        DTCliente(string _nickname, string _contrasena, DTFecha _fecha, DTDireccion _direccion, string _ciudad);
 
-        ~DataCliente();
+        ~DTCliente();
        
         DTDireccion getDireccion();
         string getCiudad();

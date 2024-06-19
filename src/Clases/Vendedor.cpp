@@ -3,7 +3,7 @@
 Vendedor::Vendedor(string _nickname, string _contrasenia, DTFecha _fecha, string _RUT):
 Usuario(_nickname, _contrasenia, _fecha), RUT(_RUT){};
 
-Vendedor::Vendedor(DataVendedor vendedor): Usuario(vendedor.getNickname(), vendedor.getContrasena(), vendedor.getFecha()){
+Vendedor::Vendedor(DTVendedor vendedor): Usuario(vendedor.getNickname(), vendedor.getContrasena(), vendedor.getFecha()){
     RUT = vendedor.getRUT();
 };
 
@@ -15,8 +15,8 @@ string Vendedor::getRUT(){
     return RUT;
 };
 
-DataVendedor Vendedor::getDataVendedor(){
-    return DataVendedor(this->getNickname(), this->getContrasena(), this->getFecha(), RUT); 
+DTVendedor Vendedor::getDataVendedor(){
+    return DTVendedor(this->getNickname(), this->getContrasena(), this->getFecha(), RUT); 
 }
 
 vector<ParCodigoNombre> Vendedor::obtenerProductos(DTFecha _fecha){

@@ -4,14 +4,14 @@ DataPromoSeleccionada::DataPromoSeleccionada(){
 
 };
 
-DataPromoSeleccionada::DataPromoSeleccionada(set<DataProducto> _productos, DataVendedor _vendedor): productos(_productos), vendedor(_vendedor){
+DataPromoSeleccionada::DataPromoSeleccionada(set<DataProducto> _productos, DTVendedor _vendedor): productos(_productos), vendedor(_vendedor){
 
 };
 
 DataPromoSeleccionada::~DataPromoSeleccionada(){};
 
 /*======= GETTERS ========*/
-DataVendedor DataPromoSeleccionada::getVendedor(){
+DTVendedor DataPromoSeleccionada::getVendedor(){
     return vendedor;
 }
 
@@ -20,7 +20,7 @@ set<DataProducto> DataPromoSeleccionada::getProductos(){
 }
 
 /*======= SETTERS ========*/
-void DataPromoSeleccionada::setVendedor(DataVendedor _vendedor){
+void DataPromoSeleccionada::setVendedor(DTVendedor _vendedor){
     vendedor = _vendedor;
 }
 

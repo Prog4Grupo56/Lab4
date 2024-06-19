@@ -4,8 +4,8 @@ void ListadoDeUsuarios(){
     Fabrica* F = Fabrica::getInstance();
     IUsuario* IU = F->getIUsuario();
     
-    vector<DataCliente> listaClientes = IU->obtenerListadoClientes();
-    vector<DataVendedor> listaVendedores = IU->obtenerListadoVendedores();
+    vector<DTCliente> listaClientes = IU->obtenerListadoClientes();
+    vector<DTVendedor> listaVendedores = IU->obtenerListadoVendedores();
 
     cout << "Usuarios: " << endl;
     cout << "\t" << endl;

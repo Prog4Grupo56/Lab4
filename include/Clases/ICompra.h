@@ -8,7 +8,7 @@
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "DataCrearPromocion.h"
 #include "../Datatypes/DataProducto.h"
-#include "../Datatypes/DataVendedor.h"
+#include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/ParCompraProductos.h"
 #include "DataInfoCompra.h"
 #include "../Datatypes/ParNickFecha.h"
