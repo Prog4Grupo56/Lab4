@@ -313,7 +313,12 @@ void ControladorUsuario::eliminarSuscripciones(){
 
 //Enviar Producto
 vector<ParCodigoNombre> ControladorUsuario::obtenerProductosVendedorEnvio(string nickVendedor){
-    return vendedores[nickVendedor]->obtenerProductosPendientesEnvio();
+
+    map<string,Vendedor*>::iterator itV;
+    itV = vendedores.find(nickVendedor);
+    vector<ParCodigoNombre> res;
+    if(itV !=vendedores.end()) res = vendedores[nickVendedor]->obtenerProductosPendientesEnvio();
+    return res;
 }
 
 //Algun caso de uso

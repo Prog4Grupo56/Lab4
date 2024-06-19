@@ -137,9 +137,7 @@ void ControladorCompra::confirmarCompra(DTFecha _fecha){
 vector<ParCodigoNombre> ControladorCompra::obtenerProductosPendientesEnvio(string nickVendedor){
     Fabrica* f = Fabrica::getInstance();
     IUsuario* IU = f->getIUsuario();
-    
     vector<ParCodigoNombre> prodPend = IU->obtenerProductosVendedorEnvio(nickVendedor);
-
     return prodPend;
 }
 

@@ -10,20 +10,19 @@ void ConsultarPromocion(){
     for(unsigned int i = 0; i<promociones.size(); i++){
         cout << "\n\t" << promociones[i].toString();
     }
-    cout << "\n\n=================" << endl;
-    cout << "Menu de opciones:" << endl;
-    cout << "=================" << endl;
-    cout << "0. Salir" << endl;
-    cout << "1. Ingresar nombre de promocion" << endl;
+    cout << "\n\nDesea obtener mas informacion sobre una promocion?";
+    cout << "\n\t0. Salir";
+    cout << "\n\t1. Obtener mas informacion";
+    cout << "\nIngrese una opcion: ";
     int opcion;
     cin >> opcion;
     if (opcion==1){
         string nombre;
-        cout<< "Ingrese el nombre de la promocion: ";
+        cout<< "\nIngrese el nombre de la promocion: ";
         cin.ignore();
         getline(cin, nombre);
         string info = IC->obtenerInfoPromocion(nombre);
-        cout << "\n" + info;
+        cout << "\n" + info + "\n";
     }
 
 }

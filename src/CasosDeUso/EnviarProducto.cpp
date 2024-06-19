@@ -6,44 +6,36 @@ void EnviarProducto(){
 
     vector<string> listaNicknames = IC->obtenerListaNicknameVendedores();
 
-    cout << "Vendedores:" << endl;
+    cout << "Vendedores:";
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
-        cout << listaNicknames[i] << endl;
+        cout << "\n\t"<<listaNicknames[i];
     }
 
-    cout << "========"<< endl;
-    cout << "Seleccione uno: ";
+    cout << "\n\nIngrese un nickname: ";
     string nickname;
     cin >> nickname;
-    cout << "========";
-
     vector<ParCodigoNombre> productos = IC->obtenerProductosPendientesEnvio(nickname); 
-
-    cout << "Productos del vendedor:" << endl;
+    cout << "\nProductos pendientes de envio del vendedor:";
     for (long unsigned int i = 0; i < productos.size(); i++){
-        cout << productos[i].getCodigo() << "-" << productos[i].getNombre() << endl;
+        cout << "\n\tCodigo: " << productos[i].getCodigo() << " | Nombre: " << productos[i].getNombre();
     }
 
-    cout << "========"<< endl;
-    cout << "Seleccione uno (codigo): ";
+    cout << "\n\nIngrese un codigo: ";
     int producto;
     cin >> producto;
-    cout << "========";
 
     vector<ParNickFecha> clientesCompra = IC -> obtenerParNickFechaEnvio(producto);
 
-    cout << "Clientes a enviar el producto:" << endl;
+    cout << "\nClientes a enviar el producto:" << endl;
     for (long unsigned int i = 0; i < clientesCompra.size(); i++){
-        cout << clientesCompra[i].getNickname() << " - " << clientesCompra[i].getFecha().toString() << endl;
+        cout << "\n\tNickname: " << clientesCompra[i].getNickname() << " | Fecha de nacimiento: " << clientesCompra[i].getFecha().toString();
     }
 
-    cout << "========"<< endl;
-    cout << "Seleccione uno (nombre): ";
+    cout << "\n\nIngrese un nickname: ";
     string cliente;
     cin >> cliente;
-    cout << "========";
 
     IC->enviarProducto(producto, cliente);
 
-    cout << "Producto enviado"<< endl;
+    cout << "\nProducto enviado"<< endl;
 }
