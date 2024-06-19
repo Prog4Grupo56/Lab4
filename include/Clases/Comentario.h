@@ -2,7 +2,6 @@
 #define COMENTARIO
 
 #include "../Datatypes/DTFecha.h"
-#include "../Datatypes/DataComentario.h"
 #include "Usuario.h"
 
 class Usuario; //fwd

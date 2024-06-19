@@ -55,7 +55,7 @@ void DejarComentario(){
 
     }
     else{
-        vector<DataComentario> listaComentariosProducto = IU->obtenerListaComentariosProducto(producto);
+        vector<DTComentario> listaComentariosProducto = IU->obtenerListaComentariosProducto(producto);
         cout << "Comentarios sobre el producto " << producto << " (comentario, fecha, id):" << endl;
         for (unsigned int i = 0; i < listaComentariosProducto.size(); i++){
             cout << "\t" << listaComentariosProducto[i].toString() << endl;

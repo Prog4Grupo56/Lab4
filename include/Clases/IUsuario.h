@@ -22,7 +22,7 @@ public:
     //Eliminar Comentario
     virtual vector<string> obtenerListaNicknamesUsuarios() = 0;
     virtual void seleccionarUsuario(string nickname) = 0;
-    virtual vector<DataComentario> obtenerComentariosUsuario() = 0;
+    virtual vector<DTComentario> obtenerComentariosUsuario() = 0;
     virtual void seleccionarComentario(int idComentario) = 0;
     virtual void eliminarComentario() = 0;
 
@@ -53,7 +53,7 @@ public:
     virtual vector<DTVendedor> obtenerListadoVendedores() = 0;
 
     //Dejar Comentario
-    virtual vector<DataComentario> obtenerListaComentariosProducto(int producto) = 0;
+    virtual vector<DTComentario> obtenerListaComentariosProducto(int producto) = 0;
     virtual void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario, DTFecha _fecha) = 0;
     virtual void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre) = 0;
 
