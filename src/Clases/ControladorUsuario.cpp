@@ -114,10 +114,10 @@ void ControladorUsuario::seleccionarUsuario(string nickname){
     dataElimCom->setNickname(nickname);
 }
 
-vector<DataComentario> ControladorUsuario::obtenerComentariosUsuario(){
+vector<DTComentario> ControladorUsuario::obtenerComentariosUsuario(){
     string nickUsuario = dataElimCom->getNickname();
 
-    vector<DataComentario> comentarios;
+    vector<DTComentario> comentarios;
     comentarios = (usuarios[nickUsuario])->obtenerComentarios();
 
     return comentarios;
@@ -207,15 +207,15 @@ Cliente* ControladorUsuario::obtenerClienteCompra(string nickname){
 }
 
     //Dejar comentario
-vector<DataComentario> ControladorUsuario::obtenerListaComentariosProducto(int codigoProducto){
+vector<DTComentario> ControladorUsuario::obtenerListaComentariosProducto(int codigoProducto){
 
-    vector<DataComentario> lista;
+    vector<DTComentario> lista;
 
     map<string,Usuario*>::iterator itU;
 
     for(itU = usuarios.begin(); itU != usuarios.end(); ++itU){
         Usuario* u = itU->second;
-        vector<DataComentario> comentariosUsuario = u->obtenerComentarios();
+        vector<DTComentario> comentariosUsuario = u->obtenerComentarios();
         for (unsigned int i = 0; i < comentariosUsuario.size(); i++){
             if (comentariosUsuario[i].getCodigoProducto() == codigoProducto){
                 lista.push_back(comentariosUsuario[i]);

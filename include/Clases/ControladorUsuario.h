@@ -7,7 +7,7 @@
 #include "../Datatypes/DTNotificacion.h"
 #include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/DTCliente.h"
-#include "../Datatypes/DataComentario.h"
+#include "../Datatypes/DTComentario.h"
 #include "../Datatypes/ParCodigoCantidad.h"
 #include "../Datatypes/ParCodigoNombre.h"
 #include "../Datatypes/ParNickFecha.h"
@@ -67,7 +67,7 @@ class ControladorUsuario : public IUsuario{
         //Eliminar Comentario
         vector<string> obtenerListaNicknamesUsuarios();
         void seleccionarUsuario(string nickname); 
-        vector<DataComentario> obtenerComentariosUsuario();
+        vector<DTComentario> obtenerComentariosUsuario();
         void seleccionarComentario(int idComentario); 
         void eliminarComentario();
         
@@ -84,7 +84,7 @@ class ControladorUsuario : public IUsuario{
         Cliente* obtenerClienteCompra(string nickname);
 
         //Dejar comentario
-        vector<DataComentario> obtenerListaComentariosProducto(int codigoProducto);
+        vector<DTComentario> obtenerListaComentariosProducto(int codigoProducto);
         void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario, DTFecha _fecha);
         void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre);
  
