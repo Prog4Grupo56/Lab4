@@ -106,6 +106,7 @@ void CargarDatos(){
     PC4.push_back(ParCodigoCantidad(14, 1));
     DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);
     IC->crearPromocion(V14, DCPM4);
+
 //INGRESO DE COMPRAS
     //CO1
     IC->seleccionarCliente(US4.getNickname());
@@ -156,7 +157,25 @@ void CargarDatos(){
     IC->seleccionarCliente(US9.getNickname());
     IC->agregarProductoCantidad(ParCodigoCantidad(1, 5));
     IC->obtenerInfoCompra();
-    IC->confirmarCompra(DTFecha(015,05,2024));
+    IC->confirmarCompra(DTFecha(15,05,2024));
+
+//INGRESO DE ENVIOS
+    //EV1
+    IC->enviarProducto(2, US4.getNickname());
+    //EV2
+    IC->enviarProducto(5, US4.getNickname());
+    //EV3
+    IC->enviarProducto(14, US5.getNickname());
+    //EV4
+    IC->enviarProducto(11, US7.getNickname());
+    //EV5
+    IC->enviarProducto(12, US7.getNickname());
+    //EV6
+    IC->enviarProducto(13, US7.getNickname());
+    //EV7
+    IC->enviarProducto(6, US4.getNickname());
+    //EV8
+    IC->enviarProducto(1, US7.getNickname());
 
 //INGRESO DE COMENTARIOS
     //CM1
