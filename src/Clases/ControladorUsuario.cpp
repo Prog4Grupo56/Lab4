@@ -253,7 +253,7 @@ void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigo
     }
 
     cantidadComentarios++;
-    u->agregarComentarioRespuesta(comentario, pr->getCodigo(), _fecha, cantidadComentarios, comentarioPadre);
+    u->agregarComentarioRespuesta(comentario, pr->getCodigo(), _fecha, cantidadComentarios, comentarioPadre); 
 };
 
     //Consultar Notificaciones

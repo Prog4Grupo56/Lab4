@@ -7,8 +7,8 @@ CompraProducto::CompraProducto(Compra* _c, int _cantidad, Producto* _producto){
 }
 
 CompraProducto::~CompraProducto(){
-    producto = NULL;
-    compra = NULL;
+    // producto = NULL;
+    // compra = NULL;
 }
 
 Compra* CompraProducto::getCompra(){

@@ -38,7 +38,8 @@ class ControladorUsuario : public IUsuario{
 
         map<string, Usuario*> usuarios;
         map<string, Cliente*> clientes;
-        map<string, Vendedor*> vendedores;      //id RUT? xd
+        map<string, Vendedor*> vendedores;
+        map<string, Comentario*> comentarios;
 
     public:
         static ControladorUsuario * getInstancia();

@@ -14,8 +14,9 @@ Producto::Producto(int _codigo, Categoria _categoria, string _nombre, string _de
 
 //Destructor
 Producto::~Producto(){
-    vendedor = NULL;
-    cantMin = NULL;
+    // vendedor = NULL;
+    // cantMin = NULL;
+    // compraProducto.clear();
 }
 
 int Producto::getCodigo(){
