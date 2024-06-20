@@ -19,17 +19,13 @@ ControladorUsuario::~ControladorUsuario(){
     map<string,Usuario*>::iterator itUsuario;
 
     for(itUsuario = usuarios.begin(); itUsuario != usuarios.end(); ++itUsuario){ //elimino usuarios (CLIENTES Y VENDEDORES INCLUIDOS)
-        itUsuario->second->~Usuario();
+        delete itUsuario->second;
     }
 
-    delete dataCrearP;
-    delete dataElimCom;
-    delete dataElimSus;    
+    //delete dataCrearP;
+    //delete dataElimCom;
+    //delete dataElimSus;    
 };
-
-void ControladorUsuario::limpiarCU(){
-    instancia->~ControladorUsuario();
-}
 
     //GETTERS
 string ControladorUsuario::getNickname(){ return nicknameC;}
