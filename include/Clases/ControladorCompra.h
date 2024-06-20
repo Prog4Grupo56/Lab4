@@ -46,7 +46,6 @@ class ControladorCompra : public ICompra{
         void confirmarCompra(DTFecha _fecha);
         void cancelarCompra();
 
-        void limpiarCC();
 
         //Enviar Producto
         vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);

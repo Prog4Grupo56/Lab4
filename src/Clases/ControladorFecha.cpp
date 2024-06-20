@@ -17,9 +17,6 @@ ControladorFecha::~ControladorFecha(){
 
 }
 
-void ControladorFecha::limpiarCF(){
-    instancia->~ControladorFecha();
-}
 
 DTFecha ControladorFecha::getFechaActual(){
     return fechaActual;

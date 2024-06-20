@@ -87,6 +87,7 @@ void CargarDatos(){
     PC1.push_back(ParCodigoCantidad(8, 1));
     DataCrearPromocion* DCPM1 = new DataCrearPromocion(V2->getNickname(), PM1, PC1);
     IC->crearPromocion(V2, DCPM1);
+    delete DCPM1;
     //PM2
     DTPromocion PM2 = DTPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
     vector<ParCodigoCantidad> PC2;
@@ -94,18 +95,21 @@ void CargarDatos(){
     PC2.push_back(ParCodigoCantidad(6, 3));
     DataCrearPromocion* DCPM2 = new DataCrearPromocion(V3->getNickname(), PM2, PC2);
     IC->crearPromocion(V3, DCPM2);
+    delete DCPM2;
     //PM3
     DTPromocion PM3 = DTPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
     vector<ParCodigoCantidad> PC3;
     PC3.push_back(ParCodigoCantidad(5, 2));
     DataCrearPromocion* DCPM3 = new DataCrearPromocion(V5->getNickname(), PM3, PC3);
     IC->crearPromocion(V5, DCPM3);
+    delete DCPM3;
     //PM4
     DTPromocion PM4 = DTPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
     vector<ParCodigoCantidad> PC4;
     PC4.push_back(ParCodigoCantidad(14, 1));
     DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);
     IC->crearPromocion(V14, DCPM4);
+    delete DCPM4;
 
 //INGRESO DE COMPRAS
     //CO1

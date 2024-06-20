@@ -14,25 +14,24 @@ ControladorCompra* ControladorCompra::getInstancia() {
 }
 
 ControladorCompra::~ControladorCompra(){
-
     for (unsigned int i = 0; i < compras.size(); i++){
-        delete compras[i];
-    }
+            delete compras[i];
+        }
 
+    map<string, Promocion*>::iterator itP;
+    for (itP = promociones.begin(); itP != promociones.end(); ++itP){
+        delete itP->second;
+    }
+    
     map<int, Producto*>::iterator it;
     for (it = productos.begin(); it != productos.end(); ++it){
         delete it->second;
     }
 
-    map<string, Promocion*>::iterator itP;
-    for (itP = promociones.begin(); itP != promociones.end(); ++it){
-        delete itP->second;
-    }
+    
 
-}
+    
 
-void ControladorCompra::limpiarCC(){
-    instancia->~ControladorCompra();
 }
 
 void ControladorCompra::crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP){

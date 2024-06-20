@@ -8,9 +8,9 @@ void LimpiarMemoria(){
     ICompra* IC = F->getICompra();
     IFecha* IF = F->getIFecha();
 
-    IU->limpiarCU();
-    IC->limpiarCC();
-    IF->limpiarCF();
+    delete IC;
+    delete IU;
+    delete IF;
 
-    delete F;
+    //delete F;
 }
