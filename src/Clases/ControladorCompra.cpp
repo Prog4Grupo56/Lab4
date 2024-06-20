@@ -31,6 +31,10 @@ ControladorCompra::~ControladorCompra(){
 
 }
 
+void ControladorCompra::limpiarCC(){
+    instancia->~ControladorCompra();
+}
+
 void ControladorCompra::crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP){
     vector<DTCodigoCantidad> parCodCant = dataCrearP->getProdCant();
     vector<DTProducto> dProductos;
