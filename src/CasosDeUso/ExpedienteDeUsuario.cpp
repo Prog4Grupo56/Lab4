@@ -9,7 +9,7 @@ void ExpedienteDeUsuario(){
 
     string nickname;
 
-    cout << "Ingrese un nickname: ";
+    cout << "\nIngrese un nickname: ";
     cin >> nickname;
 
     string info = IU->obtenerInfoUsuario(nickname);

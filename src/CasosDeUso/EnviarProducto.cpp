@@ -8,7 +8,7 @@ void EnviarProducto(){
 
     cout << "Vendedores:";
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
-        cout << "\n\t"<<listaNicknames[i];
+        cout << "\n\tNickname: "<<listaNicknames[i];
     }
 
     cout << "\n\nIngrese un nickname: ";
@@ -26,9 +26,9 @@ void EnviarProducto(){
 
     vector<DTNickFecha> clientesCompra = IC -> obtenerParNickFechaEnvio(producto);
 
-    cout << "\nClientes a enviar el producto:" << endl;
+    cout << "\nClientes a enviar el producto:";
     for (long unsigned int i = 0; i < clientesCompra.size(); i++){
-        cout << "\n\tNickname: " << clientesCompra[i].getNickname() << " | Fecha de nacimiento: " << clientesCompra[i].getFecha().toString();
+        cout << "\n\tNickname: " << clientesCompra[i].getNickname() << " | Fecha de compra: " << clientesCompra[i].getFecha().toString();
     }
 
     cout << "\n\nIngrese un nickname: ";

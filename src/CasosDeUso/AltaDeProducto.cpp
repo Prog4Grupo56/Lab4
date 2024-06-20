@@ -9,34 +9,35 @@ void AltaDeProducto(){
 
     vector<string> lista = IU->obtenerListaNicknameVendedores();
     for (unsigned int i = 0; i < lista.size(); i++){
-        cout << "\t" << lista[i] << endl;
+        cout << "\tNickname: " << lista[i] << endl;
     }
 
     string vendedor;
-    cout << "Ingrese un vendedor: ";
+    cout << "\nIngrese un nickname: ";
     cin >> vendedor;
 
     string nombreProducto;
-    cout << "Ingrese el nombre del producto: ";
+    cout << "\nIngrese el nombre del producto: ";
     cin >> nombreProducto;
 
     float precio;
-    cout << "Ingrese el precio del producto: ";
+    cout << "\nIngrese el precio del producto: ";
     cin >> precio;
 
     int stock;
-    cout << "Ingrese el stock del producto: ";
+    cout << "\nIngrese el stock del producto: ";
     cin >> stock;
 
     string descripcion;
-    cout << "Ingrese la descripcion del producto: ";
+    cout << "\nIngrese la descripcion del producto: ";
     cin >> descripcion;
 
     int categoria;
-    cout << "Ingrese la categoria del producto: " << endl;
+    cout << "\nIngrese la categoria del producto: " << endl;
     cout << "\t" << "1. Ropa" << endl;
     cout << "\t" << "2. Electrodomesticos" << endl;
     cout << "\t" << "3. Otros" << endl;
+    cout << "Ingrese una opcion: ";
     cin >> categoria;
     
     Categoria categ;
@@ -54,6 +55,6 @@ void AltaDeProducto(){
     Vendedor* v = IU->obtenerVendedor(vendedor);
     IC->confirmarAltaProducto(categ, nombreProducto, descripcion, stock, precio, v);
 
-    cout << "Producto ingresado exitosamente." << endl;
+    cout << "\nProducto ingresado exitosamente." << endl;
 
 }

@@ -8,34 +8,32 @@ void EliminarComentario(){
 
     cout << "Usuarios:" << endl;
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
-        cout << "\t" << listaNicknames[i] << endl;
+        cout << "\tNickname: " << listaNicknames[i] << endl;
     }
 
-    cout << "Seleccione uno: ";
+    cout << "\nIngrese un nickname: ";
     string nickname;
     cin >> nickname;
     IU->seleccionarUsuario(nickname);
     
     vector<DTComentario> listaComentarios = IU->obtenerComentariosUsuario();
 
-    cout << "Comentarios de " << nickname << ":" << endl;
+    cout << "\nComentarios de " << nickname << ":" << endl;
     for (long unsigned int i = 0; i < listaComentarios.size(); i++){
         string id = to_string(listaComentarios[i].getIdComentario()).append("-");
         string fecha = listaComentarios[i].getFecha().toString().append(":");
         string c = listaComentarios[i].getComentario();
 
-        cout << id.append(fecha) << endl;
-        cout << "\t" << c << endl;
+        cout << "\nId: " << to_string(listaComentarios[i].getIdComentario()) << " | Fecha: " << listaComentarios[i].getFecha().toString() << endl;
+        cout << "\tComentario: " << c << endl;
     }
 
-    cout << "========" << endl;
-    cout << "Seleccione uno: ";
+    cout << "\nIngrese un Id: ";
     int idComentario;
     cin >> idComentario;
     IU->seleccionarComentario(idComentario);
-    cout << "========" << endl;
 
     IU->eliminarComentario();
 
-    cout << "Comentario y respuestas eliminadas exitosamente.";
+    cout << "\nComentario y respuestas eliminadas exitosamente.\n";
 }
