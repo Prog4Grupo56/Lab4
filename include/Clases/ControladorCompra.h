@@ -14,9 +14,9 @@
 
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DTProducto.h"
-#include "../Datatypes/ParCodigoCantidad.h"
-#include "../Datatypes/ParCompraProductos.h"
-#include "../Datatypes/ParNickFecha.h"
+#include "../Datatypes/DTCodigoCantidad.h"
+#include "../Datatypes/DTCompraProductos.h"
+#include "../Datatypes/DTNickFecha.h"
 
 class Compra;
 class Vendedor;
@@ -39,8 +39,8 @@ class ControladorCompra : public ICompra{
         static ControladorCompra* getInstancia();
         void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP);
         vector<DTProducto> obtenerListaProductos();
-        void agregarProductoCantidad(ParCodigoCantidad parCodCant);
-        ParCompraProductos obtenerInfoCompra();
+        void agregarProductoCantidad(DTCodigoCantidad parCodCant);
+        DTCompraProductos obtenerInfoCompra();
         vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra(DTFecha _fecha);
@@ -48,8 +48,8 @@ class ControladorCompra : public ICompra{
 
 
         //Enviar Producto
-        vector<ParCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
-        vector<ParNickFecha> obtenerParNickFechaEnvio(int producto); 
+        vector<DTCodigoNombre> obtenerProductosPendientesEnvio(string nickVendedor);
+        vector<DTNickFecha> obtenerParNickFechaEnvio(int producto); 
         void enviarProducto(int producto, string cliente);
         vector<string> obtenerListaNicknameVendedores(); 
 

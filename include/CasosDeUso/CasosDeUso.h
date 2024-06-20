@@ -3,6 +3,7 @@
 #include "../Datatypes/DTDireccion.h"
 #include "../Datatypes/DTCliente.h"
 #include "../Clases/Fabrica.h"
+#include "../Clases/IUsuario.h"
 
 using namespace std;
 

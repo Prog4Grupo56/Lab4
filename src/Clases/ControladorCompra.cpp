@@ -35,7 +35,7 @@ ControladorCompra::~ControladorCompra(){
 }
 
 void ControladorCompra::crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP){
-    vector<ParCodigoCantidad> parCodCant = dataCrearP->getProdCant();
+    vector<DTCodigoCantidad> parCodCant = dataCrearP->getProdCant();
     vector<DTProducto> dProductos;
     vector<CantMin*> cantidadesMinimas;
     Promocion* promo = new Promocion(dataCrearP->getInfoP());
@@ -69,8 +69,8 @@ vector<DTProducto> ControladorCompra::obtenerListaProductos(){
     return dataProductos;
 }
 
-void ControladorCompra::agregarProductoCantidad(ParCodigoCantidad parCodCant){
-    vector<ParCodigoCantidad> lista = dataInfoC->getProdCant();
+void ControladorCompra::agregarProductoCantidad(DTCodigoCantidad parCodCant){
+    vector<DTCodigoCantidad> lista = dataInfoC->getProdCant();
     bool existe = false;
     for(unsigned int i = 0; i < lista.size(); i++){
         existe = existe || lista[i].getCodigo()==parCodCant.getCodigo();
@@ -81,13 +81,13 @@ void ControladorCompra::agregarProductoCantidad(ParCodigoCantidad parCodCant){
     }
 }
 
-ParCompraProductos ControladorCompra::obtenerInfoCompra(){
+DTCompraProductos ControladorCompra::obtenerInfoCompra(){
     Fabrica* f = Fabrica::getInstance();
     IFecha* IF = f->getIFecha();
     DTFecha fechaActual = IF->getFechaActual();
     float montoFinal = 0;
     vector<DTProducto> dProductos;
-    vector<ParCodigoCantidad> productosCompra = dataInfoC->getProdCant();
+    vector<DTCodigoCantidad> productosCompra = dataInfoC->getProdCant();
 
     for(unsigned int i = 0; i < productosCompra.size(); i++){
         Producto* productoActual = productos[productosCompra[i].getCodigo()];
@@ -99,11 +99,11 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
     for (std::map<string, Promocion*>::iterator it = promociones.begin(); it != promociones.end(); ++it) {
         Promocion* promocionActual = it->second;
         if ( !(promocionActual->getFechaVenc()<=fechaActual)){
-            vector<ParCodigoCantidad> productosPromocion = promocionActual->aplicaEnCompra(dataInfoC->getProdCant());
+            vector<DTCodigoCantidad> productosPromocion = promocionActual->aplicaEnCompra(dataInfoC->getProdCant());
             if(!productosPromocion.empty()){
                 float descuento = promocionActual->getDescuento();
                 for(unsigned int i = 0; i < productosPromocion.size(); i++){
-                    ParCodigoCantidad parCodCantActual = productosPromocion[i];
+                    DTCodigoCantidad parCodCantActual = productosPromocion[i];
                     Producto* productoActual = productos[parCodCantActual.getCodigo()];
                     montoFinal -= productoActual->getPrecio() * ((descuento/100)) * productosPromocion[i].getCantidad(); // Para cada producto que aplica le resto al monto final el descuento aplicado a ese producto
                 }
@@ -111,7 +111,7 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
         }
     }
     dataInfoC->setMontoF(montoFinal);
-    return ParCompraProductos(montoFinal, dProductos, fechaActual);
+    return DTCompraProductos(montoFinal, dProductos, fechaActual);
 }
 
 void ControladorCompra::confirmarCompra(DTFecha _fecha){
@@ -120,7 +120,7 @@ void ControladorCompra::confirmarCompra(DTFecha _fecha){
     Cliente* cliente = CU->obtenerClienteCompra(dataInfoC->getCliente());
     Compra* compra = new Compra(cliente, dataInfoC->getMontoF());
     compra->setFecha(_fecha);
-    vector<ParCodigoCantidad> productosCompra = dataInfoC->getProdCant();
+    vector<DTCodigoCantidad> productosCompra = dataInfoC->getProdCant();
 
     for(unsigned int i = 0; i < productosCompra.size(); i++){
         Producto* productoActual = productos[productosCompra[i].getCodigo()];
@@ -138,14 +138,14 @@ void ControladorCompra::confirmarCompra(DTFecha _fecha){
 }
 
     //Enviar Producto
-vector<ParCodigoNombre> ControladorCompra::obtenerProductosPendientesEnvio(string nickVendedor){
+vector<DTCodigoNombre> ControladorCompra::obtenerProductosPendientesEnvio(string nickVendedor){
     Fabrica* f = Fabrica::getInstance();
     IUsuario* IU = f->getIUsuario();
-    vector<ParCodigoNombre> prodPend = IU->obtenerProductosVendedorEnvio(nickVendedor);
+    vector<DTCodigoNombre> prodPend = IU->obtenerProductosVendedorEnvio(nickVendedor);
     return prodPend;
 }
 
-vector<ParNickFecha> ControladorCompra::obtenerParNickFechaEnvio(int producto){
+vector<DTNickFecha> ControladorCompra::obtenerParNickFechaEnvio(int producto){
     return productos[producto]->obtenerClienteFecha();
 } 
 

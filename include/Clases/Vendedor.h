@@ -2,15 +2,12 @@
 #define VENDEDOR
 
 #include "Cliente.h"
-#include "../Datatypes/ParCodigoNombre.h"
-
-
 #include "Usuario.h"
 #include "Producto.h"
 #include "../Datatypes/DTProducto.h"
 #include "../Datatypes/DTPromocion.h"
 #include "../Datatypes/DTVendedor.h"
-#include "../Datatypes/ParCodigoNombre.h"
+#include "../Datatypes/DTCodigoNombre.h"
 
 class ParCodigoNombre;
 class Usuario;
@@ -31,7 +28,7 @@ class Vendedor : public Usuario{
         ~Vendedor();
       
         string getRUT();
-        vector<ParCodigoNombre> obtenerProductos(DTFecha _fecha);
+        vector<DTCodigoNombre> obtenerProductos(DTFecha _fecha);
         DTVendedor getDataVendedor();
 
         void setRUT(string _RUT);
@@ -46,7 +43,7 @@ class Vendedor : public Usuario{
         vector<DTPromocion> obtenerInfoPromocionesVigentes(DTFecha _fecha);
         vector<DTProducto> obtenerInfoProductos();
 
-        vector<ParCodigoNombre> obtenerProductosPendientesEnvio();
+        vector<DTCodigoNombre> obtenerProductosPendientesEnvio();
 
 };
 

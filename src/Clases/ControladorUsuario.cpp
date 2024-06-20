@@ -150,20 +150,20 @@ void ControladorUsuario::seleccionarVendedor(string nickname){
     dataCrearP->setVendedor(nickname);
 }
 
-vector<ParCodigoNombre> ControladorUsuario::obtenerListaProductosVendedor(){
+vector<DTCodigoNombre> ControladorUsuario::obtenerListaProductosVendedor(){
     Fabrica* f = Fabrica::getInstance();
     IFecha* IF = f->getIFecha();
     
     string vendedor = dataCrearP->getVendedor();
 
-    vector<ParCodigoNombre> productos;
+    vector<DTCodigoNombre> productos;
     productos = (vendedores[vendedor])->obtenerProductos(IF->getFechaActual());
 
     return productos;
 }
 
-void ControladorUsuario::agregarProductoCantidad(ParCodigoCantidad parCodCant){
-    vector<ParCodigoCantidad> prodCant = dataCrearP->getProdCant();
+void ControladorUsuario::agregarProductoCantidad(DTCodigoCantidad parCodCant){
+    vector<DTCodigoCantidad> prodCant = dataCrearP->getProdCant();
     long unsigned int tamanio = prodCant.size();
     bool fueAgregado = false;
 
@@ -313,11 +313,11 @@ void ControladorUsuario::eliminarSuscripciones(){
 }
 
 //Enviar Producto
-vector<ParCodigoNombre> ControladorUsuario::obtenerProductosVendedorEnvio(string nickVendedor){
+vector<DTCodigoNombre> ControladorUsuario::obtenerProductosVendedorEnvio(string nickVendedor){
 
     map<string,Vendedor*>::iterator itV;
     itV = vendedores.find(nickVendedor);
-    vector<ParCodigoNombre> res;
+    vector<DTCodigoNombre> res;
     if(itV !=vendedores.end()) res = vendedores[nickVendedor]->obtenerProductosPendientesEnvio();
     return res;
 }

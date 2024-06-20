@@ -1,9 +1,5 @@
 #include "../../include/CasosDeUso/CasosDeUso.h"
 
-#include "../../include/Clases/IUsuario.h"
-#include "../../include/Clases/Fabrica.h"
-
-
 void CrearPromocion()
 {
 
@@ -46,7 +42,7 @@ void CrearPromocion()
 
     IU->seleccionarVendedor(seleccion); 
 
-    vector<ParCodigoNombre> listaProductos = IU->obtenerListaProductosVendedor(); 
+    vector<DTCodigoNombre> listaProductos = IU->obtenerListaProductosVendedor(); // Error
     cout << "\nProductos de "<< seleccion << ": " << endl;
     for (long unsigned int i = 0; i < listaProductos.size(); i++){
         cout << "\n\tNombre: " << listaProductos[i].getNombre() << " | Codigo: " << listaProductos[i].getCodigo();
@@ -59,7 +55,7 @@ void CrearPromocion()
     int cant; 
     cin >> cant;
 
-    IU->agregarProductoCantidad(ParCodigoCantidad(id,cant));
+    IU->agregarProductoCantidad(DTCodigoCantidad(id,cant));
 
 
     bool continuar = true;
@@ -83,7 +79,7 @@ void CrearPromocion()
             cin >> id;
             cout << "\nIngrese la cantidad deseada: ";
             cin >> cant;
-            IU->agregarProductoCantidad(ParCodigoCantidad(id,cant));
+            IU->agregarProductoCantidad(DTCodigoCantidad(id,cant));
             cout << "\nProducto ingresado con exito." << endl;
             
         }else{

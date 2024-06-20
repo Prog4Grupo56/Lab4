@@ -45,7 +45,7 @@ while(continuar)
         cin >> id;
         cout << "\nIngrese la cantidad deseada: ";
         cin >> cant;
-        interfazCompra -> agregarProductoCantidad(ParCodigoCantidad(id,cant));
+        interfazCompra -> agregarProductoCantidad(DTCodigoCantidad(id,cant));
         cout << "\nProducto ingresado con exito." << endl;
     }
     else
@@ -56,7 +56,7 @@ while(continuar)
 
 
 
-ParCompraProductos infoCompra = interfazCompra -> obtenerInfoCompra(); //Almacena los productos, fecha actual y monto final, incluyendo descuentos
+DTCompraProductos infoCompra = interfazCompra -> obtenerInfoCompra(); //Almacena los productos, fecha actual y monto final, incluyendo descuentos
 
 vector<DTProducto> dProductos = infoCompra.getProductos();
 cout << "\nFecha: " + infoCompra.getFecha().toString();

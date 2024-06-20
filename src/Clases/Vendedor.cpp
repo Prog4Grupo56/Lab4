@@ -19,15 +19,15 @@ DTVendedor Vendedor::getDataVendedor(){
     return DTVendedor(this->getNickname(), this->getContrasena(), this->getFecha(), RUT); 
 }
 
-vector<ParCodigoNombre> Vendedor::obtenerProductos(DTFecha _fecha){
+vector<DTCodigoNombre> Vendedor::obtenerProductos(DTFecha _fecha){
 
-    vector<ParCodigoNombre> lista;
+    vector<DTCodigoNombre> lista;
     map<int,Producto*>::iterator it;
     for(it = productos.begin(); it != productos.end(); ++it){
         Producto* producto = it->second;
         bool productoOcupado = producto->pertenecePromoVigente(_fecha);
         if (!productoOcupado){
-            ParCodigoNombre par = ParCodigoNombre(producto->getNombre(), producto->getCodigo());
+            DTCodigoNombre par = DTCodigoNombre(producto->getNombre(), producto->getCodigo());
             lista.push_back(par);
         }
     }
@@ -88,14 +88,14 @@ vector<DTProducto> Vendedor::obtenerInfoProductos(){
     return dProductos;
 }
 
-vector<ParCodigoNombre> Vendedor::obtenerProductosPendientesEnvio(){
+vector<DTCodigoNombre> Vendedor::obtenerProductosPendientesEnvio(){
 
-    vector<ParCodigoNombre> prodPend;
+    vector<DTCodigoNombre> prodPend;
     for(const pair<int, Producto*> par : productos){
         vector<CompraProducto*> compraProductos = par.second->getCompraProducto();
         for(unsigned int i = 0; i<compraProductos.size(); i++){
             if (!compraProductos[i]->getEstado()){
-                prodPend.push_back(ParCodigoNombre(par.second->getNombre() ,par.second->getCodigo() ));
+                prodPend.push_back(DTCodigoNombre(par.second->getNombre() ,par.second->getCodigo() ));
             }
         }
     }

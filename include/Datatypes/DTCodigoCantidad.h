@@ -1,5 +1,5 @@
-#ifndef PARCODIGOCANTIDAD
-#define PARCODIGOCANTIDAD
+#ifndef DTCODIGOCANTIDAD
+#define DTCODIGOCANTIDAD
 
 #include <string>
 
@@ -8,16 +8,16 @@ using namespace std;
 //Forward
 
 
-class ParCodigoCantidad
+class DTCodigoCantidad
 {
     private:
         int codigo;
         int cantidad;
     public:
     
-        ParCodigoCantidad(int _codigo, int _cantMinima); //Constructor
+        DTCodigoCantidad(int _codigo, int _cantMinima); //Constructor
 
-        ~ParCodigoCantidad(); //Destructor
+        ~DTCodigoCantidad(); //Destructor
 
         //Getters
         int getCodigo();

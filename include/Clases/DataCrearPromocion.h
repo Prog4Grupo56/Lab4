@@ -4,32 +4,32 @@
 #include <iostream>
 #include <vector>
 #include "../Datatypes/DTPromocion.h"
-#include "../Datatypes/ParCodigoCantidad.h"
+#include "../Datatypes/DTCodigoCantidad.h"
 
 
 class DataCrearPromocion {
     private:
         string vendedor;
         DTPromocion infoP;
-        vector<ParCodigoCantidad> prodCant;
+        vector<DTCodigoCantidad> prodCant;
     public:
         //Constructor
         DataCrearPromocion();
-        DataCrearPromocion(string _vendedor, DTPromocion _infoP, vector<ParCodigoCantidad> _prodCant);
+        DataCrearPromocion(string _vendedor, DTPromocion _infoP, vector<DTCodigoCantidad> _prodCant);
         //Destructor
         ~DataCrearPromocion();
 
         //Getters   
         string getVendedor();
         DTPromocion getInfoP();
-        vector<ParCodigoCantidad> getProdCant();
+        vector<DTCodigoCantidad> getProdCant();
 
         //Setters
         void setVendedor(string _vendedor);
         void setInfoP(DTPromocion _infoP);
-        void setProdCant(vector<ParCodigoCantidad> _prodCant);
+        void setProdCant(vector<DTCodigoCantidad> _prodCant);
 
-        void agregar(ParCodigoCantidad par);
+        void agregar(DTCodigoCantidad par);
 };
 
 #endif

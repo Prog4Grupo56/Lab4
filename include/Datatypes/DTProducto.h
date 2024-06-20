@@ -1,6 +1,6 @@
 #include <iostream>
-#ifndef DATAPRODUCTO
-#define DATAPRODUCTO
+#ifndef DTPRODUCTO
+#define DTPRODUCTO
 using namespace std;
 
 #include "Categoria.h"
