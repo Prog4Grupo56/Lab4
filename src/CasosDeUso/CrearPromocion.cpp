@@ -12,16 +12,16 @@ void CrearPromocion()
     getline(cin, nombre);
 
     string descripcion;
-    cout << "Ingrese la descripcion de la promocion: ";
+    cout << "\nIngrese la descripcion de la promocion: ";
     cin.ignore();
     getline(cin, descripcion);
 
     float descuento;
-    cout << "Ingrese el descuento de la promocion: ";
+    cout << "\nIngrese el descuento de la promocion: ";
     cin >> descuento;
 
     int dia, mes, ano;
-    cout << "Ingrese una fecha de vencimiento (dia mes año): ";
+    cout << "\nIngrese una fecha de vencimiento (dia mes año): ";
     cin >> dia;
     cin >> mes;
     cin >> ano;
@@ -33,17 +33,17 @@ void CrearPromocion()
 
     cout << "\nVendedores:" << endl;
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
-        cout << "\t" << listaNicknames[i] << endl;
+        cout << "\tNickname: " << listaNicknames[i] << endl;
     }
 
-    cout << "Seleccione uno: ";
+    cout << "\nIngrese un nickname: ";
     string seleccion;
     cin >> seleccion;
 
     IU->seleccionarVendedor(seleccion); 
 
     vector<DTCodigoNombre> listaProductos = IU->obtenerListaProductosVendedor(); // Error
-    cout << "\nProductos de "<< seleccion << ": " << endl;
+    cout << "\nProductos de "<< seleccion << ": ";
     for (long unsigned int i = 0; i < listaProductos.size(); i++){
         cout << "\n\tNombre: " << listaProductos[i].getNombre() << " | Codigo: " << listaProductos[i].getCodigo();
     }

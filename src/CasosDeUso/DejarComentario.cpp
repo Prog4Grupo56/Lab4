@@ -14,40 +14,32 @@ void DejarComentario(){
 
     cout << "Usuarios:" << endl;
     for (long unsigned int i = 0; i < listaNicknames.size(); i++){
-        cout << "\t" << listaNicknames[i] << endl;
+        cout << "\tNickname: " << listaNicknames[i] << endl;
     }
 
-    cout << "========" << endl;
-
-    cout << "Ingrese un nombre: ";
+    cout << "\nIngrese un nickname: ";
     string nickname;
     cin >> nickname;
 
-    cout << "========" << endl;
-
-    cout << "Productos:" << endl;
+    cout << "\nProductos:" << endl;
     vector<DTProducto> listaProductos = IC->obtenerListaProductos();
     for (long unsigned int i = 0; i < listaProductos.size(); i++){
-        cout << "\t" << listaProductos[i].getNombre() << ", " <<listaProductos[i].getCodigo() << endl;
+        cout << "\tNombre: " << listaProductos[i].getNombre() << " | Codigo: " <<listaProductos[i].getCodigo() << endl;
     }
     
-    cout << "========" << endl;
-
-    cout << "Ingrese un producto (codigo): ";
+    cout << "\nIngrese un codigo: ";
     int producto;
     cin >> producto;
     
-    cout << "========" << endl;
-    cout << "¿Desea realizar un comentario nuevo o responder a uno existente?" << endl;
+    cout << "\n¿Desea realizar un comentario nuevo o responder a uno existente?" << endl;
     cout << "\t" << "0. Nuevo." << endl;
     cout << "\t" << "1. Responder." << endl;
-    cout << "========" << endl;
-
+    cout << "Ingrese una opcion: ";
     int opcion;
     cin >> opcion;
 
     if (opcion == 0){
-        cout << "Ingrese el comentario: ";
+        cout << "\nIngrese el comentario: ";
         string comentario;
         cin >> comentario;
 
@@ -56,27 +48,20 @@ void DejarComentario(){
     }
     else{
         vector<DTComentario> listaComentariosProducto = IU->obtenerListaComentariosProducto(producto);
-        cout << "Comentarios sobre el producto " << producto << " (comentario, fecha, id):" << endl;
+        cout << "\nComentarios sobre el producto " << producto << ":" << endl;
         for (unsigned int i = 0; i < listaComentariosProducto.size(); i++){
             cout << "\t" << listaComentariosProducto[i].toString() << endl;
         }
-
-        cout << "========" << endl;
-        cout << "Seleccione uno (id): ";
+        cout << "\nIngrese un Id: ";
         int id;
         cin >> id;
-        cout << "========" << endl;
-
-        cout << "Ingrese el comentario: ";
+        cout << "\nIngrese el comentario: ";
         string comentario;
         cin.ignore();
         getline(cin, comentario);
-
-        cout << "========" << endl;
-
         IU->ingresarComentarioRespuesta(nickname, producto, comentario, fecha, id);
     }
 
-    cout << "Se ingresó su comentario exitosamente." << endl;
+    cout << "\nSe ingresó su comentario exitosamente." << endl;
 
 }

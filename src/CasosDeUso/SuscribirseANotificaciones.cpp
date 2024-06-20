@@ -45,7 +45,6 @@ void SuscribirseANotificaciones(){
         }
     } while (opcion != 0);
 
-    cout << "\n" << listaVendedoresSeleccionados.size() << "\n";
     IU->vendedoresASuscribirse(listaVendedoresSeleccionados);
 
     cout << "\nSe suscribio existosamente."<< endl;

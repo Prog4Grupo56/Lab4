@@ -152,7 +152,7 @@ vector<DTNickFecha> ControladorCompra::obtenerParNickFechaEnvio(int producto){
 void ControladorCompra::enviarProducto(int _producto, string _cliente){
     vector<CompraProducto*> comprasProducto = productos[_producto]->getCompraProducto();
     for(CompraProducto* cp : comprasProducto){
-        if(cp->esCompraDeCliente(_cliente)){
+        if(cp->esCompraDeCliente(_cliente) && !cp->getEstado()){
             cp->setEstado(true);
             break;
         }

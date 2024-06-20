@@ -335,7 +335,7 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
     itV = vendedores.find(nickname);
     string info;
     if(itC != clientes.end()){
-        info = itC->second->getNickname() + ", " + itC->second->getFecha().toString();
+        info = "Nickname: " + itC->second->getNickname() + " | Fecha de nacimiento: " + itC->second->getFecha().toString();
         vector<Compra*> compras = itC->second->getCompras();
         info += "\n\tCompras:";
         for(unsigned int i = 0; i<compras.size(); i++){
@@ -348,7 +348,7 @@ string ControladorUsuario::obtenerInfoUsuario(string nickname){
         }
     }
     if(itV!=vendedores.end()){
-        info = itV->second->getNickname() + ", " + itV->second->getFecha().toString();
+        info = "Nickname: " + itV->second->getNickname() + " | Fecha de nacimiento: " + itV->second->getFecha().toString();
         vector<DTProducto> productos = itV->second->obtenerInfoProductos();
         info += "\n\tProductos:";
         for(unsigned int i = 0; i<productos.size(); i++){
