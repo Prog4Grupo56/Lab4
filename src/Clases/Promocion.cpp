@@ -16,7 +16,11 @@ Promocion :: Promocion(DTPromocion _promocion, vector<CantMin*> _cantidadesMinim
     fechaVenc = _promocion.getFechaVenc();
 }
 
-Promocion ::~Promocion(){}
+Promocion ::~Promocion(){
+    for(const CantMin* cm : cantMinProductos){
+        delete cm;
+    }
+}
 
 string Promocion ::getNombre(){return nombre;}
 string Promocion ::getDescripcion(){return descripcion;}

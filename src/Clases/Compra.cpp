@@ -10,7 +10,10 @@ Compra::Compra(Cliente* _clienteDeCompra, float _montoFinal){
 }
 
 Compra::~Compra(){
-
+    clienteDeCompra = NULL;
+    for(const CompraProducto* cp : compraProductos){
+        delete cp;
+    }
 }
         
 float Compra::getMontoFinal(){

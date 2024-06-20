@@ -13,7 +13,10 @@ Producto::Producto(int _codigo, Categoria _categoria, string _nombre, string _de
 }
 
 //Destructor
-Producto::~Producto(){}
+Producto::~Producto(){
+    vendedor = NULL;
+    cantMin = NULL;
+}
 
 int Producto::getCodigo(){
     return codigo;

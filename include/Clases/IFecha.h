@@ -7,7 +7,7 @@ class Vendedor;
 
 class IFecha {
 public:
-    virtual void limpiarCF() = 0;
+    virtual ~IFecha(){};
     virtual DTFecha getFechaActual() = 0;
     virtual void setFechaActual(DTFecha _fecha) = 0;
     
