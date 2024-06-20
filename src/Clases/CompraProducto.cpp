@@ -6,7 +6,10 @@ CompraProducto::CompraProducto(Compra* _c, int _cantidad, Producto* _producto){
     producto = _producto;
 }
 
-CompraProducto::~CompraProducto(){}
+CompraProducto::~CompraProducto(){
+    producto = NULL;
+    compra = NULL;
+}
 
 Compra* CompraProducto::getCompra(){
     return compra;
