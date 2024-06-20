@@ -1,5 +1,5 @@
-#ifndef DATACLIENTE
-#define DATACLIENTE
+#ifndef DTCLIENTE
+#define DTCLIENTE
 
 #include "DTUsuario.h"
 #include "DTDireccion.h"

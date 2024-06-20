@@ -82,7 +82,7 @@ void ControladorCompra::agregarProductoCantidad(DTCodigoCantidad parCodCant){
     }
 }
 
-ParCompraProductos ControladorCompra::obtenerInfoCompra(){
+DTCompraProductos ControladorCompra::obtenerInfoCompra(){
     Fabrica* f = Fabrica::getInstance();
     IFecha* IF = f->getIFecha();
     DTFecha fechaActual = IF->getFechaActual();
@@ -112,7 +112,7 @@ ParCompraProductos ControladorCompra::obtenerInfoCompra(){
         }
     }
     dataInfoC->setMontoF(montoFinal);
-    return ParCompraProductos(montoFinal, dProductos, fechaActual);
+    return DTCompraProductos(montoFinal, dProductos, fechaActual);
 }
 
 void ControladorCompra::confirmarCompra(DTFecha _fecha){

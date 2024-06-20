@@ -1,5 +1,5 @@
-#ifndef PARNICKFECHA
-#define PARNICKFECHA
+#ifndef DTNICKFECHA
+#define DTNICKFECHA
 
 #include "DTFecha.h"
 #include <string>

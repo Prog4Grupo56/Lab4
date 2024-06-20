@@ -1,5 +1,5 @@
-#ifndef DATAVENDEDOR
-#define DATAVENDEDOR
+#ifndef DTVENDEDOR
+#define DTVENDEDOR
 
 #include "DTUsuario.h"
 

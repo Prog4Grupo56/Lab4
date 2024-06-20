@@ -1,5 +1,5 @@
-#ifndef PARCODIGOCANTIDAD
-#define PARCODIGOCANTIDAD
+#ifndef DTCODIGOCANTIDAD
+#define DTCODIGOCANTIDAD
 
 #include <string>
 

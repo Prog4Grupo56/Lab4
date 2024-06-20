@@ -1,6 +1,6 @@
 #include <iostream>
-#ifndef DATAPROMOCION
-#define DATAPROMOCION
+#ifndef DTPROMOCION
+#define DTPROMOCION
 using namespace std;
 
 #include <string>

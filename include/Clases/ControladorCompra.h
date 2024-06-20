@@ -15,7 +15,7 @@
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DTProducto.h"
 #include "../Datatypes/DTCodigoCantidad.h"
-#include "../Datatypes/ParCompraProductos.h"
+#include "../Datatypes/DTCompraProductos.h"
 #include "../Datatypes/DTNickFecha.h"
 
 class Compra;
@@ -40,7 +40,7 @@ class ControladorCompra : public ICompra{
         void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP);
         vector<DTProducto> obtenerListaProductos();
         void agregarProductoCantidad(DTCodigoCantidad parCodCant);
-        ParCompraProductos obtenerInfoCompra();
+        DTCompraProductos obtenerInfoCompra();
         vector<string> obtenerListaNicknamesClientes();
         void seleccionarCliente(string nickname);
         void confirmarCompra(DTFecha _fecha);

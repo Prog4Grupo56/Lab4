@@ -56,7 +56,7 @@ while(continuar)
 
 
 
-ParCompraProductos infoCompra = interfazCompra -> obtenerInfoCompra(); //Almacena los productos, fecha actual y monto final, incluyendo descuentos
+DTCompraProductos infoCompra = interfazCompra -> obtenerInfoCompra(); //Almacena los productos, fecha actual y monto final, incluyendo descuentos
 
 vector<DTProducto> dProductos = infoCompra.getProductos();
 cout << "\nFecha: " + infoCompra.getFecha().toString();

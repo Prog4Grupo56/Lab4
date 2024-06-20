@@ -1,5 +1,5 @@
-#ifndef PARCODIGONOMBRE
-#define PARCODIGONOMBRE
+#ifndef DTCODIGONOMBRE
+#define DTCODIGONOMBRE
 
 #include <string>
 

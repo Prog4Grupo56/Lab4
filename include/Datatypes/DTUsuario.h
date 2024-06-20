@@ -1,5 +1,5 @@
-#ifndef DATAUSUARIO
-#define DATAUSUARIO
+#ifndef DTUSUARIO
+#define DTUSUARIO
 
 #include <string>
 #include "DTFecha.h"

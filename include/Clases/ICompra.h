@@ -9,7 +9,7 @@
 #include "DataCrearPromocion.h"
 #include "../Datatypes/DTProducto.h"
 #include "../Datatypes/DTVendedor.h"
-#include "../Datatypes/ParCompraProductos.h"
+#include "../Datatypes/DTCompraProductos.h"
 #include "DataInfoCompra.h"
 #include "../Datatypes/DTNickFecha.h"
 
@@ -22,7 +22,7 @@ public:
     virtual void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP) = 0;
     virtual vector<DTProducto> obtenerListaProductos() = 0;
     virtual void agregarProductoCantidad(DTCodigoCantidad parCodCant) = 0;
-    virtual ParCompraProductos obtenerInfoCompra() = 0;
+    virtual DTCompraProductos obtenerInfoCompra() = 0;
     virtual vector<string> obtenerListaNicknamesClientes() = 0;
     virtual void seleccionarCliente(string nickname) = 0;
     virtual void confirmarCompra(DTFecha _fecha) = 0;

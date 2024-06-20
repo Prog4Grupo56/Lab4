@@ -1,5 +1,5 @@
-#ifndef DATACOMENTARIO
-#define DATACOMENTARIO
+#ifndef DTCOMENTARIO
+#define DTCOMENTARIO
 
 #include "DTFecha.h"
 #include <string>
