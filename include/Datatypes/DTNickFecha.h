@@ -4,15 +4,15 @@
 #include "DTFecha.h"
 #include <string>
 
-class ParNickFecha{
+class DTNickFecha{
 
     private:
         string nickname;
         DTFecha fecha;
     public:
-        ParNickFecha();
-        ParNickFecha(string _nickname, DTFecha _fecha);
-        ~ParNickFecha();
+        DTNickFecha();
+        DTNickFecha(string _nickname, DTFecha _fecha);
+        ~DTNickFecha();
 
         string getNickname();
         DTFecha getFecha();

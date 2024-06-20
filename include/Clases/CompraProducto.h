@@ -4,7 +4,7 @@
 #include <set>
 #include "Compra.h"
 #include "Producto.h"
-#include "../Datatypes/ParNickFecha.h"
+#include "../Datatypes/DTNickFecha.h"
 
 
 using namespace std;
@@ -34,7 +34,7 @@ class CompraProducto
         void setEstado(bool e);
         void setProducto(Producto* _producto);
 
-        ParNickFecha obtenerClienteFecha() const;
+        DTNickFecha obtenerClienteFecha() const;
         bool esCompraDeCliente(string _cliente) const;
 };
 

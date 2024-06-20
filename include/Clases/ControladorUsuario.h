@@ -8,9 +8,9 @@
 #include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/DTCliente.h"
 #include "../Datatypes/DTComentario.h"
-#include "../Datatypes/ParCodigoCantidad.h"
-#include "../Datatypes/ParCodigoNombre.h"
-#include "../Datatypes/ParNickFecha.h"
+#include "../Datatypes/DTCodigoCantidad.h"
+#include "../Datatypes/DTCodigoNombre.h"
+#include "../Datatypes/DTNickFecha.h"
 
 #include "Fabrica.h"
 #include "Vendedor.h"
@@ -75,8 +75,8 @@ class ControladorUsuario : public IUsuario{
         void ingresarDatosPromocion(DTPromocion data);
         vector<string> obtenerListaNicknameVendedores();
         void seleccionarVendedor(string nickname);
-        vector<ParCodigoNombre> obtenerListaProductosVendedor();
-        void agregarProductoCantidad(ParCodigoCantidad parCodCant);  
+        vector<DTCodigoNombre> obtenerListaProductosVendedor();
+        void agregarProductoCantidad(DTCodigoCantidad parCodCant);  
         void confirmarAltaPromocion();
 
         //Realizar Compra
@@ -104,7 +104,7 @@ class ControladorUsuario : public IUsuario{
         string obtenerInfoUsuario(string nickname);
 
         //Enviar Producto
-        vector<ParCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor);
+        vector<DTCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor);
 
         //Alta Producto
         Vendedor* obtenerVendedor(string vendedor);

@@ -14,7 +14,7 @@ void EnviarProducto(){
     cout << "\n\nIngrese un nickname: ";
     string nickname;
     cin >> nickname;
-    vector<ParCodigoNombre> productos = IC->obtenerProductosPendientesEnvio(nickname); 
+    vector<DTCodigoNombre> productos = IC->obtenerProductosPendientesEnvio(nickname); 
     cout << "\nProductos pendientes de envio del vendedor:";
     for (long unsigned int i = 0; i < productos.size(); i++){
         cout << "\n\tCodigo: " << productos[i].getCodigo() << " | Nombre: " << productos[i].getNombre();
@@ -24,7 +24,7 @@ void EnviarProducto(){
     int producto;
     cin >> producto;
 
-    vector<ParNickFecha> clientesCompra = IC -> obtenerParNickFechaEnvio(producto);
+    vector<DTNickFecha> clientesCompra = IC -> obtenerParNickFechaEnvio(producto);
 
     cout << "\nClientes a enviar el producto:" << endl;
     for (long unsigned int i = 0; i < clientesCompra.size(); i++){

@@ -6,9 +6,9 @@
 #include "../Datatypes/DTCliente.h"
 #include "../Datatypes/DTVendedor.h"
 #include "../Datatypes/DTComentario.h"
-#include "../Datatypes/ParCodigoCantidad.h"
+#include "../Datatypes/DTCodigoCantidad.h"
 #include "../Datatypes/DTPromocion.h"
-#include "../Datatypes/ParCodigoNombre.h"
+#include "../Datatypes/DTCodigoNombre.h"
 #include "../Datatypes/DTNotificacion.h"
 
 class Cliente;
@@ -30,8 +30,8 @@ public:
     virtual void ingresarDatosPromocion(DTPromocion data) = 0;
     virtual vector<string> obtenerListaNicknameVendedores() = 0;
     virtual void seleccionarVendedor(string nickname) = 0;
-    virtual vector<ParCodigoNombre> obtenerListaProductosVendedor() = 0;
-    virtual void agregarProductoCantidad(ParCodigoCantidad parCodCant) = 0;
+    virtual vector<DTCodigoNombre> obtenerListaProductosVendedor() = 0;
+    virtual void agregarProductoCantidad(DTCodigoCantidad parCodCant) = 0;
     virtual void confirmarAltaPromocion() = 0;
 
     //Eliminar Suscripcion
@@ -60,7 +60,7 @@ public:
     virtual string obtenerInfoUsuario(string nickname) = 0;
 
     //Enviar Producto
-    virtual vector<ParCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor) = 0;
+    virtual vector<DTCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor) = 0;
 
     //Alta Producto
     virtual Vendedor* obtenerVendedor(string vendedor) = 0;

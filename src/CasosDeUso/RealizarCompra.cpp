@@ -45,7 +45,7 @@ while(continuar)
         cin >> id;
         cout << "\nIngrese la cantidad deseada: ";
         cin >> cant;
-        interfazCompra -> agregarProductoCantidad(ParCodigoCantidad(id,cant));
+        interfazCompra -> agregarProductoCantidad(DTCodigoCantidad(id,cant));
         cout << "\nProducto ingresado con exito." << endl;
     }
     else

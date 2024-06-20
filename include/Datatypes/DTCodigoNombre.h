@@ -8,14 +8,14 @@ using namespace std;
 //Forward
 
 
-class ParCodigoNombre
+class DTCodigoNombre
 {
     private:
         int codigo;
         string nombre;
     public:
-        ParCodigoNombre(string _nombre, int _codigo); //Constructor
-        ~ParCodigoNombre(); //Destructor
+        DTCodigoNombre(string _nombre, int _codigo); //Constructor
+        ~DTCodigoNombre(); //Destructor
 
         //Getters
         int getCodigo();

@@ -40,8 +40,8 @@ DTPromocion Promocion::getDataPromocion(){
     return DTPromocion(nombre, descripcion, fechaVenc, descuento);
 }
 
-vector<ParCodigoCantidad> Promocion::aplicaEnCompra(vector<ParCodigoCantidad> prodCant){
-    vector<ParCodigoCantidad> aplican;
+vector<DTCodigoCantidad> Promocion::aplicaEnCompra(vector<DTCodigoCantidad> prodCant){
+    vector<DTCodigoCantidad> aplican;
     
 
     long unsigned int it = 0;
