@@ -2,7 +2,6 @@
 #include <stdexcept>
 #include <limits>
 #include "include/CasosDeUso/CasosDeUso.h"
-//poner opcion para cambiar fecha
  
 using namespace std;
 
@@ -28,7 +27,6 @@ int main(){
         cout << "12. Suscribirse a notificaciones" << endl;
         cout << "13. Consulta de notificaciones" << endl;
         cout << "14. Eliminar suscripciones" << endl;
-        //todos los casos de uso
         cout << "15. Cargar datos" << endl;
         cout << "16. Cambiar fecha" << endl;
         cout << "Seleccione una opcion: ";
