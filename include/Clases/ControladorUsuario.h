@@ -5,12 +5,12 @@
 #include <vector>
 #include "../Datatypes/DTDireccion.h"
 #include "../Datatypes/DTNotificacion.h"
-#include "../Datatypes/DataVendedor.h"
-#include "../Datatypes/DataCliente.h"
-#include "../Datatypes/DataComentario.h"
-#include "../Datatypes/ParCodigoCantidad.h"
-#include "../Datatypes/ParCodigoNombre.h"
-#include "../Datatypes/ParNickFecha.h"
+#include "../Datatypes/DTVendedor.h"
+#include "../Datatypes/DTCliente.h"
+#include "../Datatypes/DTComentario.h"
+#include "../Datatypes/DTCodigoCantidad.h"
+#include "../Datatypes/DTCodigoNombre.h"
+#include "../Datatypes/DTNickFecha.h"
 
 #include "Fabrica.h"
 #include "Vendedor.h"
@@ -43,7 +43,8 @@ class ControladorUsuario : public IUsuario{
     public:
         static ControladorUsuario * getInstancia();
         ~ControladorUsuario();
-
+        void limpiarCU();
+        
         string getNickname();
         DataEliminarComentario* getDataElimCom();
         DataCrearPromocion* getDataCrearP();
@@ -57,26 +58,26 @@ class ControladorUsuario : public IUsuario{
         void setCantidadComentarios(int c);
 
         //Alta Usuario
-        bool ingresarCliente(DataCliente cliente);
-        bool ingresarVendedor(DataVendedor vendedor);
+        bool ingresarCliente(DTCliente cliente);
+        bool ingresarVendedor(DTVendedor vendedor);
 
         //Listado de Usuarios
-        vector<DataCliente> obtenerListadoClientes();
-        vector<DataVendedor> obtenerListadoVendedores();
+        vector<DTCliente> obtenerListadoClientes();
+        vector<DTVendedor> obtenerListadoVendedores();
 
         //Eliminar Comentario
         vector<string> obtenerListaNicknamesUsuarios();
         void seleccionarUsuario(string nickname); 
-        vector<DataComentario> obtenerComentariosUsuario();
+        vector<DTComentario> obtenerComentariosUsuario();
         void seleccionarComentario(int idComentario); 
         void eliminarComentario();
         
         //Crear Promocion
-        void ingresarDatosPromocion(DataPromocion data);
+        void ingresarDatosPromocion(DTPromocion data);
         vector<string> obtenerListaNicknameVendedores();
         void seleccionarVendedor(string nickname);
-        vector<ParCodigoNombre> obtenerListaProductosVendedor();
-        void agregarProductoCantidad(ParCodigoCantidad parCodCant);  
+        vector<DTCodigoNombre> obtenerListaProductosVendedor();
+        void agregarProductoCantidad(DTCodigoCantidad parCodCant);  
         void confirmarAltaPromocion();
 
         //Realizar Compra
@@ -84,7 +85,7 @@ class ControladorUsuario : public IUsuario{
         Cliente* obtenerClienteCompra(string nickname);
 
         //Dejar comentario
-        vector<DataComentario> obtenerListaComentariosProducto(int codigoProducto);
+        vector<DTComentario> obtenerListaComentariosProducto(int codigoProducto);
         void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario, DTFecha _fecha);
         void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre);
  
@@ -92,19 +93,19 @@ class ControladorUsuario : public IUsuario{
         vector<DTNotificacion> obtenerListaNotificaciones(string nicknameCliente);
 
         //Suscribirse a Notificaciones
-        vector<DataVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente);
-        void vendedoresASuscribirse(vector<DataVendedor> vendedores); 
+        vector<DTVendedor> obtenerListaVendedoresNoSuscritos(string nicknameCliente);
+        void vendedoresASuscribirse(vector<DTVendedor> vendedores); 
 
         //Eliminar Suscripcion 
-        vector<DataVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
-        void seleccionarVendedoresAEliminarSuscripciones(vector<DataVendedor> vendedores);
+        vector<DTVendedor> obtenerListaVendedoresSuscritos(string nicknameCliente);
+        void seleccionarVendedoresAEliminarSuscripciones(vector<DTVendedor> vendedores);
         void eliminarSuscripciones();
 
         //Expediente de usuario
         string obtenerInfoUsuario(string nickname);
 
         //Enviar Producto
-        vector<ParCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor);
+        vector<DTCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor);
 
         //Alta Producto
         Vendedor* obtenerVendedor(string vendedor);

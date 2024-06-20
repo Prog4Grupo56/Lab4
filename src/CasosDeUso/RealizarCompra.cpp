@@ -22,7 +22,7 @@ interfazCompra -> seleccionarCliente(seleccion); //Queda un dataInfoCompra guard
 
 
 
-vector<DataProducto> listaProductos = interfazCompra -> obtenerListaProductos();
+vector<DTProducto> listaProductos = interfazCompra -> obtenerListaProductos();
 bool continuar = true;
 int opcion = 1; //Para el menu
 int id; int cant; //Id y cantidad del producto
@@ -45,7 +45,7 @@ while(continuar)
         cin >> id;
         cout << "\nIngrese la cantidad deseada: ";
         cin >> cant;
-        interfazCompra -> agregarProductoCantidad(ParCodigoCantidad(id,cant));
+        interfazCompra -> agregarProductoCantidad(DTCodigoCantidad(id,cant));
         cout << "\nProducto ingresado con exito." << endl;
     }
     else
@@ -56,9 +56,9 @@ while(continuar)
 
 
 
-ParCompraProductos infoCompra = interfazCompra -> obtenerInfoCompra(); //Almacena los productos, fecha actual y monto final, incluyendo descuentos
+DTCompraProductos infoCompra = interfazCompra -> obtenerInfoCompra(); //Almacena los productos, fecha actual y monto final, incluyendo descuentos
 
-vector<DataProducto> dProductos = infoCompra.getProductos();
+vector<DTProducto> dProductos = infoCompra.getProductos();
 cout << "\nFecha: " + infoCompra.getFecha().toString();
 cout << "\nMonto final: " + to_string(infoCompra.getMontoFinal());
 cout << "\nProductos:";

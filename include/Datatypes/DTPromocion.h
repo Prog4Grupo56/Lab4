@@ -1,13 +1,13 @@
 #include <iostream>
-#ifndef DATAPROMOCION
-#define DATAPROMOCION
+#ifndef DTPROMOCION
+#define DTPROMOCION
 using namespace std;
 
 #include <string>
 #include "DTFecha.h"
 
 
-class DataPromocion{
+class DTPromocion{
 
     private:
         string nombre, descripcion;
@@ -16,11 +16,11 @@ class DataPromocion{
 
     public:
         //Constructor
-        DataPromocion(string _nombre, string _descripcion, DTFecha _fechaVenc, float _descuento);
-        DataPromocion();
+        DTPromocion(string _nombre, string _descripcion, DTFecha _fechaVenc, float _descuento);
+        DTPromocion();
 
         //Destructor
-        ~DataPromocion();
+        ~DTPromocion();
 
         //Getters
         string getNombre();

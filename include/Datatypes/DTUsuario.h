@@ -1,21 +1,21 @@
-#ifndef DATAUSUARIO
-#define DATAUSUARIO
+#ifndef DTUSUARIO
+#define DTUSUARIO
 
 #include <string>
 #include "DTFecha.h"
 using namespace std;
 
-class DataUsuario{
+class DTUsuario{
 
     private:
         string nickname;
         DTFecha fecha;
         string contrasena;
     public:
-        DataUsuario();
-        DataUsuario(string _nickname, string _contrasena, DTFecha _fecha);
+        DTUsuario();
+        DTUsuario(string _nickname, string _contrasena, DTFecha _fecha);
 
-        virtual ~DataUsuario();
+        virtual ~DTUsuario();
 
         string getNickname() const;
         DTFecha getFecha();

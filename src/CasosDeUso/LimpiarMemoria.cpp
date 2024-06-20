@@ -2,15 +2,15 @@
 
 void LimpiarMemoria(){
 
-    // Fabrica* F = Fabrica::getInstance();
-    // IUsuario* IU = F->getIUsuario();
-    // ICompra* IC = F->getICompra();
-    // IFecha* IF = F->getIFecha();
+    Fabrica* F = Fabrica::getInstance();
 
-    // delete IU;
-    // delete IC;
-    // delete IF;
+    IUsuario* IU = F->getIUsuario();
+    ICompra* IC = F->getICompra();
+    IFecha* IF = F->getIFecha();
 
-    // delete F;
+    IU->limpiarCU();
+    IC->limpiarCC();
+    IF->limpiarCF();
 
+    delete F;
 }

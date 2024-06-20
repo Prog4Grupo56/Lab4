@@ -1,11 +1,11 @@
 #include "../../include/Clases/DataCrearPromocion.h"
 
-DataCrearPromocion::DataCrearPromocion(string _vendedor, DataPromocion _infoP, vector<ParCodigoCantidad> _prodCant): infoP(_infoP){
+DataCrearPromocion::DataCrearPromocion(string _vendedor, DTPromocion _infoP, vector<DTCodigoCantidad> _prodCant): infoP(_infoP){
     vendedor = _vendedor;
     prodCant = _prodCant;
 }
 DataCrearPromocion::DataCrearPromocion(){
-    infoP = DataPromocion();
+    infoP = DTPromocion();
 }
 
 DataCrearPromocion::~DataCrearPromocion(){};
@@ -15,11 +15,11 @@ string DataCrearPromocion::getVendedor(){
     return vendedor;
 }
 
-DataPromocion DataCrearPromocion::getInfoP(){
+DTPromocion DataCrearPromocion::getInfoP(){
     return infoP;
 }
 
-vector<ParCodigoCantidad> DataCrearPromocion::getProdCant(){
+vector<DTCodigoCantidad> DataCrearPromocion::getProdCant(){
     return prodCant;
 }
 
@@ -29,14 +29,14 @@ void DataCrearPromocion::setVendedor(string _vendedor){
     vendedor = _vendedor;
 }
 
-void DataCrearPromocion::setInfoP(DataPromocion _infoP){
+void DataCrearPromocion::setInfoP(DTPromocion _infoP){
     infoP = _infoP;
 }
 
-void DataCrearPromocion::setProdCant(vector<ParCodigoCantidad> _prodCant){
+void DataCrearPromocion::setProdCant(vector<DTCodigoCantidad> _prodCant){
     prodCant = _prodCant;
 }
 
-void DataCrearPromocion::agregar(ParCodigoCantidad par){
+void DataCrearPromocion::agregar(DTCodigoCantidad par){
     prodCant.push_back(par);
 }

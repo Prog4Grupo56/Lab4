@@ -10,25 +10,25 @@ void CargarDatos(){
     IF->setFechaActual(DTFecha(24,06,2024));
 
 //INGRESO DE USUARIOS
-    DataVendedor US1 = DataVendedor("ana23", "qwer1234", DTFecha(15,05,1988), "212345678001");
+    DTVendedor US1 = DTVendedor("ana23", "qwer1234", DTFecha(15,05,1988), "212345678001");
     IU->ingresarVendedor(US1);
-    DataVendedor US2 = DataVendedor("carlos78", "asdfghj", DTFecha(18,06,1968), "356789012345");
+    DTVendedor US2 = DTVendedor("carlos78", "asdfghj", DTFecha(18,06,1968), "356789012345");
     IU->ingresarVendedor(US2);
-    DataVendedor US3 = DataVendedor("diegom", "zxcvbn", DTFecha(28,07,1993), "190123456789");
+    DTVendedor US3 = DTVendedor("diegom", "zxcvbn", DTFecha(28,07,1993), "190123456789");
     IU->ingresarVendedor(US3);
-    DataCliente US4 = DataCliente("juan87", "1qaz2wsx", DTFecha(20,10,1992), DTDireccion("Av. 18 de Julio", 456), "Melo");
+    DTCliente US4 = DTCliente("juan87", "1qaz2wsx", DTFecha(20,10,1992), DTDireccion("Av. 18 de Julio", 456), "Melo");
     IU->ingresarCliente(US4);
-    DataCliente US5 = DataCliente("laura", "3edc4rfv", DTFecha(22,9,1979), DTDireccion("Rondeau", 1617), "Montevideo");
+    DTCliente US5 = DTCliente("laura", "3edc4rfv", DTFecha(22,9,1979), DTDireccion("Rondeau", 1617), "Montevideo");
     IU->ingresarCliente(US5);
-    DataVendedor US6 = DataVendedor("maria01", "5tgb6yhn", DTFecha(25,03,1985), "321098765432");
+    DTVendedor US6 = DTVendedor("maria01", "5tgb6yhn", DTFecha(25,03,1985), "321098765432");
     IU->ingresarVendedor(US6);
-    DataCliente US7 = DataCliente("natalia", "poiuyt", DTFecha(14,04,1982), DTDireccion("Paysandú", 2021), "Salto");
+    DTCliente US7 = DTCliente("natalia", "poiuyt", DTFecha(14,04,1982), DTDireccion("Paysandú", 2021), "Salto");
     IU->ingresarCliente(US7);
-    DataCliente US8 = DataCliente("pablo10", "lkjhgv", DTFecha(30,11,1995), DTDireccion("Av. Rivera", 1819), "Mercedes");
+    DTCliente US8 = DTCliente("pablo10", "lkjhgv", DTFecha(30,11,1995), DTDireccion("Av. Rivera", 1819), "Mercedes");
     IU->ingresarCliente(US8);
-    DataCliente US9 = DataCliente("roberto", "mnbvcx", DTFecha(12,8,1990), DTDireccion("Av. Brasil", 1011), "Montevideo");
+    DTCliente US9 = DTCliente("roberto", "mnbvcx", DTFecha(12,8,1990), DTDireccion("Av. Brasil", 1011), "Montevideo");
     IU->ingresarCliente(US9);
-    DataVendedor US10 = DataVendedor("sofia25", "1234asdf", DTFecha(07,12,1983), "445678901234");
+    DTVendedor US10 = DTVendedor("sofia25", "1234asdf", DTFecha(07,12,1983), "445678901234");
     IU->ingresarVendedor(US10);
 
 //INGRESO DE PRODUCTOS
@@ -80,82 +80,82 @@ void CargarDatos(){
 
 //INGRESO DE PROMOCIONES
     //PM1
-    DataPromocion PM1 = DataPromocion("Casa nueva", "Para que puedas ahorrar en la casa nueva", DTFecha(25, 10, 2024), 30);
-    vector<ParCodigoCantidad> PC1;
-    PC1.push_back(ParCodigoCantidad(2, 1));
-    PC1.push_back(ParCodigoCantidad(4, 1));
-    PC1.push_back(ParCodigoCantidad(8, 1));
+    DTPromocion PM1 = DTPromocion("Casa nueva", "Para que puedas ahorrar en la casa nueva", DTFecha(25, 10, 2024), 30);
+    vector<DTCodigoCantidad> PC1;
+    PC1.push_back(DTCodigoCantidad(2, 1));
+    PC1.push_back(DTCodigoCantidad(4, 1));
+    PC1.push_back(DTCodigoCantidad(8, 1));
     DataCrearPromocion* DCPM1 = new DataCrearPromocion(V2->getNickname(), PM1, PC1);
     IC->crearPromocion(V2, DCPM1);
     //PM2
-    DataPromocion PM2 = DataPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
-    vector<ParCodigoCantidad> PC2;
-    PC2.push_back(ParCodigoCantidad(3, 2));
-    PC2.push_back(ParCodigoCantidad(6, 3));
+    DTPromocion PM2 = DTPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
+    vector<DTCodigoCantidad> PC2;
+    PC2.push_back(DTCodigoCantidad(3, 2));
+    PC2.push_back(DTCodigoCantidad(6, 3));
     DataCrearPromocion* DCPM2 = new DataCrearPromocion(V3->getNickname(), PM2, PC2);
     IC->crearPromocion(V3, DCPM2);
     //PM3
-    DataPromocion PM3 = DataPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
-    vector<ParCodigoCantidad> PC3;
-    PC3.push_back(ParCodigoCantidad(5, 2));
+    DTPromocion PM3 = DTPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
+    vector<DTCodigoCantidad> PC3;
+    PC3.push_back(DTCodigoCantidad(5, 2));
     DataCrearPromocion* DCPM3 = new DataCrearPromocion(V5->getNickname(), PM3, PC3);
     IC->crearPromocion(V5, DCPM3);
     //PM4
-    DataPromocion PM4 = DataPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
-    vector<ParCodigoCantidad> PC4;
-    PC4.push_back(ParCodigoCantidad(14, 1));
+    DTPromocion PM4 = DTPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
+    vector<DTCodigoCantidad> PC4;
+    PC4.push_back(DTCodigoCantidad(14, 1));
     DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);
     IC->crearPromocion(V14, DCPM4);
 
 //INGRESO DE COMPRAS
     //CO1
     IC->seleccionarCliente(US4.getNickname());
-    IC->agregarProductoCantidad(ParCodigoCantidad(2, 2));
-    IC->agregarProductoCantidad(ParCodigoCantidad(4, 1));
-    IC->agregarProductoCantidad(ParCodigoCantidad(8, 1));
+    IC->agregarProductoCantidad(DTCodigoCantidad(2, 2));
+    IC->agregarProductoCantidad(DTCodigoCantidad(4, 1));
+    IC->agregarProductoCantidad(DTCodigoCantidad(8, 1));
     IC->obtenerInfoCompra();
     IC->confirmarCompra(DTFecha(01,05,2024));
     //CO2
     IC->seleccionarCliente(US4.getNickname());
-    IC->agregarProductoCantidad(ParCodigoCantidad(5, 1));
+    IC->agregarProductoCantidad(DTCodigoCantidad(5, 1));
     IC->obtenerInfoCompra();
     IC->confirmarCompra(DTFecha(01,05,2024));
     //CO3
     IC->seleccionarCliente(US5.getNickname());
-    IC->agregarProductoCantidad(ParCodigoCantidad(14, 10));
+    IC->agregarProductoCantidad(DTCodigoCantidad(14, 10));
     IC->obtenerInfoCompra();
     IC->confirmarCompra(DTFecha(15,05,2024));
     //CO4
     IC->seleccionarCliente(US7.getNickname());
-    IC->agregarProductoCantidad(ParCodigoCantidad(11, 1));
-    IC->agregarProductoCantidad(ParCodigoCantidad(12, 1));
-    IC->agregarProductoCantidad(ParCodigoCantidad(13, 1));
+    IC->agregarProductoCantidad(DTCodigoCantidad(11, 1));
+    IC->agregarProductoCantidad(DTCodigoCantidad(12, 1));
+    IC->agregarProductoCantidad(DTCodigoCantidad(13, 1));
     IC->obtenerInfoCompra();
     IC->confirmarCompra(DTFecha(25,04,2024));
     //CO5
     IC->seleccionarCliente(US4.getNickname());
-    IC->agregarProductoCantidad(ParCodigoCantidad(3, 2));
-    IC->agregarProductoCantidad(ParCodigoCantidad(6, 3));
+    IC->agregarProductoCantidad(DTCodigoCantidad(3, 2));
+    IC->agregarProductoCantidad(DTCodigoCantidad(6, 3));
     IC->obtenerInfoCompra();
     IC->confirmarCompra(DTFecha(20,05,2024));
     //CO6
     IC->seleccionarCliente(US5.getNickname());
-    IC->agregarProductoCantidad(ParCodigoCantidad(1, 2));
+    IC->agregarProductoCantidad(DTCodigoCantidad(1, 2));
     IC->obtenerInfoCompra();
     IC->confirmarCompra(DTFecha(12,05,2024));
     //CO7
     IC->seleccionarCliente(US7.getNickname());
-    IC->agregarProductoCantidad(ParCodigoCantidad(1, 3));
+    IC->agregarProductoCantidad(DTCodigoCantidad(1, 3));
     IC->obtenerInfoCompra();
     IC->confirmarCompra(DTFecha(13,05,2024));
     //CO8
     IC->seleccionarCliente(US8.getNickname());
-    IC->agregarProductoCantidad(ParCodigoCantidad(1, 4));
+    IC->agregarProductoCantidad(DTCodigoCantidad(1, 4));
     IC->obtenerInfoCompra();
     IC->confirmarCompra(DTFecha(14,05,2024));
     //CO9
     IC->seleccionarCliente(US9.getNickname());
-    IC->agregarProductoCantidad(ParCodigoCantidad(1, 5));
+    IC->agregarProductoCantidad(DTCodigoCantidad(1, 5));
     IC->obtenerInfoCompra();
     IC->confirmarCompra(DTFecha(15,05,2024));
 

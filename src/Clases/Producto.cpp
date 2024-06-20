@@ -56,8 +56,8 @@ void Producto::setPrecio(float _precio){
 
 //Operaciones:
 
-DataProducto Producto::getDataProducto(){
-    return DataProducto(codigo, stock, precio, nombre, descripcion, categoria);
+DTProducto Producto::getDataProducto(){
+    return DTProducto(codigo, stock, precio, nombre, descripcion, categoria);
 }
 
 bool Producto::pertenecePromoVigente(DTFecha _fecha){
@@ -89,8 +89,8 @@ void Producto::setCompraProducto(vector<CompraProducto*> _compraProducto){
     compraProducto = _compraProducto;
 }
 
-vector<ParNickFecha> Producto::obtenerClienteFecha(){
-    vector<ParNickFecha> clienteFecha;
+vector<DTNickFecha> Producto::obtenerClienteFecha(){
+    vector<DTNickFecha> clienteFecha;
     for(const CompraProducto* cp : compraProducto){
         clienteFecha.push_back( cp->obtenerClienteFecha() );
     }

@@ -3,9 +3,9 @@
 
 #include <set>
 #include "../Datatypes/DTFecha.h"
-#include "../Datatypes/DataProducto.h"
-#include "../Datatypes/ParCodigoCantidad.h"
-#include "../Datatypes/ParNickFecha.h"
+#include "../Datatypes/DTProducto.h"
+#include "../Datatypes/DTCodigoCantidad.h"
+#include "../Datatypes/DTNickFecha.h"
 #include "CantMin.h"
 #include "CompraProducto.h"
 
@@ -55,10 +55,10 @@ class Producto
         void setVendedor(Vendedor* _vendedor);
 
         //Operaciones:
-        DataProducto getDataProducto();
+        DTProducto getDataProducto();
         bool pertenecePromoVigente(DTFecha _fecha);
         void crearEnvio(Compra* c, int cantidad);
-        vector<ParNickFecha> obtenerClienteFecha();
+        vector<DTNickFecha> obtenerClienteFecha();
         
 };
 

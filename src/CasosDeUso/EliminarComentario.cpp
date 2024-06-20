@@ -16,7 +16,7 @@ void EliminarComentario(){
     cin >> nickname;
     IU->seleccionarUsuario(nickname);
     
-    vector<DataComentario> listaComentarios = IU->obtenerComentariosUsuario();
+    vector<DTComentario> listaComentarios = IU->obtenerComentariosUsuario();
 
     cout << "Comentarios de " << nickname << ":" << endl;
     for (long unsigned int i = 0; i < listaComentarios.size(); i++){
