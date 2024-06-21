@@ -26,7 +26,7 @@ class CompraProducto
         //Getters
         Compra* getCompra();
         int getCantidad();
-        bool getEstado();
+        bool getEstado()const;
         Producto* getProducto();
         //Setters
         void setCompra(Compra* _c);
@@ -34,8 +34,8 @@ class CompraProducto
         void setEstado(bool e);
         void setProducto(Producto* _producto);
 
-        DTNickFecha obtenerClienteFecha() const;
-        bool esCompraDeCliente(string _cliente) const;
+        DTNickFecha obtenerClienteFecha()const;
+        bool esCompraDeCliente(string _cliente)const;
 };
 
 #endif

@@ -4,6 +4,7 @@ CompraProducto::CompraProducto(Compra* _c, int _cantidad, Producto* _producto){
     compra = _c;
     cantidad = _cantidad;
     producto = _producto;
+    enviado = false;
 }
 
 CompraProducto::~CompraProducto(){
@@ -17,7 +18,7 @@ Compra* CompraProducto::getCompra(){
 int CompraProducto::getCantidad(){
     return cantidad;
 }
-bool CompraProducto::getEstado(){
+bool CompraProducto::getEstado()const{
     return enviado;
 }
 Producto* CompraProducto::getProducto(){
@@ -36,9 +37,9 @@ void CompraProducto::setEstado(bool e){
 void CompraProducto::setProducto(Producto* _producto){
     producto = _producto;
 }
-DTNickFecha CompraProducto::obtenerClienteFecha() const{
+DTNickFecha CompraProducto::obtenerClienteFecha()const{
     return DTNickFecha(compra->getNickCliente(), compra->getFecha());
 }
-bool CompraProducto::esCompraDeCliente(string _cliente) const{
+bool CompraProducto::esCompraDeCliente(string _cliente)const{
     return (compra->getNickCliente() == _cliente);
 }
