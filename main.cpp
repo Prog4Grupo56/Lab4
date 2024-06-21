@@ -44,6 +44,7 @@ int main(){
             {
                 case 0:
                     /* Salir */
+                    LimpiarMemoria();
                     break;
                 case 1:
                     AltaDeUsuario();
@@ -92,10 +93,7 @@ int main(){
                     break;
                 case 16:
                     CambiarFecha();
-                    break;
-                case 17:
-                    LimpiarMemoria();
-                    break;    
+                    break;   
                 default:
                     cout << "Numero fuera de rango. Por favor, intente de nuevo." << endl;
                     break;

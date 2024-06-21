@@ -54,6 +54,7 @@ void Comentario::desvincularHijo(Comentario* c){
 void Comentario::desvincularPadre(){
     if (padre != NULL){ //si c (this) es respuesta de padre
         padre->desvincularHijo(this);
+        padre = NULL;
     }
 };
 
@@ -61,6 +62,7 @@ void Comentario::eliminarComentario(){
     comentador->desvincularComentario(this); //desvincula al comentario del usuario
 
     map<int,Comentario*>::iterator it;
+    
     for (it = respuestas.begin(); it != respuestas.end(); ++it){
         Comentario* respuesta = it->second;
         respuesta->eliminarComentario();

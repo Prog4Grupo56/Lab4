@@ -253,7 +253,7 @@ void ControladorUsuario::ingresarComentarioRespuesta(string nickname, int codigo
     }
 
     cantidadComentarios++;
-    u->agregarComentarioRespuesta(comentario, pr->getCodigo(), _fecha, cantidadComentarios, comentarioPadre);
+    u->agregarComentarioRespuesta(comentario, pr->getCodigo(), _fecha, cantidadComentarios, comentarioPadre); 
 };
 
     //Consultar Notificaciones
@@ -314,11 +314,8 @@ void ControladorUsuario::eliminarSuscripciones(){
 
 //Enviar Producto
 vector<DTCodigoNombre> ControladorUsuario::obtenerProductosVendedorEnvio(string nickVendedor){
-
-    map<string,Vendedor*>::iterator itV;
-    itV = vendedores.find(nickVendedor);
     vector<DTCodigoNombre> res;
-    if(itV !=vendedores.end()) res = vendedores[nickVendedor]->obtenerProductosPendientesEnvio();
+    res = vendedores[nickVendedor]->obtenerProductosPendientesEnvio();
     return res;
 }
 
