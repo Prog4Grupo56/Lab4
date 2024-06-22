@@ -15,8 +15,8 @@ ControladorCompra* ControladorCompra::getInstancia() {
 
 ControladorCompra::~ControladorCompra(){
     for (unsigned int i = 0; i < compras.size(); i++){
-            delete compras[i];
-        }
+        delete compras[i];
+    }
 
     map<string, Promocion*>::iterator itP;
     for (itP = promociones.begin(); itP != promociones.end(); ++itP){
@@ -27,10 +27,6 @@ ControladorCompra::~ControladorCompra(){
     for (it = productos.begin(); it != productos.end(); ++it){
         delete it->second;
     }
-
-    
-
-    
 
 }
 
