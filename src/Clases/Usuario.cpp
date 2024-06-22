@@ -10,7 +10,9 @@ Usuario::~Usuario(){
 
     map<int,Comentario*>::iterator it;
     for (it = comentarios.begin(); it != comentarios.end(); ++it){
-        eliminarComentario(it->first);
+        if( it->second != NULL){
+            eliminarComentario(it->first);
+        }
     }
 
 };
@@ -55,11 +57,12 @@ void Usuario::setComentario(Comentario* c){
 
 /*======= FUNCIONES ========*/
 void Usuario::desvincularComentario(Comentario* c){
-    comentarios.erase(c->getIdComentario());
+    comentarios[c->getIdComentario()] = NULL;
 }
 
 void Usuario::eliminarComentario(int idComentario){
     Comentario* comentario = comentarios[idComentario];
+    comentarios[idComentario] = NULL;
     comentario->desvincularPadre();
     comentario->eliminarComentario();
 }

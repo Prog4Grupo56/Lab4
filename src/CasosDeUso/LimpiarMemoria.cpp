@@ -12,5 +12,5 @@ void LimpiarMemoria(){
     delete IC;
     delete IF;
 
-    //delete F;
+    delete F;
 }

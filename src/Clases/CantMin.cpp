@@ -7,8 +7,8 @@ CantMin::CantMin(int _cantidadMinima, Producto* _producto){
     producto = _producto;
 }
 CantMin::~CantMin(){
-    producto = NULL;
-    promocion = NULL;
+    // producto = NULL;
+    // promocion = NULL;
 }
 
 int CantMin::getCantidadMinima(){

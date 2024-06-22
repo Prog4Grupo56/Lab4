@@ -14,8 +14,9 @@ Producto::Producto(int _codigo, Categoria _categoria, string _nombre, string _de
 
 //Destructor
 Producto::~Producto(){
-    vendedor = NULL;
-    cantMin = NULL;
+    // vendedor = NULL;
+    // cantMin = NULL;
+    // compraProducto.clear();
 }
 
 int Producto::getCodigo(){
@@ -94,8 +95,10 @@ void Producto::setCompraProducto(vector<CompraProducto*> _compraProducto){
 
 vector<DTNickFecha> Producto::obtenerClienteFecha(){
     vector<DTNickFecha> clienteFecha;
-    for(const CompraProducto* cp : compraProducto){
-        clienteFecha.push_back( cp->obtenerClienteFecha() );
+    for(CompraProducto* cp : compraProducto){
+        if (!cp->getEstado()){
+            clienteFecha.push_back( cp->obtenerClienteFecha() );
+        }
     }
     return clienteFecha;
 }

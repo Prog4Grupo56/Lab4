@@ -14,8 +14,8 @@ vector<string> listaNicknames = interfazCompra->obtenerListaNicknamesClientes();
 
 cout << "Clientes:\n";
 for(unsigned int i = 0; i < listaNicknames.size(); i++)
-    cout << "\t" << listaNicknames[i] << endl;
-cout << "Seleccione un cliente: ";
+    cout << "\tNickname: " << listaNicknames[i] << endl;
+cout << "Ingrese un nickname: ";
 string seleccion;
 cin >> seleccion;
 interfazCompra -> seleccionarCliente(seleccion); //Queda un dataInfoCompra guardado con el nick seleccionado

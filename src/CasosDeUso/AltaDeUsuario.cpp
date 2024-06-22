@@ -17,7 +17,7 @@ void AltaCliente(){
     cin >> nickname;
     bool contrasenaOk = false;
     while (!contrasenaOk){
-        cout << "Ingrese una contraseña (al menos seis caracteres): ";
+        cout << "\nIngrese una contraseña (al menos seis caracteres): ";
         cin >> contrasena;
         if (contrasena.length() < 6){
             cout << "\nContraseña invalida." << endl;
@@ -26,22 +26,22 @@ void AltaCliente(){
             contrasenaOk = true;
         }
     }
-    cout << "Ingrese una fecha (dia mes año): ";
+    cout << "\nIngrese una fecha (dia mes año): ";
     cin >> dia;
     cin >> mes;
     cin >> ano;
-    cout << "Ingrese una direccion (calle numeroDePuerta): ";
+    cout << "\nIngrese una direccion (calle numeroDePuerta): ";
     cin >> calle;
     cin >> numeroDePuerta;
-    cout << "Ingrese una ciudad: ";
+    cout << "\nIngrese una ciudad: ";
     cin >> ciudad;
     DTCliente dataCliente = DTCliente(nickname, contrasena, DTFecha(dia,mes,ano), DTDireccion(calle, numeroDePuerta), ciudad);
 
     if (IU->ingresarCliente(dataCliente)){
-        cout << "Se ingresó correctamente el usuario." << endl;
+        cout << "\nSe ingresó correctamente el usuario." << endl;
     }
     else{
-        cout << "El nickname esta ocupado. No se ingreso el usuario." << endl;
+        cout << "\nEl nickname esta ocupado. No se ingreso el usuario." << endl;
     }
 }
 
@@ -60,7 +60,7 @@ void AltaVendedor(){
     cin >> nickname;
     bool contrasenaOk = false;
     while (!contrasenaOk){
-        cout << "Ingrese una contraseña (al menos seis caracteres): ";
+        cout << "\nIngrese una contraseña (al menos seis caracteres): ";
         cin >> contrasena;
         if (contrasena.length() < 6){
             cout << "\nContraseña invalida." << endl;
@@ -69,13 +69,13 @@ void AltaVendedor(){
             contrasenaOk = true;
         }
     }
-    cout << "Ingrese una fecha (dia mes año): ";
+    cout << "\nIngrese una fecha (dia mes año): ";
     cin >> dia;
     cin >> mes;
     cin >> ano;
     bool RUTok = false;
     while (!RUTok){
-        cout << "Ingrese un RUT (doce caracteres): ";
+        cout << "\nIngrese un RUT (doce caracteres): ";
         cin >> RUT;
         if (RUT.length() != 12){
             cout << "\nRUT invalido." << endl;
@@ -88,10 +88,10 @@ void AltaVendedor(){
     DTVendedor dataVendedor = DTVendedor(nickname, contrasena, DTFecha(dia,mes,ano), RUT);
 
     if (IU->ingresarVendedor(dataVendedor)){
-        cout << "Se ingresó correctamente el usuario.";
+        cout << "\nSe ingresó correctamente el usuario.\n";
     }
     else{
-        cout << "El nickname esta ocupado. No se ingreso el usuario. ";
+        cout << "\nEl nickname esta ocupado. No se ingreso el usuario.\n";
     }
 }
 
