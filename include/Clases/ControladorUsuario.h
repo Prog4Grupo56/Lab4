@@ -11,6 +11,8 @@
 #include "../Datatypes/DTCodigoCantidad.h"
 #include "../Datatypes/DTCodigoNombre.h"
 #include "../Datatypes/DTNickFecha.h"
+#include "../Datatypes/DTExpedienteCliente.h"
+#include "../Datatypes/DTExpedienteVendedor.h"
 
 #include "Fabrica.h"
 #include "Vendedor.h"
@@ -102,7 +104,8 @@ class ControladorUsuario : public IUsuario{
         void eliminarSuscripciones();
 
         //Expediente de usuario
-        string obtenerInfoUsuario(string nickname);
+        DTExpedienteCliente obtenerInfoCliente(string nickname);
+        DTExpedienteVendedor obtenerInfoVendedor(string nickname);
 
         //Enviar Producto
         vector<DTCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor);

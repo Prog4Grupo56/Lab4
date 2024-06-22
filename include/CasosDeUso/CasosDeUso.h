@@ -2,6 +2,8 @@
 #include "../Datatypes/DTFecha.h"
 #include "../Datatypes/DTDireccion.h"
 #include "../Datatypes/DTCliente.h"
+#include "../Datatypes/DTExpedienteCliente.h"
+#include "../Datatypes/DTExpedienteVendedor.h"
 #include "../Clases/Fabrica.h"
 #include "../Clases/IUsuario.h"
 

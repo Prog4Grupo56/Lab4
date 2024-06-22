@@ -1,5 +1,9 @@
 #include "../../include/Datatypes/DTCliente.h"
 
+DTCliente::DTCliente(){
+    
+}
+
 DTCliente::DTCliente(string _nickname, string _contrasena, DTFecha _fecha, DTDireccion _direccion, string _ciudad):
 DTUsuario(_nickname, _contrasena, _fecha), direccion(_direccion), ciudad(_ciudad){};
 

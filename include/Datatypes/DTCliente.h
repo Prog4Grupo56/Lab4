@@ -12,7 +12,7 @@ class DTCliente : public DTUsuario{
 
     public:
         DTCliente(string _nickname, string _contrasena, DTFecha _fecha, DTDireccion _direccion, string _ciudad);
-
+        DTCliente();
         ~DTCliente();
        
         DTDireccion getDireccion();

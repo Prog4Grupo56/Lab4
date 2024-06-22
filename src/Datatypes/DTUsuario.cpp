@@ -1,7 +1,7 @@
 #include "../../include/Datatypes/DTUsuario.h"
 
 DTUsuario::DTUsuario(){
-
+    nickname = "";
 }
 
 DTUsuario::DTUsuario(string _nickname, string _contrasena, DTFecha _fecha){

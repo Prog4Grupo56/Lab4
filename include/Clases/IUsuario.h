@@ -10,6 +10,8 @@
 #include "../Datatypes/DTPromocion.h"
 #include "../Datatypes/DTCodigoNombre.h"
 #include "../Datatypes/DTNotificacion.h"
+#include "../Datatypes/DTExpedienteCliente.h"
+#include "../Datatypes/DTExpedienteVendedor.h"
 
 class Cliente;
 
@@ -59,7 +61,8 @@ public:
     virtual void ingresarComentarioNuevo(string nickname, int codigoProducto, string comentario, DTFecha _fecha) = 0;
     virtual void ingresarComentarioRespuesta(string nickname, int codigoProducto, string comentario, DTFecha _fecha, int idPadre) = 0;
 
-    virtual string obtenerInfoUsuario(string nickname) = 0;
+    virtual DTExpedienteCliente obtenerInfoCliente(string nickname) = 0;
+    virtual DTExpedienteVendedor obtenerInfoVendedor(string nickname) = 0;
 
     //Enviar Producto
     virtual vector<DTCodigoNombre> obtenerProductosVendedorEnvio(string nickVendedor) = 0;

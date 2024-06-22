@@ -320,46 +320,45 @@ vector<DTCodigoNombre> ControladorUsuario::obtenerProductosVendedorEnvio(string 
 }
 
 //Algun caso de uso
-string ControladorUsuario::obtenerInfoUsuario(string nickname){
+DTExpedienteCliente ControladorUsuario::obtenerInfoCliente(string nickname){
+    Fabrica* f = Fabrica::getInstance();
+    IFecha* IF = f->getIFecha();
+    DTFecha fechaActual = IF->getFechaActual();
+    map<string,Cliente*>::iterator itC;
+    itC = clientes.find(nickname);
+    if(itC != clientes.end()){
+        vector<Compra*> compras = itC->second->getCompras();
+        vector<DTCompraProductos> vCompraProductos;
+        for(unsigned int i = 0; i<compras.size(); i++){
+            vector<CompraProducto*> compraProductos = compras[i]->obtenerCompraProductos();
+            vector<DTProducto> vDTProd;
+            for(unsigned int j = 0; j < compraProductos.size(); j++){
+                DTProducto dProd = compraProductos[j]->getProducto()->getDataProducto();
+                vDTProd.push_back(dProd);
+            }
+            vCompraProductos.push_back(DTCompraProductos(compras[i]->getMontoFinal(), vDTProd, compras[i]->getFecha()));
+        }
+        return DTExpedienteCliente(vCompraProductos, itC->second->getDataCliente());
+    }
+    return DTExpedienteCliente();
+}
+DTExpedienteVendedor ControladorUsuario::obtenerInfoVendedor(string nickname){
 
     Fabrica* f = Fabrica::getInstance();
     IFecha* IF = f->getIFecha();
     DTFecha fechaActual = IF->getFechaActual();
 
-    map<string,Cliente*>::iterator itC;
-    itC = clientes.find(nickname);
     map<string,Vendedor*>::iterator itV;
     itV = vendedores.find(nickname);
-    string info;
-    if(itC != clientes.end()){
-        info = "Nickname: " + itC->second->getNickname() + " | Fecha de nacimiento: " + itC->second->getFecha().toString();
-        vector<Compra*> compras = itC->second->getCompras();
-        info += "\n\tCompras:";
-        for(unsigned int i = 0; i<compras.size(); i++){
-            info+= "\n\t\tFecha: " + compras[i]->getFecha().toString() + " | Monto final: " + to_string(compras[i]->getMontoFinal());
-            vector<CompraProducto*> compraProductos = compras[i]->obtenerCompraProductos();
-            for(unsigned int j = 0; j < compraProductos.size(); j++){
-                DTProducto dProd = compraProductos[j]->getProducto()->getDataProducto();
-                info += "\n\t\t\t" + dProd.toString();
-            }
-        }
-    }
+
     if(itV!=vendedores.end()){
-        info = "Nickname: " + itV->second->getNickname() + " | Fecha de nacimiento: " + itV->second->getFecha().toString();
-        vector<DTProducto> productos = itV->second->obtenerInfoProductos();
-        info += "\n\tProductos:";
-        for(unsigned int i = 0; i<productos.size(); i++){
-            info += "\n\t\t" + productos[i].toString();
-        }
-        info += "\n\tPromociones:";
-        vector<DTPromocion> promociones = itV->second->obtenerInfoPromocionesVigentes(fechaActual);
-        for(unsigned int i = 0; i<promociones.size(); i++){
-            info += "\n\t\t" + promociones[i].toString();
-        }
+        return DTExpedienteVendedor(itV->second->getDataVendedor(), itV->second->obtenerInfoProductos(), itV->second->obtenerInfoPromocionesVigentes(fechaActual));
     }
-    info+="\n";
-    return info;
+    return DTExpedienteVendedor();
 }
+
+
+
 
 //Alta Producto
 
