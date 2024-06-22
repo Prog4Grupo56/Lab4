@@ -15,16 +15,16 @@ void ConsultarProducto(){
     cout << "\nIntroducir el código del producto a seleccionar: ";
     cin >> codigo;
 
-    Producto* productoSeleccionado = IC->obtenerProducto(codigo);
-    string nicknameVendedor = productoSeleccionado->getVendedor()->getNickname();
+    DTProducto productoSeleccionado = IC->obtenerDTProducto(codigo);
+    string nicknameVendedor = IC->obtenerNicknameVendedorDeProducto(codigo);
 
     cout << "\nInformación del producto:" << endl;
-    cout << "\t" << "Nombre: " << productoSeleccionado->getNombre() << endl;
-    cout << "\t" << "Precio: $" << productoSeleccionado->getPrecio() << endl;
-    cout << "\t" << "Cantidad: " << productoSeleccionado->getStock() << endl;
-    cout << "\t" << "Descripción: " << productoSeleccionado->getDescripcion() << endl;
-    string categ = productoSeleccionado->getCategoria() == Ropa ? "Ropa" : 
-                   productoSeleccionado->getCategoria() == Electrodomesticos ? "Electrodomesticos" :
+    cout << "\t" << "Nombre: " << productoSeleccionado.getNombre() << endl;
+    cout << "\t" << "Precio: $" << productoSeleccionado.getPrecio() << endl;
+    cout << "\t" << "Cantidad: " << productoSeleccionado.getStock() << endl;
+    cout << "\t" << "Descripción: " << productoSeleccionado.getDescripcion() << endl;
+    string categ = productoSeleccionado.getCategoria() == Ropa ? "Ropa" : 
+                   productoSeleccionado.getCategoria() == Electrodomesticos ? "Electrodomesticos" :
                    "Otros";
     cout << "\t" << "Categoría: " << categ << endl;
     cout << "\t" << "Vendedor: " << nicknameVendedor << endl;

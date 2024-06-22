@@ -51,9 +51,8 @@ void AltaDeProducto(){
     else{
         categ = Otros;
     }
-    
-    Vendedor* v = IU->obtenerVendedor(vendedor);
-    IC->confirmarAltaProducto(categ, nombreProducto, descripcion, stock, precio, v);
+
+    IC->confirmarAltaProducto(categ, nombreProducto, descripcion, stock, precio, vendedor);
 
     cout << "\nProducto ingresado exitosamente." << endl;
 
