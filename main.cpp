@@ -112,7 +112,5 @@ int main(){
         }      
     } while (opcion != 0);
 
-    //LimpiarMemoria();
-
     return 0;
 }

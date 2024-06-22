@@ -186,7 +186,7 @@ void ControladorUsuario::confirmarAltaPromocion(){
 
     c->crearPromocion(v, dataCrearP);
 
-    dataCrearP->~DataCrearPromocion();
+    delete dataCrearP;
     dataCrearP = NULL;
 }
 

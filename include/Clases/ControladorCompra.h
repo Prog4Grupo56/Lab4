@@ -58,8 +58,10 @@ class ControladorCompra : public ICompra{
         vector<DTPromocion> obtenerInfoPromociones(DTFecha _fecha);
         string obtenerInfoPromocion(string nombre);
 
-        void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor);
+        void confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, string vendedor);
 
+        DTProducto obtenerDTProducto(int codigo);
+        string obtenerNicknameVendedorDeProducto(int codigo);
         
 };
 
