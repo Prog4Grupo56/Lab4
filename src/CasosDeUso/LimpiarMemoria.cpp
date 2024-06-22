@@ -8,8 +8,8 @@ void LimpiarMemoria(){
     ICompra* IC = F->getICompra();
     IFecha* IF = F->getIFecha();
 
-    delete IC;
     delete IU;
+    delete IC;
     delete IF;
 
     delete F;

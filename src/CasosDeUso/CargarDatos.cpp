@@ -33,83 +33,64 @@ void CargarDatos(){
 
 //INGRESO DE PRODUCTOS
     //PR1
-    Vendedor* V1 = IU->obtenerVendedor("carlos78");
-    IC->confirmarAltaProducto(Ropa, "Camiseta Azul", "Camiseta de poliester, color azul", 50, 1400, V1);
+    IC->confirmarAltaProducto(Ropa, "Camiseta Azul", "Camiseta de poliester, color azul", 50, 1400, "carlos78");
     //PR2
-    Vendedor* V2 = IU->obtenerVendedor("ana23");
-    IC->confirmarAltaProducto(Electrodomesticos, "Televisor LED", "Televisor LED 55 pulgadas", 30, 40500, V2);
+    IC->confirmarAltaProducto(Electrodomesticos, "Televisor LED", "Televisor LED 55 pulgadas", 30, 40500, "ana23");
     //PR3
-    Vendedor* V3 = IU->obtenerVendedor("carlos78");
-    IC->confirmarAltaProducto(Ropa, "Chaqueta de Cuero", "Chaqueta de cuero, color negro", 20, 699.99, V3);
+    IC->confirmarAltaProducto(Ropa, "Chaqueta de Cuero", "Chaqueta de cuero, color negro", 20, 699.99, "carlos78");
     //PR4
-    Vendedor* V4 = IU->obtenerVendedor("ana23");
-    IC->confirmarAltaProducto(Electrodomesticos, "Microondas Digital", "Microondas digital, 30L", 15, 1199.99, V4);
+    IC->confirmarAltaProducto(Electrodomesticos, "Microondas Digital", "Microondas digital, 30L", 15, 1199.99, "ana23");
     //PR5
-    Vendedor* V5 = IU->obtenerVendedor("diegom");
-    IC->confirmarAltaProducto(Otros, "Luz LED", "Luz Bluetooth LED", 40, 599.99, V5);
+    IC->confirmarAltaProducto(Otros, "Luz LED", "Luz Bluetooth LED", 40, 599.99, "diegom");
     //PR6
-    Vendedor* V6 = IU->obtenerVendedor("carlos78");
-    IC->confirmarAltaProducto(Ropa, "Pantalones Vaqueros", "Pantalones vaqueros, talla 32", 25, 60, V6);
+    IC->confirmarAltaProducto(Ropa, "Pantalones Vaqueros", "Pantalones vaqueros, talla 32", 25, 60, "carlos78");
     //PR7
-    Vendedor* V7 = IU->obtenerVendedor("diegom");
-    IC->confirmarAltaProducto(Otros, "Auriculares Bluetooth", "Auriculares bluethooth para celular", 35, 199.99, V7);
+    IC->confirmarAltaProducto(Otros, "Auriculares Bluetooth", "Auriculares bluethooth para celular", 35, 199.99, "diegom");
     //PR8
-    Vendedor* V8 = IU->obtenerVendedor("ana23");
-    IC->confirmarAltaProducto(Electrodomesticos, "Refrigerador", "Refrigerador de doble puerta", 10, 15499, V8);
+    IC->confirmarAltaProducto(Electrodomesticos, "Refrigerador", "Refrigerador de doble puerta", 10, 15499, "ana23");
     //PR9
-    Vendedor* V9 = IU->obtenerVendedor("ana23");
-    IC->confirmarAltaProducto(Electrodomesticos, "Cafetera", "Cafetera de goteo programable", 50, 23000, V9);
+    IC->confirmarAltaProducto(Electrodomesticos, "Cafetera", "Cafetera de goteo programable", 50, 23000, "ana23");
     //PR10
-    Vendedor* V10 = IU->obtenerVendedor("carlos78");
-    IC->confirmarAltaProducto(Ropa, "Zapatillas Deportivas", "Zapatillas para correr, talla 42", 20, 5500, V10);
+    IC->confirmarAltaProducto(Ropa, "Zapatillas Deportivas", "Zapatillas para correr, talla 42", 20, 5500, "carlos78");
     //PR11
-    Vendedor* V11 = IU->obtenerVendedor("carlos78");
-    IC->confirmarAltaProducto(Otros, "Mochila", "Mochila de viaje, 40L", 30, 9000, V11);
+    IC->confirmarAltaProducto(Otros, "Mochila", "Mochila de viaje, 40L", 30, 9000, "carlos78");
     //PR12
-    Vendedor* V12 = IU->obtenerVendedor("diegom");
-    IC->confirmarAltaProducto(Electrodomesticos, "Plancha de Ropa", "Plancha a vapor, 1500W", 25, 2534, V12);
+    IC->confirmarAltaProducto(Electrodomesticos, "Plancha de Ropa", "Plancha a vapor, 1500W", 25, 2534, "diegom");
     //PR13
-    Vendedor* V13 = IU->obtenerVendedor("sofia25");
-    IC->confirmarAltaProducto(Ropa, "Gorra", "Gorra para deportes, color rojo", 50, 200, V13);
+    IC->confirmarAltaProducto(Ropa, "Gorra", "Gorra para deportes, color rojo", 50, 200, "sofia25");
     //PR14
-    Vendedor* V14 = IU->obtenerVendedor("diegom");
-    IC->confirmarAltaProducto(Otros, "Tablet", "Tablet Android de 10 pulgadas", 15, 15000, V14);
+    IC->confirmarAltaProducto(Otros, "Tablet", "Tablet Android de 10 pulgadas", 15, 15000, "diegom");
     //PR15
-    Vendedor* V15 = IU->obtenerVendedor("sofia25");
-    IC->confirmarAltaProducto(Otros, "Reloj de Pared", "Reloj de pared vintage", 20, 150.50, V15);
+    IC->confirmarAltaProducto(Otros, "Reloj de Pared", "Reloj de pared vintage", 20, 150.50, "sofia25");
 
 //INGRESO DE PROMOCIONES
     //PM1
     DTPromocion PM1 = DTPromocion("Casa nueva", "Para que puedas ahorrar en la casa nueva", DTFecha(25, 10, 2024), 30);
-    vector<DTCodigoCantidad> PC1;
-    PC1.push_back(DTCodigoCantidad(2, 1));
-    PC1.push_back(DTCodigoCantidad(4, 1));
-    PC1.push_back(DTCodigoCantidad(8, 1));
-    DataCrearPromocion* DCPM1 = new DataCrearPromocion(V2->getNickname(), PM1, PC1);
-    IC->crearPromocion(V2, DCPM1);
-    delete DCPM1;
+    IU->ingresarDatosPromocion(PM1);
+    IU->seleccionarVendedor("ana23");
+    IU->agregarProductoCantidad(DTCodigoCantidad(2, 1));
+    IU->agregarProductoCantidad(DTCodigoCantidad(4, 1));
+    IU->agregarProductoCantidad(DTCodigoCantidad(8, 1));
+    IU->confirmarAltaPromocion();
     //PM2
     DTPromocion PM2 = DTPromocion("Fiesta", "Para que no te quedes sin ropa para las fiestas", DTFecha(26, 10, 2024), 20);
-    vector<DTCodigoCantidad> PC2;
-    PC2.push_back(DTCodigoCantidad(3, 2));
-    PC2.push_back(DTCodigoCantidad(6, 3));
-    DataCrearPromocion* DCPM2 = new DataCrearPromocion(V3->getNickname(), PM2, PC2);
-    IC->crearPromocion(V3, DCPM2);
-    delete DCPM2;
+    IU->ingresarDatosPromocion(PM2);
+    IU->seleccionarVendedor("carlos78");
+    IU->agregarProductoCantidad(DTCodigoCantidad(3, 2));
+    IU->agregarProductoCantidad(DTCodigoCantidad(6, 3));
+    IU->confirmarAltaPromocion();
     //PM3
     DTPromocion PM3 = DTPromocion("Domotica", "Para modernizar tu casa", DTFecha(26, 10, 2024), 10);
-    vector<DTCodigoCantidad> PC3;
-    PC3.push_back(DTCodigoCantidad(5, 2));
-    DataCrearPromocion* DCPM3 = new DataCrearPromocion(V5->getNickname(), PM3, PC3);
-    IC->crearPromocion(V5, DCPM3);
-    delete DCPM3;
+    IU->ingresarDatosPromocion(PM3);
+    IU->seleccionarVendedor("diegom");
+    IU->agregarProductoCantidad(DTCodigoCantidad(5, 2));
+    IU->confirmarAltaPromocion();
     //PM4
     DTPromocion PM4 = DTPromocion("Liquidacion", "Hasta agotar stock", DTFecha(26, 03, 2024), 10);
-    vector<DTCodigoCantidad> PC4;
-    PC4.push_back(DTCodigoCantidad(14, 1));
-    DataCrearPromocion* DCPM4 = new DataCrearPromocion(V14->getNickname(), PM4, PC4);
-    IC->crearPromocion(V14, DCPM4);
-    delete DCPM4;
+    IU->ingresarDatosPromocion(PM4);
+    IU->seleccionarVendedor("diegom");
+    IU->agregarProductoCantidad(DTCodigoCantidad(14, 1));
+    IU->confirmarAltaPromocion();
 
 //INGRESO DE COMPRAS
     //CO1

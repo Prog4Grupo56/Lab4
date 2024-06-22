@@ -15,8 +15,8 @@ ControladorCompra* ControladorCompra::getInstancia() {
 
 ControladorCompra::~ControladorCompra(){
     for (unsigned int i = 0; i < compras.size(); i++){
-            delete compras[i];
-        }
+        delete compras[i];
+    }
 
     map<string, Promocion*>::iterator itP;
     for (itP = promociones.begin(); itP != promociones.end(); ++itP){
@@ -27,10 +27,6 @@ ControladorCompra::~ControladorCompra(){
     for (it = productos.begin(); it != productos.end(); ++it){
         delete it->second;
     }
-
-    
-
-    
 
 }
 
@@ -193,13 +189,16 @@ string ControladorCompra::obtenerInfoPromocion(string nombre){
 }
 
     //Alta de Producto
-void ControladorCompra::confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, Vendedor* vendedor){
+void ControladorCompra::confirmarAltaProducto(Categoria categoria, string nombre, string descripcion, int stock, float precio, string vendedor){
+    Fabrica* F = Fabrica::getInstance();
+    IUsuario* IU = F->getIUsuario();
+    Vendedor* v = IU->obtenerVendedor(vendedor);
 
     cantidadProductos++; //codigo
-    Producto* productoNuevo = new Producto(cantidadProductos, categoria, nombre, descripcion, stock, precio, vendedor);
+    Producto* productoNuevo = new Producto(cantidadProductos, categoria, nombre, descripcion, stock, precio, v);
     productos[cantidadProductos] = productoNuevo;
 
-    vendedor->setProducto(productoNuevo);
+    v->setProducto(productoNuevo);
 
 }
 
@@ -207,4 +206,14 @@ void ControladorCompra::confirmarAltaProducto(Categoria categoria, string nombre
 void ControladorCompra::cancelarCompra(){
     delete dataInfoC;
     dataInfoC = NULL;
+}
+
+
+DTProducto ControladorCompra::obtenerDTProducto(int codigo){
+    Producto* producto = productos[codigo];
+    return DTProducto(codigo, producto->getStock(), producto->getPrecio(), producto->getNombre(), producto->getDescripcion(), producto->getCategoria());
+}
+
+string ControladorCompra::obtenerNicknameVendedorDeProducto(int codigo){
+    return productos[codigo]->getVendedor()->getNickname();
 }
