@@ -50,7 +50,7 @@ void DejarComentario(){
     else{
         vector<DTComentario> listaComentariosProducto = IU->obtenerListaComentariosProducto(producto);
         if (listaComentariosProducto.empty()){
-            cout << "Este producto no tiene comentarios." << endl;
+            cout << "\nEste producto no tiene comentarios." << endl;
         }
         else{
             cout << "\nComentarios sobre el producto " << producto << ":" << endl;
