@@ -128,7 +128,7 @@ void ControladorUsuario::seleccionarComentario(int _idComentario){
 void ControladorUsuario::eliminarComentario(){
     string nickUsuario = dataElimCom->getNickname();
     (usuarios[nickUsuario])->eliminarComentario( dataElimCom->getIdComentario() );
-    dataElimCom->~DataEliminarComentario();
+    delete dataElimCom;;
     dataElimCom = NULL;
 } 
 
@@ -308,7 +308,7 @@ void ControladorUsuario::eliminarSuscripciones(){
     for(const DTVendedor &vend : elimVend){
         vendedores[vend.getNickname()]->eliminarSuscriptor(cliente);
     }
-    dataElimSus->~DataEliminarSuscripcion();
+    delete dataElimSus;;
     dataElimSus = NULL;
 }
 

@@ -22,9 +22,9 @@ void EliminarSuscripciones(){
 
      do{
           cout << "\nDesea eliminar un vendedor?" << endl;
-          cout << "0. Terminar." << endl;
-          cout << "1. Agregar." << endl;
-          cout << "Ingrese una opcion: ";
+          cout << "\t0. Terminar." << endl;
+          cout << "\t1. Agregar." << endl;
+          cout << "\nIngrese una opcion: ";
           cin >> opcion;
           
           if (opcion == 1){
