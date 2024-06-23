@@ -21,7 +21,7 @@ public:
 
     virtual void crearPromocion(Vendedor* v, DataCrearPromocion* dataCrearP) = 0;
     virtual vector<DTProducto> obtenerListaProductos() = 0;
-    virtual void agregarProductoCantidad(DTCodigoCantidad parCodCant) = 0;
+    virtual bool agregarProductoCantidad(DTCodigoCantidad parCodCant) = 0;
     virtual DTCompraProductos obtenerInfoCompra() = 0;
     virtual vector<string> obtenerListaNicknamesClientes() = 0;
     virtual void seleccionarCliente(string nickname) = 0;
