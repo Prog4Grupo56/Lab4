@@ -23,9 +23,28 @@ interfazCompra -> seleccionarCliente(seleccion); //Queda un dataInfoCompra guard
 
 
 vector<DTProducto> listaProductos = interfazCompra -> obtenerListaProductos();
+
+bool agregado=false;
+int id; int cant; //Id y cantidad del producto
+cout << "\nProductos:";
+        for(unsigned int i = 0; i < listaProductos.size(); i++)//Imprimir productos
+        {
+            cout << "\n\t" << listaProductos[i].toString();
+        };
+
+        cout << "\n\nIngrese el codigo del producto: ";
+        cin >> id;
+        cout << "\nIngrese la cantidad deseada: ";
+        cin >> cant;
+        agregado = interfazCompra -> agregarProductoCantidad(DTCodigoCantidad(id,cant));
+        if (agregado){
+            cout << "\nProducto ingresado con exito." << endl;
+        }else{
+            cout << "\nYa ingresado / No hay stock" << endl;
+        }
+
 bool continuar = true;
 int opcion = 1; //Para el menu
-int id; int cant; //Id y cantidad del producto
 while(continuar)
 {
     cout << "\nDesea agregar un producto?";
@@ -45,8 +64,12 @@ while(continuar)
         cin >> id;
         cout << "\nIngrese la cantidad deseada: ";
         cin >> cant;
-        interfazCompra -> agregarProductoCantidad(DTCodigoCantidad(id,cant));
-        cout << "\nProducto ingresado con exito." << endl;
+        agregado = interfazCompra -> agregarProductoCantidad(DTCodigoCantidad(id,cant));
+        if (agregado){
+            cout << "\nProducto ingresado con exito." << endl;
+        }else{
+            cout << "\nYa ingresado / No hay stock" << endl;
+        }
     }
     else
     {

@@ -65,15 +65,19 @@ vector<DTProducto> ControladorCompra::obtenerListaProductos(){
     return dataProductos;
 }
 
-void ControladorCompra::agregarProductoCantidad(DTCodigoCantidad parCodCant){
+bool ControladorCompra::agregarProductoCantidad(DTCodigoCantidad parCodCant){
     vector<DTCodigoCantidad> lista = dataInfoC->getProdCant();
+    bool hayStock = productos[parCodCant.getCodigo()]->getStock() >= parCodCant.getCantidad();
     bool existe = false;
     for(unsigned int i = 0; i < lista.size(); i++){
         existe = existe || lista[i].getCodigo()==parCodCant.getCodigo();
     }
-    if (!existe){
+    if ((!existe) && hayStock){
         lista.push_back(parCodCant);
         dataInfoC->setProdCant(lista);
+        return true;
+    }else{
+        return false;
     }
 }
 
