@@ -44,24 +44,29 @@ void DejarComentario(){
         cin >> comentario;
 
         IU->ingresarComentarioNuevo(nickname, producto, comentario, fecha);
+        cout << "\nSe ingresó su comentario exitosamente." << endl;
 
     }
     else{
         vector<DTComentario> listaComentariosProducto = IU->obtenerListaComentariosProducto(producto);
-        cout << "\nComentarios sobre el producto " << producto << ":" << endl;
-        for (unsigned int i = 0; i < listaComentariosProducto.size(); i++){
-            cout << "\t" << listaComentariosProducto[i].toString() << endl;
+        if (listaComentariosProducto.empty()){
+            cout << "Este producto no tiene comentarios." << endl;
         }
-        cout << "\nIngrese un Id: ";
-        int id;
-        cin >> id;
-        cout << "\nIngrese el comentario: ";
-        string comentario;
-        cin.ignore();
-        getline(cin, comentario);
-        IU->ingresarComentarioRespuesta(nickname, producto, comentario, fecha, id);
+        else{
+            cout << "\nComentarios sobre el producto " << producto << ":" << endl;
+            for (unsigned int i = 0; i < listaComentariosProducto.size(); i++){
+                cout << "\t" << listaComentariosProducto[i].toString() << endl;
+            }
+            cout << "\nIngrese un Id: ";
+            int id;
+            cin >> id;
+            cout << "\nIngrese el comentario: ";
+            string comentario;
+            cin.ignore();
+            getline(cin, comentario);
+            IU->ingresarComentarioRespuesta(nickname, producto, comentario, fecha, id);        
+            cout << "\nSe ingresó su comentario exitosamente." << endl;
+        }
     }
-
-    cout << "\nSe ingresó su comentario exitosamente." << endl;
 
 }
