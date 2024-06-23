@@ -7,7 +7,7 @@ void CargarDatos(){
     ICompra* IC = F->getICompra();
     IFecha* IF =  F->getIFecha();
 
-    IF->setFechaActual(DTFecha(24,06,2024));
+    IF->setFechaActual(DTFecha(26,06,2024));
 
 //INGRESO DE USUARIOS
     DTVendedor US1 = DTVendedor("ana23", "qwer1234", DTFecha(15,05,1988), "212345678001");
